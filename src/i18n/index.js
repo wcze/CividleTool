@@ -2,8 +2,10 @@ import { ref } from 'vue'
 import zh from './locales/zh'
 import en from './locales/en'
 import zhGame from './data/zh'
+import enGame from './data/en'
 
 const messages = { zh, en }
+const gameMessages = { zh: zhGame, en: enGame }
 const DEFAULT_LOCALE = 'zh'
 const STORAGE_KEY = 'cividle-locale'
 
@@ -51,11 +53,12 @@ function t(key, params) {
   return str
 }
 
-// 游戏内翻译：中文使用游戏本地化数据，其它语言保留原键（游戏内英文名）
+// 游戏内翻译：按当前语言查询游戏本地化数据，找不到回退原键
 function tGame(key) {
   if (!key) return key
-  if (locale.value !== 'zh') return key
-  return zhGame[key] || key
+  const dict = gameMessages[locale.value]
+  if (!dict) return key
+  return dict[key] || key
 }
 
 export { locale, setLocale, t, tGame }
