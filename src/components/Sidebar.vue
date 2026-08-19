@@ -4,6 +4,14 @@
       <span class="title">{{ t('sidebar.title') }}</span>
     </div>
 
+    <!-- 主导航：首页 / 关于 -->
+    <nav class="side-nav">
+      <router-link to="/" class="side-nav-item" exact-active-class="active">{{ t('nav.home') }}</router-link>
+      <router-link to="/about" class="side-nav-item" active-class="active">{{ t('nav.about') }}</router-link>
+    </nav>
+
+    <div class="side-divider"></div>
+
     <nav class="tool-list">
       <button
         v-for="tool in tools"
@@ -16,9 +24,6 @@
       </button>
     </nav>
 
-    <div class="sidebar-foot">
-      <button class="back" @click="$emit('goHome')">← {{ t('sidebar.backHome') }}</button>
-    </div>
   </aside>
 </template>
 
@@ -36,7 +41,7 @@ defineProps({
   }
 })
 
-defineEmits(['goHome', 'switchTool'])
+defineEmits(['switchTool'])
 </script>
 
 <style scoped>
@@ -65,6 +70,52 @@ defineEmits(['goHome', 'switchTool'])
 .tool-list {
   flex: 1;
   padding: 4px 10px;
+}
+
+.side-nav {
+  display: none;
+  padding: 0 10px 10px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.side-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: var(--text-1);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.side-nav-item:hover {
+  background: var(--bg-soft);
+}
+
+.side-nav-item.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.side-divider {
+  display: none;
+  height: 1px;
+  background: var(--border);
+  margin: 2px 14px 10px;
+}
+
+/* 移动端：首页/关于收进侧边栏菜单 */
+@media (max-width: 768px) {
+  .side-nav {
+    display: flex;
+  }
+
+  .side-divider {
+    display: block;
+  }
 }
 
 .tool-item {
@@ -101,27 +152,4 @@ defineEmits(['goHome', 'switchTool'])
   text-overflow: ellipsis;
 }
 
-.sidebar-foot {
-  padding: 12px 14px 16px;
-  border-top: 1px solid var(--border);
-}
-
-.back {
-  width: 100%;
-  padding: 8px;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 0.88rem;
-  color: var(--text-2);
-  cursor: pointer;
-  text-align: center;
-  border-radius: 8px;
-  transition: color 0.2s, background 0.2s;
-}
-
-.back:hover {
-  color: var(--accent);
-  background: var(--bg-soft);
-}
 </style>

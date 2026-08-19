@@ -1,12 +1,5 @@
 <template>
   <div class="tool-layout">
-    <!-- 移动端菜单按钮 -->
-    <button class="menu-btn" @click="drawerOpen = true" :aria-label="t('nav.openMenu')">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
     <!-- 抽屉遮罩 -->
     <div v-if="drawerOpen" class="drawer-overlay" @click="drawerOpen = false"></div>
 
@@ -27,9 +20,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import Sidebar from './Sidebar.vue'
-import { t } from '@/i18n'
+import { drawerOpen } from '@/store/ui'
 
 defineProps({
   tools: {
@@ -43,8 +35,6 @@ defineProps({
 })
 
 const emit = defineEmits(['goHome', 'switchTool'])
-
-const drawerOpen = ref(false)
 
 const onGoHome = () => {
   drawerOpen.value = false
@@ -79,41 +69,11 @@ const onSwitchTool = (tool) => {
   background: #fff;
 }
 
-.menu-btn {
-  display: none;
-}
-
 .drawer-overlay {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .menu-btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    position: fixed;
-    top: 66px;
-    left: 14px;
-    z-index: 60;
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .menu-btn span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: var(--text-1);
-    border-radius: 2px;
-  }
-
   .sidebar-wrap {
     position: fixed;
     top: 0;
@@ -137,13 +97,13 @@ const onSwitchTool = (tool) => {
   }
 
   .content-area {
-    padding: 124px 20px 24px;
+    padding: 24px 20px 24px;
   }
 }
 
 @media (max-width: 600px) {
   .content-area {
-    padding: 124px 16px 20px;
+    padding: 24px 16px 20px;
   }
 }
 </style>

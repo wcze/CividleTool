@@ -13,6 +13,20 @@
             <router-link to="/about" class="nav-link">{{ t('nav.about') }}</router-link>
           </div>
 
+          <!-- 移动端菜单按钮 -->
+          <button
+            class="menu-btn"
+            :class="{ open: drawerOpen }"
+            :aria-label="t('nav.openMenu')"
+            aria-haspopup="true"
+            :aria-expanded="drawerOpen"
+            @click="drawerOpen = !drawerOpen"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <!-- 自定义语言下拉 -->
           <div class="lang-select" ref="langSelectRef">
             <button
@@ -57,8 +71,10 @@
 
 <script setup>
 import iconUrl from '@/assets/icon.webp'
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, watch, onMounted, onBeforeUnmount } from 'vue'
+import { useRoute } from 'vue-router'
 import { locale, setLocale, t } from './i18n'
+import { drawerOpen } from './store/ui'
 
 // 语言选项
 const langOptions = [
@@ -80,6 +96,17 @@ const selectLocale = (value) => {
   setLocale(value)
   langOpen.value = false
 }
+
+const route = useRoute()
+
+// 路由变化时关闭移动端抽屉（点击首页/关于等链接后自动收起侧边栏）
+// 放在根组件，避免路由切换导致 ToolContainer 卸载时监听失效
+watch(
+  () => route.path,
+  () => {
+    drawerOpen.value = false
+  }
+)
 
 // 点击外部关闭下拉
 const onOutsideClick = (e) => {
@@ -282,6 +309,60 @@ onBeforeUnmount(() => {
 
 .nav-link:hover {
   color: var(--accent);
+}
+
+/* 移动端菜单按钮：默认隐藏，仅移动端显示 */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 10px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.menu-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-1);
+  border-radius: 2px;
+}
+
+.menu-btn:hover,
+.menu-btn.open {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* 移动端：导航链接收进侧边栏菜单，显示汉堡按钮 */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  /* 语言按钮只显示图标，与菜单按钮同尺寸 */
+  .lang-trigger {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .lang-label,
+  .lang-arrow {
+    display: none;
+  }
 }
 
 .app-body {
