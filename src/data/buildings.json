@@ -1,0 +1,3776 @@
+[
+  {
+    "building": "Aqueduct",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "StoneQuarry",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "LoggingCamp",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Hut",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Brickworks",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "LumberMill",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "WheatFarm",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "PyramidOfGiza",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "135000"
+      }
+    ]
+  },
+  {
+    "building": "StatisticsOffice",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "4500"
+      },
+      {
+        "resource": "Wood",
+        "count": "4500"
+      }
+    ]
+  },
+  {
+    "building": "AbuSimbel",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "62100"
+      },
+      {
+        "resource": "Brick",
+        "count": "15520"
+      },
+      {
+        "resource": "Lumber",
+        "count": "15520"
+      }
+    ]
+  },
+  {
+    "building": "CopperMiningCamp",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "10"
+      },
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "House",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      },
+      {
+        "resource": "Stone",
+        "count": "10"
+      },
+      {
+        "resource": "Water",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "PoultryFarm",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "DairyFarm",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Stable",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Sandpit",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "GreatSphinx",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "57800"
+      },
+      {
+        "resource": "Brick",
+        "count": "14450"
+      },
+      {
+        "resource": "Lumber",
+        "count": "14450"
+      }
+    ]
+  },
+  {
+    "building": "Blacksmith",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "FlourMill",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Market",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "20"
+      },
+      {
+        "resource": "Copper",
+        "count": "20"
+      },
+      {
+        "resource": "Lumber",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "CottonPlantation",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "PaperMaker",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Wood",
+        "count": "10"
+      },
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "HatshepsutTemple",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "57800"
+      },
+      {
+        "resource": "Wood",
+        "count": "57800"
+      },
+      {
+        "resource": "Copper",
+        "count": "19260"
+      }
+    ]
+  },
+  {
+    "building": "ColossusOfRhodes",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "173400"
+      }
+    ]
+  },
+  {
+    "building": "IronMiningCamp",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Warehouse",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Horse",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Caravansary",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Horse",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Brewery",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Copper",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "GreatMosqueOfSamarra",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Sand",
+        "count": "79030"
+      },
+      {
+        "resource": "Brick",
+        "count": "59270"
+      },
+      {
+        "resource": "Cotton",
+        "count": "59270"
+      }
+    ]
+  },
+  {
+    "building": "Stonehenge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "711300"
+      }
+    ]
+  },
+  {
+    "building": "WallOfBabylon",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "59270"
+      },
+      {
+        "resource": "Lumber",
+        "count": "59270"
+      },
+      {
+        "resource": "Sand",
+        "count": "79030"
+      }
+    ]
+  },
+  {
+    "building": "GreatWall",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "59270"
+      },
+      {
+        "resource": "Tool",
+        "count": "16930"
+      },
+      {
+        "resource": "Horse",
+        "count": "33870"
+      }
+    ]
+  },
+  {
+    "building": "ChariotWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Horse",
+        "count": "10"
+      },
+      {
+        "resource": "Copper",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "20"
+      },
+      {
+        "resource": "Brick",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "IronForge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Marbleworks",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "20"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "MusiciansGuild",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "20"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "PaintersGuild",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CottonMill",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Persepolis",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "305900"
+      },
+      {
+        "resource": "Wood",
+        "count": "305900"
+      },
+      {
+        "resource": "Copper",
+        "count": "101900"
+      }
+    ]
+  },
+  {
+    "building": "ChoghaZanbil",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Water",
+        "count": "305900"
+      },
+      {
+        "resource": "Wood",
+        "count": "305900"
+      },
+      {
+        "resource": "Stone",
+        "count": "305900"
+      },
+      {
+        "resource": "Wheat",
+        "count": "152900"
+      }
+    ]
+  },
+  {
+    "building": "HangingGarden",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "305900"
+      },
+      {
+        "resource": "Water",
+        "count": "305900"
+      },
+      {
+        "resource": "Copper",
+        "count": "101900"
+      }
+    ]
+  },
+  {
+    "building": "Midsummer",
+    "mult": "5",
+    "build_resources": [
+      {
+        "resource": "Alcohol",
+        "count": "152900"
+      }
+    ]
+  },
+  {
+    "building": "Armory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "IronTech",
+        "count": "10"
+      },
+      {
+        "resource": "Wood",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "GoldMiningCamp",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Copper",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Bakery",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      },
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CheeseMaker",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "WritersGuild",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "LighthouseOfAlexandria",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "IronTech",
+        "count": "174600"
+      },
+      {
+        "resource": "Marble",
+        "count": "43670"
+      },
+      {
+        "resource": "Tool",
+        "count": "99820"
+      }
+    ]
+  },
+  {
+    "building": "MausoleumAtHalicarnassus",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Marble",
+        "count": "43670"
+      },
+      {
+        "resource": "Lumber",
+        "count": "349300"
+      },
+      {
+        "resource": "Tool",
+        "count": "99820"
+      }
+    ]
+  },
+  {
+    "building": "SiegeWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "20"
+      },
+      {
+        "resource": "IronTech",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "FurnitureWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "20"
+      },
+      {
+        "resource": "Copper",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ActorsGuild",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Music",
+        "count": "10"
+      },
+      {
+        "resource": "Poem",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Library",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Glassworks",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Wood",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "PoetrySchool",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "TerracottaArmy",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Chariot",
+        "count": "31940"
+      },
+      {
+        "resource": "IronTech",
+        "count": "223600"
+      },
+      {
+        "resource": "Stone",
+        "count": "1788000"
+      }
+    ]
+  },
+  {
+    "building": "Petra",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Gold",
+        "count": "596300"
+      }
+    ]
+  },
+  {
+    "building": "ZigguratOfUr",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "447200"
+      },
+      {
+        "resource": "Lumber",
+        "count": "447200"
+      },
+      {
+        "resource": "Sand",
+        "count": "596300"
+      }
+    ]
+  },
+  {
+    "building": "Colosseum",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "447200"
+      },
+      {
+        "resource": "Chariot",
+        "count": "31940"
+      },
+      {
+        "resource": "Alcohol",
+        "count": "298100"
+      }
+    ]
+  },
+  {
+    "building": "StatueOfZeus",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Marble",
+        "count": "55900"
+      },
+      {
+        "resource": "Brick",
+        "count": "447200"
+      },
+      {
+        "resource": "Music",
+        "count": "85180"
+      }
+    ]
+  },
+  {
+    "building": "YearOfTheSnakeV2",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Opera",
+        "count": "255500"
+      }
+    ]
+  },
+  {
+    "building": "SwordForge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Copper",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "Apartment",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Cheese",
+        "count": "10"
+      },
+      {
+        "resource": "Meat",
+        "count": "10"
+      },
+      {
+        "resource": "Bread",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CoinMint",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Gold",
+        "count": "20"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      },
+      {
+        "resource": "Copper",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Shrine",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      },
+      {
+        "resource": "Alcohol",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ChichenItza",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "2258000"
+      },
+      {
+        "resource": "Armor",
+        "count": "46090"
+      },
+      {
+        "resource": "SiegeRam",
+        "count": "26260"
+      }
+    ]
+  },
+  {
+    "building": "TempleOfHeaven",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "IronTech",
+        "count": "282300"
+      },
+      {
+        "resource": "Bread",
+        "count": "141100"
+      },
+      {
+        "resource": "Cheese",
+        "count": "161300"
+      }
+    ]
+  },
+  {
+    "building": "LuxorTemple",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tool",
+        "count": "161300"
+      },
+      {
+        "resource": "Cloth",
+        "count": "161300"
+      },
+      {
+        "resource": "Furniture",
+        "count": "102600"
+      }
+    ]
+  },
+  {
+    "building": "TowerOfBabel",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "564600"
+      },
+      {
+        "resource": "Lumber",
+        "count": "564600"
+      },
+      {
+        "resource": "Sand",
+        "count": "752800"
+      }
+    ]
+  },
+  {
+    "building": "ItsukushimaShrine",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Furniture",
+        "count": "102600"
+      },
+      {
+        "resource": "Opera",
+        "count": "64530"
+      },
+      {
+        "resource": "SiegeRam",
+        "count": "26260"
+      }
+    ]
+  },
+  {
+    "building": "CothonOfCarthage",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "SiegeRam",
+        "count": "26260"
+      },
+      {
+        "resource": "Sword",
+        "count": "46090"
+      },
+      {
+        "resource": "Furniture",
+        "count": "102600"
+      }
+    ]
+  },
+  {
+    "building": "Parthenon",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Marble",
+        "count": "70580"
+      },
+      {
+        "resource": "Painting",
+        "count": "161300"
+      },
+      {
+        "resource": "Music",
+        "count": "107500"
+      }
+    ]
+  },
+  {
+    "building": "CaravelBuilder",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "50"
+      },
+      {
+        "resource": "Marble",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "20"
+      },
+      {
+        "resource": "Tool",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "GarmentWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Cloth",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "KnightCamp",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Horse",
+        "count": "10"
+      },
+      {
+        "resource": "Armor",
+        "count": "10"
+      },
+      {
+        "resource": "Sword",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "TempleOfArtemis",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Armor",
+        "count": "166900"
+      },
+      {
+        "resource": "Sword",
+        "count": "166900"
+      },
+      {
+        "resource": "Marble",
+        "count": "255600"
+      }
+    ]
+  },
+  {
+    "building": "MogaoCaves",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "314600"
+      },
+      {
+        "resource": "Marble",
+        "count": "255600"
+      },
+      {
+        "resource": "Painting",
+        "count": "584300"
+      }
+    ]
+  },
+  {
+    "building": "GoldenPavilion",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "314600"
+      },
+      {
+        "resource": "Coin",
+        "count": "103500"
+      },
+      {
+        "resource": "Sword",
+        "count": "166900"
+      }
+    ]
+  },
+  {
+    "building": "SanchiStupa",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Garment",
+        "count": "166900"
+      },
+      {
+        "resource": "Sword",
+        "count": "166900"
+      },
+      {
+        "resource": "Furniture",
+        "count": "371800"
+      }
+    ]
+  },
+  {
+    "building": "YellowCraneTower",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Furniture",
+        "count": "371800"
+      },
+      {
+        "resource": "Sword",
+        "count": "166900"
+      },
+      {
+        "resource": "Coin",
+        "count": "103500"
+      }
+    ]
+  },
+  {
+    "building": "SantaClausVillage",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "1573000"
+      }
+    ]
+  },
+  {
+    "building": "CologneCathedral",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "385900"
+      },
+      {
+        "resource": "Knight",
+        "count": "42510"
+      },
+      {
+        "resource": "Caravel",
+        "count": "58670"
+      }
+    ]
+  },
+  {
+    "building": "GalleonBuilder",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Caravel",
+        "count": "10"
+      },
+      {
+        "resource": "Sword",
+        "count": "10"
+      },
+      {
+        "resource": "SiegeRam",
+        "count": "10"
+      },
+      {
+        "resource": "Armor",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "School",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "20"
+      },
+      {
+        "resource": "Poem",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "AngkorWat",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "385900"
+      },
+      {
+        "resource": "Tool",
+        "count": "716700"
+      },
+      {
+        "resource": "Marble",
+        "count": "313500"
+      }
+    ]
+  },
+  {
+    "building": "HagiaSophia",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "578800"
+      },
+      {
+        "resource": "Marble",
+        "count": "471300"
+      },
+      {
+        "resource": "Knight",
+        "count": "63770"
+      }
+    ]
+  },
+  {
+    "building": "GrandBazaar",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Coin",
+        "count": "127000"
+      },
+      {
+        "resource": "Garment",
+        "count": "204700"
+      },
+      {
+        "resource": "Furniture",
+        "count": "456000"
+      }
+    ]
+  },
+  {
+    "building": "CircusMaximus",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Music",
+        "count": "447800"
+      },
+      {
+        "resource": "Poem",
+        "count": "716700"
+      },
+      {
+        "resource": "Painting",
+        "count": "716700"
+      }
+    ]
+  },
+  {
+    "building": "BranCastle",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Coin",
+        "count": "127000"
+      },
+      {
+        "resource": "Faith",
+        "count": "385900"
+      },
+      {
+        "resource": "Knight",
+        "count": "42510"
+      }
+    ]
+  },
+  {
+    "building": "LensWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Glass",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "Bank",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Coin",
+        "count": "30"
+      }
+    ]
+  },
+  {
+    "building": "University",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Poem",
+        "count": "20"
+      },
+      {
+        "resource": "Faith",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "CoalMine",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "IronTech",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "OxfordUniversity",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "1442000"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "340800"
+      },
+      {
+        "resource": "Poem",
+        "count": "2678000"
+      }
+    ]
+  },
+  {
+    "building": "QutbMinar",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "180600"
+      },
+      {
+        "resource": "Galleon",
+        "count": "84440"
+      },
+      {
+        "resource": "Knight",
+        "count": "317700"
+      }
+    ]
+  },
+  {
+    "building": "PorcelainTower",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "90340"
+      },
+      {
+        "resource": "Garment",
+        "count": "765100"
+      },
+      {
+        "resource": "Knight",
+        "count": "158800"
+      }
+    ]
+  },
+  {
+    "building": "BlueMosque",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Cannon",
+        "count": "659800"
+      },
+      {
+        "resource": "Lens",
+        "count": "1184000"
+      },
+      {
+        "resource": "Banknote",
+        "count": "111200"
+      }
+    ]
+  },
+  {
+    "building": "CannonWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "IronTech",
+        "count": "10"
+      },
+      {
+        "resource": "Wood",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Stone",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "PrintingHouse",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Paper",
+        "count": "50"
+      },
+      {
+        "resource": "Poem",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Museum",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Music",
+        "count": "20"
+      },
+      {
+        "resource": "Painting",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "GunpowderMill",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "10"
+      },
+      {
+        "resource": "Coal",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ForbiddenCity",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "111200"
+      },
+      {
+        "resource": "Marble",
+        "count": "1443000"
+      },
+      {
+        "resource": "Book",
+        "count": "679200"
+      }
+    ]
+  },
+  {
+    "building": "SaintBasilsCathedral",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Furniture",
+        "count": "2099000"
+      },
+      {
+        "resource": "Gunpowder",
+        "count": "624100"
+      },
+      {
+        "resource": "Lens",
+        "count": "1184000"
+      }
+    ]
+  },
+  {
+    "building": "CambridgeUniversity",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Philosophy",
+        "count": "419800"
+      },
+      {
+        "resource": "Culture",
+        "count": "329900"
+      },
+      {
+        "resource": "Faith",
+        "count": "1776000"
+      }
+    ]
+  },
+  {
+    "building": "FrigateBuilder",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Galleon",
+        "count": "10"
+      },
+      {
+        "resource": "Knight",
+        "count": "10"
+      },
+      {
+        "resource": "Cannon",
+        "count": "10"
+      },
+      {
+        "resource": "Lens",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "BondMarket",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "30"
+      }
+    ]
+  },
+  {
+    "building": "Courthouse",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Philosophy",
+        "count": "10"
+      },
+      {
+        "resource": "Faith",
+        "count": "10"
+      },
+      {
+        "resource": "Culture",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "DynamiteWorkshop",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Stone",
+        "count": "20"
+      },
+      {
+        "resource": "Gunpowder",
+        "count": "10"
+      },
+      {
+        "resource": "Coal",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "HimejiCastle",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Caravel",
+        "count": "334100"
+      },
+      {
+        "resource": "Galleon",
+        "count": "64340"
+      },
+      {
+        "resource": "Frigate",
+        "count": "18530"
+      }
+    ]
+  },
+  {
+    "building": "TajMahal",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Faith",
+        "count": "2197000"
+      },
+      {
+        "resource": "Marble",
+        "count": "1785000"
+      },
+      {
+        "resource": "Garment",
+        "count": "1166000"
+      }
+    ]
+  },
+  {
+    "building": "MontSaintMichel",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Culture",
+        "count": "4081000"
+      }
+    ]
+  },
+  {
+    "building": "EastIndiaCompany",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "26220"
+      },
+      {
+        "resource": "Frigate",
+        "count": "18530"
+      },
+      {
+        "resource": "Gunpowder",
+        "count": "772100"
+      }
+    ]
+  },
+  {
+    "building": "EasterBunny",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "26220"
+      },
+      {
+        "resource": "Book",
+        "count": "840300"
+      },
+      {
+        "resource": "Culture",
+        "count": "408100"
+      }
+    ]
+  },
+  {
+    "building": "KizhiPogost",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "126200"
+      },
+      {
+        "resource": "Law",
+        "count": "442900"
+      },
+      {
+        "resource": "Frigate",
+        "count": "89220"
+      }
+    ]
+  },
+  {
+    "building": "RifleFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Gunpowder",
+        "count": "50"
+      },
+      {
+        "resource": "Tool",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "SteelMill",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Coal",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Steamworks",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "IronTech",
+        "count": "10"
+      },
+      {
+        "resource": "Coal",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ConcretePlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "50"
+      },
+      {
+        "resource": "Sand",
+        "count": "50"
+      },
+      {
+        "resource": "Tool",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "Parliament",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Culture",
+        "count": "20"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "20"
+      },
+      {
+        "resource": "Law",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "Neuschwanstein",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rifle",
+        "count": "312600"
+      },
+      {
+        "resource": "Bond",
+        "count": "126200"
+      },
+      {
+        "resource": "Cannon",
+        "count": "3929000"
+      }
+    ]
+  },
+  {
+    "building": "EiffelTower",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Steel",
+        "count": "9378000"
+      }
+    ]
+  },
+  {
+    "building": "BigBen",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Politics",
+        "count": "210500"
+      }
+    ]
+  },
+  {
+    "building": "Mauritshuis",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Politics",
+        "count": "210480"
+      }
+    ]
+  },
+  {
+    "building": "WallStreet",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "126200"
+      },
+      {
+        "resource": "Law",
+        "count": "442900"
+      },
+      {
+        "resource": "Banknote",
+        "count": "662800"
+      }
+    ]
+  },
+  {
+    "building": "Hermitage",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Politics",
+        "count": "134900"
+      },
+      {
+        "resource": "Newspaper",
+        "count": "330600"
+      }
+    ]
+  },
+  {
+    "building": "Louvre",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "161800"
+      },
+      {
+        "resource": "Law",
+        "count": "567900"
+      },
+      {
+        "resource": "Frigate",
+        "count": "114400"
+      }
+    ]
+  },
+  {
+    "building": "GatlingGunFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rifle",
+        "count": "10"
+      },
+      {
+        "resource": "Gunpowder",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "LocomotiveFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Engine",
+        "count": "10"
+      },
+      {
+        "resource": "Steel",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "RebarPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Steel",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "OilWell",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Sand",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CableFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Copper",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "PublishingHouse",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Philosophy",
+        "count": "20"
+      },
+      {
+        "resource": "Book",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "Rijksmuseum",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Newspaper",
+        "count": "220400"
+      },
+      {
+        "resource": "Culture",
+        "count": "2519000"
+      },
+      {
+        "resource": "Concrete",
+        "count": "1494000"
+      }
+    ]
+  },
+  {
+    "building": "Broadway",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Opera",
+        "count": "10070000"
+      },
+      {
+        "resource": "Culture",
+        "count": "2519000"
+      },
+      {
+        "resource": "Bond",
+        "count": "161800"
+      }
+    ]
+  },
+  {
+    "building": "ThePentagon",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Book",
+        "count": "5187000"
+      },
+      {
+        "resource": "Law",
+        "count": "567900"
+      },
+      {
+        "resource": "Rifle",
+        "count": "400800"
+      }
+    ]
+  },
+  {
+    "building": "RedFort",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Frigate",
+        "count": "114400"
+      },
+      {
+        "resource": "Rifle",
+        "count": "400800"
+      },
+      {
+        "resource": "GatlingGun",
+        "count": "141000"
+      }
+    ]
+  },
+  {
+    "building": "OsakaCastle",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Train",
+        "count": "225600"
+      },
+      {
+        "resource": "GatlingGun",
+        "count": "182400"
+      },
+      {
+        "resource": "Politics",
+        "count": "116300"
+      }
+    ]
+  },
+  {
+    "building": "ArcDeTriomphe",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Train",
+        "count": "225600"
+      },
+      {
+        "resource": "GatlingGun",
+        "count": "182400"
+      },
+      {
+        "resource": "Politics",
+        "count": "116300"
+      }
+    ]
+  },
+  {
+    "building": "IroncladBuilder",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "GatlingGun",
+        "count": "10"
+      },
+      {
+        "resource": "Rifle",
+        "count": "10"
+      },
+      {
+        "resource": "Frigate",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CoalPowerPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Lumber",
+        "count": "50"
+      },
+      {
+        "resource": "Brick",
+        "count": "40"
+      }
+    ]
+  },
+  {
+    "building": "ReinforcedConcretePlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rebar",
+        "count": "50"
+      },
+      {
+        "resource": "Concrete",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "StockExchange",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "30"
+      }
+    ]
+  },
+  {
+    "building": "Stadium",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Culture",
+        "count": "10"
+      },
+      {
+        "resource": "Opera",
+        "count": "10"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "MagazinePublisher",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Sports",
+        "count": "20"
+      },
+      {
+        "resource": "Book",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "SummerPalace",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Gunpowder",
+        "count": "6165000"
+      },
+      {
+        "resource": "Rifle",
+        "count": "518400"
+      },
+      {
+        "resource": "GatlingGun",
+        "count": "182400"
+      }
+    ]
+  },
+  {
+    "building": "StatueOfLiberty",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Philosophy",
+        "count": "4147000"
+      },
+      {
+        "resource": "Politics",
+        "count": "116300"
+      },
+      {
+        "resource": "Law",
+        "count": "734600"
+      }
+    ]
+  },
+  {
+    "building": "TowerBridge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "68020"
+      },
+      {
+        "resource": "Steel",
+        "count": "7776000"
+      }
+    ]
+  },
+  {
+    "building": "WindTurbine",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ChateauFrontenac",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tank",
+        "count": "66470"
+      },
+      {
+        "resource": "Ironclad",
+        "count": "40920"
+      },
+      {
+        "resource": "Train",
+        "count": "294300"
+      }
+    ]
+  },
+  {
+    "building": "TankFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Engine",
+        "count": "10"
+      },
+      {
+        "resource": "Steel",
+        "count": "100"
+      },
+      {
+        "resource": "Cannon",
+        "count": "10"
+      },
+      {
+        "resource": "GatlingGun",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "AluminumSmelter",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "OilRefinery",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Steel",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "NaturalGasWell",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      },
+      {
+        "resource": "Lumber",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Pizzeria",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Cheese",
+        "count": "10"
+      },
+      {
+        "resource": "Meat",
+        "count": "10"
+      },
+      {
+        "resource": "Flour",
+        "count": "20"
+      },
+      {
+        "resource": "Water",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "ResearchLab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Culture",
+        "count": "30"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "30"
+      }
+    ]
+  },
+  {
+    "building": "BrandenburgGate",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Train",
+        "count": "294300"
+      },
+      {
+        "resource": "Politics",
+        "count": "151800"
+      },
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "59150"
+      }
+    ]
+  },
+  {
+    "building": "BritishMuseum",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tank",
+        "count": "66470"
+      },
+      {
+        "resource": "Ironclad",
+        "count": "40920"
+      },
+      {
+        "resource": "Train",
+        "count": "29430"
+      }
+    ]
+  },
+  {
+    "building": "TopkapiPalace",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Biplane",
+        "count": "1274000"
+      },
+      {
+        "resource": "Tank",
+        "count": "410400"
+      },
+      {
+        "resource": "Ironclad",
+        "count": "252600"
+      }
+    ]
+  },
+  {
+    "building": "CathedralOfBrasilia",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Biplane",
+        "count": "1274000"
+      },
+      {
+        "resource": "Tank",
+        "count": "410400"
+      },
+      {
+        "resource": "Ironclad",
+        "count": "252600"
+      }
+    ]
+  },
+  {
+    "building": "BiplaneFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Engine",
+        "count": "10"
+      },
+      {
+        "resource": "Steel",
+        "count": "10"
+      },
+      {
+        "resource": "Lens",
+        "count": "10"
+      },
+      {
+        "resource": "Petrol",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "PlasticsFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Oil",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "GasPowerPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Concrete",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "UraniumMine",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "10"
+      },
+      {
+        "resource": "Tool",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "GasPlasticsPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "NaturalGas",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "MovieStudio",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Sports",
+        "count": "50"
+      },
+      {
+        "resource": "Lens",
+        "count": "50"
+      },
+      {
+        "resource": "Garment",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "Hollywood",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Magazine",
+        "count": "986700"
+      },
+      {
+        "resource": "Movie",
+        "count": "448000"
+      },
+      {
+        "resource": "Newspaper",
+        "count": "2296000"
+      }
+    ]
+  },
+  {
+    "building": "CarFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Engine",
+        "count": "10"
+      },
+      {
+        "resource": "Steel",
+        "count": "10"
+      },
+      {
+        "resource": "Furniture",
+        "count": "10"
+      },
+      {
+        "resource": "Cable",
+        "count": "10"
+      },
+      {
+        "resource": "Plastics",
+        "count": "10"
+      },
+      {
+        "resource": "Petrol",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ArtilleryFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "GatlingGun",
+        "count": "10"
+      },
+      {
+        "resource": "Dynamite",
+        "count": "10"
+      },
+      {
+        "resource": "Aluminum",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "SubmarineYard",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Ironclad",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "UraniumEnrichmentPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "40"
+      },
+      {
+        "resource": "Steel",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "RadioStation",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Magazine",
+        "count": "50"
+      },
+      {
+        "resource": "Newspaper",
+        "count": "50"
+      },
+      {
+        "resource": "Culture",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "SagradaFamilia",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Tank",
+        "count": "549600"
+      },
+      {
+        "resource": "Biplane",
+        "count": "1707000"
+      },
+      {
+        "resource": "Train",
+        "count": "2433000"
+      }
+    ]
+  },
+  {
+    "building": "CristoRedentor",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "489200"
+      },
+      {
+        "resource": "Sports",
+        "count": "7677000"
+      },
+      {
+        "resource": "Politics",
+        "count": "1255000"
+      }
+    ]
+  },
+  {
+    "building": "GreatOceanRoad",
+    "mult": "1.7",
+    "build_resources": [
+      {
+        "resource": "Battleship",
+        "count": "163200"
+      },
+      {
+        "resource": "Rocket",
+        "count": "389800"
+      }
+    ]
+  },
+  {
+    "building": "SydneyHarbourBridge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "659200"
+      },
+      {
+        "resource": "Car",
+        "count": "1639000"
+      },
+      {
+        "resource": "Submarine",
+        "count": "130200"
+      }
+    ]
+  },
+  {
+    "building": "ItaipuDam",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Diplomacy",
+        "count": "126700"
+      },
+      {
+        "resource": "Submarine",
+        "count": "130200"
+      },
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "659200"
+      }
+    ]
+  },
+  {
+    "building": "ResearchFund",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "10"
+      },
+      {
+        "resource": "Bond",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "RocketFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Engine",
+        "count": "10"
+      },
+      {
+        "resource": "Artillery",
+        "count": "10"
+      },
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "50"
+      },
+      {
+        "resource": "Cable",
+        "count": "50"
+      },
+      {
+        "resource": "Petrol",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "BattleshipBuilder",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Ironclad",
+        "count": "10"
+      },
+      {
+        "resource": "Artillery",
+        "count": "10"
+      },
+      {
+        "resource": "Cable",
+        "count": "50"
+      },
+      {
+        "resource": "Steel",
+        "count": "50"
+      },
+      {
+        "resource": "Aluminum",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "AtomicFacility",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Dynamite",
+        "count": "100"
+      },
+      {
+        "resource": "Uranium",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "HydroDam",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Dynamite",
+        "count": "10"
+      },
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "Embassy",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Law",
+        "count": "50"
+      },
+      {
+        "resource": "Politics",
+        "count": "50"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "ManhattanProject",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "NuclearFuelRod",
+        "count": "28260000"
+      }
+    ]
+  },
+  {
+    "building": "GoldenGateBridge",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "659200"
+      },
+      {
+        "resource": "Movie",
+        "count": "808600"
+      },
+      {
+        "resource": "Radio",
+        "count": "107800"
+      }
+    ]
+  },
+  {
+    "building": "UnitedNations",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Politics",
+        "count": "1691000"
+      },
+      {
+        "resource": "Tank",
+        "count": "740700"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "126700"
+      }
+    ]
+  },
+  {
+    "building": "Elbphilharmonie",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Radio",
+        "count": "722400"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "848600"
+      },
+      {
+        "resource": "Rocket",
+        "count": "1740000"
+      }
+    ]
+  },
+  {
+    "building": "Sputnik1",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Satellite",
+        "count": "2486000"
+      }
+    ]
+  },
+  {
+    "building": "SatelliteFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rocket",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "AirplaneFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Biplane",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "SiliconSmelter",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Brick",
+        "count": "10"
+      },
+      {
+        "resource": "Coal",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "NuclearPowerPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "160"
+      },
+      {
+        "resource": "Steel",
+        "count": "160"
+      }
+    ]
+  },
+  {
+    "building": "Condo",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "ReinforcedConcrete",
+        "count": "30"
+      },
+      {
+        "resource": "Steel",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "SpaceNeedle",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Battleship",
+        "count": "1092000"
+      },
+      {
+        "resource": "Rocket",
+        "count": "2610000"
+      },
+      {
+        "resource": "Car",
+        "count": "16470000"
+      }
+    ]
+  },
+  {
+    "building": "Atomium",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "NuclearFuelRod",
+        "count": "37850000"
+      },
+      {
+        "resource": "AtomicBomb",
+        "count": "6960000"
+      },
+      {
+        "resource": "Artillery",
+        "count": "6541000"
+      }
+    ]
+  },
+  {
+    "building": "SydneyOperaHouse",
+    "mult": "5",
+    "build_resources": [
+      {
+        "resource": "Television",
+        "count": "739500"
+      },
+      {
+        "resource": "Radio",
+        "count": "4931000"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "5793000"
+      }
+    ]
+  },
+  {
+    "building": "FighterJetPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Airplane",
+        "count": "10"
+      },
+      {
+        "resource": "Artillery",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "NuclearMissileSilo",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "AtomicBomb",
+        "count": "10"
+      },
+      {
+        "resource": "Rocket",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "SemiconductorFab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Silicon",
+        "count": "100"
+      },
+      {
+        "resource": "Copper",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "TVStation",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Radio",
+        "count": "20"
+      },
+      {
+        "resource": "Movie",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "ForexMarket",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Banknote",
+        "count": "20"
+      },
+      {
+        "resource": "Bond",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "CNTower",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Movie",
+        "count": "7393000"
+      },
+      {
+        "resource": "Radio",
+        "count": "986300"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "1158000"
+      }
+    ]
+  },
+  {
+    "building": "SwissBank",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Forex",
+        "count": "5843000"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "1158000"
+      },
+      {
+        "resource": "Radio",
+        "count": "986300"
+      }
+    ]
+  },
+  {
+    "building": "Cosmodrome",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rocket",
+        "count": "40"
+      },
+      {
+        "resource": "Satellite",
+        "count": "40"
+      },
+      {
+        "resource": "Airplane",
+        "count": "40"
+      }
+    ]
+  },
+  {
+    "building": "SpacecraftFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rocket",
+        "count": "20"
+      },
+      {
+        "resource": "Satellite",
+        "count": "20"
+      },
+      {
+        "resource": "Airplane",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "NuclearSubmarineYard",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Submarine",
+        "count": "20"
+      },
+      {
+        "resource": "NuclearMissile",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "AircraftCarrierYard",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Battleship",
+        "count": "10"
+      },
+      {
+        "resource": "FighterJet",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "ComputerFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Semiconductor",
+        "count": "50"
+      },
+      {
+        "resource": "Plastics",
+        "count": "50"
+      },
+      {
+        "resource": "Aluminum",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "ComputerLab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Computer",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "OpticalFiberPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Cable",
+        "count": "100"
+      },
+      {
+        "resource": "Glass",
+        "count": "100"
+      },
+      {
+        "resource": "Plastics",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "ApolloProgram",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "FighterJet",
+        "count": "4925000"
+      },
+      {
+        "resource": "Satellite",
+        "count": "930900"
+      },
+      {
+        "resource": "Spacecraft",
+        "count": "147900"
+      }
+    ]
+  },
+  {
+    "building": "PortOfSingapore",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Koti",
+        "count": "41570"
+      }
+    ]
+  },
+  {
+    "building": "Penthouse",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bond",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CentrePompidou",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Television",
+        "count": "1393000"
+      },
+      {
+        "resource": "Computer",
+        "count": "61900000"
+      },
+      {
+        "resource": "Forex",
+        "count": "55050000"
+      }
+    ]
+  },
+  {
+    "building": "MaglevFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Train",
+        "count": "150"
+      },
+      {
+        "resource": "Airplane",
+        "count": "150"
+      },
+      {
+        "resource": "Car",
+        "count": "150"
+      }
+    ]
+  },
+  {
+    "building": "SoftwareCompany",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Computer",
+        "count": "10"
+      },
+      {
+        "resource": "Philosophy",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "FusionFuelPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "NuclearFuelRod",
+        "count": "100"
+      }
+    ]
+  },
+  {
+    "building": "InternetServiceProvider",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Computer",
+        "count": "10"
+      },
+      {
+        "resource": "OpticalFiber",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "MutualFund",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Forex",
+        "count": "10"
+      },
+      {
+        "resource": "Stock",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "InternationalSpaceStation",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Spacecraft",
+        "count": "1016000"
+      },
+      {
+        "resource": "AircraftCarrier",
+        "count": "1243000"
+      },
+      {
+        "resource": "NuclearSubmarine",
+        "count": "1245000"
+      }
+    ]
+  },
+  {
+    "building": "WorldTradeOrganization",
+    "mult": "2",
+    "build_resources": [
+      {
+        "resource": "MutualFund",
+        "count": "13090000"
+      },
+      {
+        "resource": "Koti",
+        "count": "57120"
+      },
+      {
+        "resource": "Television",
+        "count": "1393000"
+      }
+    ]
+  },
+  {
+    "building": "AkademikLomonosov",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Spacecraft",
+        "count": "7022000"
+      }
+    ]
+  },
+  {
+    "building": "CloneFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Software",
+        "count": "50"
+      },
+      {
+        "resource": "Tank",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "CloneLab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Rocket",
+        "count": "50"
+      },
+      {
+        "resource": "Computer",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "FusionPowerPlant",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "FusionFuel",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "SupercomputerLab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Software",
+        "count": "10"
+      },
+      {
+        "resource": "Computer",
+        "count": "50"
+      }
+    ]
+  },
+  {
+    "building": "CivTok",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Internet",
+        "count": "10"
+      },
+      {
+        "resource": "Politics",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "HedgeFund",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "MutualFund",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "Peacekeeper",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "NuclearMissile",
+        "count": "40"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "10"
+      },
+      {
+        "resource": "Radio",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "MarinaBaySands",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Television",
+        "count": "1926000"
+      },
+      {
+        "resource": "CivTok",
+        "count": "5443000"
+      },
+      {
+        "resource": "MutualFund",
+        "count": "18090000"
+      }
+    ]
+  },
+  {
+    "building": "Habitat67",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Bitcoin",
+        "count": "6075000"
+      }
+    ]
+  },
+  {
+    "building": "AILab",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Internet",
+        "count": "20"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "40"
+      },
+      {
+        "resource": "Radio",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "RobocarFactory",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Car",
+        "count": "50"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "20"
+      },
+      {
+        "resource": "Satellite",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "SpaceCenter",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Maglev",
+        "count": "10"
+      },
+      {
+        "resource": "Radio",
+        "count": "10"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CivGPT",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Internet",
+        "count": "10"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "20"
+      },
+      {
+        "resource": "Radio",
+        "count": "10"
+      }
+    ]
+  },
+  {
+    "building": "CivOasis",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "CivTok",
+        "count": "10"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "10"
+      },
+      {
+        "resource": "Diplomacy",
+        "count": "20"
+      }
+    ]
+  },
+  {
+    "building": "BitcoinMiner",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "HedgeFund",
+        "count": "7169000"
+      },
+      {
+        "resource": "Bitcoin",
+        "count": "1215000"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "8207000"
+      }
+    ]
+  },
+  {
+    "building": "LargeHadronCollider",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "Supercomputer",
+        "count": "8207000"
+      },
+      {
+        "resource": "CivTok",
+        "count": "7547000"
+      },
+      {
+        "resource": "HedgeFund",
+        "count": "7169000"
+      }
+    ]
+  },
+  {
+    "building": "PalmJumeirah",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "HedgeFund",
+        "count": "7169000"
+      },
+      {
+        "resource": "Bitcoin",
+        "count": "1215000"
+      },
+      {
+        "resource": "Supercomputer",
+        "count": "8207000"
+      }
+    ]
+  },
+  {
+    "building": "AldersonDisk",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "CivOasis",
+        "count": "1766000"
+      },
+      {
+        "resource": "Robocar",
+        "count": "1798000"
+      },
+      {
+        "resource": "Bitcoin",
+        "count": "1690000"
+      }
+    ]
+  },
+  {
+    "building": "DysonSphere",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "CivGPT",
+        "count": "1705000"
+      },
+      {
+        "resource": "Peace",
+        "count": "1834000"
+      },
+      {
+        "resource": "PlanetaryRover",
+        "count": "1828000"
+      }
+    ]
+  },
+  {
+    "building": "MatrioshkaBrain",
+    "mult": "1.5",
+    "build_resources": [
+      {
+        "resource": "CivOasis",
+        "count": "1766000"
+      },
+      {
+        "resource": "Peace",
+        "count": "1834000"
+      },
+      {
+        "resource": "CivGPT",
+        "count": "1705000"
+      }
+    ]
+  }
+]
