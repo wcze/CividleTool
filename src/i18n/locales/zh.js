@@ -9,7 +9,8 @@ export default {
     close: '关闭',
     developer: '开发',
     dataSource: '数据来源',
-    translationSource: '翻译来源'
+    translationSource: '翻译来源',
+    projectUrl: '项目地址'
   },
   home: {
     subtitle: '放置文明',

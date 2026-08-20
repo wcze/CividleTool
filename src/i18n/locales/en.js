@@ -9,7 +9,8 @@ export default {
     close: 'Close',
     developer: 'Developer',
     dataSource: 'Data Source',
-    translationSource: 'Translation Source'
+    translationSource: 'Translation Source',
+    projectUrl: 'Project URL'
   },
   home: {
     subtitle: 'Civilization Idle',

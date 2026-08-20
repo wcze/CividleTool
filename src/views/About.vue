@@ -12,6 +12,15 @@
         </div>
 
         <div class="about-row">
+          <span class="about-key">{{ t('about.projectUrl') }}</span>
+          <span class="about-value">
+            <a href="https://github.com/wcze/CividleTool" target="_blank" rel="noopener noreferrer">
+              https://github.com/wcze/CividleTool
+            </a>
+          </span>
+        </div>
+
+        <div class="about-row">
           <span class="about-key">{{ t('about.dataSource') }}</span>
           <span class="about-value">
             <a :href="dataSourceUrl" target="_blank" rel="noopener noreferrer">Cekay</a>
