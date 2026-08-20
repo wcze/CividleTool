@@ -46,6 +46,26 @@
         <button class="close-btn" @click="closeCalculator">✕ {{ t('calcBuildings.close') }}</button>
       </div>
 
+      <!-- 建筑信息：解锁时代 / 解锁科技 / 建造者能力 -->
+      <div class="building-meta" v-if="selectedBuilding">
+        <span class="meta-item" v-if="selectedBuilding.age">
+          <span class="meta-label">{{ t('calcBuildings.unlockAge') }}</span>
+          <span class="meta-value">{{ tGame(selectedBuilding.age) }}</span>
+        </span>
+        <span class="meta-item" v-if="selectedBuilding.tech">
+          <span class="meta-label">{{ t('calcBuildings.unlockTech') }}</span>
+          <span class="meta-value">{{ tGame(selectedBuilding.tech) }}</span>
+        </span>
+        <span class="meta-item">
+          <span class="meta-label">{{ t('calcBuildings.builderInit') }}</span>
+          <span class="meta-value">{{ formatNumber(selectedBuilding.builder_init ?? 1) }}</span>
+        </span>
+        <span class="meta-item meta-power">
+          <span class="meta-label">{{ t('calcBuildings.builderPower') }}</span>
+          <span class="meta-value">{{ formatNumber(builderPower) }}</span>
+        </span>
+      </div>
+
       <div class="calculator-body">
         <!-- 输入区 -->
         <div class="input-row">
@@ -295,6 +315,15 @@ watch(builderMultiplier, (val) => {
   localStorage.setItem(BUILDER_MULTIPLIER_KEY, String(val))
 })
 
+// 建造者能力 = 基础建造者能力 × 建造者能力乘数
+// 普通建筑基础能力 = 1；奇观基础能力 = builder_init（时代/科技列计算）
+const builderPower = computed(() => {
+  if (!selectedBuilding.value) return 0
+  const init = selectedBuilding.value.builder_init ?? 1
+  const bm = Math.max(0, builderMultiplier.value || 1)
+  return init * bm
+})
+
 // 建造者能力乘数说明弹窗是否显示
 const showHelpDialog = ref(false)
 
@@ -340,6 +369,8 @@ const upgradeDetails = computed(() => {
   const baseResources = selectedBuilding.value.build_resources
   const diff = targetLevel.value - currentLevel.value
   const bm = Math.max(0, builderMultiplier.value || 1)
+  // 基础建造者能力：普通建筑 = 1，奇观 = builder_init（时代/科技列计算）
+  const builderInit = selectedBuilding.value.builder_init ?? 1
 
   const details = []
   for (let i = 0; i < diff; i++) {
@@ -350,8 +381,8 @@ const upgradeDetails = computed(() => {
       count: parseFloat(res.count) * resourceMultiplier
     }))
     const materials = perRes.reduce((sum, r) => sum + r.count, 0)
-    // 每秒运输量 = max(1, 当前等级) × 建造者能力乘数
-    const rate = Math.max(1, level) * bm
+    // 每秒运输量 = max(1, 当前等级) × 基础建造者能力 × 建造者能力乘数
+    const rate = Math.max(1, level) * builderInit * bm
     details.push({
       from: level,
       to: level + 1,
@@ -610,6 +641,43 @@ const formatTime = (seconds) => {
 .close-btn:hover {
   background: #f0f4fa;
   color: #1a2332;
+}
+
+/* 建筑信息：解锁时代 / 解锁科技 / 建造者能力 */
+.building-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f5f8fc;
+  border: 1px solid #e8eef6;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}
+
+.meta-label {
+  color: #8a9ab0;
+}
+
+.meta-value {
+  font-weight: 600;
+  color: #1a2332;
+}
+
+.meta-power {
+  background: #eef7ff;
+  border-color: #cfe6fa;
+}
+
+.meta-power .meta-value {
+  color: #2b6cb0;
 }
 
 .input-row {
