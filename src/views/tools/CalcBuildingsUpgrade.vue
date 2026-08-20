@@ -218,7 +218,7 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed, watch, nextTick } from 'vue'
 import buildingsData from '@/data/buildings.json'
 import texturesData from '@/data/textures_building.json'
 import spriteImage from '@/assets/textures_building.png'
@@ -282,7 +282,19 @@ const selectedBuilding = ref(null)
 const currentLevel = ref(0)
 const targetLevel = ref(1)
 const buildingCount = ref(1)
-const builderMultiplier = ref(1)
+
+// 建造者能力乘数：从 localStorage 自动读取，变化时自动保存
+const BUILDER_MULTIPLIER_KEY = 'cividle-builder-multiplier'
+const storedMultiplier = parseFloat(localStorage.getItem(BUILDER_MULTIPLIER_KEY))
+const builderMultiplier = ref(Number.isFinite(storedMultiplier) ? storedMultiplier : 1)
+watch(builderMultiplier, (val) => {
+  if (val === undefined || val === null || val === '' || !Number.isFinite(Number(val))) {
+    localStorage.removeItem(BUILDER_MULTIPLIER_KEY)
+    return
+  }
+  localStorage.setItem(BUILDER_MULTIPLIER_KEY, String(val))
+})
+
 // 建造者能力乘数说明弹窗是否显示
 const showHelpDialog = ref(false)
 
