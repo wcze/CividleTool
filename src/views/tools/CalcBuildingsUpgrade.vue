@@ -401,12 +401,16 @@ const formatNumber = (num) => {
   return Math.round(num * 100) / 100
 }
 
-// 格式化时长（秒 → X小时 X分 X秒），随语言切换
+// 格式化时长（秒 → 年月日时分秒），随语言切换
+// 月按 30 天、年按 365 天近似，避免巨大数字（如 1 亿小时）难以阅读
 const formatTime = (seconds) => {
   const isZh = locale.value === 'zh'
-  const s = isZh ? '秒' : 's'
-  const m = isZh ? '分' : 'm'
+  const y = isZh ? '年' : 'y'
+  const mo = isZh ? '月' : 'mo'
+  const d = isZh ? '天' : 'd'
   const h = isZh ? '小时' : 'h'
+  const m = isZh ? '分' : 'm'
+  const s = isZh ? '秒' : 's'
   if (!isFinite(seconds) || seconds <= 0) return '0' + s
   const round1 = (n) => Math.round(n * 10) / 10
   const total = round1(seconds)
@@ -416,7 +420,16 @@ const formatTime = (seconds) => {
   if (mins < 60) return `${mins}${m} ${secs}${s}`
   const hrs = Math.floor(mins / 60)
   const remMins = mins - hrs * 60
-  return `${hrs}${h} ${remMins}${m} ${secs}${s}`
+  if (hrs < 24) return `${hrs}${h} ${remMins}${m} ${secs}${s}`
+  const days = Math.floor(hrs / 24)
+  const remHrs = hrs - days * 24
+  if (days < 30) return `${days}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+  const months = Math.floor(days / 30)
+  const remDays = days - months * 30
+  if (months < 12) return `${months}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+  const years = Math.floor(months / 12)
+  const remMonths = months - years * 12
+  return `${years}${y} ${remMonths}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
 }
 </script>
 
