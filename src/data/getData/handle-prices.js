@@ -264,14 +264,13 @@ function main() {
   MaterialPrice.Koti = KOTI_PRICE;
   MaterialTier.Koti = 8;
 
-  // 6.5 NoPrice 资源：无价格，游戏内统一为 1
+  // 6.5 NoPrice 资源：从结果中排除
   for (const k of Object.keys(noPrice)) {
-    MaterialPrice[k] = 1;
-    MaterialTier[k] = 1;
+    delete MaterialPrice[k];
+    delete MaterialTier[k];
   }
 
   // 6.6 特殊别名/补充项（游戏内存在但不在标准生产链）
-  MaterialPrice.Log = 1; // 原木占位
   MaterialPrice.Television = MaterialPrice.TV ?? 409900; // TV 别名
 
   // ===== 7. 输出 =====
