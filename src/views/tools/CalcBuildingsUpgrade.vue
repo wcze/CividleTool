@@ -46,8 +46,12 @@
         <button class="close-btn" @click="closeCalculator">✕ {{ t('calcBuildings.close') }}</button>
       </div>
 
-      <!-- 建筑信息：解锁时代 / 解锁科技 / 建造者能力 -->
+      <!-- 建筑信息：解锁时代 / 解锁科技 / 文明 / 建造者能力 -->
       <div class="building-meta" v-if="selectedBuilding">
+        <span class="meta-item" v-if="selectedBuilding.city">
+          <span class="meta-label">{{ t('calcBuildings.unlockCity') }}</span>
+          <span class="meta-value">{{ tGame(selectedBuilding.city) }}</span>
+        </span>
         <span class="meta-item" v-if="selectedBuilding.age">
           <span class="meta-label">{{ t('calcBuildings.unlockAge') }}</span>
           <span class="meta-value">{{ tGame(selectedBuilding.age) }}</span>

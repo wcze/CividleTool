@@ -55,6 +55,11 @@ export default {
     buildResources: '📦 建造资源',
     builderCapacity: '建造者能力乘数',
     builderCapacityHelpAlt: '如何查看建造者能力乘数',
+    unlockAge: '解锁时代',
+    unlockTech: '解锁科技',
+    unlockCity: '文明',
+    builderInit: '基础建造者能力',
+    builderPower: '建造者能力',
     buildTime: '建造所需时间',
     buildTimeDetail: '（共 {count} 次升级）'
   }

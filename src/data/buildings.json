@@ -2279,17 +2279,23 @@
     "build_resources": [
       {
         "resource": "Marble",
-        "count": "1000"
+        "count": "70581"
       },
       {
         "resource": "Painting",
-        "count": "1000"
+        "count": "161329"
       },
       {
         "resource": "Music",
-        "count": "1000"
+        "count": "107552"
       }
-    ]
+    ],
+    "city": "Greek",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8,
+    "tech": "Democracy",
+    "builder_init": 64.9135551089682
   },
   {
     "building": "TempleOfArtemis",
@@ -2596,17 +2602,23 @@
     "build_resources": [
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "447225"
       },
       {
         "resource": "Chariot",
-        "count": "1000"
+        "count": "31945"
       },
       {
         "resource": "Alcohol",
-        "count": "1000"
+        "count": "298150"
       }
-    ]
+    ],
+    "city": "Roman",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7,
+    "tech": "Theater",
+    "builder_init": 154.71859150243654
   },
   {
     "building": "MogaoCaves",
@@ -2637,17 +2649,23 @@
     "build_resources": [
       {
         "resource": "Marble",
-        "count": "1000"
+        "count": "55903"
       },
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "447225"
       },
       {
         "resource": "Music",
-        "count": "1000"
+        "count": "85186"
       }
-    ]
+    ],
+    "city": "Greek",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7,
+    "tech": "Theater",
+    "builder_init": 117.09863819426292
   },
   {
     "building": "CircusMaximus",
@@ -2655,17 +2673,23 @@
     "build_resources": [
       {
         "resource": "Music",
-        "count": "1000"
+        "count": "477814"
       },
       {
         "resource": "Poem",
-        "count": "1000"
+        "count": "716721"
       },
       {
         "resource": "Painting",
-        "count": "1000"
+        "count": "716721"
       }
-    ]
+    ],
+    "city": "Roman",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 10,
+    "tech": "CivilService",
+    "builder_init": 269.90799726733735
   },
   {
     "building": "EiffelTower",
@@ -2826,17 +2850,23 @@
     "build_resources": [
       {
         "resource": "Stone",
-        "count": "1000"
+        "count": "62100"
       },
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "15525"
       },
       {
         "resource": "Lumber",
-        "count": "1000"
+        "count": "15525"
       }
-    ]
+    ],
+    "city": "Egyptian",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2,
+    "tech": "Housing",
+    "builder_init": 43.499145896104174
   },
   {
     "building": "GreatSphinx",
@@ -2844,17 +2874,23 @@
     "build_resources": [
       {
         "resource": "Stone",
-        "count": "1000"
+        "count": "57800"
       },
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "14450"
       },
       {
         "resource": "Lumber",
-        "count": "1000"
+        "count": "14450"
       }
-    ]
+    ],
+    "city": "Egyptian",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3,
+    "tech": "Arithmetic",
+    "builder_init": 38.36609771076077
   },
   {
     "building": "Hollywood",
@@ -2992,17 +3028,23 @@
     "build_resources": [
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "59275"
       },
       {
         "resource": "Tool",
-        "count": "1000"
+        "count": "16936"
       },
       {
         "resource": "Horse",
-        "count": "1000"
+        "count": "33871"
       }
-    ]
+    ],
+    "city": "Chinese",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4,
+    "tech": "LandTrade",
+    "builder_init": 33.215119644003074
   },
   {
     "building": "YellowCraneTower",
@@ -3010,17 +3052,23 @@
     "build_resources": [
       {
         "resource": "Furniture",
-        "count": "1000"
+        "count": "371832"
       },
       {
         "resource": "Sword",
-        "count": "1000"
+        "count": "166945"
       },
       {
         "resource": "Coin",
-        "count": "1000"
+        "count": "103548"
       }
-    ]
+    ],
+    "city": "Chinese",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9,
+    "tech": "Geography",
+    "builder_init": 93.77007299270073
   },
   {
     "building": "PorcelainTower",
@@ -3028,17 +3076,23 @@
     "build_resources": [
       {
         "resource": "Banknote",
-        "count": "1000"
+        "count": "90347"
       },
       {
         "resource": "Garment",
-        "count": "1000"
+        "count": "765188"
       },
       {
         "resource": "Knight",
-        "count": "1000"
+        "count": "158874"
       }
-    ]
+    ],
+    "city": "Chinese",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11,
+    "tech": "Banking",
+    "builder_init": 113.7955257096709
   },
   {
     "building": "CNTower",
@@ -3165,17 +3219,23 @@
     "build_resources": [
       {
         "resource": "Opera",
-        "count": "1000"
+        "count": "10077800"
       },
       {
         "resource": "Culture",
-        "count": "1000"
+        "count": "2519450"
       },
       {
         "resource": "Bond",
-        "count": "1000"
+        "count": "161874"
       }
-    ]
+    ],
+    "city": "American",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15,
+    "tech": "Railway",
+    "builder_init": 1085.586621967788
   },
   {
     "building": "TheMet",
@@ -3183,17 +3243,23 @@
     "build_resources": [
       {
         "resource": "Book",
-        "count": "1000"
+        "count": "5187103"
       },
       {
         "resource": "Law",
-        "count": "1000"
+        "count": "567992"
       },
       {
         "resource": "Rifle",
-        "count": "1000"
+        "count": "400822"
       }
-    ]
+    ],
+    "city": "American",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15,
+    "tech": "RapidFire",
+    "builder_init": 523.7648870834769
   },
   {
     "building": "WallStreet",
@@ -3201,17 +3267,23 @@
     "build_resources": [
       {
         "resource": "Bond",
-        "count": "1000"
+        "count": "126246"
       },
       {
         "resource": "Law",
-        "count": "1000"
+        "count": "442979"
       },
       {
         "resource": "Banknote",
-        "count": "1000"
+        "count": "662868"
       }
-    ]
+    ],
+    "city": "American",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14,
+    "tech": "Capitalism",
+    "builder_init": 107.440950271521
   },
   {
     "building": "StPetersBasilica",
@@ -3259,17 +3331,23 @@
     "build_resources": [
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "59275"
       },
       {
         "resource": "Lumber",
-        "count": "1000"
+        "count": "59275"
       },
       {
         "resource": "Sand",
-        "count": "1000"
+        "count": "79033"
       }
-    ]
+    ],
+    "city": "Babylonian",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4,
+    "tech": "LandTrade",
+    "builder_init": 59.616858202258854
   },
   {
     "building": "TowerOfBabel",
@@ -3277,17 +3355,23 @@
     "build_resources": [
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "564650"
       },
       {
         "resource": "Lumber",
-        "count": "1000"
+        "count": "564650"
       },
       {
         "resource": "Sand",
-        "count": "1000"
+        "count": "752867"
       }
-    ]
+    ],
+    "city": "Babylonian",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8,
+    "tech": "Religion",
+    "builder_init": 359.9170195155314
   },
   {
     "building": "ZigguratOfUr",
@@ -3295,17 +3379,23 @@
     "build_resources": [
       {
         "resource": "Brick",
-        "count": "1000"
+        "count": "447225"
       },
       {
         "resource": "Lumber",
-        "count": "1000"
+        "count": "447225"
       },
       {
         "resource": "Sand",
-        "count": "1000"
+        "count": "596300"
       }
-    ]
+    ],
+    "city": "Babylonian",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7,
+    "tech": "Theater",
+    "builder_init": 296.7204501135405
   },
   {
     "building": "InternationalSpaceStation",
@@ -3520,17 +3610,23 @@
     "build_resources": [
       {
         "resource": "Furniture",
-        "count": "1000"
+        "count": "102664"
       },
       {
         "resource": "Opera",
-        "count": "1000"
+        "count": "64531"
       },
       {
         "resource": "SiegeRam",
-        "count": "1000"
+        "count": "26263"
       }
-    ]
+    ],
+    "city": "Japanese",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8,
+    "tech": "Religion",
+    "builder_init": 36.99396852746631
   },
   {
     "building": "GoldenPavilion",
@@ -3538,17 +3634,23 @@
     "build_resources": [
       {
         "resource": "Faith",
-        "count": "1000"
+        "count": "314627"
       },
       {
         "resource": "Coin",
-        "count": "1000"
+        "count": "103548"
       },
       {
         "resource": "Sword",
-        "count": "1000"
+        "count": "166945"
       }
-    ]
+    ],
+    "city": "Japanese",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9,
+    "tech": "Theocracy",
+    "builder_init": 85.41897810218978
   },
   {
     "building": "OsakaCastle",
@@ -3556,17 +3658,23 @@
     "build_resources": [
       {
         "resource": "Train",
-        "count": "1000"
+        "count": "225633"
       },
       {
         "resource": "GatlingGun",
-        "count": "1000"
+        "count": "182492"
       },
       {
         "resource": "Politics",
-        "count": "1000"
+        "count": "116385"
       }
-    ]
+    ],
+    "city": "Japanese",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16,
+    "tech": "Electricity",
+    "builder_init": 43.53333108623047
   },
   {
     "building": "CologneCathedral",
@@ -3574,17 +3682,23 @@
     "build_resources": [
       {
         "resource": "Faith",
-        "count": "1000"
+        "count": "385927"
       },
       {
         "resource": "Knight",
-        "count": "1000"
+        "count": "42517"
       },
       {
         "resource": "Caravel",
-        "count": "1000"
+        "count": "58679"
       }
-    ]
+    ],
+    "city": "German",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 10,
+    "tech": "HolyEmpire",
+    "builder_init": 68.79161836659097
   },
   {
     "building": "Elbphilharmonie",
@@ -3592,17 +3706,23 @@
     "build_resources": [
       {
         "resource": "Radio",
-        "count": "1000"
+        "count": "722418"
       },
       {
         "resource": "Diplomacy",
-        "count": "1000"
+        "count": "848694"
       },
       {
         "resource": "Rocket",
-        "count": "1000"
+        "count": "1740293"
       }
-    ]
+    ],
+    "city": "German",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21,
+    "tech": "Skyscraper",
+    "builder_init": 187.87673253409466
   },
   {
     "building": "SantaClausVillage",
@@ -3640,17 +3760,23 @@
     "build_resources": [
       {
         "resource": "Tank",
-        "count": "1000"
+        "count": "66474"
       },
       {
         "resource": "Ironclad",
-        "count": "1000"
+        "count": "40926"
       },
       {
         "resource": "Train",
-        "count": "1000"
+        "count": "294334"
       }
-    ]
+    ],
+    "city": "English",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17,
+    "tech": "Combustion",
+    "builder_init": 32.52088196345882
   },
   {
     "building": "CambridgeUniversity",
@@ -3658,17 +3784,23 @@
     "build_resources": [
       {
         "resource": "Philosophy",
-        "count": "1000"
+        "count": "419880"
       },
       {
         "resource": "Culture",
-        "count": "1000"
+        "count": "329906"
       },
       {
         "resource": "Faith",
-        "count": "1000"
+        "count": "1776415"
       }
-    ]
+    ],
+    "city": "English",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12,
+    "tech": "Enlightenment",
+    "builder_init": 275.5265234272228
   },
   {
     "building": "TowerBridge",
@@ -3676,13 +3808,19 @@
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
-        "count": "1500"
+        "count": "68026"
       },
       {
         "resource": "Steel",
-        "count": "1500"
+        "count": "7776644"
       }
-    ]
+    ],
+    "city": "English",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16,
+    "tech": "Electricity",
+    "builder_init": 651.0926700581867
   },
   {
     "building": "EastIndiaCompany",
@@ -3690,17 +3828,23 @@
     "build_resources": [
       {
         "resource": "Bond",
-        "count": "1000"
+        "count": "26224"
       },
       {
         "resource": "Frigate",
-        "count": "1000"
+        "count": "18535"
       },
       {
         "resource": "Gunpowder",
-        "count": "1000"
+        "count": "772193"
       }
-    ]
+    ],
+    "city": "English",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13,
+    "tech": "PrivateOwnership",
+    "builder_init": 86.59860093970933
   },
   {
     "building": "ArcDeTriomphe",
@@ -3708,17 +3852,23 @@
     "build_resources": [
       {
         "resource": "Train",
-        "count": "1000"
+        "count": "225633"
       },
       {
         "resource": "GatlingGun",
-        "count": "1000"
+        "count": "182492"
       },
       {
         "resource": "Politics",
-        "count": "1000"
+        "count": "116385"
       }
-    ]
+    ],
+    "city": "French",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16,
+    "tech": "Electricity",
+    "builder_init": 43.53333108623047
   },
   {
     "building": "MontSaintMichel",
@@ -3726,9 +3876,15 @@
     "build_resources": [
       {
         "resource": "Culture",
-        "count": "10000"
+        "count": "4081593"
       }
-    ]
+    ],
+    "city": "French",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13,
+    "tech": "Revolution",
+    "builder_init": 432.65729615119494
   },
   {
     "building": "Louvre",
@@ -3736,17 +3892,23 @@
     "build_resources": [
       {
         "resource": "Bond",
-        "count": "1000"
+        "count": "161874"
       },
       {
         "resource": "Law",
-        "count": "1000"
+        "count": "567992"
       },
       {
         "resource": "Frigate",
-        "count": "1000"
+        "count": "114409"
       }
-    ]
+    ],
+    "city": "French",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15,
+    "tech": "Railway",
+    "builder_init": 71.83358710690909
   },
   {
     "building": "CentrePompidou",
@@ -3754,17 +3916,23 @@
     "build_resources": [
       {
         "resource": "TV",
-        "count": "1000"
+        "count": "1393604"
       },
       {
         "resource": "Computer",
-        "count": "1000"
+        "count": "61996753"
       },
       {
         "resource": "Forex",
-        "count": "1000"
+        "count": "55053786"
       }
-    ]
+    ],
+    "city": "French",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24,
+    "tech": "Software",
+    "builder_init": 5672.944932309464
   },
   {
     "building": "EasterBunny",
@@ -3795,17 +3963,23 @@
     "build_resources": [
       {
         "resource": "Cannon",
-        "count": "1000"
+        "count": "659811"
       },
       {
         "resource": "Lens",
-        "count": "1000"
+        "count": "1184277"
       },
       {
         "resource": "Banknote",
-        "count": "1000"
+        "count": "111293"
       }
-    ]
+    ],
+    "city": "Ottoman",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12,
+    "tech": "Exploration",
+    "builder_init": 213.26859141677417
   },
   {
     "building": "TopkapiPalace",
@@ -3813,17 +3987,23 @@
     "build_resources": [
       {
         "resource": "Biplane",
-        "count": "1000"
+        "count": "1274628"
       },
       {
         "resource": "Tank",
-        "count": "1000"
+        "count": "410449"
       },
       {
         "resource": "Ironclad",
-        "count": "1000"
+        "count": "252699"
       }
-    ]
+    ],
+    "city": "Ottoman",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18,
+    "tech": "Aviation",
+    "builder_init": 132.92006550381853
   },
   {
     "building": "SwissBank",
@@ -3854,17 +4034,23 @@
     "build_resources": [
       {
         "resource": "Diplomacy",
-        "count": "1000"
+        "count": "126746"
       },
       {
         "resource": "Submarine",
-        "count": "1000"
+        "count": "130300"
       },
       {
         "resource": "ReinforcedConcrete",
-        "count": "1000"
+        "count": "659232"
       }
-    ]
+    ],
+    "city": "Brazilian",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20,
+    "tech": "Hydroelectricity",
+    "builder_init": 60.153756994961654
   },
   {
     "building": "CathedralOfBrasilia",
@@ -3872,17 +4058,23 @@
     "build_resources": [
       {
         "resource": "Biplane",
-        "count": "1000"
+        "count": "1274628"
       },
       {
         "resource": "Tank",
-        "count": "1000"
+        "count": "410449"
       },
       {
         "resource": "Ironclad",
-        "count": "1000"
+        "count": "252699"
       }
-    ]
+    ],
+    "city": "Brazilian",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18,
+    "tech": "Aviation",
+    "builder_init": 132.92006550381853
   },
   {
     "building": "RedFort",
@@ -3890,17 +4082,23 @@
     "build_resources": [
       {
         "resource": "Frigate",
-        "count": "1000"
+        "count": "114409"
       },
       {
         "resource": "Rifle",
-        "count": "1000"
+        "count": "400822"
       },
       {
         "resource": "GatlingGun",
-        "count": "1000"
+        "count": "141089"
       }
-    ]
+    ],
+    "city": "Indian",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15,
+    "tech": "RapidFire",
+    "builder_init": 55.84178127980406
   },
   {
     "building": "SanchiStupa",
@@ -3908,17 +4106,23 @@
     "build_resources": [
       {
         "resource": "Garment",
-        "count": "1000"
+        "count": "166945"
       },
       {
         "resource": "Sword",
-        "count": "1000"
+        "count": "166945"
       },
       {
         "resource": "Furniture",
-        "count": "1000"
+        "count": "371832"
       }
-    ]
+    ],
+    "city": "Indian",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9,
+    "tech": "Physics",
+    "builder_init": 103.02510948905109
   },
   {
     "building": "QutbMinar",
@@ -3926,17 +4130,23 @@
     "build_resources": [
       {
         "resource": "Banknote",
-        "count": "2000"
+        "count": "180695"
       },
       {
         "resource": "Galleon",
-        "count": "2000"
+        "count": "84446"
       },
       {
         "resource": "Knight",
-        "count": "2000"
+        "count": "317747"
       }
-    ]
+    ],
+    "city": "Indian",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11,
+    "tech": "Banking",
+    "builder_init": 65.38787253450892
   },
   {
     "building": "BranCastle",
@@ -3982,17 +4192,23 @@
     "build_resources": [
       {
         "resource": "TV",
-        "count": "5000"
+        "count": "739594"
       },
       {
         "resource": "Radio",
-        "count": "5000"
+        "count": "4931829"
       },
       {
         "resource": "Diplomacy",
-        "count": "5000"
+        "count": "5793891"
       }
-    ]
+    ],
+    "city": "Australian",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22,
+    "tech": "Television",
+    "builder_init": 637.912881091136
   },
   {
     "building": "SydneyHarbourBridge",
@@ -4000,17 +4216,23 @@
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
-        "count": "1000"
+        "count": "659232"
       },
       {
         "resource": "Car",
-        "count": "1000"
+        "count": "1639929"
       },
       {
         "resource": "Submarine",
-        "count": "1000"
+        "count": "130300"
       }
-    ]
+    ],
+    "city": "Australian",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20,
+    "tech": "Hydroelectricity",
+    "builder_init": 159.4943964852769
   },
   {
     "building": "GreatOceanRoad",
@@ -4018,13 +4240,19 @@
     "build_resources": [
       {
         "resource": "Battleship",
-        "count": "1500"
+        "count": "163202"
       },
       {
         "resource": "Rocket",
-        "count": "1500"
+        "count": "389850"
       }
-    ]
+    ],
+    "city": "Australian",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20,
+    "tech": "Rocketry",
+    "builder_init": 36.307927958084264
   },
   {
     "building": "KizhiPogost",
@@ -4032,17 +4260,23 @@
     "build_resources": [
       {
         "resource": "Bond",
-        "count": "1000"
+        "count": "126246"
       },
       {
         "resource": "Law",
-        "count": "1000"
+        "count": "442979"
       },
       {
         "resource": "Frigate",
-        "count": "1000"
+        "count": "89228"
       }
-    ]
+    ],
+    "city": "Russian",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14,
+    "tech": "Alloy",
+    "builder_init": 57.41840593943299
   },
   {
     "building": "Hermitage",
@@ -4050,13 +4284,19 @@
     "build_resources": [
       {
         "resource": "Politics",
-        "count": "1500"
+        "count": "134971"
       },
       {
         "resource": "Newspaper",
-        "count": "1500"
+        "count": "330678"
       }
-    ]
+    ],
+    "city": "Russian",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15,
+    "tech": "Journalism",
+    "builder_init": 39.618889583068444
   },
   {
     "building": "Sputnik1",
@@ -4064,9 +4304,15 @@
     "build_resources": [
       {
         "resource": "Satellite",
-        "count": "5000"
+        "count": "2486119"
       }
-    ]
+    ],
+    "city": "Russian",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21,
+    "tech": "Satellite",
+    "builder_init": 141.05309208959065
   },
   {
     "building": "AkademikLomonosov",
@@ -4074,9 +4320,15 @@
     "build_resources": [
       {
         "resource": "Spacecraft",
-        "count": "5000"
+        "count": "7022871"
       }
-    ]
+    ],
+    "city": "Russian",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25,
+    "tech": "Genetics",
+    "builder_init": 330.48804705882355
   },
   {
     "building": "ChateauFrontenac",
@@ -4084,17 +4336,23 @@
     "build_resources": [
       {
         "resource": "Tank",
-        "count": "1000"
+        "count": "66474"
       },
       {
         "resource": "Ironclad",
-        "count": "1000"
+        "count": "40926"
       },
       {
         "resource": "Train",
-        "count": "1000"
+        "count": "294334"
       }
-    ]
+    ],
+    "city": "Canadian",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17,
+    "tech": "Combustion",
+    "builder_init": 32.52088196345882
   },
   {
     "building": "Habitat67",
@@ -4102,9 +4360,15 @@
     "build_resources": [
       {
         "resource": "Bitcoin",
-        "count": "5000"
+        "count": "6075977"
       }
-    ]
+    ],
+    "city": "Canadian",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26,
+    "tech": "ArtificialIntelligence",
+    "builder_init": 280.92163993547314
   },
   {
     "building": "WorldTradeOrganization",
@@ -4135,17 +4399,23 @@
     "build_resources": [
       {
         "resource": "SiegeRam",
-        "count": "1000"
+        "count": "26263"
       },
       {
         "resource": "Sword",
-        "count": "1000"
+        "count": "46094"
       },
       {
         "resource": "Furniture",
-        "count": "1000"
+        "count": "102664"
       }
-    ]
+    ],
+    "city": "Carthaginian",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8,
+    "tech": "Architecture",
+    "builder_init": 33.46835677845156
   },
   {
     "building": "Mauritshuis",
@@ -4153,9 +4423,15 @@
     "build_resources": [
       {
         "resource": "Politics",
-        "count": "3000"
+        "count": "210528"
       }
-    ]
+    ],
+    "city": "Dutch",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14,
+    "tech": "Capitalism",
+    "builder_init": 18.358458638075838
   },
   {
     "building": "Midsummer",

@@ -55,6 +55,11 @@ export default {
     buildResources: '📦 Build Resources',
     builderCapacity: 'Builder Capacity Multiplier',
     builderCapacityHelpAlt: 'How to view Builder Capacity Multiplier',
+    unlockAge: 'Unlock Age',
+    unlockTech: 'Unlock Tech',
+    unlockCity: 'Civilization',
+    builderInit: 'Base Builder Capacity',
+    builderPower: 'Builder Capacity',
     buildTime: 'Build Time Required',
     buildTimeDetail: '({count} upgrades total)'
   }
