@@ -76,8 +76,8 @@
         <!-- 结果区 -->
         <div class="result-area" v-if="totalResources.length > 0 && targetLevel > currentLevel">
           <div class="result-header">
-            <span>{{ t('calcBuildings.upgradeResources') }}</span>
-            <div class="result-header-right">
+            <div class="result-header-left">
+              <span class="result-title">{{ t('calcBuildings.upgradeResources') }}</span>
               <button
                 type="button"
                 class="detail-btn"
@@ -87,6 +87,8 @@
                 <span>{{ showDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
                 <span class="chevron" :class="{ open: showDetails }">▾</span>
               </button>
+            </div>
+            <div class="result-header-right">
               <span class="level-range">
                 {{ t('calcBuildings.levelRange', { current: currentLevel, target: targetLevel }) }}
                 <span class="level-count">{{ t('calcBuildings.levelCount', { count: levelDiff }) }}</span>
@@ -807,7 +809,14 @@ const formatTime = (seconds) => {
   gap: 8px;
 }
 
-.result-header>span {
+.result-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.result-title {
   font-weight: 600;
   color: #1a2332;
   font-size: 0.95rem;
@@ -915,22 +924,22 @@ const formatTime = (seconds) => {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #e8f7ef;
-  border: 1px solid #b9e6cc;
+  background: #eef4ff;
+  border: 1px solid #cfe0fa;
   border-radius: 8px;
   padding: 5px 12px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #1f9d63;
+  color: #4a90d9;
   cursor: pointer;
   transition: all 0.2s;
   white-space: nowrap;
 }
 
 .detail-btn:hover {
-  background: #1f9d63;
+  background: #4a90d9;
   color: #ffffff;
-  border-color: #1f9d63;
+  border-color: #4a90d9;
 }
 
 .chevron {
