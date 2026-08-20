@@ -69,7 +69,7 @@ const dataSourceUrl =
 <style scoped>
 /* ——— 全局重置 & 动画 ——— */
 .about-page {
-  animation: fadeInUp 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation: fadeInUp 0.35s ease both;
   max-width: 820px;
   margin: 0 auto;
   padding: 0 4px;
@@ -78,7 +78,7 @@ const dataSourceUrl =
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(12px);
   }
   100% {
     opacity: 1;

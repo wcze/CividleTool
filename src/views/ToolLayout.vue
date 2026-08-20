@@ -1,6 +1,7 @@
 <template>
     <ToolContainer :tools="tools" :currentToolId="currentToolId" @goHome="goHome" @switchTool="switchTool">
-        <div class="tool-content">
+        <transition name="fade-in-up" mode="out-in" appear>
+        <div class="tool-content" :key="route.path">
             <!-- 选中工具时显示 -->
             <template v-if="currentTool">
                 <header class="content-head">
@@ -87,6 +88,7 @@
                 </div>
             </template>
         </div>
+        </transition>
     </ToolContainer>
 </template>
 
@@ -125,7 +127,26 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 
 <style scoped>
 .tool-content {
-    animation: fadeInUp 0.35s ease both;
+    will-change: transform, opacity;
+}
+
+/* ===== 内容切换过渡（工具/首页之间） ===== */
+.fade-in-up-enter-active {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.fade-in-up-leave-active {
+    transition: none;
+}
+
+.fade-in-up-enter-from {
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.fade-in-up-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
 }
 
 .content-head {
@@ -541,19 +562,6 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 
     .steam-rating-row {
         flex-wrap: wrap;
-    }
-}
-
-/* ===== 动画 ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 </style>
