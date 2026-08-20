@@ -10,7 +10,8 @@ export default {
     developer: '开发',
     dataSource: '数据来源',
     translationSource: '翻译来源',
-    projectUrl: '项目地址'
+    projectUrl: '项目地址',
+    disclaimer: '本工具集由玩家自制，非官方发布，所有数据仅供参考。'
   },
   home: {
     subtitle: 'CivIdle 工具集',

@@ -5,6 +5,8 @@
         <h1>{{ t('about.title') }}</h1>
       </header>
 
+      <div class="about-disclaimer">{{ t('about.disclaimer') }}</div>
+
       <div class="about-card">
         <div class="about-row">
           <span class="about-key">{{ t('about.developer') }}</span>
@@ -105,6 +107,18 @@ const dataSourceUrl =
   line-height: 1.2;
 }
 
+/* ——— 免责声明 ——— */
+.about-disclaimer {
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(43, 108, 148, 0.06);
+  border: 1px solid rgba(43, 108, 148, 0.18);
+  color: var(--text-2, #3a3a3a);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 /* ——— 卡片 ——— */
 .about-card {
   background: #ffffff;
@@ -200,6 +214,13 @@ const dataSourceUrl =
   .about-card {
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+
+  .about-disclaimer {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    border-radius: 10px;
   }
 
   .about-row {

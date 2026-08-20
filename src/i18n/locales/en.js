@@ -10,7 +10,8 @@ export default {
     developer: 'Developer',
     dataSource: 'Data Source',
     translationSource: 'Translation Source',
-    projectUrl: 'Project URL'
+    projectUrl: 'Project URL',
+    disclaimer: 'This toolset is a fan-made project, not an official release. All data is for reference only.'
   },
   home: {
     subtitle: 'CivIdle Assistant Tools',
