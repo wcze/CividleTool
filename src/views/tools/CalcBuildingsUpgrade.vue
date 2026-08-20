@@ -95,7 +95,7 @@
             <!-- 目标等级快速按钮 -->
             <div class="level-presets">
               <button 
-                v-for="lvl in [20, 25, 35, 40, 45, 50]" 
+                v-for="lvl in [25, 30, 35, 40, 45, 50]" 
                 :key="lvl" 
                 class="preset-btn"
                 @click="targetLevel = lvl; calculate()"
