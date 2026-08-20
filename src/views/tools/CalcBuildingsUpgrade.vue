@@ -1,37 +1,5 @@
 <template>
   <div class="building-viewer">
-    <!-- ===== 顶部搜索区 ===== -->
-    <div class="search-section">
-      <div class="section-header">
-        <h1>{{ t('calcBuildings.title') }}</h1>
-        <span class="badge">{{ t('calcBuildings.totalBuildings', { count: buildings.length }) }}</span>
-      </div>
-      <p class="subtitle">{{ t('calcBuildings.subtitle') }}</p>
-
-      <div class="search-wrapper">
-        <div class="search-input-container">
-          <span class="search-icon">🔍</span>
-          <input
-            v-model="keyword"
-            type="text"
-            :placeholder="t('calcBuildings.searchPlaceholder')"
-            class="search-input"
-          />
-          <button 
-            v-if="keyword" 
-            class="clear-btn" 
-            @click="keyword = ''"
-          >
-            ✕
-          </button>
-        </div>
-
-        <div class="search-stats" v-if="keyword">
-          <span v-html="t('calcBuildings.foundCount', { count: filteredBuildings.length })"></span>
-        </div>
-      </div>
-    </div>
-
     <!-- ===== 升级计算器（置顶） ===== -->
     <div v-if="selectedBuilding" class="calculator-panel">
       <div class="calculator-header">
@@ -60,9 +28,9 @@
           <span class="meta-label">{{ t('calcBuildings.unlockTech') }}</span>
           <span class="meta-value">{{ tGame(selectedBuilding.tech) }}</span>
         </span>
-        <span class="meta-item">
+        <span class="meta-item" v-if="selectedBuilding.builder_init != null">
           <span class="meta-label">{{ t('calcBuildings.builderInit') }}</span>
-          <span class="meta-value">{{ formatNumber(selectedBuilding.builder_init ?? 1) }}</span>
+          <span class="meta-value">{{ formatNumber(selectedBuilding.builder_init) }}</span>
         </span>
         <span class="meta-item meta-power">
           <span class="meta-label">{{ t('calcBuildings.builderPower') }}</span>
@@ -75,65 +43,33 @@
         <div class="input-row">
           <div class="input-group">
             <label>{{ t('calcBuildings.currentLevel') }}</label>
-            <input 
-              v-model.number="currentLevel" 
-              type="number" 
-              min="0"
-              class="num-input"
-              @input="calculate"
-            />
+            <input v-model.number="currentLevel" type="number" min="0" class="num-input" @input="calculate" />
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.targetLevel') }}</label>
-            <input 
-              v-model.number="targetLevel" 
-              type="number" 
-              min="0"
-              class="num-input"
-              @input="calculate"
-            />
+            <input v-model.number="targetLevel" type="number" min="0" class="num-input" @input="calculate" />
             <!-- 目标等级快速按钮 -->
             <div class="level-presets">
-              <button 
-                v-for="lvl in [25, 30, 35, 40, 45, 50]" 
-                :key="lvl" 
-                class="preset-btn"
-                @click="targetLevel = lvl; calculate()"
-              >
+              <button v-for="lvl in [25, 30, 35, 40, 45, 50]" :key="lvl" class="preset-btn"
+                @click="targetLevel = lvl; calculate()">
                 {{ lvl }}
               </button>
             </div>
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.buildingCount') }}</label>
-            <input 
-              v-model.number="buildingCount" 
-              type="number" 
-              min="1"
-              class="num-input"
-              @input="calculate"
-            />
+            <input v-model.number="buildingCount" type="number" min="1" class="num-input" @input="calculate" />
           </div>
           <div class="input-group">
             <div class="label-with-help">
               <label>{{ t('calcBuildings.builderCapacity') }}</label>
-              <button 
-                type="button" 
-                class="help-icon" 
-                :aria-label="t('calcBuildings.builderCapacityHelpAlt')" 
-                @click="showHelpDialog = true"
-              >
+              <button type="button" class="help-icon" :aria-label="t('calcBuildings.builderCapacityHelpAlt')"
+                @click="showHelpDialog = true">
                 ?
               </button>
             </div>
-            <input 
-              v-model.number="builderMultiplier" 
-              type="number" 
-              min="0"
-              step="0.1"
-              class="num-input"
-              @input="calculate"
-            />
+            <input v-model.number="builderMultiplier" type="number" min="0" step="0.1" class="num-input"
+              @input="calculate" />
           </div>
         </div>
 
@@ -141,19 +77,26 @@
         <div class="result-area" v-if="totalResources.length > 0 && targetLevel > currentLevel">
           <div class="result-header">
             <span>{{ t('calcBuildings.upgradeResources') }}</span>
-            <span class="level-range">
-              {{ t('calcBuildings.levelRange', { current: currentLevel, target: targetLevel }) }}
-              <span class="level-count">{{ t('calcBuildings.levelCount', { count: levelDiff }) }}</span>
-            </span>
+            <div class="result-header-right">
+              <button
+                type="button"
+                class="detail-btn"
+                v-if="upgradeDetails.length > 0"
+                @click="showDetails = !showDetails"
+              >
+                <span>{{ showDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
+                <span class="chevron" :class="{ open: showDetails }">▾</span>
+              </button>
+              <span class="level-range">
+                {{ t('calcBuildings.levelRange', { current: currentLevel, target: targetLevel }) }}
+                <span class="level-count">{{ t('calcBuildings.levelCount', { count: levelDiff }) }}</span>
+              </span>
+            </div>
           </div>
 
           <!-- 每个资源单独显示 -->
           <div class="result-list">
-            <div 
-              v-for="res in totalResources" 
-              :key="res.resource"
-              class="result-item"
-            >
+            <div v-for="res in totalResources" :key="res.resource" class="result-item">
               <span class="result-name">{{ res.resource }}</span>
               <span class="result-count">
                 <strong>{{ formatNumber(res.total * buildingCount) }}</strong>
@@ -170,6 +113,27 @@
             <strong class="time-value">{{ formatTime(totalBuildTime) }}</strong>
             <span class="time-detail">{{ t('calcBuildings.buildTimeDetail', { count: levelDiff }) }}</span>
           </div>
+
+          <div class="detail-table-wrap" v-if="showDetails && upgradeDetails.length > 0">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th>{{ t('calcBuildings.detailCurrent') }}</th>
+                  <th>{{ t('calcBuildings.detailTarget') }}</th>
+                  <th v-for="res in detailResources" :key="res">{{ res }}</th>
+                  <th>{{ t('calcBuildings.detailTime') }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="d in upgradeDetails" :key="d.from">
+                  <td>{{ d.from }}</td>
+                  <td>{{ d.to }}</td>
+                  <td v-for="res in detailResources" :key="res">{{ resCount(d, res) }}</td>
+                  <td>{{ formatTime(d.time) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div v-else class="result-empty">
@@ -178,34 +142,43 @@
       </div>
     </div>
 
-    <!-- ===== 建造者能力乘数说明弹窗（Teleport 到 body，避免被父级 transform 影响） ===== -->
-    <Teleport to="body">
-      <div 
-        v-if="showHelpDialog" 
-        class="dialog-overlay" 
-        @click.self="showHelpDialog = false"
-      >
-        <div class="dialog-panel" role="dialog" aria-modal="true" :aria-label="t('calcBuildings.builderCapacityHelpAlt')">
-          <div class="dialog-header">
-            <h3>{{ t('calcBuildings.builderCapacityHelpAlt') }}</h3>
-            <button type="button" class="dialog-close" @click="showHelpDialog = false">✕</button>
-          </div>
-          <div class="dialog-body">
-            <img :src="builderCapacityImage" :alt="t('calcBuildings.builderCapacityHelpAlt')" />
-          </div>
+    <!-- ===== 顶部搜索区 ===== -->
+    <div class="search-section">
+      <div class="section-header">
+        <h1>{{ t('calcBuildings.title') }}</h1>
+        <span class="badge">{{ t('calcBuildings.totalBuildings', { count: buildings.length }) }}</span>
+      </div>
+      <p class="subtitle">{{ t('calcBuildings.subtitle') }}</p>
+
+      <div class="search-wrapper">
+        <div class="search-input-container">
+          <span class="search-icon">🔍</span>
+          <input v-model="keyword" type="text" :placeholder="t('calcBuildings.searchPlaceholder')"
+            class="search-input" />
+          <button v-if="keyword" class="clear-btn" @click="keyword = ''">
+            ✕
+          </button>
+        </div>
+
+        <div class="search-stats" v-if="keyword">
+          <span v-html="t('calcBuildings.foundCount', { count: filteredBuildings.length })"></span>
         </div>
       </div>
-    </Teleport>
+    </div>
+
+    <!-- ===== 建造者能力乘数说明弹窗 ===== -->
+    <AppDialog
+      v-model="showHelpDialog"
+      :title="t('calcBuildings.builderCapacityHelpAlt')"
+    >
+      <img :src="builderCapacityImage" :alt="t('calcBuildings.builderCapacityHelpAlt')" />
+    </AppDialog>
 
     <!-- ===== 建筑卡片列表 ===== -->
     <div class="building-grid" v-if="filteredBuildings.length > 0">
-      <div 
-        v-for="item in filteredBuildings" 
-        :key="item.building"
-        class="building-card"
+      <div v-for="item in filteredBuildings" :key="item.building" class="building-card"
         :class="{ active: selectedBuilding && selectedBuilding.building === item.building }"
-        @click="selectBuilding(item)"
-      >
+        @click="selectBuilding(item)">
         <div class="card-header">
           <div class="building-title">
             <span class="building-icon">
@@ -220,11 +193,7 @@
         <div class="resources">
           <span class="resource-label">{{ t('calcBuildings.buildResources') }}</span>
           <div class="resource-list">
-            <span 
-              v-for="res in item.build_resources" 
-              :key="res.resource"
-              class="resource-tag"
-            >
+            <span v-for="res in item.build_resources" :key="res.resource" class="resource-tag">
               {{ res.resource }}
               <span class="count">{{ res.count }}</span>
             </span>
@@ -247,6 +216,7 @@ import buildingsData from '@/data/buildings.json'
 import texturesData from '@/data/textures_building.json'
 import spriteImage from '@/assets/textures_building.png'
 import builderCapacityImage from '@/assets/How-to-view-Builder-Capacity-Multiplier.png'
+import AppDialog from '@/components/AppDialog.vue'
 import { t, tGame, locale } from '@/i18n'
 
 // ===== 建筑贴图（雪碧图） =====
@@ -307,6 +277,9 @@ const currentLevel = ref(0)
 const targetLevel = ref(1)
 const buildingCount = ref(1)
 
+// 是否展开“查看详情”（每一级升级明细）
+const showDetails = ref(false)
+
 // 建造者能力乘数：从 localStorage 自动读取，变化时自动保存
 const BUILDER_MULTIPLIER_KEY = 'cividle-builder-multiplier'
 const storedMultiplier = parseFloat(localStorage.getItem(BUILDER_MULTIPLIER_KEY))
@@ -337,7 +310,7 @@ const filteredBuildings = computed(() => {
     return buildings.value
   }
   const kw = keyword.value.trim().toLowerCase()
-  return buildings.value.filter(item => 
+  return buildings.value.filter(item =>
     item.building.toLowerCase().includes(kw)
   )
 })
@@ -348,8 +321,9 @@ const selectBuilding = (item) => {
   currentLevel.value = 0
   targetLevel.value = 1
   buildingCount.value = 1
+  showDetails.value = false
   calculate()
-  
+
   // 滚动到顶部
   nextTick(() => {
     const calculator = document.querySelector('.calculator-panel')
@@ -399,6 +373,21 @@ const upgradeDetails = computed(() => {
   return details
 })
 
+// 明细中出现的所有资源列（用于表格表头）
+const detailResources = computed(() => {
+  const set = new Set()
+  upgradeDetails.value.forEach((d) => {
+    d.perRes.forEach((r) => set.add(r.resource))
+  })
+  return [...set]
+})
+
+// 获取某一级某一资源的数量（已格式化）
+const resCount = (detail, res) => {
+  const found = detail.perRes.find((r) => r.resource === res)
+  return found ? formatNumber(found.count) : '0'
+}
+
 // 计算从 currentLevel 到 targetLevel 的总资源
 const totalResources = computed(() => {
   const result = {}
@@ -428,12 +417,18 @@ const calculate = () => {
   // 由 computed 自动触发
 }
 
-// 格式化数字
+// 数字后缀：K(千) M(百万) B(十亿) T(万亿) Qa(千兆) Qt(百京) Sx Sp Oc No Dc
+const NUMBER_SUFFIXES = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
+
+// 格式化数字：按 1000 进位，自动选择合适后缀，避免出现 2174603.02B 这类大数字
 const formatNumber = (num) => {
-  if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B'
-  if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M'
-  if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K'
-  return Math.round(num * 100) / 100
+  if (!Number.isFinite(num)) return String(num ?? 0)
+  if (num < 0) return '-' + formatNumber(-num)
+  if (num < 1000) return Math.round(num * 100) / 100
+  let tier = Math.floor(Math.log10(num) / 3)
+  tier = Math.min(tier, NUMBER_SUFFIXES.length - 1)
+  const scaled = num / Math.pow(1000, tier)
+  return scaled.toFixed(2) + NUMBER_SUFFIXES[tier]
 }
 
 // 格式化时长（秒 → 年月日时分秒），随语言切换
@@ -735,101 +730,6 @@ const formatTime = (seconds) => {
   color: #ffffff;
 }
 
-/* ===== 说明弹窗（Dialog） ===== */
-.dialog-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(15, 23, 42, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  animation: dialog-fade 0.18s ease;
-}
-
-.dialog-panel {
-  background: #ffffff;
-  border-radius: 16px;
-  max-width: min(760px, 100%);
-  width: 100%;
-  max-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
-  overflow: hidden;
-  animation: dialog-pop 0.2s ease;
-}
-
-.dialog-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 18px;
-  border-bottom: 1px solid #eef2f6;
-}
-
-.dialog-header h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a2332;
-  margin: 0;
-}
-
-.dialog-close {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: #f0f5fe;
-  border: 1px solid #dce6f2;
-  color: #6b7a8f;
-  font-size: 0.9rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.dialog-close:hover {
-  background: #e4e9f0;
-  color: #1a2332;
-}
-
-.dialog-body {
-  padding: 16px 18px 20px;
-  overflow: auto;
-}
-
-.dialog-body img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-@keyframes dialog-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes dialog-pop {
-  from { opacity: 0; transform: translateY(12px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* 移动端适配：弹窗改为底部弹出 */
-@media (max-width: 600px) {
-  .dialog-overlay {
-    padding: 12px;
-    align-items: flex-end;
-  }
-  .dialog-panel {
-    max-height: 88vh;
-    border-radius: 16px 16px 0 0;
-  }
-}
-
 .num-input {
   padding: 10px 14px;
   border: 1px solid #dce6f2;
@@ -883,7 +783,8 @@ const formatTime = (seconds) => {
   text-align: center;
 }
 
-.preset-btn:hover, .preset-btn:active {
+.preset-btn:hover,
+.preset-btn:active {
   background: #4a90d9;
   color: #ffffff;
   border-color: #4a90d9;
@@ -906,7 +807,7 @@ const formatTime = (seconds) => {
   gap: 8px;
 }
 
-.result-header > span {
+.result-header>span {
   font-weight: 600;
   color: #1a2332;
   font-size: 0.95rem;
@@ -916,6 +817,13 @@ const formatTime = (seconds) => {
   font-weight: 400;
   color: #6b7a8f;
   font-size: 0.85rem;
+}
+
+.result-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .level-count {
@@ -1000,6 +908,93 @@ const formatTime = (seconds) => {
   font-weight: 400;
   color: #9aabbf;
   font-size: 0.8rem;
+}
+
+/* ===== 查看详情（每一级升级明细） ===== */
+.detail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f7ef;
+  border: 1px solid #b9e6cc;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f9d63;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.detail-btn:hover {
+  background: #1f9d63;
+  color: #ffffff;
+  border-color: #1f9d63;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.7rem;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.detail-table-wrap {
+  margin-top: 14px;
+  overflow-x: auto;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 8px 14px;
+  text-align: right;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.detail-table th:first-child,
+.detail-table td:first-child,
+.detail-table th:nth-child(2),
+.detail-table td:nth-child(2) {
+  text-align: center;
+}
+
+.detail-table thead th {
+  background: #f5f8fc;
+  color: #6b7a8f;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+.detail-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.detail-table tbody tr:hover {
+  background: #f7faff;
+}
+
+.detail-table td {
+  color: #1a2332;
+}
+
+.detail-table td:last-child {
+  color: #4a90d9;
+  font-weight: 600;
 }
 
 /* ===== 建筑卡片网格 ===== */

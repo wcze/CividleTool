@@ -61,6 +61,11 @@ export default {
     builderInit: 'Base Builder Capacity',
     builderPower: 'Builder Capacity',
     buildTime: 'Build Time Required',
-    buildTimeDetail: '({count} upgrades total)'
+    buildTimeDetail: '({count} upgrades total)',
+    viewDetails: 'View Details',
+    hideDetails: 'Hide Details',
+    detailCurrent: 'Current',
+    detailTarget: 'Target',
+    detailTime: 'Time'
   }
 }

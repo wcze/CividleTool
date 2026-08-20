@@ -61,6 +61,11 @@ export default {
     builderInit: '基础建造者能力',
     builderPower: '建造者能力',
     buildTime: '建造所需时间',
-    buildTimeDetail: '（共 {count} 次升级）'
+    buildTimeDetail: '（共 {count} 次升级）',
+    viewDetails: '查看详情',
+    hideDetails: '收起详情',
+    detailCurrent: '当前',
+    detailTarget: '目标',
+    detailTime: '耗时'
   }
 }
