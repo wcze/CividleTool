@@ -47,6 +47,10 @@ export default {
     levelRange: 'From level {current} → {target}',
     levelCount: '({count} levels)',
     emptyResult: '⚠️ Please make sure the target level is greater than the current level',
-    buildResources: '📦 Build Resources'
+    buildResources: '📦 Build Resources',
+    builderCapacity: 'Builder Capacity Multiplier',
+    builderCapacityHelpAlt: 'How to view Builder Capacity Multiplier',
+    buildTime: 'Build Time Required',
+    buildTimeDetail: '({count} upgrades total)'
   }
 }

@@ -90,6 +90,27 @@
               @input="calculate"
             />
           </div>
+          <div class="input-group">
+            <div class="label-with-help">
+              <label>{{ t('calcBuildings.builderCapacity') }}</label>
+              <button 
+                type="button" 
+                class="help-icon" 
+                :aria-label="t('calcBuildings.builderCapacityHelpAlt')" 
+                @click="showHelpDialog = true"
+              >
+                ?
+              </button>
+            </div>
+            <input 
+              v-model.number="builderMultiplier" 
+              type="number" 
+              min="0"
+              step="0.1"
+              class="num-input"
+              @input="calculate"
+            />
+          </div>
         </div>
 
         <!-- 结果区 -->
@@ -118,6 +139,13 @@
               </span>
             </div>
           </div>
+
+          <!-- 建造所需时间 -->
+          <div class="time-result" v-if="totalBuildTime > 0">
+            <span class="time-label">⏱️ {{ t('calcBuildings.buildTime') }}</span>
+            <strong class="time-value">{{ formatTime(totalBuildTime) }}</strong>
+            <span class="time-detail">{{ t('calcBuildings.buildTimeDetail', { count: levelDiff }) }}</span>
+          </div>
         </div>
 
         <div v-else class="result-empty">
@@ -125,6 +153,25 @@
         </div>
       </div>
     </div>
+
+    <!-- ===== 建造者能力乘数说明弹窗（Teleport 到 body，避免被父级 transform 影响） ===== -->
+    <Teleport to="body">
+      <div 
+        v-if="showHelpDialog" 
+        class="dialog-overlay" 
+        @click.self="showHelpDialog = false"
+      >
+        <div class="dialog-panel" role="dialog" aria-modal="true" :aria-label="t('calcBuildings.builderCapacityHelpAlt')">
+          <div class="dialog-header">
+            <h3>{{ t('calcBuildings.builderCapacityHelpAlt') }}</h3>
+            <button type="button" class="dialog-close" @click="showHelpDialog = false">✕</button>
+          </div>
+          <div class="dialog-body">
+            <img :src="builderCapacityImage" :alt="t('calcBuildings.builderCapacityHelpAlt')" />
+          </div>
+        </div>
+      </div>
+    </Teleport>
 
     <!-- ===== 建筑卡片列表 ===== -->
     <div class="building-grid" v-if="filteredBuildings.length > 0">
@@ -175,7 +222,8 @@ import { ref, computed, nextTick } from 'vue'
 import buildingsData from '@/data/buildings.json'
 import texturesData from '@/data/textures_building.json'
 import spriteImage from '@/assets/textures_building.png'
-import { t, tGame } from '@/i18n'
+import builderCapacityImage from '@/assets/How-to-view-Builder-Capacity-Multiplier.png'
+import { t, tGame, locale } from '@/i18n'
 
 // ===== 建筑贴图（雪碧图） =====
 // textures_building.json 中的键名形如 Building_StoneQuarry，
@@ -234,6 +282,9 @@ const selectedBuilding = ref(null)
 const currentLevel = ref(0)
 const targetLevel = ref(1)
 const buildingCount = ref(1)
+const builderMultiplier = ref(1)
+// 建造者能力乘数说明弹窗是否显示
+const showHelpDialog = ref(false)
 
 // 搜索过滤
 const filteredBuildings = computed(() => {
@@ -268,35 +319,57 @@ const closeCalculator = () => {
   selectedBuilding.value = null
 }
 
-// 计算从 currentLevel 到 targetLevel 的总资源
-const totalResources = computed(() => {
+// 每个等级升级的明细：材料 / 每秒运输量 / 耗时
+const upgradeDetails = computed(() => {
   if (!selectedBuilding.value) return []
   if (targetLevel.value <= currentLevel.value) return []
 
   const mult = parseFloat(selectedBuilding.value.mult)
   const baseResources = selectedBuilding.value.build_resources
   const diff = targetLevel.value - currentLevel.value
+  const bm = Math.max(0, builderMultiplier.value || 1)
 
-  const result = {}
-
+  const details = []
   for (let i = 0; i < diff; i++) {
     const level = currentLevel.value + i
-    const multiplier = Math.pow(mult, level)
-    
-    baseResources.forEach(res => {
-      const count = parseFloat(res.count) * multiplier
-      if (!result[res.resource]) {
-        result[res.resource] = 0
-      }
-      result[res.resource] += count
+    const resourceMultiplier = Math.pow(mult, level)
+    const perRes = baseResources.map((res) => ({
+      resource: res.resource,
+      count: parseFloat(res.count) * resourceMultiplier
+    }))
+    const materials = perRes.reduce((sum, r) => sum + r.count, 0)
+    // 每秒运输量 = max(1, 当前等级) × 建造者能力乘数
+    const rate = Math.max(1, level) * bm
+    details.push({
+      from: level,
+      to: level + 1,
+      materials,
+      rate,
+      time: rate > 0 ? materials / rate : 0,
+      perRes
     })
   }
+  return details
+})
 
-  return Object.keys(result).map(key => ({
+// 计算从 currentLevel 到 targetLevel 的总资源
+const totalResources = computed(() => {
+  const result = {}
+  upgradeDetails.value.forEach((d) => {
+    d.perRes.forEach((r) => {
+      result[r.resource] = (result[r.resource] || 0) + r.count
+    })
+  })
+  return Object.keys(result).map((key) => ({
     resource: key,
     total: result[key]
   }))
 })
+
+// 建造所需总时间 = 各等级升级耗时之和
+const totalBuildTime = computed(() =>
+  upgradeDetails.value.reduce((sum, d) => sum + d.time, 0)
+)
 
 // 等级差
 const levelDiff = computed(() => {
@@ -314,6 +387,24 @@ const formatNumber = (num) => {
   if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M'
   if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K'
   return Math.round(num * 100) / 100
+}
+
+// 格式化时长（秒 → X小时 X分 X秒），随语言切换
+const formatTime = (seconds) => {
+  const isZh = locale.value === 'zh'
+  const s = isZh ? '秒' : 's'
+  const m = isZh ? '分' : 'm'
+  const h = isZh ? '小时' : 'h'
+  if (!isFinite(seconds) || seconds <= 0) return '0' + s
+  const round1 = (n) => Math.round(n * 10) / 10
+  const total = round1(seconds)
+  if (total < 60) return `${total}${s}`
+  const mins = Math.floor(total / 60)
+  const secs = round1(total - mins * 60)
+  if (mins < 60) return `${mins}${m} ${secs}${s}`
+  const hrs = Math.floor(mins / 60)
+  const remMins = mins - hrs * 60
+  return `${hrs}${h} ${remMins}${m} ${secs}${s}`
 }
 </script>
 
@@ -498,7 +589,7 @@ const formatNumber = (num) => {
 
 .input-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -513,6 +604,133 @@ const formatNumber = (num) => {
   font-size: 0.8rem;
   font-weight: 500;
   color: #6b7a8f;
+}
+
+/* 带 ? 帮助提示的标签 */
+.label-with-help {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #dce6f2;
+  color: #4a90d9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.help-icon:hover {
+  background: #4a90d9;
+  color: #ffffff;
+}
+
+/* ===== 说明弹窗（Dialog） ===== */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: dialog-fade 0.18s ease;
+}
+
+.dialog-panel {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: min(760px, 100%);
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+  overflow: hidden;
+  animation: dialog-pop 0.2s ease;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.dialog-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2332;
+  margin: 0;
+}
+
+.dialog-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #f0f5fe;
+  border: 1px solid #dce6f2;
+  color: #6b7a8f;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dialog-close:hover {
+  background: #e4e9f0;
+  color: #1a2332;
+}
+
+.dialog-body {
+  padding: 16px 18px 20px;
+  overflow: auto;
+}
+
+.dialog-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@keyframes dialog-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes dialog-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 移动端适配：弹窗改为底部弹出 */
+@media (max-width: 600px) {
+  .dialog-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+  .dialog-panel {
+    max-height: 88vh;
+    border-radius: 16px 16px 0 0;
+  }
 }
 
 .num-input {
@@ -656,6 +874,35 @@ const formatNumber = (num) => {
   text-align: center;
   color: #9aabbf;
   font-size: 0.9rem;
+}
+
+/* 建造所需时间 */
+.time-result {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed #dce6f2;
+}
+
+.time-label {
+  font-weight: 600;
+  color: #1a2332;
+  font-size: 0.95rem;
+}
+
+.time-value {
+  font-weight: 700;
+  color: #4a90d9;
+  font-size: 1.15rem;
+}
+
+.time-detail {
+  font-weight: 400;
+  color: #9aabbf;
+  font-size: 0.8rem;
 }
 
 /* ===== 建筑卡片网格 ===== */
@@ -830,6 +1077,12 @@ const formatNumber = (num) => {
 }
 
 /* ===== 响应式 ===== */
+@media (max-width: 992px) {
+  .input-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .input-row {
     grid-template-columns: 1fr 1fr;

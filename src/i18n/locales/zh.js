@@ -47,6 +47,10 @@ export default {
     levelRange: '从 {current} → {target} 级',
     levelCount: '(共 {count} 级)',
     emptyResult: '⚠️ 请确保目标等级大于当前等级',
-    buildResources: '📦 建造资源'
+    buildResources: '📦 建造资源',
+    builderCapacity: '建造者能力乘数',
+    builderCapacityHelpAlt: '如何查看建造者能力乘数',
+    buildTime: '建造所需时间',
+    buildTimeDetail: '（共 {count} 次升级）'
   }
 }
