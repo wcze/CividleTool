@@ -50,19 +50,14 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import ToolContainer from '../components/ToolContainer.vue'
+import { getTools } from '../data/tools'
 import { t } from '../i18n'
 
 const router = useRouter()
 const currentToolId = 'about'
 
-// 侧边栏工具列表（与 ToolLayout 保持一致）
-const tools = computed(() => [
-  {
-    id: 'CalcBuildingsUpgrade',
-    name: t('tools.CalcBuildingsUpgrade.name'),
-    description: t('tools.CalcBuildingsUpgrade.description')
-  }
-])
+// 侧边栏工具列表（与 ToolLayout 共用同一数据源）
+const tools = computed(() => getTools())
 
 const goHome = () => router.push('/')
 const switchTool = (tool) => router.push(`/tool/${tool.id}`)

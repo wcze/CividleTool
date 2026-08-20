@@ -98,24 +98,14 @@ import { useRouter, useRoute } from 'vue-router'
 import ToolContainer from '../components/ToolContainer.vue'
 import CalcBuildingsUpgrade from './tools/CalcBuildingsUpgrade.vue'
 import CalcExtraGreatPerson from './tools/CalcExtraGreatPerson.vue'
+import { getTools } from '../data/tools'
 import { t } from '../i18n'
 
 const router = useRouter()
 const route = useRoute()
 
-// 工具列表随语言变化
-const tools = computed(() => [
-    {
-        id: 'CalcBuildingsUpgrade',
-        name: t('tools.CalcBuildingsUpgrade.name'),
-        description: t('tools.CalcBuildingsUpgrade.description')
-    },
-    {
-        id: 'CalcExtraGreatPerson',
-        name: t('tools.CalcExtraGreatPerson.name'),
-        description: t('tools.CalcExtraGreatPerson.description')
-    }
-])
+// 工具列表唯一数据源（随语言变化）
+const tools = computed(() => getTools())
 
 const componentsMap = {
     'CalcBuildingsUpgrade': CalcBuildingsUpgrade,
