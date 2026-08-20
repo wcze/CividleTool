@@ -34,6 +34,10 @@ export default {
     CalcBuildingsUpgrade: {
       name: '建筑升级计算器',
       description: '快速计算建筑升级成本与资源需求'
+    },
+    CalcExtraGreatPerson: {
+      name: '伟人所需帝国价值',
+      description: '计算第 N 个重生额外伟人所需要的帝国价值'
     }
   },
   calcBuildings: {
@@ -67,5 +71,29 @@ export default {
     detailCurrent: '当前',
     detailTarget: '目标',
     detailTime: '耗时'
+  },
+  calcExtraGreatPerson: {
+    title: '伟人所需帝国价值',
+    description: '第 N 个伟人的获取成本 = 64M × N³',
+    countLabel: '需要的额外伟人数量',
+    countPlaceholder: '请输入数量',
+    countHelp: '输入伟人数量，计算该伟人获取所需要的帝国价值',
+    resultTitle: '最终结果',
+    resultLabel: '第 {count} 个伟人的获取所需的帝国价值',
+    tableTitle: '伟人明细',
+    pageInfo: '第 {page} 页',
+    thCount: '伟人数量',
+    thFormula: '计算公式',
+    thCost: '所需帝国价值',
+    formulaCell: '64M × {index}³',
+    prevPage: '上一页',
+    nextPage: '下一页',
+    equivalent: '折合 {amount} 个 {resource}',
+    selectResource: '选择资源'
+  },
+  resourceSelect: {
+    placeholder: '选择资源',
+    searchPlaceholder: '搜索资源...',
+    emptyText: '无匹配资源'
   }
 }

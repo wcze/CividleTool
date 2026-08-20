@@ -1,0 +1,98 @@
+/**
+ * ========================================
+ * 通用大数格式化工具
+ * ========================================
+ *
+ * 供多个工具页面共用（如伟人获取成本、建筑升级等）。
+ *
+ * 默认基础单位是 M（放置文明的资源单位）：
+ *
+ * 1000M = 1B
+ * 1000B = 1T
+ * 1000T = 1Qa
+ * ...
+ *
+ * 如需其他计数体系（如带 K 的普通计数），可传入自定义后缀列表，
+ * 例如 formatNumber(num, ['', 'K', 'M', 'B', 'T', ...])。
+ */
+
+// 默认数字后缀（基础单位 M）
+const DEFAULT_SUFFIXES = ['M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
+
+/**
+ * 格式化大数：按 1000 进位自动选择合适后缀。
+ *
+ * @param {number} value 数值
+ * @param {string[]} [suffixes] 后缀列表（从最低位开始），默认 M/B/T/Qa...
+ * @returns {string} 例如 64 → "64M"，1728 → "1.73B"
+ */
+export function formatNumber(value, suffixes = DEFAULT_SUFFIXES) {
+  if (!Number.isFinite(value)) {
+    return '0' + suffixes[0]
+  }
+
+  if (value === 0) {
+    return '0' + suffixes[0]
+  }
+
+  let displayValue = value
+  let tier = 0
+
+  while (Math.abs(displayValue) >= 1000 && tier < suffixes.length - 1) {
+    displayValue /= 1000
+    tier++
+  }
+
+  return formatDecimal(displayValue) + suffixes[tier]
+}
+
+/**
+ * 小数格式：根据数值大小自适应位数。
+ *
+ * - >= 100：不保留小数
+ * - >= 10：保留 1 位
+ * - 其他：保留 2 位
+ */
+function formatDecimal(value) {
+  if (value >= 100) {
+    return value.toFixed(0)
+  }
+
+  if (value >= 10) {
+    return value.toFixed(1)
+  }
+
+  return value.toFixed(2)
+}
+
+/**
+ * 格式化带千分位分隔的完整数字。
+ *
+ * @param {number} value 数值
+ * @returns {string} 例如 13824000 → "13,824,000"
+ */
+export function formatNumberDetail(value) {
+  if (!Number.isFinite(value)) {
+    return '0'
+  }
+
+  return Math.round(value).toLocaleString('en-US')
+}
+
+/**
+ * 同时展示科学计数法（带后缀）与完整数字。
+ *
+ * 数值以基础单位（默认 M = 百万）传入，故详细数字需乘以基数倍率
+ * 得到真实数值。例如传入 64（即 64M）：
+ *
+ * formatNumberWithDetail(64)
+ *   → "64.0M (64,000,000)"
+ *
+ * @param {number} value 数值（基础单位）
+ * @param {string[]} [suffixes] 后缀列表（从最低位开始），默认 M/B/T/Qa...
+ * @param {number} [baseMultiplier] 基础单位对应的真实数量，默认 1e6（M = 百万）
+ * @returns {string} 例如 64 → "64.0M (64,000,000)"
+ */
+export function formatNumberWithDetail(value, suffixes = DEFAULT_SUFFIXES, baseMultiplier = 1e6) {
+  return `${formatNumber(value, suffixes)} (${formatNumberDetail(value * baseMultiplier)})`
+}

@@ -34,6 +34,10 @@ export default {
     CalcBuildingsUpgrade: {
       name: 'Building Upgrade Calculator',
       description: 'Quickly calculate building upgrade costs and resource requirements'
+    },
+    CalcExtraGreatPerson: {
+      name: 'Great Person Empire Value',
+      description: 'Calculate the empire value needed for the Nth rebirth extra Great Person'
     }
   },
   calcBuildings: {
@@ -67,5 +71,29 @@ export default {
     detailCurrent: 'Current',
     detailTarget: 'Target',
     detailTime: 'Time'
+  },
+  calcExtraGreatPerson: {
+    title: 'Great Person Empire Value',
+    description: 'Cost of the Nth Great Person = 64M × N³',
+    countLabel: 'Extra Great People Needed',
+    countPlaceholder: 'Enter a number',
+    countHelp: 'Enter a number to calculate the empire value needed for that Great Person',
+    resultTitle: 'Final Result',
+    resultLabel: 'Empire Value Needed for Great Person #{count}',
+    tableTitle: 'Great Person Details',
+    pageInfo: 'Page {page}',
+    thCount: 'Great People Count',
+    thFormula: 'Formula',
+    thCost: 'Empire Value Needed',
+    formulaCell: '64M × {index}³',
+    prevPage: 'Previous',
+    nextPage: 'Next',
+    equivalent: '≈ {amount} {resource}',
+    selectResource: 'Select resource'
+  },
+  resourceSelect: {
+    placeholder: 'Select resource',
+    searchPlaceholder: 'Search resource...',
+    emptyText: 'No matching resources'
   }
 }
