@@ -13,11 +13,15 @@ export default {
     projectUrl: 'Project URL'
   },
   home: {
-    subtitle: 'Civilization Idle',
-    toolset: 'Toolset',
-    freeToPlay: 'Free to Play',
+    subtitle: 'CivIdle Assistant Tools',
+    hintDesktop: 'Click a tool in the left menu to start using it',
+    hintMobile: 'Tap the button above to open the menu and pick a tool',
+    quickStart: 'Toolbox',
+    steamSectionTitle: 'About the Game',
+    developer: 'Developed by Fish Pond Studio',
+    freeToPlay: 'Free',
     free: 'Free',
-    visitSteam: 'Visit Steam',
+    visitSteam: 'View Game Details',
     releaseDate: 'Release Date: December 5, 2025',
     tags: 'Idle / Base Building / Automation / History / 4X / Management / Resource Management'
   },
@@ -28,7 +32,7 @@ export default {
   tools: {
     CalcBuildingsUpgrade: {
       name: 'Building Upgrade Calculator',
-      description: 'Calculate the resources needed for building upgrades'
+      description: 'Quickly calculate building upgrade costs and resource requirements'
     }
   },
   calcBuildings: {

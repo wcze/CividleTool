@@ -18,51 +18,70 @@
                         <div class="home-icon">
                             <img :src="iconUrl" alt="CivIdle" />
                         </div>
-                        <h1>CivIdle <span>Tool</span></h1>
-                        <p class="home-subtitle">
-                            <span>{{ t('home.subtitle') }}</span>{{ t('home.toolset') }}
-                        </p>
+                        <h1>CivIdle <span>Tools</span></h1>
+                        <p class="home-subtitle">{{ t('home.subtitle') }}</p>
                     </div>
 
-                    <!-- ===== Steam 风格游戏卡片 ===== -->
-                    <div class="steam-card">
-                        <div class="steam-card-inner">
-                            <!-- 左侧：封面图 -->
-                            <div class="steam-cover">
-                                <img v-if="gameCover" :src="gameCover" alt="CivIdle" class="cover-image" />
-                                <div v-else class="cover-placeholder">
-                                    <span>🎮</span>
-                                </div>
+                    <!-- ===== 使用引导（单行提示） ===== -->
+                    <p class="home-hint">
+                        <span class="hint-desktop">{{ t('home.hintDesktop') }}</span>
+                        <span class="hint-mobile">{{ t('home.hintMobile') }}</span>
+                    </p>
+
+                    <!-- ===== 快捷工具 ===== -->
+                    <div class="home-tools-preview">
+                        <div class="home-tools-title">{{ t('home.quickStart') }}</div>
+                        <div v-for="tool in tools" :key="tool.id" class="home-tool-card" @click="switchTool(tool)">
+                            <div class="home-tool-info">
+                                <h3>{{ tool.name }}</h3>
+                                <p>{{ tool.description }}</p>
                             </div>
-
-                            <!-- 右侧：游戏信息 -->
-                            <div class="steam-info">
-                                <div class="steam-title-row">
-                                    <h2 class="steam-title">CivIdle</h2>
-                                    <span class="steam-tag">{{ t('home.freeToPlay') }}</span>
-                                </div>
-
-                                <p class="steam-desc">
-                                    Fish Pond Studio
-                                </p>
-
-                                <div class="steam-rating-row">
-                                    <span class="steam-price">{{ t('home.free') }}</span>
-                                </div>
-
-                                <div class="steam-actions">
-                                    <a :href="gameUrl" target="_blank" rel="noopener noreferrer"
-                                        class="steam-btn primary">
-                                        {{ t('home.visitSteam') }}
-                                    </a>
-                                </div>
-                            </div>
+                            <span class="home-tool-arrow">→</span>
                         </div>
+                    </div>
 
-                        <!-- Steam 底部信息 -->
-                        <div class="steam-footer">
-                            <span>{{ t('home.releaseDate') }}</span>
-                            <span>{{ t('home.tags') }}</span>
+                    <!-- ===== 游戏信息 ===== -->
+                    <div class="steam-section">
+                        <div class="steam-section-title">{{ t('home.steamSectionTitle') }}</div>
+                        <div class="steam-card">
+                            <div class="steam-card-inner">
+                                <!-- 左侧：封面图 -->
+                                <div class="steam-cover">
+                                    <img v-if="gameCover" :src="gameCover" alt="CivIdle" class="cover-image" />
+                                    <div v-else class="cover-placeholder">
+                                        <span>🎮</span>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：游戏信息 -->
+                                <div class="steam-info">
+                                    <div class="steam-title-row">
+                                        <h2 class="steam-title">CivIdle</h2>
+                                        <span class="steam-tag">{{ t('home.freeToPlay') }}</span>
+                                    </div>
+
+                                    <p class="steam-desc">
+                                        {{ t('home.developer') }}
+                                    </p>
+
+                                    <div class="steam-rating-row">
+                                        <span class="steam-price">{{ t('home.free') }}</span>
+                                    </div>
+
+                                    <div class="steam-actions">
+                                        <a :href="gameUrl" target="_blank" rel="noopener noreferrer"
+                                            class="steam-btn primary">
+                                            {{ t('home.visitSteam') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Steam 底部信息 -->
+                            <div class="steam-footer">
+                                <span>{{ t('home.releaseDate') }}</span>
+                                <span>{{ t('home.tags') }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,9 +154,7 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    padding: 40px 20px;
+    padding: 48px 20px;
 }
 
 .home-hero {
@@ -189,20 +206,16 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 .steam-card {
     width: 100%;
     max-width: 700px;
-    background: #1a1a2e;
-    /* Steam 深色背景 */
-    border-radius: 4px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 32px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    font-family: 'Motiva Sans', 'Segoe UI', Arial, sans-serif;
 }
 
 .steam-card-inner {
     display: flex;
     gap: 0;
     padding: 12px;
-    background: #1a1a2e;
 }
 
 /* ===== 封面图（Steam 风格） ===== */
@@ -210,10 +223,10 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     flex-shrink: 0;
     width: 200px;
     height: 113px;
-    border-radius: 2px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
-    background: #0d0d1a;
+    background: var(--bg-soft);
     cursor: pointer;
 }
 
@@ -229,7 +242,7 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+    background: var(--bg-soft);
     font-size: 2.5rem;
 }
 
@@ -253,26 +266,25 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 
 .steam-title {
     font-size: 1.15rem;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 600;
+    color: var(--text-1);
     letter-spacing: 0.5px;
 }
 
 .steam-tag {
-    font-size: 0.6rem;
-    font-weight: 400;
-    color: #a4d007;
-    background: rgba(164, 208, 7, 0.12);
-    padding: 1px 10px;
-    border-radius: 2px;
-    border: 1px solid rgba(164, 208, 7, 0.2);
-    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--success);
+    background: rgba(48, 164, 108, 0.08);
+    padding: 2px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(48, 164, 108, 0.2);
     letter-spacing: 0.5px;
 }
 
 .steam-desc {
     font-size: 0.85rem;
-    color: #8f98a0;
+    color: var(--text-2);
     margin: 6px 0 8px;
     line-height: 1.4;
 }
@@ -280,7 +292,7 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 .steam-price {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #a4d007;
+    color: var(--text-1);
     margin-left: 6px;
 }
 
@@ -292,9 +304,9 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 }
 
 .steam-btn {
-    padding: 6px 18px;
-    border-radius: 2px;
-    font-size: 0.8rem;
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 0.82rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -307,39 +319,38 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
 }
 
 .steam-btn.primary {
-    background: linear-gradient(to bottom, #75b022 5%, #5c8e1b 95%);
+    background: var(--accent);
     color: #fff;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .steam-btn.primary:hover {
-    background: linear-gradient(to bottom, #8cc43a 5%, #6ca02a 95%);
+    background: var(--accent-strong);
 }
 
 .steam-btn.primary:active {
-    background: linear-gradient(to bottom, #4f7a17 5%, #5c8e1b 95%);
+    background: var(--accent-strong);
 }
 
 .steam-btn.secondary {
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #fff;
+    color: var(--text-1);
+    border: 1px solid var(--border);
 }
 
 .steam-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.25);
+    background: var(--bg-soft);
+    border-color: var(--text-3);
 }
 
 /* ===== Steam 底部信息 ===== */
 .steam-footer {
     display: flex;
     gap: 24px;
-    padding: 8px 16px 10px 16px;
-    background: #131320;
-    border-top: 1px solid #1f1f3a;
-    font-size: 0.7rem;
-    color: #6b7a8f;
+    padding: 10px 16px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: var(--text-3);
     flex-wrap: wrap;
 }
 
@@ -349,13 +360,65 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     gap: 4px;
 }
 
+/* ===== 游戏信息区 ===== */
+.steam-section {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 32px;
+    margin-top: 48px;
+}
+
+.steam-section .steam-card {
+    margin-bottom: 0;
+}
+
+.steam-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* ===== 使用引导（单行提示） ===== */
+.home-hint {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 0 24px;
+    font-size: 0.85rem;
+    color: var(--text-3);
+    text-align: left;
+}
+
+.hint-mobile {
+    display: none;
+}
+
+/* 移动端：侧边栏变为顶部按钮打开，引导文案同步切换 */
+@media (max-width: 768px) {
+    .hint-mobile {
+        display: inline;
+    }
+
+    .hint-desktop {
+        display: none;
+    }
+}
+
 /* ===== 工具列表 ===== */
 .home-tools-preview {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    max-width: 480px;
+    max-width: 700px;
+}
+
+.home-tools-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-1);
+    margin-bottom: 2px;
 }
 
 .home-tool-card {
@@ -374,11 +437,6 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     border-color: #4a90d9;
     box-shadow: 0 4px 16px rgba(74, 144, 217, 0.08);
     transform: translateX(4px);
-}
-
-.home-tool-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
 }
 
 .home-tool-info {
@@ -407,7 +465,7 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
     transform: translateX(4px);
 }
 
-.steam-rating-row{
+.steam-rating-row {
     margin-bottom: 6px;
 }
 
@@ -468,8 +526,12 @@ const gameUrl = 'https://store.steampowered.com/app/2181940/_/'
         max-width: 100%;
     }
 
-    .steam-card {
+    .steam-section {
         margin-bottom: 24px;
+    }
+
+    .steam-section .steam-card {
+        margin-bottom: 0;
     }
 }
 

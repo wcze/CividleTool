@@ -13,11 +13,15 @@ export default {
     projectUrl: '项目地址'
   },
   home: {
-    subtitle: '放置文明',
-    toolset: '工具集',
+    subtitle: 'CivIdle 工具集',
+    hintDesktop: '点击左侧菜单中的工具开始使用',
+    hintMobile: '点击上方按钮打开菜单，选择工具',
+    quickStart: '工具箱',
+    steamSectionTitle: '关于游戏',
+    developer: 'Fish Pond Studio 开发',
     freeToPlay: '免费游戏',
     free: '免费',
-    visitSteam: '前往 Steam',
+    visitSteam: '查看游戏详情',
     releaseDate: '发行日期：2025 年 12 月 5 日',
     tags: '挂机游戏 / 基地建设 / 自动化 / 历史 / 4X / 管理 / 资源管理'
   },
@@ -28,7 +32,7 @@ export default {
   tools: {
     CalcBuildingsUpgrade: {
       name: '建筑升级计算器',
-      description: '计算建筑升级所需资源'
+      description: '快速计算建筑升级成本与资源需求'
     }
   },
   calcBuildings: {
