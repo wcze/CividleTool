@@ -36,7 +36,10 @@
     <div v-if="selectedBuilding" class="calculator-panel">
       <div class="calculator-header">
         <div class="calc-title">
-          <span class="calc-icon">🏛️</span>
+          <span class="building-icon calc-icon">
+            <span v-if="selectedBuilding.spriteStyle" class="sprite" :style="selectedBuilding.spriteStyle"></span>
+            <span v-else class="icon-fallback">🏗️</span>
+          </span>
           <h2>{{ selectedBuilding.building }}</h2>
           <span class="mult-badge-lg">{{ t('calcBuildings.multiplier') }} ×{{ selectedBuilding.mult }}</span>
         </div>
@@ -133,7 +136,13 @@
         @click="selectBuilding(item)"
       >
         <div class="card-header">
-          <span class="building-name">{{ item.building }}</span>
+          <div class="building-title">
+            <span class="building-icon">
+              <span v-if="item.spriteStyle" class="sprite" :style="item.spriteStyle"></span>
+              <span v-else class="icon-fallback">🏗️</span>
+            </span>
+            <span class="building-name">{{ item.building }}</span>
+          </div>
           <span class="mult-badge">×{{ item.mult }}</span>
         </div>
 
@@ -164,18 +173,59 @@
 <script setup>
 import { ref, computed, nextTick } from 'vue'
 import buildingsData from '@/data/buildings.json'
+import texturesData from '@/data/textures_building.json'
+import spriteImage from '@/assets/textures_building.png'
 import { t, tGame } from '@/i18n'
+
+// ===== 建筑贴图（雪碧图） =====
+// textures_building.json 中的键名形如 Building_StoneQuarry，
+// buildings.json 中是 StoneQuarry，需要自己补上 Building_ 前缀。
+// 个别建筑名与贴图键名不一致，通过别名映射修正。
+const BUILDING_FRAME_ALIASES = {
+  StatisticsOffice: 'Statistics',
+  YearOfTheSnakeV2: 'YearOfTheSnake'
+}
+
+// 图标显示尺寸（px）
+const ICON_SIZE = 48
+
+// 根据建筑名获取贴图 frame（{ x, y, w, h }），找不到返回 null
+function getFrame(buildingKey) {
+  const key = BUILDING_FRAME_ALIASES[buildingKey] || buildingKey
+  return texturesData.frames[`Building_${key}`]?.frame || null
+}
+
+// 生成雪碧图遮罩样式：把 PNG 作为 mask，再填充颜色实现单色图标
+function getSpriteStyle(buildingKey) {
+  const frame = getFrame(buildingKey)
+  if (!frame) return null
+  const scale = Math.min(ICON_SIZE / frame.w, ICON_SIZE / frame.h)
+  return {
+    width: `${frame.w}px`,
+    height: `${frame.h}px`,
+    transform: `translate(-50%, -50%) scale(${scale})`,
+    // 通过 CSS 变量传递雪碧图遮罩参数（供 .sprite 及其伪元素加粗层使用）
+    '--mask-image': `url(${spriteImage})`,
+    '--mask-position': `-${frame.x}px -${frame.y}px`
+  }
+}
 
 // 建筑数据：建筑名 / 资源名按当前语言翻译（中文使用游戏内本地化数据）
 const buildings = computed(() =>
-  buildingsData.map((b) => ({
-    ...b,
-    building: tGame(b.building),
-    build_resources: b.build_resources.map((r) => ({
-      ...r,
-      resource: tGame(r.resource)
-    }))
-  }))
+  buildingsData.map((b) => {
+    const item = {
+      ...b,
+      buildingKey: b.building,
+      building: tGame(b.building),
+      build_resources: b.build_resources.map((r) => ({
+        ...r,
+        resource: tGame(r.resource)
+      }))
+    }
+    // 预计算贴图样式，模板中直接使用
+    item.spriteStyle = getSpriteStyle(item.buildingKey)
+    return item
+  })
 )
 const keyword = ref('')
 const selectedBuilding = ref(null)
@@ -411,7 +461,8 @@ const formatNumber = (num) => {
 }
 
 .calc-icon {
-  font-size: 1.4rem;
+  width: 56px;
+  height: 56px;
 }
 
 .calculator-header h2 {
@@ -642,6 +693,72 @@ const formatNumber = (num) => {
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid #f0f4fa;
+  gap: 12px;
+}
+
+.building-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.building-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #f0f5fe;
+  border: 1px solid #dce6f2;
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 图标颜色：在此处统一修改即可 */
+  --icon-color: #102122;
+}
+
+/* 使用 mask 把雪碧图作为遮罩，再填充颜色，实现单色图标 */
+.building-icon .sprite {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  background-color: var(--icon-color);
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+  -webkit-mask-position: var(--mask-position);
+  mask-position: var(--mask-position);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: auto;
+  mask-size: auto;
+  image-rendering: pixelated;
+}
+
+/* 伪元素作为“加粗层”：轻微偏移制造厚度 */
+.building-icon .sprite::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: var(--mask-image);
+  mask-image: var(--mask-image);
+  -webkit-mask-position: var(--mask-position);
+  mask-position: var(--mask-position);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: auto;
+  mask-size: auto;
+  background-color: var(--icon-color);
+  transform: translate(1px, 1px);
+  z-index: -1;
+}
+
+.icon-fallback {
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 .building-name {
