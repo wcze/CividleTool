@@ -65,13 +65,15 @@ import { t, tGame } from '@/i18n'
  *
  * props：
  * - sortOrder: 'asc'（价格从小到大，默认）| 'desc'（价格从大到小）
+ * - allowKeys: 可选，资源 key 数组，传入后仅显示这些资源（默认显示 prices.json 全部）
  */
 
 const props = defineProps({
   placeholder: { type: String, default: '' },
   searchPlaceholder: { type: String, default: '' },
   emptyText: { type: String, default: '' },
-  sortOrder: { type: String, default: 'asc' }
+  sortOrder: { type: String, default: 'asc' },
+  allowKeys: { type: Array, default: null }
 })
 
 // v-model 绑定选中的资源 key
@@ -87,17 +89,23 @@ const searchPlaceholderText = computed(() => props.searchPlaceholder || t('resou
 const emptyText = computed(() => props.emptyText || t('resourceSelect.emptyText'))
 
 // 全部资源：key / 翻译名 / 价格，按价格排序（asc 从小到大 / desc 从大到小）
-const resources = computed(() =>
-  Object.keys(prices)
+// 传入 allowKeys 时仅显示这些资源，否则显示 prices.json 全部
+const resources = computed(() => {
+  const keys =
+    Array.isArray(props.allowKeys) && props.allowKeys.length
+      ? props.allowKeys
+      : Object.keys(prices)
+
+  return keys
     .map((key) => ({
       key,
       name: tGame(key),
-      price: prices[key]
+      price: prices[key] ?? 0
     }))
     .sort((a, b) =>
       props.sortOrder === 'desc' ? b.price - a.price : a.price - b.price
     )
-)
+})
 
 // 按关键词过滤（匹配翻译名或原始 key）
 const filteredResources = computed(() => {

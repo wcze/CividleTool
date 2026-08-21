@@ -101,6 +101,7 @@ import ToolContainer from '../components/ToolContainer.vue'
 import CalcBuildingsUpgrade from './tools/CalcBuildingsUpgrade.vue'
 import CalcExtraGreatPerson from './tools/CalcExtraGreatPerson.vue'
 import FreeCivilization from './tools/FreeCivilization.vue'
+import MarketQuery from './tools/MarketQuery.vue'
 import { getTools } from '../data/tools'
 import { t } from '../i18n'
 
@@ -113,7 +114,8 @@ const tools = computed(() => getTools())
 const componentsMap = {
     'CalcBuildingsUpgrade': CalcBuildingsUpgrade,
     'CalcExtraGreatPerson': CalcExtraGreatPerson,
-    'FreeCivilization': FreeCivilization
+    'FreeCivilization': FreeCivilization,
+    'MarketQuery': MarketQuery
 }
 
 const currentToolId = computed(() => route.params.id)

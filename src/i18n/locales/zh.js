@@ -43,6 +43,10 @@ export default {
     FreeCivilization: {
       name: '周免文明查询',
       description: '查看每周免费游玩的文明列表'
+    },
+    MarketQuery: {
+      name: '集市查询',
+      description: '上传存档，查看市集交易'
     }
   },
   calcBuildings: {
@@ -145,5 +149,52 @@ export default {
     statusUpcoming: '即将开始',
     emptyTitle: '暂无文明数据',
     emptyDesc: '当前 civilization.json 中没有可用的文明数据。'
+  },
+  marketQuery: {
+    uploadTitle: '上传存档',
+    helpTitle: '使用提示',
+    helpSaveFolder: '存档位于 %AppData%\\Roaming\\CivIdleSaves\\{steamid}\\CivIdle，可在游戏内右上角「帮助 → 关于放置文明 → 打开存档文件夹」打开。',
+    helpTechNote: '当您解锁新科技时交易列表会发生变化，市集交易内容会改变，请以实际为准。',
+    uploadButton: '选择存档文件',
+    dropZoneTitle: '点击选择文件，或将存档拖入此处',
+    dropZoneHint: '可直接将存档文件拖拽到卡片任意位置',
+    dropHint: '拖到此处释放鼠标上传',
+    parsing: '正在解析...',
+    uploaded: '已上传并解析成功',
+    parseError: '解压或解析失败',
+    lastUpload: '上次上传时间：{time}',
+    privacyTitle: '隐私说明',
+    privacyNoteBefore: '本功能仅在你的浏览器本地读取存档，不会将任何数据上传或保存到服务器，可放心使用。本项目已',
+    privacyOpenSource: '开源',
+    privacyNoteAfter: '，你也可以离线使用；如仍有顾虑，建议停止使用此功能。',
+    techsCount: '已解锁科技：{count}',
+    resourcesCount: '参与交易的资源：{count}',
+    tabTime: '按时间查询',
+    tabResource: '按资源名称查询',
+    dateLabel: '日期',
+    prevDay: '前一天',
+    nextDay: '后一天',
+    hourLabel: '时间',
+    filterResourceLabel: '筛选资源',
+    clearFilter: '清除筛选',
+    trackModeLabel: '查看方式',
+    trackModeSell: '按出售查看',
+    trackModeBuy: '按获得查看',
+    resourceLabel: '选择资源',
+    resourcePlaceholder: '请选择资源',
+    prevPage: '上一页',
+    nextPage: '下一页',
+    pageRange: '{start} ~ {end}',
+    backToCurrent: '回到当前时段',
+    thIndex: '#',
+    thSell: '出售',
+    thBuy: '获得',
+    thHour: '时间',
+    thTrade: '交易',
+    currentBadge: '当前',
+    emptyTrackTitle: '请选择资源',
+    emptyTrackDesc: '选择出售项或获得项，即可查看该资源每个小时的交易对象。',
+    noSaveTitle: '尚未上传存档',
+    noSaveDesc: '请先在上方上传 CivIdle 存档文件，即可查看市集交易。'
   }
 }

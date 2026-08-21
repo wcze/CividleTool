@@ -43,6 +43,10 @@ export default {
     FreeCivilization: {
       name: 'Free Civilization Rotation',
       description: 'Check the weekly free civilization rotation schedule'
+    },
+    MarketQuery: {
+      name: 'Market Query',
+      description: 'Upload a save to view market trades'
     }
   },
   calcBuildings: {
@@ -145,5 +149,52 @@ export default {
     statusUpcoming: 'Upcoming',
     emptyTitle: 'No civilization data',
     emptyDesc: 'No civilization data available in civilization.json.'
+  },
+  marketQuery: {
+    uploadTitle: 'Upload Save',
+    helpTitle: 'Tips',
+    helpSaveFolder: 'Your save is at %AppData%\\Roaming\\CivIdleSaves\\{steamid}\\CivIdle. Open it in-game via Help → About CivIdle → Open Save Folder.',
+    helpTechNote: 'The trade list changes when you unlock new techs. Please refer to the actual in-game state.',
+    uploadButton: 'Choose save file',
+    dropZoneTitle: 'Click to choose a file, or drag & drop it here',
+    dropZoneHint: 'You can also drag your save file anywhere onto the card',
+    dropHint: 'Drop your save file here to upload',
+    parsing: 'Parsing...',
+    uploaded: 'Uploaded & parsed',
+    parseError: 'Decompress or parse failed',
+    lastUpload: 'Last upload: {time}',
+    privacyTitle: 'Privacy',
+    privacyNoteBefore: 'This feature reads your save locally in your browser only. No data is uploaded to or stored on any server. This project is ',
+    privacyOpenSource: 'open source',
+    privacyNoteAfter: ' and can be used offline; if you still have concerns, please refrain from using it.',
+    techsCount: 'Unlocked techs: {count}',
+    resourcesCount: 'Tradable resources: {count}',
+    tabTime: 'Query by Time',
+    tabResource: 'Query by Resource',
+    dateLabel: 'Date',
+    prevDay: 'Prev day',
+    nextDay: 'Next day',
+    hourLabel: 'Hour',
+    filterResourceLabel: 'Filter resource',
+    clearFilter: 'Clear',
+    trackModeLabel: 'Mode',
+    trackModeSell: 'View by sell',
+    trackModeBuy: 'View by buy',
+    resourceLabel: 'Resource',
+    resourcePlaceholder: 'Choose a resource',
+    prevPage: 'Previous',
+    nextPage: 'Next',
+    pageRange: '{start} ~ {end}',
+    backToCurrent: 'Back to current hour',
+    thIndex: '#',
+    thSell: 'Sell',
+    thBuy: 'Buy',
+    thHour: 'Time',
+    thTrade: 'Trade',
+    currentBadge: 'Now',
+    emptyTrackTitle: 'Choose a resource',
+    emptyTrackDesc: 'Pick a sell or buy item to see its trade partner hour by hour.',
+    noSaveTitle: 'No save uploaded',
+    noSaveDesc: 'Upload a CivIdle save file above to view market trades.'
   }
 }
