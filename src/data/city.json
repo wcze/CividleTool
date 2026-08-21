@@ -1,0 +1,574 @@
+[
+  {
+    "id": "Rome",
+    "name": "Roman",
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.02,
+      "Iron": 0.02,
+      "Wood": 0.02,
+      "Stone": 0.02,
+      "Gold": 0.02,
+      "Coal": 0.02,
+      "Oil": 0.02,
+      "Aluminum": 0.02,
+      "NaturalGas": 0.02,
+      "Uranium": 0.02
+    },
+    "size": 40,
+    "sizeOld": 40,
+    "headquarter": "RomanForum",
+    "uniqueBuildings": {
+      "CircusMaximus": "CivilService",
+      "Colosseum": "Theater"
+    },
+    "naturalWonders": [
+      "Alps",
+      "GrottaAzzurra"
+    ],
+    "requireGreatPeopleLevel": 0,
+    "requireSupporterPack": true,
+    "festivalDesc": "SaturnaliaV2"
+  },
+  {
+    "id": "Athens",
+    "name": "Greek",
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.03,
+      "Iron": 0.01,
+      "Wood": 0.01,
+      "Stone": 0.04,
+      "Gold": 0.01,
+      "Coal": 0.03,
+      "Oil": 0.02,
+      "Aluminum": 0.02,
+      "NaturalGas": 0.03,
+      "Uranium": 0.01
+    },
+    "size": 40,
+    "headquarter": "Acropolis",
+    "uniqueBuildings": {
+      "StatueOfZeus": "Theater",
+      "Parthenon": "Democracy"
+    },
+    "naturalWonders": [
+      "Aphrodite",
+      "Poseidon"
+    ],
+    "requireGreatPeopleLevel": 5,
+    "requireSupporterPack": true,
+    "festivalDesc": "Panathenaea"
+  },
+  {
+    "id": "Memphis",
+    "name": "Egyptian",
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.01,
+      "Iron": 0.025,
+      "Wood": 0.025,
+      "Stone": 0.025,
+      "Gold": 0.025,
+      "Coal": 0.025,
+      "Oil": 0.01,
+      "Aluminum": 0.025,
+      "NaturalGas": 0.015,
+      "Uranium": 0.025
+    },
+    "size": 40,
+    "sizeOld": 50,
+    "headquarter": "TempleOfPtah",
+    "uniqueBuildings": {
+      "AbuSimbel": "Housing",
+      "GreatSphinx": "Arithmetic"
+    },
+    "naturalWonders": [
+      "NileRiver",
+      "MountSinai"
+    ],
+    "requireGreatPeopleLevel": 10,
+    "requireSupporterPack": true,
+    "festivalDesc": "OpetV3"
+  },
+  {
+    "id": "Beijing",
+    "name": "Chinese",
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.02,
+      "Iron": 0.03,
+      "Wood": 0.01,
+      "Stone": 0.02,
+      "Gold": 0.03,
+      "Coal": 0.01,
+      "Oil": 0.02,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.01,
+      "Uranium": 0.03
+    },
+    "size": 50,
+    "headquarter": "HallOfSupremeHarmony",
+    "uniqueBuildings": {
+      "GreatWall": "LandTrade",
+      "YellowCraneTower": "Geography",
+      "PorcelainTower": "Banking"
+    },
+    "naturalWonders": [
+      "MountTai",
+      "YangtzeRiver"
+    ],
+    "requireGreatPeopleLevel": 15,
+    "requireSupporterPack": true,
+    "festivalDesc": "LunarNewYearV2"
+  },
+  {
+    "id": "NewYork",
+    "name": "American",
+    "deposits": {
+      "Water": 0.03,
+      "Copper": 0.03,
+      "Iron": 0.03,
+      "Wood": 0.03,
+      "Stone": 0.03,
+      "Gold": 0.03,
+      "Coal": 0.03,
+      "Oil": 0.03,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.03,
+      "Uranium": 0.03
+    },
+    "size": 50,
+    "sizeOld": 30,
+    "headquarter": "TheWhiteHouse",
+    "uniqueBuildings": {
+      "Broadway": "Railway",
+      "WallStreet": "Capitalism",
+      "TheMet": "RapidFire",
+      "ResearchFund": "UnitedNations"
+    },
+    "naturalWonders": [
+      "Shenandoah",
+      "NiagaraFalls"
+    ],
+    "requireGreatPeopleLevel": 20,
+    "requireSupporterPack": true,
+    "festivalDesc": "Thanksgiving"
+  },
+  {
+    "id": "Babylon",
+    "name": "Babylonian",
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.025,
+      "Iron": 0.03,
+      "Wood": 0.025,
+      "Stone": 0.03,
+      "Gold": 0.01,
+      "Coal": 0.025,
+      "Oil": 0.03,
+      "Aluminum": 0.025,
+      "NaturalGas": 0.025,
+      "Uranium": 0.01
+    },
+    "size": 40,
+    "sizeOld": 35,
+    "headquarter": "Babylonian",
+    "uniqueBuildings": {
+      "WallOfBabylon": "LandTrade",
+      "TowerOfBabel": "Religion",
+      "ZigguratOfUr": "Theater"
+    },
+    "naturalWonders": [
+      "EuphratesRiver",
+      "ZagrosMountains"
+    ],
+    "requireGreatPeopleLevel": 30,
+    "requireSupporterPack": true,
+    "festivalDesc": "Akitu"
+  },
+  {
+    "id": "Kyoto",
+    "name": "Japanese",
+    "deposits": {
+      "Water": 0.03,
+      "Copper": 0.025,
+      "Iron": 0.025,
+      "Wood": 0.03,
+      "Stone": 0.03,
+      "Gold": 0.025,
+      "Coal": 0.01,
+      "Oil": 0.01,
+      "Aluminum": 0.025,
+      "NaturalGas": 0.01,
+      "Uranium": 0.025
+    },
+    "size": 40,
+    "sizeOld": 35,
+    "headquarter": "ImperialPalace",
+    "uniqueBuildings": {
+      "ItsukushimaShrine": "Religion",
+      "GoldenPavilion": "Theocracy",
+      "OsakaCastle": "Electricity"
+    },
+    "naturalWonders": [
+      "Kanagawa",
+      "MountFuji"
+    ],
+    "requireGreatPeopleLevel": 40,
+    "requireSupporterPack": true,
+    "festivalDesc": "AoiMatsuri"
+  },
+  {
+    "id": "German",
+    "name": "German",
+    "deposits": {
+      "Water": 0.025,
+      "Copper": 0.025,
+      "Iron": 0.025,
+      "Wood": 0.01,
+      "Stone": 0.03,
+      "Gold": 0.025,
+      "Coal": 0.035,
+      "Oil": 0.025,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.02,
+      "Uranium": 0.015
+    },
+    "size": 40,
+    "headquarter": "Reichstag",
+    "uniqueBuildings": {
+      "CologneCathedral": "HolyEmpire",
+      "Elbphilharmonie": "Skyscraper"
+    },
+    "naturalWonders": [
+      "Zugspitze",
+      "RhineGorge",
+      "BlackForest"
+    ],
+    "requireGreatPeopleLevel": 50,
+    "requireSupporterPack": true,
+    "festivalDesc": "Oktoberfest"
+  },
+  {
+    "id": "English",
+    "name": "English",
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.03,
+      "Iron": 0.025,
+      "Wood": 0.03,
+      "Stone": 0.03,
+      "Gold": 0.02,
+      "Coal": 0.02,
+      "Oil": 0.02,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.03,
+      "Uranium": 0.02
+    },
+    "size": 40,
+    "headquarter": "Westminster",
+    "uniqueBuildings": {
+      "BritishMuseum": "Combustion",
+      "CambridgeUniversity": "Enlightenment",
+      "TowerBridge": "Electricity",
+      "EastIndiaCompany": "PrivateOwnership"
+    },
+    "naturalWonders": [
+      "CerneAbbasGiant"
+    ],
+    "requireGreatPeopleLevel": 60,
+    "requireSupporterPack": true,
+    "festivalDesc": "GuyFawkesNightV2"
+  },
+  {
+    "id": "French",
+    "name": "French",
+    "deposits": {
+      "Water": 0.03,
+      "Copper": 0.02,
+      "Iron": 0.025,
+      "Wood": 0.02,
+      "Stone": 0.02,
+      "Gold": 0.01,
+      "Coal": 0.03,
+      "Oil": 0.04,
+      "Aluminum": 0.02,
+      "NaturalGas": 0.03,
+      "Uranium": 0.03
+    },
+    "size": 40,
+    "sizeOld": 50,
+    "headquarter": "ElyseePalace",
+    "uniqueBuildings": {
+      "ArcDeTriomphe": "Electricity",
+      "MontSaintMichel": "Revolution",
+      "Louvre": "Railway",
+      "CentrePompidou": "Software"
+    },
+    "naturalWonders": [
+      "DuneOfPilat"
+    ],
+    "requireGreatPeopleLevel": 70,
+    "requireSupporterPack": true,
+    "festivalDesc": "BastilleDay"
+  },
+  {
+    "id": "Ottoman",
+    "name": "Ottoman",
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.03,
+      "Iron": 0.03,
+      "Wood": 0.02,
+      "Stone": 0.02,
+      "Gold": 0.03,
+      "Coal": 0.01,
+      "Oil": 0.02,
+      "Aluminum": 0.04,
+      "NaturalGas": 0.01,
+      "Uranium": 0.04
+    },
+    "size": 50,
+    "headquarter": "DolmabahcePalace",
+    "uniqueBuildings": {
+      "Penthouse": "FinancialLeverage",
+      "BlueMosque": "Exploration",
+      "TopkapiPalace": "Aviation"
+    },
+    "naturalWonders": [
+      "Cappadocia",
+      "MountArarat",
+      "Pamukkale"
+    ],
+    "requireGreatPeopleLevel": 80,
+    "requireSupporterPack": true,
+    "festivalDesc": "Culus"
+  },
+  {
+    "id": "Brazilian",
+    "name": "Brazilian",
+    "deposits": {
+      "Water": 0.04,
+      "Copper": 0.01,
+      "Iron": 0.04,
+      "Wood": 0.04,
+      "Stone": 0.01,
+      "Gold": 0.01,
+      "Coal": 0.01,
+      "Oil": 0.04,
+      "Aluminum": 0.04,
+      "NaturalGas": 0.01,
+      "Uranium": 0.025
+    },
+    "size": 50,
+    "headquarter": "Brasilia",
+    "uniqueBuildings": {
+      "ItaipuDam": "Hydroelectricity",
+      "CathedralOfBrasilia": "Aviation"
+    },
+    "naturalWonders": [
+      "Capybara",
+      "GiantOtter",
+      "Hoatzin",
+      "RoyalFlycatcher",
+      "GlassFrog",
+      "PygmyMarmoset"
+    ],
+    "requireGreatPeopleLevel": 90,
+    "requireSupporterPack": true,
+    "festivalDesc": "Carnival"
+  },
+  {
+    "id": "Indian",
+    "name": "Indian",
+    "deposits": {
+      "Water": 0.03,
+      "Copper": 0.02,
+      "Iron": 0.03,
+      "Wood": 0.02,
+      "Stone": 0.025,
+      "Gold": 0.025,
+      "Coal": 0.04,
+      "Oil": 0.01,
+      "Aluminum": 0.025,
+      "NaturalGas": 0.04,
+      "Uranium": 0.01
+    },
+    "size": 45,
+    "sizeOld": 40,
+    "headquarter": "RashtrapatiBhavan",
+    "uniqueBuildings": {
+      "RedFort": "RapidFire",
+      "SanchiStupa": "Physics",
+      "QutbMinar": "Banking"
+    },
+    "naturalWonders": [
+      "GangesRiver",
+      "Sundarbans"
+    ],
+    "requireGreatPeopleLevel": 100,
+    "requireSupporterPack": true,
+    "festivalDesc": "DiwaliV2"
+  },
+  {
+    "id": "Australian",
+    "name": "Australian",
+    "deposits": {
+      "Water": 0.01,
+      "Copper": 0.01,
+      "Iron": 0.05,
+      "Wood": 0.04,
+      "Stone": 0.02,
+      "Gold": 0.02,
+      "Coal": 0.01,
+      "Oil": 0.03,
+      "Aluminum": 0.01,
+      "NaturalGas": 0.01,
+      "Uranium": 0.01
+    },
+    "size": 45,
+    "headquarter": "CanberraParliamentHouse",
+    "uniqueBuildings": {
+      "FusionFuelPlant": "Software",
+      "FusionPowerPlant": "Genetics",
+      "SydneyOperaHouse": "Television",
+      "SydneyHarbourBridge": "Hydroelectricity",
+      "GreatOceanRoad": "Rocketry"
+    },
+    "naturalWonders": [
+      "GreatBarrierReef",
+      "Uluru"
+    ],
+    "requireGreatPeopleLevel": 110,
+    "requireSupporterPack": true,
+    "festivalDesc": "Moomba",
+    "uniqueEffects": [
+      "AustralianUniqueEffectHTML"
+    ]
+  },
+  {
+    "id": "Russian",
+    "name": "Russian",
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.01,
+      "Iron": 0.01,
+      "Wood": 0.04,
+      "Stone": 0.02,
+      "Gold": 0.02,
+      "Coal": 0.01,
+      "Oil": 0.03,
+      "Aluminum": 0.01,
+      "NaturalGas": 0.04,
+      "Uranium": 0.01
+    },
+    "size": 50,
+    "headquarter": "Kremlin",
+    "uniqueBuildings": {
+      "Cosmodrome": "SpaceProgram",
+      "KizhiPogost": "Alloy",
+      "Hermitage": "Journalism",
+      "Sputnik1": "Satellite",
+      "AkademikLomonosov": "Genetics"
+    },
+    "naturalWonders": [
+      "LakeBaikal"
+    ],
+    "requireGreatPeopleLevel": 120,
+    "requireSupporterPack": true,
+    "festivalDesc": "Maslenitsa"
+  },
+  {
+    "id": "Canadian",
+    "name": "Canadian",
+    "deposits": {
+      "Water": 0.02,
+      "Copper": 0.01,
+      "Iron": 0.025,
+      "Wood": 0.04,
+      "Stone": 0.025,
+      "Gold": 0.01,
+      "Coal": 0.01,
+      "Oil": 0.01,
+      "Aluminum": 0.01,
+      "NaturalGas": 0.01,
+      "Uranium": 0.05
+    },
+    "size": 50,
+    "headquarter": "ParliamentHill",
+    "uniqueBuildings": {
+      "AILab": "ArtificialIntelligence",
+      "ChateauFrontenac": "Combustion",
+      "Habitat67": "ArtificialIntelligence"
+    },
+    "naturalWonders": [
+      "AuroraBorealis",
+      "LakeLouise",
+      "DinosaurProvincialPark"
+    ],
+    "requireGreatPeopleLevel": 130,
+    "requireSupporterPack": true,
+    "festivalDesc": "WinterCarnival"
+  },
+  {
+    "id": "Carthaginian",
+    "name": "Carthaginian",
+    "deposits": {
+      "Water": 0.025,
+      "Copper": 0.015,
+      "Iron": 0.025,
+      "Wood": 0.015,
+      "Stone": 0.025,
+      "Gold": 0.015,
+      "Coal": 0.025,
+      "Oil": 0.015,
+      "Aluminum": 0.025,
+      "NaturalGas": 0.015,
+      "Uranium": 0.02
+    },
+    "size": 40,
+    "headquarter": "Carthage",
+    "uniqueBuildings": {
+      "CothonOfCarthage": "Architecture"
+    },
+    "naturalWonders": [
+      "AtlasMountains"
+    ],
+    "requireGreatPeopleLevel": 130,
+    "requireSupporterPack": true,
+    "festivalDesc": "FestivalOfTanit"
+  },
+  {
+    "id": "Dutch",
+    "name": "Dutch",
+    "deposits": {
+      "Water": 0.03,
+      "Copper": 0.01,
+      "Iron": 0.01,
+      "Wood": 0.03,
+      "Stone": 0.01,
+      "Gold": 0.03,
+      "Coal": 0.01,
+      "Oil": 0.01,
+      "Aluminum": 0.03,
+      "NaturalGas": 0.03,
+      "Uranium": 0.02
+    },
+    "size": 40,
+    "headquarter": "Binnenhof",
+    "uniqueBuildings": {
+      "Mauritshuis": "Capitalism",
+      "WindTurbine": "Urbanization"
+    },
+    "naturalWonders": [
+      "Keukenhof"
+    ],
+    "requireGreatPeopleLevel": 140,
+    "requireSupporterPack": true,
+    "festivalDesc": "KoningsdagV3",
+    "uniqueEffects": [
+      "Every5WindMillsLevelGives1ProductionMultiplierToAdjacentPowerPlants"
+    ]
+  }
+]
