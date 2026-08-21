@@ -14,6 +14,11 @@ export function getTools() {
       id: 'CalcExtraGreatPerson',
       name: t('tools.CalcExtraGreatPerson.name'),
       description: t('tools.CalcExtraGreatPerson.description')
+    },
+     {
+      id: 'FreeCity',
+      name: t('tools.FreeCity.name'),
+      description: t('tools.FreeCity.description')
     }
   ]
 }

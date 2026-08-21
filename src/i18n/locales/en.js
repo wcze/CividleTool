@@ -38,10 +38,14 @@ export default {
     CalcExtraGreatPerson: {
       name: 'Great Person Empire Value',
       description: 'Calculate the empire value needed for the Nth rebirth extra Great Person'
+    },
+    FreeCity: {
+      name: 'Free City Rotation',
+      description: 'Check the weekly free civilization rotation schedule'
     }
   },
   calcBuildings: {
-    title: '🏗️ Building Resources',
+    title: 'Building Resources',
     totalBuildings: 'Total {count} buildings',
     subtitle: 'Search for a building to view its construction resources',
     searchPlaceholder: 'Search building...',
@@ -52,11 +56,11 @@ export default {
     targetLevel: 'Target Level',
     buildingCount: 'Building Count',
     multiplier: 'Multiplier',
-    upgradeResources: '📊 Resources Needed to Upgrade',
+    upgradeResources: 'Resources Needed to Upgrade',
     levelRange: 'From level {current} → {target}',
     levelCount: '({count} levels)',
-    emptyResult: '⚠️ Please make sure the target level is greater than the current level',
-    buildResources: '📦 Build Resources',
+    emptyResult: 'Please make sure the target level is greater than the current level',
+    buildResources: 'Build Resources',
     builderCapacity: 'Builder Capacity Multiplier',
     builderCapacityHelpAlt: 'How to view Builder Capacity Multiplier',
     unlockAge: 'Unlock Age',
@@ -95,5 +99,50 @@ export default {
     placeholder: 'Select resource',
     searchPlaceholder: 'Search resource...',
     emptyText: 'No matching resources'
+  },
+  freeCity: {
+    title: 'Free City Rotation',
+    description: 'View the free rotation schedule of the selected civilization',
+    countryLabel: 'Select Civilization',
+    countryPlaceholder: 'Select a civilization',
+    timezoneLabel: 'Display Timezone',
+    timezonePlaceholder: 'Select timezone',
+    timezones: {
+      utc: 'UTC',
+      shanghai: 'China Standard Time UTC+8',
+      singapore: 'Singapore Time UTC+8',
+      tokyo: 'Japan Standard Time UTC+9',
+      seoul: 'Korea Standard Time UTC+9',
+      kolkata: 'India Standard Time UTC+5:30',
+      dubai: 'Dubai Time UTC+4',
+      london: 'London Time UTC+0',
+      paris: 'Paris Time UTC+1',
+      berlin: 'Berlin Time UTC+1',
+      warsaw: 'Warsaw Time UTC+1',
+      newYork: 'New York Time UTC-5',
+      chicago: 'Chicago Time UTC-6',
+      denver: 'Denver Time UTC-7',
+      losAngeles: 'Los Angeles Time UTC-8',
+      sydney: 'Sydney Time UTC+10'
+    },
+    sectionTitle: 'Free rotations for {city}',
+    sectionDesc: 'Showing the next 10 free civilizations starting this week',
+    futureCount: 'Next 10',
+    currentBadge: 'Current Free Civilization',
+    to: 'to',
+    days: '7 days',
+    yearlyTitle: 'Yearly Free Rotation Schedule',
+    yearlyDesc: 'Showing the next 52 weekly rotations starting this week',
+    weeksCount: '{count} weeks',
+    thIndex: '#',
+    thCity: 'Free Civilization',
+    thStart: 'Start Date',
+    thEnd: 'End Date',
+    thDuration: 'Duration',
+    thStatus: 'Status',
+    statusCurrent: 'Current Week',
+    statusUpcoming: 'Upcoming',
+    emptyTitle: 'No civilization data',
+    emptyDesc: 'No civilization data available in city.json.'
   }
 }

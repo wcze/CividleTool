@@ -38,10 +38,14 @@ export default {
     CalcExtraGreatPerson: {
       name: '伟人所需帝国价值',
       description: '计算第 N 个重生额外伟人所需要的帝国价值'
+    },
+    FreeCity: {
+      name: '周免国家查询',
+      description: '查看每周免费游玩的文明列表'
     }
   },
   calcBuildings: {
-    title: '🏗️ 建筑资源',
+    title: '建筑资源',
     totalBuildings: '共 {count} 个建筑',
     subtitle: '搜索建筑名称，查看建造所需资源',
     searchPlaceholder: '搜索建筑...',
@@ -52,11 +56,11 @@ export default {
     targetLevel: '目标等级',
     buildingCount: '建筑数量',
     multiplier: '倍率',
-    upgradeResources: '📊 升级所需资源',
+    upgradeResources: '升级所需资源',
     levelRange: '从 {current} → {target} 级',
     levelCount: '(共 {count} 级)',
-    emptyResult: '⚠️ 请确保目标等级大于当前等级',
-    buildResources: '📦 建造资源',
+    emptyResult: '请确保目标等级大于当前等级',
+    buildResources: '建造资源',
     builderCapacity: '建造者能力乘数',
     builderCapacityHelpAlt: '如何查看建造者能力乘数',
     unlockAge: '解锁时代',
@@ -95,5 +99,50 @@ export default {
     placeholder: '选择资源',
     searchPlaceholder: '搜索资源...',
     emptyText: '无匹配资源'
+  },
+  freeCity: {
+    title: '周免国家查询',
+    description: '查询所选择文明周免的时间表',
+    countryLabel: '选择文明',
+    countryPlaceholder: '请选择文明',
+    timezoneLabel: '显示时区',
+    timezonePlaceholder: '请选择时区',
+    timezones: {
+      utc: 'UTC',
+      shanghai: '中国标准时间 UTC+8',
+      singapore: '新加坡时间 UTC+8',
+      tokyo: '日本标准时间 UTC+9',
+      seoul: '韩国标准时间 UTC+9',
+      kolkata: '印度标准时间 UTC+5:30',
+      dubai: '迪拜时间 UTC+4',
+      london: '伦敦时间 UTC+0',
+      paris: '巴黎时间 UTC+1',
+      berlin: '柏林时间 UTC+1',
+      warsaw: '华沙时间 UTC+1',
+      newYork: '纽约时间 UTC-5',
+      chicago: '芝加哥时间 UTC-6',
+      denver: '丹佛时间 UTC-7',
+      losAngeles: '洛杉矶时间 UTC-8',
+      sydney: '悉尼时间 UTC+10'
+    },
+    sectionTitle: '{city} 的周免日期',
+    sectionDesc: '从当前周开始，显示未来 10 次周免文明',
+    futureCount: '未来 10 次',
+    currentBadge: '当前周免文明',
+    to: '至',
+    days: '7 天',
+    yearlyTitle: '未来一年周免记录',
+    yearlyDesc: '从当前周开始，显示未来 52 个周免周期',
+    weeksCount: '{count} 周',
+    thIndex: '#',
+    thCity: '周免国家',
+    thStart: '开始日期',
+    thEnd: '结束日期',
+    thDuration: '周期',
+    thStatus: '状态',
+    statusCurrent: '当前周',
+    statusUpcoming: '即将开始',
+    emptyTitle: '暂无国家数据',
+    emptyDesc: '当前 city.json 中没有可用的国家数据。'
   }
 }

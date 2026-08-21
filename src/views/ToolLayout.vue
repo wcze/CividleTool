@@ -100,6 +100,7 @@ import { useRouter, useRoute } from 'vue-router'
 import ToolContainer from '../components/ToolContainer.vue'
 import CalcBuildingsUpgrade from './tools/CalcBuildingsUpgrade.vue'
 import CalcExtraGreatPerson from './tools/CalcExtraGreatPerson.vue'
+import FreeCity from './tools/FreeCity.vue'
 import { getTools } from '../data/tools'
 import { t } from '../i18n'
 
@@ -111,7 +112,8 @@ const tools = computed(() => getTools())
 
 const componentsMap = {
     'CalcBuildingsUpgrade': CalcBuildingsUpgrade,
-    'CalcExtraGreatPerson': CalcExtraGreatPerson
+    'CalcExtraGreatPerson': CalcExtraGreatPerson,
+    'FreeCity': FreeCity
 }
 
 const currentToolId = computed(() => route.params.id)
