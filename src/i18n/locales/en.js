@@ -8,7 +8,8 @@ export default {
     title: 'About',
     close: 'Close',
     developer: 'Developer',
-    dataSource: 'Data Source',
+    dataSource: 'Data Reference',
+    gameSource: 'Game Source',
     translationSource: 'Translation Source',
     projectUrl: 'Project URL',
     disclaimer: 'This toolset is a fan-made project, not an official release. All data is for reference only.'

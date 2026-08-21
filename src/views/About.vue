@@ -25,6 +25,15 @@
         <div class="about-row">
           <span class="about-key">{{ t('about.dataSource') }}</span>
           <span class="about-value">
+            <a href="https://github.com/fishpondstudio/CivIdle" target="_blank" rel="noopener noreferrer">
+              https://github.com/fishpondstudio/CivIdle
+            </a>
+          </span>
+        </div>
+
+        <div class="about-row">
+          <span class="about-key">{{ t('about.dataSource') }}</span>
+          <span class="about-value">
             <a :href="dataSourceUrl" target="_blank" rel="noopener noreferrer">Cekay</a>
             <span class="about-sep">·</span>
             SourRat
@@ -36,7 +45,8 @@
         <div class="about-row">
           <span class="about-key">{{ t('about.translationSource') }}</span>
           <span class="about-value">
-            <a href="https://github.com/fishpondstudio/CivIdle/tree/main/shared/languages" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/fishpondstudio/CivIdle/tree/main/shared/languages" target="_blank"
+              rel="noopener noreferrer">
               https://github.com/fishpondstudio/CivIdle/tree/main/shared/languages
             </a>
           </span>
@@ -80,6 +90,7 @@ const dataSourceUrl =
     opacity: 0;
     transform: translateY(12px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -131,7 +142,7 @@ const dataSourceUrl =
 /* ——— 行 ——— */
 .about-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 24px;
   padding: 22px 28px;
   border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.04));
@@ -220,6 +231,7 @@ const dataSourceUrl =
 
   .about-row {
     flex-direction: column;
+    align-items: flex-start;
     gap: 6px;
     padding: 18px 20px;
   }

@@ -13,15 +13,30 @@
       />
     </div>
 
-    <main class="content-area">
+    <main class="content-area" ref="contentAreaRef">
       <slot />
     </main>
   </div>
 </template>
 
 <script setup>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Sidebar from './Sidebar.vue'
 import { drawerOpen } from '@/store/ui'
+
+const contentAreaRef = ref(null)
+const route = useRoute()
+
+// 切换页面时把滚动容器拉回最上面
+watch(
+  () => route.fullPath,
+  () => {
+    if (contentAreaRef.value) {
+      contentAreaRef.value.scrollTop = 0
+    }
+  }
+)
 
 defineProps({
   tools: {

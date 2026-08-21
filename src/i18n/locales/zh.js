@@ -8,7 +8,8 @@ export default {
     title: '关于',
     close: '关闭',
     developer: '开发',
-    dataSource: '数据来源',
+    dataSource: '数据参考',
+    gameSource: '游戏源码',
     translationSource: '翻译来源',
     projectUrl: '项目地址',
     disclaimer: '本工具集由玩家自制，非官方发布，所有数据仅供参考。'
