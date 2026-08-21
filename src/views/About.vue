@@ -23,7 +23,7 @@
         </div>
 
         <div class="about-row">
-          <span class="about-key">{{ t('about.dataSource') }}</span>
+          <span class="about-key">{{ t('about.gameSource') }}</span>
           <span class="about-value">
             <a href="https://github.com/fishpondstudio/CivIdle" target="_blank" rel="noopener noreferrer">
               https://github.com/fishpondstudio/CivIdle
