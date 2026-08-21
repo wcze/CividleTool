@@ -119,6 +119,38 @@
         </table>
       </div>
 
+
+      <!-- 移动端：方块式展示（桌面端隐藏） -->
+      <div class="mobile-week-list">
+
+        <div
+          v-for="item in currentPageItems"
+          :key="`m-${item.index}`"
+          class="mobile-week-card"
+        >
+
+          <div class="mobile-week-top">
+
+            <span class="mobile-week-index">
+              #{{ item.index }}
+            </span>
+
+            <span class="mobile-week-cost">
+              {{ formatNumberWithDetail(item.cost) }}
+            </span>
+
+          </div>
+
+
+          <div class="mobile-week-formula">
+            {{ t('calcExtraGreatPerson.formulaCell', { index: item.index }) }}
+          </div>
+
+        </div>
+
+      </div>
+
+
       <div class="pagination">
         <div class="pagination-info">
           {{ pageStart }} - {{ pageEnd }}
@@ -863,6 +895,74 @@ tbody tr:last-child td {
   text-align: right;
 }
 
+
+/* =========================================
+   移动端方块列表
+   桌面端隐藏，移动端显示。
+========================================= */
+
+.mobile-week-list {
+  display: none;
+}
+
+
+.mobile-week-card {
+  min-width: 0;
+
+  padding: 12px 14px;
+
+  border: 1px solid #e8edf4;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+
+.mobile-week-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 6px;
+}
+
+
+.mobile-week-index {
+  color: #1a2332;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.mobile-week-cost {
+  color: #4a90d9;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-align: right;
+
+  word-break: break-all;
+}
+
+
+.mobile-week-formula {
+  color: #6b7a8f;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
 /* =========================================
    Pagination
 ========================================= */
@@ -1000,6 +1100,23 @@ tbody tr:last-child td {
   .pagination {
     padding: 13px 17px;
   }
+
+
+  /* 移动端切换为方块展示，隐藏表格 */
+  .table-wrapper {
+    display: none;
+  }
+
+
+  .mobile-week-list {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 0 17px 17px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1055,6 +1172,11 @@ tbody tr:last-child td {
 
   .pagination-button {
     flex: 1;
+  }
+
+
+  .mobile-week-list {
+    padding: 0 14px 14px;
   }
 }
 </style>
