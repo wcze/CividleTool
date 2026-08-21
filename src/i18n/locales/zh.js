@@ -45,7 +45,7 @@ export default {
       description: '查看每周免费游玩的文明列表'
     },
     MarketQuery: {
-      name: '集市查询',
+      name: '市集查询',
       description: '上传存档，查看市集交易'
     }
   },
@@ -163,6 +163,11 @@ export default {
     uploaded: '已上传并解析成功',
     parseError: '解压或解析失败',
     lastUpload: '上次上传时间：{time}',
+    clearSave: '清除存档',
+    clearConfirmTitle: '清除存档',
+    clearConfirmMessage: '确定要清除本地保存的存档数据吗？此操作不可撤销。',
+    clearConfirmOk: '确定清除',
+    clearConfirmCancel: '取消',
     privacyTitle: '隐私说明',
     privacyNoteBefore: '本功能仅在你的浏览器本地读取存档，不会将任何数据上传或保存到服务器，可放心使用。本项目已',
     privacyOpenSource: '开源',

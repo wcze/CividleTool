@@ -44,6 +44,13 @@
 
       <p v-if="lastUploadLabel" class="last-upload-hint">
         {{ t('marketQuery.lastUpload', { time: lastUploadLabel }) }}
+        <a
+          href="javascript:void(0)"
+          class="clear-save-link"
+          @click.prevent="showClearConfirm = true"
+        >
+          {{ t('marketQuery.clearSave') }}
+        </a>
       </p>
 
       <div class="privacy-note">
@@ -323,6 +330,16 @@
       </p>
     </section>
 
+    <ConfirmDialog
+      v-model="showClearConfirm"
+      :title="t('marketQuery.clearConfirmTitle')"
+      :message="t('marketQuery.clearConfirmMessage')"
+      :confirm-text="t('marketQuery.clearConfirmOk')"
+      :cancel-text="t('marketQuery.clearConfirmCancel')"
+      danger
+      @confirm="clearSave"
+    />
+
   </div>
 </template>
 
@@ -331,6 +348,7 @@
 import { ref, computed, watch } from 'vue'
 import AppSelect from '@/components/AppSelect.vue'
 import ResourceSelect from '@/components/ResourceSelect.vue'
+import ConfirmDialog from '@/components/ConfirmDialog.vue'
 import buildingsData from '@/data/buildings.json'
 import marketData from '@/data/market.json'
 import { t, tGame, locale } from '@/i18n'
@@ -396,6 +414,24 @@ const lastUploadLabel = computed(() => {
     { dateStyle: 'medium', timeStyle: 'medium' }
   )
 })
+
+// 清除存档：删除 localStorage 数据并重置状态
+const showClearConfirm = ref(false)
+
+function clearSave() {
+  try {
+    localStorage.removeItem(STORAGE_RESOURCES_KEY)
+    localStorage.removeItem(STORAGE_TIME_KEY)
+  } catch {
+    /* ignore */
+  }
+  storedResources.value = null
+  lastUploadTime.value = null
+  saveData.value = null
+  saveLoaded.value = false
+  selectedResource.value = ''
+  filterResource.value = ''
+}
 
 // 反序列化：$type 标记的 Map / Set 还原
 const reviver = (key, value) => {
@@ -893,6 +929,18 @@ watch([selectedResource, trackMode], () => {
   margin: 10px 0 0;
   color: #8296ad;
   font-size: 12.5px;
+}
+
+.clear-save-link {
+  margin-left: 10px;
+  color: #4a90d9;
+  text-decoration: underline;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clear-save-link:hover {
+  color: #2b6cb0;
 }
 
 .upload-error {
