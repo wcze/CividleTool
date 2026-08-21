@@ -39,8 +39,8 @@ export default {
       name: '伟人所需帝国价值',
       description: '计算第 N 个重生额外伟人所需要的帝国价值'
     },
-    FreeCity: {
-      name: '周免国家查询',
+    FreeCivilization: {
+      name: '周免文明查询',
       description: '查看每周免费游玩的文明列表'
     }
   },
@@ -100,8 +100,8 @@ export default {
     searchPlaceholder: '搜索资源...',
     emptyText: '无匹配资源'
   },
-  freeCity: {
-    title: '周免国家查询',
+  freeCivilization: {
+    title: '周免文明查询',
     description: '查询所选择文明周免的时间表',
     countryLabel: '选择文明',
     countryPlaceholder: '请选择文明',
@@ -125,7 +125,7 @@ export default {
       losAngeles: '洛杉矶时间 UTC-8',
       sydney: '悉尼时间 UTC+10'
     },
-    sectionTitle: '{city} 的周免日期',
+    sectionTitle: '{civilization} 的周免日期',
     sectionDesc: '从当前周开始，显示未来 10 次周免文明',
     futureCount: '未来 10 次',
     currentBadge: '当前周免文明',
@@ -135,14 +135,14 @@ export default {
     yearlyDesc: '从当前周开始，显示未来 52 个周免周期',
     weeksCount: '{count} 周',
     thIndex: '#',
-    thCity: '周免国家',
+    thCivilization: '周免文明',
     thStart: '开始日期',
     thEnd: '结束日期',
     thDuration: '周期',
     thStatus: '状态',
     statusCurrent: '当前周',
     statusUpcoming: '即将开始',
-    emptyTitle: '暂无国家数据',
-    emptyDesc: '当前 city.json 中没有可用的国家数据。'
+    emptyTitle: '暂无文明数据',
+    emptyDesc: '当前 city.json 中没有可用的文明数据。'
   }
 }

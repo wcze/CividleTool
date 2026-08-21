@@ -39,8 +39,8 @@ export default {
       name: 'Great Person Empire Value',
       description: 'Calculate the empire value needed for the Nth rebirth extra Great Person'
     },
-    FreeCity: {
-      name: 'Free City Rotation',
+    FreeCivilization: {
+      name: 'Free Civilization Rotation',
       description: 'Check the weekly free civilization rotation schedule'
     }
   },
@@ -100,8 +100,8 @@ export default {
     searchPlaceholder: 'Search resource...',
     emptyText: 'No matching resources'
   },
-  freeCity: {
-    title: 'Free City Rotation',
+  freeCivilization: {
+    title: 'Free Civilization Rotation',
     description: 'View the free rotation schedule of the selected civilization',
     countryLabel: 'Select Civilization',
     countryPlaceholder: 'Select a civilization',
@@ -125,7 +125,7 @@ export default {
       losAngeles: 'Los Angeles Time UTC-8',
       sydney: 'Sydney Time UTC+10'
     },
-    sectionTitle: 'Free rotations for {city}',
+    sectionTitle: 'Free rotations for {civilization}',
     sectionDesc: 'Showing the next 10 free civilizations starting this week',
     futureCount: 'Next 10',
     currentBadge: 'Current Free Civilization',
@@ -135,7 +135,7 @@ export default {
     yearlyDesc: 'Showing the next 52 weekly rotations starting this week',
     weeksCount: '{count} weeks',
     thIndex: '#',
-    thCity: 'Free Civilization',
+    thCivilization: 'Free Civilization',
     thStart: 'Start Date',
     thEnd: 'End Date',
     thDuration: 'Duration',

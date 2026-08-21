@@ -16,9 +16,9 @@ export function getTools() {
       description: t('tools.CalcExtraGreatPerson.description')
     },
      {
-      id: 'FreeCity',
-      name: t('tools.FreeCity.name'),
-      description: t('tools.FreeCity.description')
+      id: 'FreeCivilization',
+      name: t('tools.FreeCivilization.name'),
+      description: t('tools.FreeCivilization.description')
     }
   ]
 }

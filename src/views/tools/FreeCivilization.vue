@@ -1,16 +1,16 @@
 <template>
-  <div class="free-city-page">
+  <div class="free-civilization-page">
 
     <!-- ==================== 查询卡片 ==================== -->
     <section class="calculator-card">
 
       <div class="calculator-header">
         <div class="calculator-title">
-          {{ t('freeCity.title') }}
+          {{ t('freeCivilization.title') }}
         </div>
 
         <div class="calculator-description">
-          {{ t('freeCity.description') }}
+          {{ t('freeCivilization.description') }}
         </div>
       </div>
 
@@ -19,26 +19,26 @@
         <!-- 国家 -->
         <div class="filter-group">
           <label>
-            {{ t('freeCity.countryLabel') }}
+            {{ t('freeCivilization.countryLabel') }}
           </label>
 
           <AppSelect
-            v-model="selectedCity"
-            :options="cityOptions"
-            :placeholder="t('freeCity.countryPlaceholder')"
+            v-model="selectedCivilization"
+            :options="civilizationOptions"
+            :placeholder="t('freeCivilization.countryPlaceholder')"
           />
         </div>
 
         <!-- 时区 -->
         <div class="filter-group">
           <label>
-            {{ t('freeCity.timezoneLabel') }}
+            {{ t('freeCivilization.timezoneLabel') }}
           </label>
 
           <AppSelect
             v-model="selectedTimezone"
             :options="timezoneOptions"
-            :placeholder="t('freeCity.timezonePlaceholder')"
+            :placeholder="t('freeCivilization.timezonePlaceholder')"
           />
         </div>
 
@@ -48,34 +48,34 @@
 
     <!-- ==================== 选择国家后的 10 次周免 ==================== -->
     <section
-      v-if="selectedCity"
+      v-if="selectedCivilization"
       class="section"
     >
       <div class="section-header">
 
         <div class="section-title-group">
           <h2>
-            {{ t('freeCity.sectionTitle', { city: tGame(selectedCity) }) }}
+            {{ t('freeCivilization.sectionTitle', { civilization: tGame(selectedCivilization) }) }}
           </h2>
 
           <p>
-            {{ t('freeCity.sectionDesc') }}
+            {{ t('freeCivilization.sectionDesc') }}
           </p>
         </div>
 
         <span class="section-badge">
-          {{ t('freeCity.futureCount') }}
+          {{ t('freeCivilization.futureCount') }}
         </span>
 
       </div>
 
 
-      <div class="city-result-grid">
+      <div class="civilization-result-grid">
 
         <div
-          v-for="(week, index) in selectedCityWeeks"
-          :key="`${week.week}-${week.city?.id}`"
-          class="city-week-card"
+          v-for="(week, index) in selectedCivilizationWeeks"
+          :key="`${week.week}-${week.civilization?.id}`"
+          class="civilization-week-card"
           :class="{
             current: week.isCurrent
           }"
@@ -92,15 +92,15 @@
               v-if="week.isCurrent"
               class="current-badge"
             >
-              {{ t('freeCity.currentBadge') }}
+              {{ t('freeCivilization.currentBadge') }}
             </span>
 
           </div>
 
 
           <!-- 国家 -->
-          <div class="week-city">
-            {{ tGame(week.city.name) }}
+          <div class="week-civilization">
+            {{ tGame(week.civilization.name) }}
           </div>
 
 
@@ -110,7 +110,7 @@
           </div>
 
           <div class="week-separator">
-            {{ t('freeCity.to') }}
+            {{ t('freeCivilization.to') }}
           </div>
 
           <div class="week-date end">
@@ -120,7 +120,7 @@
 
           <!-- 周期 -->
           <div class="week-duration">
-            {{ t('freeCity.days') }}
+            {{ t('freeCivilization.days') }}
           </div>
 
         </div>
@@ -136,16 +136,16 @@
 
         <div class="section-title-group">
           <h2>
-            {{ t('freeCity.yearlyTitle') }}
+            {{ t('freeCivilization.yearlyTitle') }}
           </h2>
 
           <p>
-            {{ t('freeCity.yearlyDesc') }}
+            {{ t('freeCivilization.yearlyDesc') }}
           </p>
         </div>
 
         <span class="section-badge">
-          {{ t('freeCity.weeksCount', { count: yearlyWeeks.length }) }}
+          {{ t('freeCivilization.weeksCount', { count: yearlyWeeks.length }) }}
         </span>
 
       </div>
@@ -162,27 +162,27 @@
               <tr>
 
                 <th class="index-column">
-                  {{ t('freeCity.thIndex') }}
+                  {{ t('freeCivilization.thIndex') }}
                 </th>
 
                 <th>
-                  {{ t('freeCity.thCity') }}
+                  {{ t('freeCivilization.thCivilization') }}
                 </th>
 
                 <th>
-                  {{ t('freeCity.thStart') }}
+                  {{ t('freeCivilization.thStart') }}
                 </th>
 
                 <th>
-                  {{ t('freeCity.thEnd') }}
+                  {{ t('freeCivilization.thEnd') }}
                 </th>
 
                 <th>
-                  {{ t('freeCity.thDuration') }}
+                  {{ t('freeCivilization.thDuration') }}
                 </th>
 
                 <th class="status-column">
-                  {{ t('freeCity.thStatus') }}
+                  {{ t('freeCivilization.thStatus') }}
                 </th>
 
               </tr>
@@ -207,8 +207,8 @@
 
                 <!-- 国家 -->
                 <td>
-                  <span class="city-name-cell">
-                    {{ week.city?.name ? tGame(week.city.name) : '-' }}
+                  <span class="civilization-name-cell">
+                    {{ week.civilization?.name ? tGame(week.civilization.name) : '-' }}
                   </span>
                 </td>
 
@@ -227,7 +227,7 @@
 
                 <!-- 周期 -->
                 <td class="duration-cell">
-                  {{ t('freeCity.days') }}
+                  {{ t('freeCivilization.days') }}
                 </td>
 
 
@@ -238,14 +238,14 @@
                     v-if="week.isCurrent"
                     class="table-current-badge"
                   >
-                    {{ t('freeCity.statusCurrent') }}
+                    {{ t('freeCivilization.statusCurrent') }}
                   </span>
 
                   <span
                     v-else
                     class="table-future-badge"
                   >
-                    {{ t('freeCity.statusUpcoming') }}
+                    {{ t('freeCivilization.statusUpcoming') }}
                   </span>
 
                 </td>
@@ -283,27 +283,27 @@
               v-if="week.isCurrent"
               class="table-current-badge"
             >
-              {{ t('freeCity.statusCurrent') }}
+              {{ t('freeCivilization.statusCurrent') }}
             </span>
 
             <span
               v-else
               class="table-future-badge"
             >
-              {{ t('freeCity.statusUpcoming') }}
+              {{ t('freeCivilization.statusUpcoming') }}
             </span>
 
           </div>
 
 
-          <div class="mobile-week-city">
-            {{ week.city?.name ? tGame(week.city.name) : '-' }}
+          <div class="mobile-week-civilization">
+            {{ week.civilization?.name ? tGame(week.civilization.name) : '-' }}
           </div>
 
 
           <div class="mobile-week-row">
             <span class="mobile-week-label">
-              {{ t('freeCity.thStart') }}
+              {{ t('freeCivilization.thStart') }}
             </span>
 
             <span class="mobile-week-value">
@@ -314,7 +314,7 @@
 
           <div class="mobile-week-row">
             <span class="mobile-week-label">
-              {{ t('freeCity.thEnd') }}
+              {{ t('freeCivilization.thEnd') }}
             </span>
 
             <span class="mobile-week-value">
@@ -325,11 +325,11 @@
 
           <div class="mobile-week-row">
             <span class="mobile-week-label">
-              {{ t('freeCity.thDuration') }}
+              {{ t('freeCivilization.thDuration') }}
             </span>
 
             <span class="mobile-week-value">
-              {{ t('freeCity.days') }}
+              {{ t('freeCivilization.days') }}
             </span>
           </div>
 
@@ -342,7 +342,7 @@
 
     <!-- ==================== 空状态 ==================== -->
     <section
-      v-if="!cities.length"
+      v-if="!civilizations.length"
       class="empty-state"
     >
 
@@ -373,11 +373,11 @@
       </div>
 
       <h3>
-        {{ t('freeCity.emptyTitle') }}
+        {{ t('freeCivilization.emptyTitle') }}
       </h3>
 
       <p>
-        {{ t('freeCity.emptyDesc') }}
+        {{ t('freeCivilization.emptyDesc') }}
       </p>
 
     </section>
@@ -389,7 +389,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import AppSelect from '@/components/AppSelect.vue'
-import cityData from '@/data/city.json'
+import civilizationData from '@/data/civilization.json'
 import { t, tGame } from '@/i18n'
 
 
@@ -397,13 +397,13 @@ import { t, tGame } from '@/i18n'
  * 国家数据
  * ========================================================= */
 
-const cities = computed(() => {
-  if (!Array.isArray(cityData)) {
+const civilizations = computed(() => {
+  if (!Array.isArray(civilizationData)) {
     return []
   }
 
-  return cityData.filter(city => {
-    return city && city.name
+  return civilizationData.filter(civilization => {
+    return civilization && civilization.name
   })
 })
 
@@ -412,10 +412,10 @@ const cities = computed(() => {
  * 国家下拉选项（value 存原始 name，用于周免匹配；label 用 tGame 翻译）
  */
 
-const cityOptions = computed(() => {
-  return cities.value.map(city => ({
-    value: city.name,
-    label: tGame(city.name)
+const civilizationOptions = computed(() => {
+  return civilizations.value.map(civilization => ({
+    value: civilization.name,
+    label: tGame(civilization.name)
   }))
 })
 
@@ -424,7 +424,7 @@ const cityOptions = computed(() => {
  * 当前选择的国家
  * ========================================================= */
 
-const selectedCity = ref('')
+const selectedCivilization = ref('')
 
 
 /* =========================================================
@@ -555,7 +555,7 @@ const timezones = [
 const timezoneOptions = computed(() => {
   return timezones.map(tz => ({
     value: tz.value,
-    label: t(`freeCity.timezones.${tz.key}`)
+    label: t(`freeCivilization.timezones.${tz.key}`)
   }))
 })
 
@@ -608,9 +608,9 @@ function getWeek(date) {
  * 根据 Week 获取国家
  * ========================================================= */
 
-function getCityByWeek(week) {
+function getCivilizationByWeek(week) {
 
-  if (!cities.value.length) {
+  if (!civilizations.value.length) {
     return null
   }
 
@@ -622,13 +622,13 @@ function getCityByWeek(week) {
   const index =
     (
       (week + OFFSET) %
-      cities.value.length +
-      cities.value.length
+      civilizations.value.length +
+      civilizations.value.length
     ) %
-    cities.value.length
+    civilizations.value.length
 
 
-  return cities.value[index] || null
+  return civilizations.value[index] || null
 
 }
 
@@ -637,12 +637,12 @@ function getCityByWeek(week) {
  * 根据日期获取国家
  * ========================================================= */
 
-function getCityByDate(date) {
+function getCivilizationByDate(date) {
 
   const week =
     getWeek(date)
 
-  return getCityByWeek(week)
+  return getCivilizationByWeek(week)
 
 }
 
@@ -680,9 +680,9 @@ const currentWeek = computed(() => {
  * 当前周免国家
  * ========================================================= */
 
-const currentCity = computed(() => {
+const currentCivilization = computed(() => {
 
-  return getCityByWeek(
+  return getCivilizationByWeek(
     currentWeek.value
   )
 
@@ -760,14 +760,14 @@ function getWeekInfo(week) {
   const endTimestamp =
     startTimestamp + WEEK - 1
 
-  const city = getCityByWeek(week)
+  const civilization = getCivilizationByWeek(week)
 
   const nowWeek = currentWeek.value
 
   return {
     week,
 
-    city,
+    civilization,
 
     startTimestamp,
     endTimestamp,
@@ -787,14 +787,14 @@ function getWeekInfo(week) {
  * 选择国家后的未来 10 次周免
  * ========================================================= */
 
-const selectedCityWeeks =
+const selectedCivilizationWeeks =
   computed(() => {
 
     /*
      * 没有选择国家
      */
 
-    if (!selectedCity.value) {
+    if (!selectedCivilization.value) {
       return []
     }
 
@@ -819,14 +819,14 @@ const selectedCityWeeks =
       result.length < 10
     ) {
 
-      const city =
-        getCityByWeek(week)
+      const civilization =
+        getCivilizationByWeek(week)
 
 
       if (
-        city &&
-        city.name ===
-        selectedCity.value
+        civilization &&
+        civilization.name ===
+        selectedCivilization.value
       ) {
 
         result.push(
@@ -910,7 +910,7 @@ const yearlyWeeks =
  * 基础
  * ========================================================= */
 
-.free-city-page {
+.free-civilization-page {
   width: 100%;
   min-height: 100vh;
 
@@ -929,9 +929,9 @@ const yearlyWeeks =
 }
 
 
-.free-city-page *,
-.free-city-page *::before,
-.free-city-page *::after {
+.free-civilization-page *,
+.free-civilization-page *::before,
+.free-civilization-page *::after {
   box-sizing: border-box;
 }
 
@@ -1102,7 +1102,7 @@ const yearlyWeeks =
  * 国家周免 Grid
  * ========================================================= */
 
-.city-result-grid {
+.civilization-result-grid {
   display: grid;
 
   grid-template-columns:
@@ -1119,7 +1119,7 @@ const yearlyWeeks =
  * 国家周免 Card
  * ========================================================= */
 
-.city-week-card {
+.civilization-week-card {
   min-width: 0;
 
   padding: 17px;
@@ -1138,7 +1138,7 @@ const yearlyWeeks =
 }
 
 
-.city-week-card:hover {
+.civilization-week-card:hover {
   border-color: #4a90d9;
 
   box-shadow:
@@ -1150,7 +1150,7 @@ const yearlyWeeks =
 }
 
 
-.city-week-card.current {
+.civilization-week-card.current {
   border-color: #4a90d9;
 
   background: #f7faff;
@@ -1216,7 +1216,7 @@ const yearlyWeeks =
  * 国家名称
  * ========================================================= */
 
-.week-city {
+.week-civilization {
   margin-bottom: 12px;
 
   overflow: hidden;
@@ -1404,7 +1404,7 @@ tbody tr:last-child td {
 }
 
 
-.city-name-cell {
+.civilization-name-cell {
   color: #1a2332;
 
   font-weight: 600;
@@ -1537,7 +1537,7 @@ tbody tr:last-child td {
 }
 
 
-.mobile-week-city {
+.mobile-week-civilization {
   margin-bottom: 10px;
 
   overflow: hidden;
@@ -1674,7 +1674,7 @@ tbody tr:last-child td {
 
 @media (max-width: 992px) {
 
-  .city-result-grid {
+  .civilization-result-grid {
     grid-template-columns:
       repeat(
         auto-fill,
@@ -1710,7 +1710,7 @@ tbody tr:last-child td {
   }
 
 
-  .city-result-grid {
+  .civilization-result-grid {
     grid-template-columns:
       repeat(
         2,
@@ -1765,12 +1765,12 @@ tbody tr:last-child td {
   }
 
 
-  .city-result-grid {
+  .civilization-result-grid {
     grid-template-columns: 1fr;
   }
 
 
-  .city-week-card {
+  .civilization-week-card {
     padding: 15px;
   }
 
@@ -1799,7 +1799,7 @@ tbody tr:last-child td {
 
 @media (prefers-reduced-motion: reduce) {
 
-  .city-week-card,
+  .civilization-week-card,
   tbody tr {
     transition: none;
   }

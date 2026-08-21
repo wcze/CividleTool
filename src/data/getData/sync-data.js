@@ -1,5 +1,5 @@
 // src/data/getData/sync-data.js
-// 一键同步脚本：下载 -> 计算价格 -> 生成建筑数据 -> 清理临时文件
+// 一键同步脚本：下载 -> 计算价格 -> 生成建筑数据 -> 生成城市数据 -> 清理临时文件
 import { spawnSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const TEMP_DIR = path.join(__dirname, '.temp');
 
 // 依次执行的脚本（相对本文件）
-const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js'];
+const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js'];
 
 function runScript(script) {
   const scriptPath = path.join(__dirname, script);
@@ -67,6 +67,7 @@ function main() {
   // 3. 依次执行计算脚本
   runScript('handle-prices.js');
   runScript('handle-buildings.js');
+  runScript('handle-civilization.js');
 
   // 4. 清理临时文件
   cleanTemp();
