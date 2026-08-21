@@ -1,0 +1,451 @@
+{
+  "techUnlock": {
+    "Fire": [
+      "Aqueduct"
+    ],
+    "StoneTools": [
+      "StoneQuarry"
+    ],
+    "Logging": [
+      "LoggingCamp"
+    ],
+    "Shelter": [
+      "Hut"
+    ],
+    "Masonry": [
+      "Brickworks",
+      "PyramidOfGiza"
+    ],
+    "Counting": [
+      "LumberMill",
+      "Statistics"
+    ],
+    "Farming": [
+      "WheatFarm"
+    ],
+    "Bronze": [
+      "CopperMiningCamp"
+    ],
+    "Housing": [
+      "House"
+    ],
+    "Herding": [
+      "PoultryFarm",
+      "DairyFarm"
+    ],
+    "HorsebackRiding": [
+      "Stable",
+      "Sandpit"
+    ],
+    "Metallurgy": [
+      "HatshepsutTemple",
+      "Blacksmith"
+    ],
+    "Stateship": [
+      "FlourMill"
+    ],
+    "Market": [
+      "Market",
+      "ColossusOfRhodes"
+    ],
+    "Arithmetic": [
+      "CottonPlantation"
+    ],
+    "Writing": [
+      "PaperMaker"
+    ],
+    "Iron": [
+      "IronMiningCamp"
+    ],
+    "RoadAndWheel": [
+      "Warehouse",
+      "GreatMosqueOfSamarra"
+    ],
+    "LandTrade": [
+      "Caravansary"
+    ],
+    "Astronomy": [
+      "Brewery",
+      "Stonehenge"
+    ],
+    "Shamanism": [
+      "ChariotWorkshop",
+      "Persepolis"
+    ],
+    "Construction": [
+      "IronForge",
+      "Marbleworks",
+      "ChoghaZanbil"
+    ],
+    "Music": [
+      "MusiciansGuild",
+      "PaintersGuild"
+    ],
+    "Calendar": [
+      "CottonMill",
+      "HangingGarden"
+    ],
+    "Engineering": [
+      "Armory",
+      "LighthouseOfAlexandria"
+    ],
+    "PreciousMetal": [
+      "GoldMiningCamp"
+    ],
+    "CityState": [
+      "Bakery",
+      "MausoleumAtHalicarnassus"
+    ],
+    "Literature": [
+      "CheeseMaker",
+      "WritersGuild"
+    ],
+    "Machinery": [
+      "SiegeWorkshop",
+      "TerracottaArmy"
+    ],
+    "Politics": [
+      "FurnitureWorkshop",
+      "Petra"
+    ],
+    "Theater": [
+      "ActorsGuild"
+    ],
+    "Library": [
+      "Library",
+      "Glassworks",
+      "PoetrySchool"
+    ],
+    "Architecture": [
+      "SwordForge",
+      "ChichenItza"
+    ],
+    "Democracy": [
+      "Apartment"
+    ],
+    "Autocracy": [
+      "CoinMint",
+      "TempleOfHeaven"
+    ],
+    "Religion": [
+      "Shrine",
+      "LuxorTemple"
+    ],
+    "Geography": [
+      "CaravelBuilder"
+    ],
+    "Physics": [
+      "GarmentWorkshop"
+    ],
+    "Feudalism": [
+      "KnightCamp",
+      "TempleOfArtemis"
+    ],
+    "Theocracy": [
+      "MogaoCaves"
+    ],
+    "Navigation": [
+      "GalleonBuilder"
+    ],
+    "CivilService": [
+      "AngkorWat"
+    ],
+    "HolyEmpire": [
+      "HagiaSophia"
+    ],
+    "Education": [
+      "School",
+      "GrandBazaar"
+    ],
+    "Optics": [
+      "LensWorkshop"
+    ],
+    "Banking": [
+      "Bank"
+    ],
+    "University": [
+      "University",
+      "OxfordUniversity"
+    ],
+    "Chemistry": [
+      "CoalMine"
+    ],
+    "Exploration": [
+      "CannonWorkshop"
+    ],
+    "PrintingPress": [
+      "PrintingHouse",
+      "ForbiddenCity"
+    ],
+    "Enlightenment": [
+      "Museum"
+    ],
+    "Firearm": [
+      "GunpowderMill",
+      "SaintBasilsCathedral"
+    ],
+    "Colonialism": [
+      "FrigateBuilder",
+      "HimejiCastle"
+    ],
+    "PrivateOwnership": [
+      "BondMarket"
+    ],
+    "Constitution": [
+      "Courthouse",
+      "TajMahal"
+    ],
+    "Revolution": [
+      "DynamiteWorkshop"
+    ],
+    "Rifling": [
+      "RifleFactory",
+      "Neuschwanstein"
+    ],
+    "Alloy": [
+      "SteelMill",
+      "EiffelTower"
+    ],
+    "SteamEngine": [
+      "Steamworks",
+      "ConcretePlant"
+    ],
+    "Capitalism": [
+      "Parliament",
+      "BigBen"
+    ],
+    "RapidFire": [
+      "GatlingGunFactory"
+    ],
+    "Railway": [
+      "LocomotiveFactory",
+      "RebarPlant"
+    ],
+    "Drilling": [
+      "OilWell",
+      "CableFactory"
+    ],
+    "Journalism": [
+      "PublishingHouse",
+      "Rijksmuseum"
+    ],
+    "Imperialism": [
+      "IroncladBuilder",
+      "SummerPalace"
+    ],
+    "Electricity": [
+      "CoalPowerPlant",
+      "ReinforcedConcretePlant"
+    ],
+    "StockMarket": [
+      "StockExchange",
+      "StatueOfLiberty"
+    ],
+    "Olympics": [
+      "Stadium",
+      "MagazinePublisher"
+    ],
+    "Combustion": [
+      "TankFactory"
+    ],
+    "Electrolysis": [
+      "AluminumSmelter"
+    ],
+    "Refinery": [
+      "OilRefinery",
+      "BrandenburgGate"
+    ],
+    "GasPipeline": [
+      "NaturalGasWell"
+    ],
+    "Urbanization": [
+      "Pizzeria",
+      "ResearchLab"
+    ],
+    "Aviation": [
+      "BiplaneFactory"
+    ],
+    "Synthetics": [
+      "PlasticsFactory",
+      "GasPowerPlant"
+    ],
+    "AtomicTheory": [
+      "UraniumMine",
+      "GasPlasticsPlant"
+    ],
+    "MotionPicture": [
+      "MovieStudio",
+      "Hollywood"
+    ],
+    "Assembly": [
+      "CarFactory",
+      "SagradaFamilia"
+    ],
+    "Ballistics": [
+      "ArtilleryFactory",
+      "SubmarineYard"
+    ],
+    "Enrichment": [
+      "UraniumEnrichmentPlant"
+    ],
+    "Radio": [
+      "RadioStation",
+      "CristoRedentor"
+    ],
+    "Rocketry": [
+      "RocketFactory",
+      "BattleshipBuilder"
+    ],
+    "NuclearFission": [
+      "AtomicFacility",
+      "ManhattanProject"
+    ],
+    "Hydroelectricity": [
+      "HydroDam",
+      "GoldenGateBridge"
+    ],
+    "UnitedNations": [
+      "Embassy",
+      "UnitedNations"
+    ],
+    "Satellite": [
+      "SatelliteFactory",
+      "SpaceNeedle"
+    ],
+    "JetPropulsion": [
+      "AirplaneFactory",
+      "SiliconSmelter"
+    ],
+    "NuclearReactor": [
+      "NuclearPowerPlant",
+      "Atomium"
+    ],
+    "Skyscraper": [
+      "Condo"
+    ],
+    "MilitaryTactics": [
+      "FighterJetPlant",
+      "NuclearMissileSilo"
+    ],
+    "Semiconductor": [
+      "SemiconductorFab"
+    ],
+    "Television": [
+      "TVStation",
+      "CNTower"
+    ],
+    "MonetarySystem": [
+      "ForexMarket",
+      "SwissBank"
+    ],
+    "SpaceProgram": [
+      "SpacecraftFactory",
+      "ApolloProgram"
+    ],
+    "MutualAssuredDestruction": [
+      "NuclearSubmarineYard",
+      "AircraftCarrierYard"
+    ],
+    "Computer": [
+      "ComputerFactory",
+      "ComputerLab"
+    ],
+    "Globalization": [
+      "OpticalFiberPlant",
+      "PortOfSingapore"
+    ],
+    "Nanotechnology": [
+      "MaglevFactory",
+      "InternationalSpaceStation"
+    ],
+    "Software": [
+      "SoftwareCompany"
+    ],
+    "WorldWideWeb": [
+      "InternetServiceProvider"
+    ],
+    "FinancialLeverage": [
+      "MutualFund",
+      "WorldTradeOrganization"
+    ],
+    "Genetics": [
+      "CloneFactory",
+      "CloneLab"
+    ],
+    "CloudComputing": [
+      "SupercomputerLab"
+    ],
+    "SocialNetwork": [
+      "CivTok",
+      "MarinaBaySands"
+    ],
+    "FinancialArbitrage": [
+      "HedgeFund",
+      "Peacekeeper"
+    ],
+    "Robotics": [
+      "RobocarFactory",
+      "SpaceCenter"
+    ],
+    "ArtificialIntelligence": [
+      "CivGPT"
+    ],
+    "VirtualReality": [
+      "CivOasis",
+      "LargeHadronCollider"
+    ],
+    "Blockchain": [
+      "BitcoinMiner",
+      "PalmJumeirah"
+    ],
+    "Future": [
+      "AldersonDisk",
+      "DysonSphere",
+      "MatrioshkaBrain",
+      "Superintelligence"
+    ]
+  },
+  "upgradeUnlock": {
+    "Christianity1": [
+      "Church"
+    ],
+    "Christianity2": [
+      "StPetersBasilica"
+    ],
+    "Islam1": [
+      "Mosque"
+    ],
+    "Islam2": [
+      "ProphetsMosque"
+    ],
+    "Buddhism1": [
+      "Pagoda"
+    ],
+    "Buddhism2": [
+      "GreatDagonPagoda"
+    ],
+    "Polytheism2": [
+      "Pantheon"
+    ]
+  },
+  "noPrice": [
+    "Worker",
+    "Power",
+    "Science",
+    "Festival",
+    "Warp",
+    "Explorer",
+    "Teleport",
+    "Cycle",
+    "TradeValue"
+  ],
+  "noStorage": [
+    "Worker",
+    "Power",
+    "Science",
+    "Warp",
+    "Festival",
+    "Cycle",
+    "TradeValue"
+  ]
+}

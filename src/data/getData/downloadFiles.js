@@ -30,6 +30,10 @@ const FILES = [
         url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/MaterialDefinitions.ts',
         output: './.temp/MaterialDefinitions.js'
     },
+    {
+        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/UpgradeDefinitions.ts',
+        output: './.temp/UpgradeDefinitions.js'
+    },
 ];
 
 // 下载配置

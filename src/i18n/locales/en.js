@@ -144,6 +144,6 @@ export default {
     statusCurrent: 'Current Week',
     statusUpcoming: 'Upcoming',
     emptyTitle: 'No civilization data',
-    emptyDesc: 'No civilization data available in city.json.'
+    emptyDesc: 'No civilization data available in civilization.json.'
   }
 }

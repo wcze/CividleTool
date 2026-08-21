@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const TEMP_DIR = path.join(__dirname, '.temp');
 
 // 依次执行的脚本（相对本文件）
-const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js'];
+const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js', 'handle-market.js'];
 
 function runScript(script) {
   const scriptPath = path.join(__dirname, script);
@@ -43,7 +43,7 @@ function cleanTemp() {
 
 function checkTempFiles() {
   if (!fs.existsSync(TEMP_DIR)) return 0;
-  return fs.readdirSync(TEMP_DIR).filter((f) => f.endsWith('.js')).length;
+  return fs.readdirSync(TEMP_DIR).filter((f) => /\.(js|ts)$/.test(f)).length;
 }
 
 function main() {
@@ -68,6 +68,7 @@ function main() {
   runScript('handle-prices.js');
   runScript('handle-buildings.js');
   runScript('handle-civilization.js');
+  runScript('handle-market.js');
 
   // 4. 清理临时文件
   cleanTemp();

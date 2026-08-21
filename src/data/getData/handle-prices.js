@@ -8,7 +8,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BUILDING_SRC = path.join(__dirname, '.temp', 'BuildingDefinitions.js');
+const BUILDING_SRC_JS = path.join(__dirname, '.temp', 'BuildingDefinitions.js');
+const BUILDING_SRC_TS = path.join(__dirname, '.temp', 'BuildingDefinitions.ts');
 const TECH_SRC = path.join(__dirname, '.temp', 'TechDefinitions.js');
 const TIMED_SRC = path.join(__dirname, '.temp', 'TimedBuildingUnlock.js');
 const CITY_SRC = path.join(__dirname, '.temp', 'CityDefinitions.js');
@@ -22,7 +23,8 @@ const KOTI_PRICE = 10000000;
 
 function extractObjectBlocks(text) {
   const blocks = [];
-  const re = /^\s*([A-Za-z_$][\w$]*)\s*=\s*\{/gm;
+  // 兼容 js 格式（Name = {）与 ts 格式（Name: IBuildingDefinition = {）
+  const re = /^\s*([A-Za-z_$][\w$]*)\s*(?::\s*[A-Za-z_$][\w$]*)?\s*=\s*\{/gm;
   let m;
   while ((m = re.exec(text)) !== null) {
     const name = m[1];
@@ -68,12 +70,13 @@ function extractStringArray(body, key) {
 // ---------- 主流程 ----------
 
 function main() {
-  if (!fs.existsSync(BUILDING_SRC) || !fs.existsSync(TECH_SRC)) {
+  const buildingSrcPath = fs.existsSync(BUILDING_SRC_JS) ? BUILDING_SRC_JS : BUILDING_SRC_TS;
+  if (!fs.existsSync(buildingSrcPath) || !fs.existsSync(TECH_SRC)) {
     console.error('❌ 缺少源文件，请先运行 downloadFiles.js');
     process.exit(1);
   }
 
-  const buildingSrc = fs.readFileSync(BUILDING_SRC, 'utf8');
+  const buildingSrc = fs.readFileSync(buildingSrcPath, 'utf8');
   const techSrc = fs.readFileSync(TECH_SRC, 'utf8');
   const materialSrc = fs.existsSync(MATERIAL_SRC) ? fs.readFileSync(MATERIAL_SRC, 'utf8') : '';
   const timedSrc = fs.existsSync(TIMED_SRC) ? fs.readFileSync(TIMED_SRC, 'utf8') : '';

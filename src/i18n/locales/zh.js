@@ -144,6 +144,6 @@ export default {
     statusCurrent: '当前周',
     statusUpcoming: '即将开始',
     emptyTitle: '暂无文明数据',
-    emptyDesc: '当前 city.json 中没有可用的文明数据。'
+    emptyDesc: '当前 civilization.json 中没有可用的文明数据。'
   }
 }

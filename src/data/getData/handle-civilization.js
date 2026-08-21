@@ -1,5 +1,5 @@
-// src/data/getData/handle-city.js
-// 同步脚本：处理 .temp 下的 CityDefinitions.js 成 city.json，并覆盖 src/data/city.json
+// src/data/getData/handle-civilization.js
+// 同步脚本：处理 .temp 下的 CityDefinitions.js 成 civilization.json，并覆盖 src/data/civilization.json
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 // 输入 / 输出路径
 const CITY_SRC = path.join(__dirname, '.temp', 'CityDefinitions.js');
-const OUT = path.join(__dirname, '..', 'city.json');
+const OUT = path.join(__dirname, '..', 'civilization.json');
 
 // ---------- 解析工具 ----------
 

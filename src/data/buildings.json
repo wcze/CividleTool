@@ -2,16 +2,23 @@
   {
     "building": "Hut",
     "mult": "1.5",
+    "output": {
+      "Worker": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Shelter"
   },
   {
     "building": "House",
     "mult": "1.5",
+    "output": {
+      "Worker": 6
+    },
     "build_resources": [
       {
         "resource": "Wood",
@@ -25,11 +32,18 @@
         "resource": "Water",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Housing",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "Apartment",
     "mult": "1.5",
+    "output": {
+      "Worker": 84
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -47,11 +61,18 @@
         "resource": "Bread",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Democracy",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8
   },
   {
     "building": "Condo",
     "mult": "1.5",
+    "output": {
+      "Worker": 510
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -61,71 +82,112 @@
         "resource": "Steel",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Skyscraper",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21
   },
   {
     "building": "Penthouse",
     "mult": "1.5",
+    "output": {
+      "Worker": 4358
+    },
     "build_resources": [
       {
         "resource": "Bond",
         "count": "10"
       }
-    ]
+    ],
+    "city": "Ottoman",
+    "tech": "FinancialLeverage",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "WheatFarm",
     "mult": "1.5",
+    "output": {
+      "Wheat": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Farming",
+    "age": "StoneAge",
+    "age_index": 0,
+    "column": 1
   },
   {
     "building": "StoneQuarry",
     "mult": "1.5",
+    "output": {
+      "Stone": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "StoneTools"
   },
   {
     "building": "LoggingCamp",
     "mult": "1.5",
+    "output": {
+      "Wood": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Logging"
   },
   {
     "building": "Aqueduct",
     "mult": "1.5",
+    "output": {
+      "Water": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Fire"
   },
   {
     "building": "IronMiningCamp",
     "mult": "1.5",
+    "output": {
+      "Iron": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Iron",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4
   },
   {
     "building": "CopperMiningCamp",
     "mult": "1.5",
+    "output": {
+      "Copper": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -135,11 +197,18 @@
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Bronze",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "CoalMine",
     "mult": "1.5",
+    "output": {
+      "Coal": 1
+    },
     "build_resources": [
       {
         "resource": "Iron",
@@ -153,21 +222,35 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Chemistry",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11
   },
   {
     "building": "Sandpit",
     "mult": "1.5",
+    "output": {
+      "Sand": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "HorsebackRiding",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "GoldMiningCamp",
     "mult": "1.5",
+    "output": {
+      "Gold": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -177,11 +260,18 @@
         "resource": "Copper",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "PreciousMetal",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 6
   },
   {
     "building": "UraniumMine",
     "mult": "1.5",
+    "output": {
+      "Uranium": 1
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -191,11 +281,18 @@
         "resource": "Tool",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "AtomicTheory",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "UraniumEnrichmentPlant",
     "mult": "1.5",
+    "output": {
+      "NuclearFuelRod": 1
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -205,21 +302,36 @@
         "resource": "Steel",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Enrichment",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 19
   },
   {
     "building": "FusionFuelPlant",
     "mult": "1.5",
+    "output": {
+      "FusionFuel": 1
+    },
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
         "count": "100"
       }
-    ]
+    ],
+    "city": "Australian",
+    "tech": "Software",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "OilWell",
     "mult": "1.5",
+    "output": {
+      "Oil": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -233,11 +345,18 @@
         "resource": "Sand",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Drilling",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "NaturalGasWell",
     "mult": "1.5",
+    "output": {
+      "NaturalGas": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -251,11 +370,18 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "GasPipeline",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "AluminumSmelter",
     "mult": "1.5",
+    "output": {
+      "Aluminum": 1
+    },
     "build_resources": [
       {
         "resource": "Tool",
@@ -269,21 +395,36 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Electrolysis",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "WindTurbine",
     "mult": "1.5",
+    "output": {
+      "Power": 1
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
         "count": "10"
       }
-    ]
+    ],
+    "city": "Dutch",
+    "tech": "Urbanization",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "CoalPowerPlant",
     "mult": "1.5",
+    "output": {
+      "Power": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -293,21 +434,36 @@
         "resource": "Brick",
         "count": "40"
       }
-    ]
+    ],
+    "tech": "Electricity",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "GasPowerPlant",
     "mult": "1.5",
+    "output": {
+      "Power": 3
+    },
     "build_resources": [
       {
         "resource": "Concrete",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Synthetics",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "HydroDam",
     "mult": "1.5",
+    "output": {
+      "Water": 1,
+      "Power": 2
+    },
     "build_resources": [
       {
         "resource": "Dynamite",
@@ -317,11 +473,18 @@
         "resource": "ReinforcedConcrete",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Hydroelectricity",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "NuclearPowerPlant",
     "mult": "1.5",
+    "output": {
+      "Power": 65
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -331,21 +494,36 @@
         "resource": "Steel",
         "count": "160"
       }
-    ]
+    ],
+    "tech": "NuclearReactor",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21
   },
   {
     "building": "FusionPowerPlant",
     "mult": "1.5",
+    "output": {
+      "Power": 1140
+    },
     "build_resources": [
       {
         "resource": "FusionFuel",
         "count": "20"
       }
-    ]
+    ],
+    "city": "Australian",
+    "tech": "Genetics",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "SwordForge",
     "mult": "1.5",
+    "output": {
+      "Sword": 1
+    },
     "build_resources": [
       {
         "resource": "Tool",
@@ -359,11 +537,18 @@
         "resource": "Copper",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Architecture",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8
   },
   {
     "building": "Armory",
     "mult": "1.5",
+    "output": {
+      "Armor": 1
+    },
     "build_resources": [
       {
         "resource": "Tool",
@@ -381,11 +566,18 @@
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Engineering",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 6
   },
   {
     "building": "ChariotWorkshop",
     "mult": "1.5",
+    "output": {
+      "Chariot": 1
+    },
     "build_resources": [
       {
         "resource": "Horse",
@@ -403,11 +595,18 @@
         "resource": "Brick",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Shamanism",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "KnightCamp",
     "mult": "1.5",
+    "output": {
+      "Knight": 1
+    },
     "build_resources": [
       {
         "resource": "Horse",
@@ -421,11 +620,18 @@
         "resource": "Sword",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Feudalism",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9
   },
   {
     "building": "CannonWorkshop",
     "mult": "1.5",
+    "output": {
+      "Cannon": 1
+    },
     "build_resources": [
       {
         "resource": "Iron",
@@ -447,11 +653,18 @@
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Exploration",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12
   },
   {
     "building": "GunpowderMill",
     "mult": "1.5",
+    "output": {
+      "Gunpowder": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -461,11 +674,18 @@
         "resource": "Coal",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Firearm",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12
   },
   {
     "building": "DynamiteWorkshop",
     "mult": "1.5",
+    "output": {
+      "Dynamite": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -479,11 +699,18 @@
         "resource": "Coal",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Revolution",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13
   },
   {
     "building": "SiegeWorkshop",
     "mult": "1.5",
+    "output": {
+      "SiegeRam": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -505,11 +732,18 @@
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Machinery",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "CaravelBuilder",
     "mult": "1.5",
+    "output": {
+      "Caravel": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -527,11 +761,18 @@
         "resource": "Tool",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Geography",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9
   },
   {
     "building": "GalleonBuilder",
     "mult": "1.5",
+    "output": {
+      "Galleon": 1
+    },
     "build_resources": [
       {
         "resource": "Caravel",
@@ -549,11 +790,18 @@
         "resource": "Armor",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Navigation",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 10
   },
   {
     "building": "FrigateBuilder",
     "mult": "1.5",
+    "output": {
+      "Frigate": 1
+    },
     "build_resources": [
       {
         "resource": "Galleon",
@@ -571,11 +819,18 @@
         "resource": "Lens",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Colonialism",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13
   },
   {
     "building": "RifleFactory",
     "mult": "1.5",
+    "output": {
+      "Rifle": 1
+    },
     "build_resources": [
       {
         "resource": "Gunpowder",
@@ -585,11 +840,18 @@
         "resource": "Tool",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Rifling",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14
   },
   {
     "building": "GatlingGunFactory",
     "mult": "1.5",
+    "output": {
+      "GatlingGun": 1
+    },
     "build_resources": [
       {
         "resource": "Rifle",
@@ -599,11 +861,18 @@
         "resource": "Gunpowder",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "RapidFire",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "ArtilleryFactory",
     "mult": "1.5",
+    "output": {
+      "Artillery": 1
+    },
     "build_resources": [
       {
         "resource": "GatlingGun",
@@ -617,11 +886,18 @@
         "resource": "Aluminum",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Ballistics",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 19
   },
   {
     "building": "IroncladBuilder",
     "mult": "1.5",
+    "output": {
+      "Ironclad": 1
+    },
     "build_resources": [
       {
         "resource": "GatlingGun",
@@ -635,11 +911,18 @@
         "resource": "Frigate",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Imperialism",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "BattleshipBuilder",
     "mult": "1.5",
+    "output": {
+      "Battleship": 1
+    },
     "build_resources": [
       {
         "resource": "Ironclad",
@@ -661,11 +944,18 @@
         "resource": "Aluminum",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Rocketry",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "TankFactory",
     "mult": "1.5",
+    "output": {
+      "Tank": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -683,11 +973,18 @@
         "resource": "GatlingGun",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Combustion",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "BiplaneFactory",
     "mult": "1.5",
+    "output": {
+      "Biplane": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -705,11 +1002,18 @@
         "resource": "Petrol",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Aviation",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "RocketFactory",
     "mult": "1.5",
+    "output": {
+      "Rocket": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -731,11 +1035,18 @@
         "resource": "Petrol",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Rocketry",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "AtomicFacility",
     "mult": "1.5",
+    "output": {
+      "AtomicBomb": 1
+    },
     "build_resources": [
       {
         "resource": "Dynamite",
@@ -745,11 +1056,18 @@
         "resource": "Uranium",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "NuclearFission",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "FighterJetPlant",
     "mult": "1.5",
+    "output": {
+      "FighterJet": 2
+    },
     "build_resources": [
       {
         "resource": "Airplane",
@@ -759,11 +1077,18 @@
         "resource": "Artillery",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "MilitaryTactics",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22
   },
   {
     "building": "AircraftCarrierYard",
     "mult": "1.5",
+    "output": {
+      "AircraftCarrier": 1
+    },
     "build_resources": [
       {
         "resource": "Battleship",
@@ -773,21 +1098,35 @@
         "resource": "FighterJet",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "MutualAssuredDestruction",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "SubmarineYard",
     "mult": "1.5",
+    "output": {
+      "Submarine": 1
+    },
     "build_resources": [
       {
         "resource": "Ironclad",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Ballistics",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 19
   },
   {
     "building": "NuclearSubmarineYard",
     "mult": "1.5",
+    "output": {
+      "NuclearSubmarine": 1
+    },
     "build_resources": [
       {
         "resource": "Submarine",
@@ -797,11 +1136,18 @@
         "resource": "NuclearMissile",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "MutualAssuredDestruction",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "NuclearMissileSilo",
     "mult": "1.5",
+    "output": {
+      "NuclearMissile": 1
+    },
     "build_resources": [
       {
         "resource": "AtomicBomb",
@@ -811,11 +1157,18 @@
         "resource": "Rocket",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "MilitaryTactics",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22
   },
   {
     "building": "Peacekeeper",
     "mult": "1.5",
+    "output": {
+      "Peace": 1
+    },
     "build_resources": [
       {
         "resource": "NuclearMissile",
@@ -829,21 +1182,35 @@
         "resource": "Radio",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "FinancialArbitrage",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "WritersGuild",
     "mult": "1.5",
+    "output": {
+      "Poem": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Literature",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 6
   },
   {
     "building": "PoetrySchool",
     "mult": "1.5",
+    "output": {
+      "Poem": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -853,11 +1220,18 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Library",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "PaintersGuild",
     "mult": "1.5",
+    "output": {
+      "Painting": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -867,11 +1241,18 @@
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Music",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "MusiciansGuild",
     "mult": "1.5",
+    "output": {
+      "Music": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -881,11 +1262,18 @@
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Music",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "ActorsGuild",
     "mult": "1.5",
+    "output": {
+      "Opera": 2
+    },
     "build_resources": [
       {
         "resource": "Music",
@@ -895,11 +1283,18 @@
         "resource": "Poem",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Theater",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "Shrine",
     "mult": "1.5",
+    "output": {
+      "Faith": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -913,11 +1308,18 @@
         "resource": "Alcohol",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Religion",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8
   },
   {
     "building": "Church",
     "mult": "1.5",
+    "output": {
+      "Faith": 3
+    },
     "build_resources": [
       {
         "resource": "Music",
@@ -932,6 +1334,9 @@
   {
     "building": "Mosque",
     "mult": "1.5",
+    "output": {
+      "Faith": 4
+    },
     "build_resources": [
       {
         "resource": "Cheese",
@@ -946,6 +1351,9 @@
   {
     "building": "Pagoda",
     "mult": "1.5",
+    "output": {
+      "Faith": 3
+    },
     "build_resources": [
       {
         "resource": "Painting",
@@ -960,16 +1368,26 @@
   {
     "building": "Library",
     "mult": "1.5",
+    "output": {
+      "Science": 140
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Library",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "School",
     "mult": "1.5",
+    "output": {
+      "Science": 800
+    },
     "build_resources": [
       {
         "resource": "Faith",
@@ -979,11 +1397,19 @@
         "resource": "Poem",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Education",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 10
   },
   {
     "building": "University",
     "mult": "1.5",
+    "output": {
+      "Philosophy": 1,
+      "Science": 250
+    },
     "build_resources": [
       {
         "resource": "Poem",
@@ -993,11 +1419,19 @@
         "resource": "Faith",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "University",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11
   },
   {
     "building": "PublishingHouse",
     "mult": "1.5",
+    "output": {
+      "Newspaper": 1,
+      "Science": 1000
+    },
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -1007,11 +1441,19 @@
         "resource": "Book",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Journalism",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "MagazinePublisher",
     "mult": "1.5",
+    "output": {
+      "Magazine": 1,
+      "Science": 1000
+    },
     "build_resources": [
       {
         "resource": "Sports",
@@ -1021,11 +1463,18 @@
         "resource": "Book",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Olympics",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "ResearchLab",
     "mult": "1.5",
+    "output": {
+      "Science": 7500
+    },
     "build_resources": [
       {
         "resource": "Culture",
@@ -1035,11 +1484,18 @@
         "resource": "Philosophy",
         "count": "30"
       }
-    ]
+    ],
+    "tech": "Urbanization",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "ResearchFund",
     "mult": "1.5",
+    "output": {
+      "Science": 25940
+    },
     "build_resources": [
       {
         "resource": "Banknote",
@@ -1049,21 +1505,36 @@
         "resource": "Bond",
         "count": "10"
       }
-    ]
+    ],
+    "city": "American",
+    "tech": "UnitedNations",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "ComputerLab",
     "mult": "1.5",
+    "output": {
+      "Science": 80625
+    },
     "build_resources": [
       {
         "resource": "Computer",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Computer",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "Museum",
     "mult": "1.5",
+    "output": {
+      "Culture": 1
+    },
     "build_resources": [
       {
         "resource": "Music",
@@ -1073,11 +1544,18 @@
         "resource": "Painting",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Enlightenment",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12
   },
   {
     "building": "Courthouse",
     "mult": "1.5",
+    "output": {
+      "Law": 1
+    },
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -1091,11 +1569,18 @@
         "resource": "Culture",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Constitution",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13
   },
   {
     "building": "Stadium",
     "mult": "1.5",
+    "output": {
+      "Sports": 1
+    },
     "build_resources": [
       {
         "resource": "Culture",
@@ -1109,11 +1594,18 @@
         "resource": "Philosophy",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Olympics",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "Parliament",
     "mult": "1.5",
+    "output": {
+      "Politics": 1
+    },
     "build_resources": [
       {
         "resource": "Culture",
@@ -1127,11 +1619,18 @@
         "resource": "Law",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Capitalism",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14
   },
   {
     "building": "MovieStudio",
     "mult": "1.5",
+    "output": {
+      "Movie": 1
+    },
     "build_resources": [
       {
         "resource": "Sports",
@@ -1145,11 +1644,18 @@
         "resource": "Garment",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "MotionPicture",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "RadioStation",
     "mult": "1.5",
+    "output": {
+      "Radio": 1
+    },
     "build_resources": [
       {
         "resource": "Magazine",
@@ -1163,11 +1669,18 @@
         "resource": "Culture",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Radio",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 19
   },
   {
     "building": "Embassy",
     "mult": "1.5",
+    "output": {
+      "Diplomacy": 1
+    },
     "build_resources": [
       {
         "resource": "Law",
@@ -1181,11 +1694,18 @@
         "resource": "Philosophy",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "UnitedNations",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 20
   },
   {
     "building": "TVStation",
     "mult": "1.5",
+    "output": {
+      "TV": 1
+    },
     "build_resources": [
       {
         "resource": "Radio",
@@ -1195,11 +1715,18 @@
         "resource": "Movie",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Television",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22
   },
   {
     "building": "InternetServiceProvider",
     "mult": "1.5",
+    "output": {
+      "Internet": 1
+    },
     "build_resources": [
       {
         "resource": "Computer",
@@ -1209,11 +1736,18 @@
         "resource": "OpticalFiber",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "WorldWideWeb",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "SoftwareCompany",
     "mult": "1.5",
+    "output": {
+      "Software": 1
+    },
     "build_resources": [
       {
         "resource": "Computer",
@@ -1223,11 +1757,18 @@
         "resource": "Philosophy",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Software",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "SupercomputerLab",
     "mult": "1.5",
+    "output": {
+      "Supercomputer": 1
+    },
     "build_resources": [
       {
         "resource": "Software",
@@ -1237,11 +1778,18 @@
         "resource": "Computer",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "CloudComputing",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "CivGPT",
     "mult": "1.5",
+    "output": {
+      "CivGPT": 1
+    },
     "build_resources": [
       {
         "resource": "Internet",
@@ -1255,11 +1803,18 @@
         "resource": "Radio",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "ArtificialIntelligence",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "AILab",
     "mult": "1.5",
+    "output": {
+      "CivGPT": 2
+    },
     "build_resources": [
       {
         "resource": "Internet",
@@ -1273,11 +1828,19 @@
         "resource": "Radio",
         "count": "20"
       }
-    ]
+    ],
+    "city": "Canadian",
+    "tech": "ArtificialIntelligence",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "CivTok",
     "mult": "1.5",
+    "output": {
+      "CivTok": 1
+    },
     "build_resources": [
       {
         "resource": "Internet",
@@ -1287,11 +1850,18 @@
         "resource": "Politics",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "SocialNetwork",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "CivOasis",
     "mult": "1.5",
+    "output": {
+      "CivOasis": 1
+    },
     "build_resources": [
       {
         "resource": "CivTok",
@@ -1305,21 +1875,35 @@
         "resource": "Diplomacy",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "VirtualReality",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "CottonPlantation",
     "mult": "1.5",
+    "output": {
+      "Cotton": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Arithmetic",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3
   },
   {
     "building": "CottonMill",
     "mult": "1.5",
+    "output": {
+      "Cloth": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1329,21 +1913,35 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Calendar",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "GarmentWorkshop",
     "mult": "1.5",
+    "output": {
+      "Garment": 1
+    },
     "build_resources": [
       {
         "resource": "Cloth",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Physics",
+    "age": "MiddleAge",
+    "age_index": 4,
+    "column": 9
   },
   {
     "building": "FurnitureWorkshop",
     "mult": "1.5",
+    "output": {
+      "Furniture": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -1353,11 +1951,18 @@
         "resource": "Copper",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Politics",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "PrintingHouse",
     "mult": "1.5",
+    "output": {
+      "Book": 1
+    },
     "build_resources": [
       {
         "resource": "Paper",
@@ -1367,51 +1972,86 @@
         "resource": "Poem",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "PrintingPress",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 12
   },
   {
     "building": "FlourMill",
     "mult": "1.5",
+    "output": {
+      "Flour": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Stateship",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3
   },
   {
     "building": "PoultryFarm",
     "mult": "1.5",
+    "output": {
+      "Meat": 2
+    },
     "build_resources": [
       {
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Herding",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "DairyFarm",
     "mult": "1.5",
+    "output": {
+      "Milk": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Herding",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "Stable",
     "mult": "1.5",
+    "output": {
+      "Horse": 1
+    },
     "build_resources": [
       {
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "HorsebackRiding",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 2
   },
   {
     "building": "Bakery",
     "mult": "1.5",
+    "output": {
+      "Bread": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1425,11 +2065,18 @@
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "CityState",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 6
   },
   {
     "building": "CheeseMaker",
     "mult": "1.5",
+    "output": {
+      "Cheese": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1439,21 +2086,35 @@
         "resource": "Lumber",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Literature",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 6
   },
   {
     "building": "Brewery",
     "mult": "1.5",
+    "output": {
+      "Alcohol": 1
+    },
     "build_resources": [
       {
         "resource": "Copper",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Astronomy",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4
   },
   {
     "building": "PaperMaker",
     "mult": "1.5",
+    "output": {
+      "Paper": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
@@ -1463,11 +2124,18 @@
         "resource": "Stone",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Writing",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3
   },
   {
     "building": "Pizzeria",
     "mult": "1.5",
+    "output": {
+      "Pizza": 1
+    },
     "build_resources": [
       {
         "resource": "Cheese",
@@ -1485,41 +2153,69 @@
         "resource": "Water",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Urbanization",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "PlasticsFactory",
     "mult": "1.5",
+    "output": {
+      "Plastics": 1
+    },
     "build_resources": [
       {
         "resource": "Oil",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Synthetics",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "GasPlasticsPlant",
     "mult": "1.5",
+    "output": {
+      "Plastics": 1
+    },
     "build_resources": [
       {
         "resource": "NaturalGas",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "AtomicTheory",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 18
   },
   {
     "building": "LumberMill",
     "mult": "1.5",
+    "output": {
+      "Lumber": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Counting",
+    "age": "StoneAge",
+    "age_index": 0,
+    "column": 1
   },
   {
     "building": "Glassworks",
     "mult": "1.5",
+    "output": {
+      "Glass": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1529,51 +2225,86 @@
         "resource": "Wood",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Library",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 7
   },
   {
     "building": "LensWorkshop",
     "mult": "1.5",
+    "output": {
+      "Lens": 1
+    },
     "build_resources": [
       {
         "resource": "Glass",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Optics",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11
   },
   {
     "building": "Blacksmith",
     "mult": "1.5",
+    "output": {
+      "Tool": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Metallurgy",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3
   },
   {
     "building": "IronForge",
     "mult": "1.5",
+    "output": {
+      "Tool": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Construction",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "Brickworks",
     "mult": "1.5",
+    "output": {
+      "Brick": 1
+    },
     "build_resources": [
       {
         "resource": "Wood",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Masonry",
+    "age": "StoneAge",
+    "age_index": 0,
+    "column": 1
   },
   {
     "building": "Marbleworks",
     "mult": "1.5",
+    "output": {
+      "Marble": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -1583,11 +2314,18 @@
         "resource": "Tool",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Construction",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 5
   },
   {
     "building": "ConcretePlant",
     "mult": "1.5",
+    "output": {
+      "Concrete": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1601,21 +2339,35 @@
         "resource": "Tool",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "SteamEngine",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14
   },
   {
     "building": "RebarPlant",
     "mult": "1.5",
+    "output": {
+      "Rebar": 1
+    },
     "build_resources": [
       {
         "resource": "Steel",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Railway",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "ReinforcedConcretePlant",
     "mult": "1.5",
+    "output": {
+      "ReinforcedConcrete": 1
+    },
     "build_resources": [
       {
         "resource": "Rebar",
@@ -1625,11 +2377,18 @@
         "resource": "Concrete",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Electricity",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "SteelMill",
     "mult": "1.5",
+    "output": {
+      "Steel": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1639,11 +2398,18 @@
         "resource": "Coal",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Alloy",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14
   },
   {
     "building": "SiliconSmelter",
     "mult": "1.5",
+    "output": {
+      "Silicon": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1653,21 +2419,35 @@
         "resource": "Coal",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "JetPropulsion",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21
   },
   {
     "building": "CableFactory",
     "mult": "1.5",
+    "output": {
+      "Cable": 1
+    },
     "build_resources": [
       {
         "resource": "Copper",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Drilling",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "Steamworks",
     "mult": "1.5",
+    "output": {
+      "Engine": 1
+    },
     "build_resources": [
       {
         "resource": "Iron",
@@ -1681,11 +2461,18 @@
         "resource": "Tool",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "SteamEngine",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 14
   },
   {
     "building": "LocomotiveFactory",
     "mult": "1.5",
+    "output": {
+      "Train": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -1695,11 +2482,18 @@
         "resource": "Steel",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Railway",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 15
   },
   {
     "building": "MaglevFactory",
     "mult": "1.5",
+    "output": {
+      "Maglev": 1
+    },
     "build_resources": [
       {
         "resource": "Train",
@@ -1713,11 +2507,18 @@
         "resource": "Car",
         "count": "150"
       }
-    ]
+    ],
+    "tech": "Nanotechnology",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "CarFactory",
     "mult": "1.5",
+    "output": {
+      "Car": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -1743,11 +2544,18 @@
         "resource": "Petrol",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Assembly",
+    "age": "WorldWarAge",
+    "age_index": 7,
+    "column": 19
   },
   {
     "building": "RobocarFactory",
     "mult": "1.5",
+    "output": {
+      "Robocar": 1
+    },
     "build_resources": [
       {
         "resource": "Car",
@@ -1761,11 +2569,18 @@
         "resource": "Satellite",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Robotics",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "SpaceCenter",
     "mult": "1.5",
+    "output": {
+      "PlanetaryRover": 2
+    },
     "build_resources": [
       {
         "resource": "Maglev",
@@ -1779,41 +2594,69 @@
         "resource": "Supercomputer",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Robotics",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "OilRefinery",
     "mult": "1.5",
+    "output": {
+      "Petrol": 1
+    },
     "build_resources": [
       {
         "resource": "Steel",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Refinery",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 17
   },
   {
     "building": "SatelliteFactory",
     "mult": "1.5",
+    "output": {
+      "Satellite": 1
+    },
     "build_resources": [
       {
         "resource": "Rocket",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Satellite",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21
   },
   {
     "building": "AirplaneFactory",
     "mult": "1.5",
+    "output": {
+      "Airplane": 1
+    },
     "build_resources": [
       {
         "resource": "Biplane",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "JetPropulsion",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 21
   },
   {
     "building": "SpacecraftFactory",
     "mult": "1.5",
+    "output": {
+      "Spacecraft": 1
+    },
     "build_resources": [
       {
         "resource": "Rocket",
@@ -1827,11 +2670,18 @@
         "resource": "Airplane",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "SpaceProgram",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "Cosmodrome",
     "mult": "1.5",
+    "output": {
+      "Spacecraft": 2
+    },
     "build_resources": [
       {
         "resource": "Rocket",
@@ -1845,11 +2695,19 @@
         "resource": "Airplane",
         "count": "40"
       }
-    ]
+    ],
+    "city": "Russian",
+    "tech": "SpaceProgram",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "SemiconductorFab",
     "mult": "1.5",
+    "output": {
+      "Semiconductor": 1
+    },
     "build_resources": [
       {
         "resource": "Silicon",
@@ -1859,11 +2717,18 @@
         "resource": "Copper",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Semiconductor",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22
   },
   {
     "building": "ComputerFactory",
     "mult": "1.5",
+    "output": {
+      "Computer": 1
+    },
     "build_resources": [
       {
         "resource": "Semiconductor",
@@ -1877,11 +2742,18 @@
         "resource": "Aluminum",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Computer",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "OpticalFiberPlant",
     "mult": "1.5",
+    "output": {
+      "OpticalFiber": 1
+    },
     "build_resources": [
       {
         "resource": "Cable",
@@ -1895,11 +2767,18 @@
         "resource": "Plastics",
         "count": "100"
       }
-    ]
+    ],
+    "tech": "Globalization",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 23
   },
   {
     "building": "CoinMint",
     "mult": "1.5",
+    "output": {
+      "Coin": 1
+    },
     "build_resources": [
       {
         "resource": "Gold",
@@ -1913,41 +2792,69 @@
         "resource": "Copper",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Autocracy",
+    "age": "ClassicalAge",
+    "age_index": 3,
+    "column": 8
   },
   {
     "building": "Bank",
     "mult": "1.5",
+    "output": {
+      "Banknote": 1
+    },
     "build_resources": [
       {
         "resource": "Coin",
         "count": "30"
       }
-    ]
+    ],
+    "tech": "Banking",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 11
   },
   {
     "building": "BondMarket",
     "mult": "1.5",
+    "output": {
+      "Bond": 1
+    },
     "build_resources": [
       {
         "resource": "Banknote",
         "count": "30"
       }
-    ]
+    ],
+    "tech": "PrivateOwnership",
+    "age": "RenaissanceAge",
+    "age_index": 5,
+    "column": 13
   },
   {
     "building": "StockExchange",
     "mult": "1.5",
+    "output": {
+      "Stock": 1
+    },
     "build_resources": [
       {
         "resource": "Bond",
         "count": "30"
       }
-    ]
+    ],
+    "tech": "StockMarket",
+    "age": "IndustrialAge",
+    "age_index": 6,
+    "column": 16
   },
   {
     "building": "ForexMarket",
     "mult": "1.5",
+    "output": {
+      "Forex": 1
+    },
     "build_resources": [
       {
         "resource": "Banknote",
@@ -1957,11 +2864,18 @@
         "resource": "Bond",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "MonetarySystem",
+    "age": "ColdWarAge",
+    "age_index": 8,
+    "column": 22
   },
   {
     "building": "MutualFund",
     "mult": "1.5",
+    "output": {
+      "MutualFund": 1
+    },
     "build_resources": [
       {
         "resource": "Forex",
@@ -1971,21 +2885,35 @@
         "resource": "Stock",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "FinancialLeverage",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 24
   },
   {
     "building": "HedgeFund",
     "mult": "1.5",
+    "output": {
+      "HedgeFund": 1
+    },
     "build_resources": [
       {
         "resource": "MutualFund",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "FinancialArbitrage",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "BitcoinMiner",
     "mult": "1.5",
+    "output": {
+      "Bitcoin": 1
+    },
     "build_resources": [
       {
         "resource": "HedgeFund",
@@ -1995,11 +2923,16 @@
         "resource": "CivTok",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "Blockchain",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 26
   },
   {
     "building": "Caravansary",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -2013,11 +2946,16 @@
         "resource": "Tool",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "LandTrade",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4
   },
   {
     "building": "Market",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -2031,11 +2969,16 @@
         "resource": "Lumber",
         "count": "20"
       }
-    ]
+    ],
+    "tech": "Market",
+    "age": "BronzeAge",
+    "age_index": 1,
+    "column": 3
   },
   {
     "building": "Warehouse",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Lumber",
@@ -2049,11 +2992,16 @@
         "resource": "Horse",
         "count": "10"
       }
-    ]
+    ],
+    "tech": "RoadAndWheel",
+    "age": "IronAge",
+    "age_index": 2,
+    "column": 4
   },
   {
     "building": "CloneFactory",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Software",
@@ -2063,11 +3011,16 @@
         "resource": "Tank",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Genetics",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
   },
   {
     "building": "CloneLab",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Rocket",
@@ -2077,11 +3030,24 @@
         "resource": "Computer",
         "count": "50"
       }
-    ]
+    ],
+    "tech": "Genetics",
+    "age": "InformationAge",
+    "age_index": 9,
+    "column": 25
+  },
+  {
+    "building": "Headquarter",
+    "mult": "1.5",
+    "output": {
+      "Worker": 10
+    },
+    "build_resources": []
   },
   {
     "building": "Statistics",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2092,45 +3058,48 @@
         "count": "4500"
       }
     ],
+    "tech": "Counting",
     "age": "StoneAge",
     "age_index": 0,
     "column": 1,
-    "tech": "Counting",
     "builder_init": 5.806451612903226
   },
   {
     "building": "Petra",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Gold",
         "count": "596300"
       }
     ],
+    "tech": "Politics",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Politics",
     "builder_init": 118.68818004541619
   },
   {
     "building": "Stonehenge",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
         "count": "711300"
       }
     ],
+    "tech": "Astronomy",
     "age": "IronAge",
     "age_index": 2,
     "column": 4,
-    "tech": "Astronomy",
     "builder_init": 214.6210516049798
   },
   {
     "building": "HatshepsutTemple",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2145,15 +3114,16 @@
         "count": "19267"
       }
     ],
+    "tech": "Metallurgy",
     "age": "BronzeAge",
     "age_index": 1,
     "column": 3,
-    "tech": "Metallurgy",
     "builder_init": 59.68074394414271
   },
   {
     "building": "LighthouseOfAlexandria",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Iron",
@@ -2168,45 +3138,48 @@
         "count": "99821"
       }
     ],
+    "tech": "Engineering",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 6,
-    "tech": "Engineering",
     "builder_init": 65.83613915751656
   },
   {
     "building": "PyramidOfGiza",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
         "count": "135000"
       }
     ],
+    "tech": "Masonry",
     "age": "StoneAge",
     "age_index": 0,
     "column": 1,
-    "tech": "Masonry",
     "builder_init": 87.09677419354838
   },
   {
     "building": "ColossusOfRhodes",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
         "count": "173400"
       }
     ],
+    "tech": "Market",
     "age": "BronzeAge",
     "age_index": 1,
     "column": 3,
-    "tech": "Market",
     "builder_init": 76.73219542152154
   },
   {
     "building": "GreatMosqueOfSamarra",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Sand",
@@ -2221,15 +3194,16 @@
         "count": "59275"
       }
     ],
+    "tech": "RoadAndWheel",
     "age": "IronAge",
     "age_index": 2,
     "column": 4,
-    "tech": "RoadAndWheel",
     "builder_init": 59.616858202258854
   },
   {
     "building": "HangingGarden",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2244,15 +3218,16 @@
         "count": "101967"
       }
     ],
+    "tech": "Calendar",
     "age": "IronAge",
     "age_index": 2,
     "column": 5,
-    "tech": "Calendar",
     "builder_init": 205.50521721434302
   },
   {
     "building": "TempleOfHeaven",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Iron",
@@ -2267,15 +3242,16 @@
         "count": "161329"
       }
     ],
+    "tech": "Autocracy",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Autocracy",
     "builder_init": 111.83151739564798
   },
   {
     "building": "Parthenon",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -2291,15 +3267,16 @@
       }
     ],
     "city": "Greek",
+    "tech": "Democracy",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Democracy",
     "builder_init": 64.9135551089682
   },
   {
     "building": "TempleOfArtemis",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Armor",
@@ -2314,15 +3291,16 @@
         "count": "255634"
       }
     ],
+    "tech": "Feudalism",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Feudalism",
     "builder_init": 86.06189781021898
   },
   {
     "building": "LuxorTemple",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Tool",
@@ -2337,15 +3315,16 @@
         "count": "102664"
       }
     ],
+    "tech": "Religion",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Religion",
     "builder_init": 81.33211695582
   },
   {
     "building": "ChichenItza",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2360,15 +3339,16 @@
         "count": "26263"
       }
     ],
+    "tech": "Architecture",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Architecture",
     "builder_init": 445.7368002195685
   },
   {
     "building": "MausoleumAtHalicarnassus",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -2383,15 +3363,16 @@
         "count": "99821"
       }
     ],
+    "tech": "CityState",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 6,
-    "tech": "CityState",
     "builder_init": 101.98134468835937
   },
   {
     "building": "HagiaSophia",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -2406,15 +3387,16 @@
         "count": "63776"
       }
     ],
+    "tech": "HolyEmpire",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "HolyEmpire",
     "builder_init": 157.18008454676308
   },
   {
     "building": "AngkorWat",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -2429,15 +3411,16 @@
         "count": "313566"
       }
     ],
+    "tech": "CivilService",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "CivilService",
     "builder_init": 199.9980559600414
   },
   {
     "building": "TerracottaArmy",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Chariot",
@@ -2452,15 +3435,16 @@
         "count": "1788900"
       }
     ],
+    "tech": "Machinery",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Machinery",
     "builder_init": 406.93107361947256
   },
   {
     "building": "Persepolis",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2475,15 +3459,16 @@
         "count": "101967"
       }
     ],
+    "tech": "Shamanism",
     "age": "IronAge",
     "age_index": 2,
     "column": 5,
-    "tech": "Shamanism",
     "builder_init": 205.50521721434302
   },
   {
     "building": "OxfordUniversity",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -2498,15 +3483,16 @@
         "count": "2678157"
       }
     ],
+    "tech": "University",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 11,
-    "tech": "University",
     "builder_init": 500.44212162191127
   },
   {
     "building": "SaintBasilsCathedral",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -2521,15 +3507,16 @@
         "count": "1184277"
       }
     ],
+    "tech": "Firearm",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 12,
-    "tech": "Firearm",
     "builder_init": 426.2166333395245
   },
   {
     "building": "ForbiddenCity",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -2544,15 +3531,16 @@
         "count": "679218"
       }
     ],
+    "tech": "PrintingPress",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 12,
-    "tech": "PrintingPress",
     "builder_init": 243.640410573576
   },
   {
     "building": "HimejiCastle",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Caravel",
@@ -2567,15 +3555,16 @@
         "count": "18535"
       }
     ],
+    "tech": "Colonialism",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 13,
-    "tech": "Colonialism",
     "builder_init": 44.20805619339305
   },
   {
     "building": "TajMahal",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -2590,15 +3579,16 @@
         "count": "1166169"
       }
     ],
+    "tech": "Constitution",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 13,
-    "tech": "Constitution",
     "builder_init": 545.8732282109247
   },
   {
     "building": "Colosseum",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -2614,15 +3604,16 @@
       }
     ],
     "city": "Roman",
+    "tech": "Theater",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Theater",
     "builder_init": 154.71859150243654
   },
   {
     "building": "MogaoCaves",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -2637,15 +3628,16 @@
         "count": "584307"
       }
     ],
+    "tech": "Theocracy",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Theocracy",
     "builder_init": 168.55007299270073
   },
   {
     "building": "StatueOfZeus",
     "mult": "5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -2661,15 +3653,16 @@
       }
     ],
     "city": "Greek",
+    "tech": "Theater",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Theater",
     "builder_init": 117.09863819426292
   },
   {
     "building": "CircusMaximus",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Music",
@@ -2685,30 +3678,32 @@
       }
     ],
     "city": "Roman",
+    "tech": "CivilService",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "CivilService",
     "builder_init": 269.90799726733735
   },
   {
     "building": "EiffelTower",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Steel",
         "count": "9378075"
       }
     ],
+    "tech": "Alloy",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Alloy",
     "builder_init": 817.7867171695597
   },
   {
     "building": "Rijksmuseum",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Newspaper",
@@ -2723,15 +3718,16 @@
         "count": "1494589"
       }
     ],
+    "tech": "Journalism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "Journalism",
     "builder_init": 360.28388629525045
   },
   {
     "building": "SummerPalace",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Gunpowder",
@@ -2746,15 +3742,16 @@
         "count": "182492"
       }
     ],
+    "tech": "Imperialism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 16,
-    "tech": "Imperialism",
     "builder_init": 569.8817725196257
   },
   {
     "building": "StatueOfLiberty",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -2769,15 +3766,16 @@
         "count": "734670"
       }
     ],
+    "tech": "StockMarket",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 16,
-    "tech": "StockMarket",
     "builder_init": 414.87419731616274
   },
   {
     "building": "Neuschwanstein",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Rifle",
@@ -2792,15 +3790,16 @@
         "count": "3929860"
       }
     ],
+    "tech": "Rifling",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Rifling",
     "builder_init": 380.96007884124515
   },
   {
     "building": "BrandenburgGate",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -2815,15 +3814,16 @@
         "count": "59159"
       }
     ],
+    "tech": "Refinery",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 17,
-    "tech": "Refinery",
     "builder_init": 40.90589661160169
   },
   {
     "building": "GrandBazaar",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Coin",
@@ -2838,15 +3838,16 @@
         "count": "456095"
       }
     ],
+    "tech": "Education",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "Education",
     "builder_init": 111.26557731825073
   },
   {
     "building": "AbuSimbel",
     "mult": "2",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2862,15 +3863,16 @@
       }
     ],
     "city": "Egyptian",
+    "tech": "Housing",
     "age": "BronzeAge",
     "age_index": 1,
     "column": 2,
-    "tech": "Housing",
     "builder_init": 43.499145896104174
   },
   {
     "building": "GreatSphinx",
     "mult": "5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -2886,15 +3888,16 @@
       }
     ],
     "city": "Egyptian",
+    "tech": "Arithmetic",
     "age": "BronzeAge",
     "age_index": 1,
     "column": 3,
-    "tech": "Arithmetic",
     "builder_init": 38.36609771076077
   },
   {
     "building": "Hollywood",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Magazine",
@@ -2909,15 +3912,16 @@
         "count": "2296720"
       }
     ],
+    "tech": "MotionPicture",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "tech": "MotionPicture",
     "builder_init": 255.9645650234107
   },
   {
     "building": "GoldenGateBridge",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -2932,15 +3936,16 @@
         "count": "107888"
       }
     ],
+    "tech": "Hydroelectricity",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "Hydroelectricity",
     "builder_init": 103.45053370272193
   },
   {
     "building": "CristoRedentor",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -2955,15 +3960,16 @@
         "count": "1255452"
       }
     ],
+    "tech": "Radio",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 19,
-    "tech": "Radio",
     "builder_init": 632.3232767735177
   },
   {
     "building": "UnitedNations",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -2978,30 +3984,32 @@
         "count": "126746"
       }
     ],
+    "tech": "UnitedNations",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "UnitedNations",
     "builder_init": 168.01788234674018
   },
   {
     "building": "ManhattanProject",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
         "count": "28268850"
       }
     ],
+    "tech": "NuclearFission",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "NuclearFission",
     "builder_init": 1855.8532818937285
   },
   {
     "building": "SagradaFamilia",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -3016,15 +4024,16 @@
         "count": "2433913"
       }
     ],
+    "tech": "Assembly",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 19,
-    "tech": "Assembly",
     "builder_init": 314.7848257621703
   },
   {
     "building": "GreatWall",
     "mult": "5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -3040,15 +4049,16 @@
       }
     ],
     "city": "Chinese",
+    "tech": "LandTrade",
     "age": "IronAge",
     "age_index": 2,
     "column": 4,
-    "tech": "LandTrade",
     "builder_init": 33.215119644003074
   },
   {
     "building": "YellowCraneTower",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -3064,15 +4074,16 @@
       }
     ],
     "city": "Chinese",
+    "tech": "Geography",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Geography",
     "builder_init": 93.77007299270073
   },
   {
     "building": "PorcelainTower",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -3088,15 +4099,16 @@
       }
     ],
     "city": "Chinese",
+    "tech": "Banking",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 11,
-    "tech": "Banking",
     "builder_init": 113.7955257096709
   },
   {
     "building": "CNTower",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Movie",
@@ -3111,15 +4123,16 @@
         "count": "1158778"
       }
     ],
+    "tech": "Television",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 22,
-    "tech": "Television",
     "builder_init": 530.700995454937
   },
   {
     "building": "SpaceNeedle",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Battleship",
@@ -3134,15 +4147,16 @@
         "count": "16471462"
       }
     ],
+    "tech": "Satellite",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 21,
-    "tech": "Satellite",
     "builder_init": 1144.6371795312857
   },
   {
     "building": "ApolloProgram",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "FighterJet",
@@ -3157,15 +4171,16 @@
         "count": "147905"
       }
     ],
+    "tech": "SpaceProgram",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "tech": "SpaceProgram",
     "builder_init": 327.6030840691076
   },
   {
     "building": "Atomium",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -3180,15 +4195,16 @@
         "count": "6541995"
       }
     ],
+    "tech": "NuclearReactor",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 21,
-    "tech": "NuclearReactor",
     "builder_init": 2913.9760334751595
   },
   {
     "building": "ChoghaZanbil",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Water",
@@ -3207,15 +4223,16 @@
         "count": "152950"
       }
     ],
+    "tech": "Construction",
     "age": "IronAge",
     "age_index": 2,
     "column": 5,
-    "tech": "Construction",
     "builder_init": 308.25768186332004
   },
   {
     "building": "Broadway",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Opera",
@@ -3231,15 +4248,16 @@
       }
     ],
     "city": "American",
+    "tech": "Railway",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "Railway",
     "builder_init": 1085.586621967788
   },
   {
     "building": "TheMet",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Book",
@@ -3255,15 +4273,16 @@
       }
     ],
     "city": "American",
+    "tech": "RapidFire",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "RapidFire",
     "builder_init": 523.7648870834769
   },
   {
     "building": "WallStreet",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -3279,15 +4298,16 @@
       }
     ],
     "city": "American",
+    "tech": "Capitalism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Capitalism",
     "builder_init": 107.440950271521
   },
   {
     "building": "StPetersBasilica",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3298,6 +4318,7 @@
   {
     "building": "ProphetsMosque",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3308,6 +4329,7 @@
   {
     "building": "GreatDagonPagoda",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3318,6 +4340,7 @@
   {
     "building": "Pantheon",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3328,6 +4351,7 @@
   {
     "building": "WallOfBabylon",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -3343,15 +4367,16 @@
       }
     ],
     "city": "Babylonian",
+    "tech": "LandTrade",
     "age": "IronAge",
     "age_index": 2,
     "column": 4,
-    "tech": "LandTrade",
     "builder_init": 59.616858202258854
   },
   {
     "building": "TowerOfBabel",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -3367,15 +4392,16 @@
       }
     ],
     "city": "Babylonian",
+    "tech": "Religion",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Religion",
     "builder_init": 359.9170195155314
   },
   {
     "building": "ZigguratOfUr",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -3391,15 +4417,16 @@
       }
     ],
     "city": "Babylonian",
+    "tech": "Theater",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Theater",
     "builder_init": 296.7204501135405
   },
   {
     "building": "InternationalSpaceStation",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Spacecraft",
@@ -3414,15 +4441,16 @@
         "count": "1245168"
       }
     ],
+    "tech": "Nanotechnology",
     "age": "InformationAge",
     "age_index": 9,
     "column": 24,
-    "tech": "Nanotechnology",
     "builder_init": 167.8534749172734
   },
   {
     "building": "MarinaBaySands",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -3437,15 +4465,16 @@
         "count": "18095771"
       }
     ],
+    "tech": "SocialNetwork",
     "age": "InformationAge",
     "age_index": 9,
     "column": 25,
-    "tech": "SocialNetwork",
     "builder_init": 1198.356988235294
   },
   {
     "building": "PalmJumeirah",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "HedgeFund",
@@ -3460,15 +4489,16 @@
         "count": "8207461"
       }
     ],
+    "tech": "Blockchain",
     "age": "InformationAge",
     "age_index": 9,
     "column": 26,
-    "tech": "Blockchain",
     "builder_init": 767.1272216901301
   },
   {
     "building": "AldersonDisk",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -3483,15 +4513,16 @@
         "count": "1690101"
       }
     ],
+    "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
     "column": 27,
-    "tech": "Future",
     "builder_init": 238.70285546670527
   },
   {
     "building": "DysonSphere",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "CivGPT",
@@ -3506,15 +4537,16 @@
         "count": "1828676"
       }
     ],
+    "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
     "column": 27,
-    "tech": "Future",
     "builder_init": 243.84098846585186
   },
   {
     "building": "MatrioshkaBrain",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -3529,15 +4561,16 @@
         "count": "1705246"
       }
     ],
+    "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
     "column": 27,
-    "tech": "Future",
     "builder_init": 241.01852431843577
   },
   {
     "building": "Superintelligence",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Robocar",
@@ -3560,15 +4593,16 @@
         "count": "1690101"
       }
     ],
+    "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
     "column": 27,
-    "tech": "Future",
     "builder_init": 399.227642140534
   },
   {
     "building": "LargeHadronCollider",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Supercomputer",
@@ -3583,30 +4617,32 @@
         "count": "7169328"
       }
     ],
+    "tech": "VirtualReality",
     "age": "InformationAge",
     "age_index": 9,
     "column": 26,
-    "tech": "VirtualReality",
     "builder_init": 1059.9104020372022
   },
   {
     "building": "BigBen",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Politics",
         "count": "210528"
       }
     ],
+    "tech": "Capitalism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Capitalism",
     "builder_init": 18.358458638075838
   },
   {
     "building": "ItsukushimaShrine",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -3622,15 +4658,16 @@
       }
     ],
     "city": "Japanese",
+    "tech": "Religion",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Religion",
     "builder_init": 36.99396852746631
   },
   {
     "building": "GoldenPavilion",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3646,15 +4683,16 @@
       }
     ],
     "city": "Japanese",
+    "tech": "Theocracy",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Theocracy",
     "builder_init": 85.41897810218978
   },
   {
     "building": "OsakaCastle",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -3670,15 +4708,16 @@
       }
     ],
     "city": "Japanese",
+    "tech": "Electricity",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 16,
-    "tech": "Electricity",
     "builder_init": 43.53333108623047
   },
   {
     "building": "CologneCathedral",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3694,15 +4733,16 @@
       }
     ],
     "city": "German",
+    "tech": "HolyEmpire",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "HolyEmpire",
     "builder_init": 68.79161836659097
   },
   {
     "building": "Elbphilharmonie",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Radio",
@@ -3718,45 +4758,48 @@
       }
     ],
     "city": "German",
+    "tech": "Skyscraper",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 21,
-    "tech": "Skyscraper",
     "builder_init": 187.87673253409466
   },
   {
     "building": "SantaClausVillage",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Faith",
         "count": "1573135"
       }
     ],
+    "tech": "Theocracy",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Theocracy",
     "builder_init": 229.65474452554744
   },
   {
     "building": "YearOfTheSnake",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Opera",
         "count": "255557"
       }
     ],
+    "tech": "Theater",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
-    "tech": "Theater",
     "builder_init": 50.86633444217076
   },
   {
     "building": "BritishMuseum",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -3772,15 +4815,16 @@
       }
     ],
     "city": "English",
+    "tech": "Combustion",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 17,
-    "tech": "Combustion",
     "builder_init": 32.52088196345882
   },
   {
     "building": "CambridgeUniversity",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -3796,15 +4840,16 @@
       }
     ],
     "city": "English",
+    "tech": "Enlightenment",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 12,
-    "tech": "Enlightenment",
     "builder_init": 275.5265234272228
   },
   {
     "building": "TowerBridge",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -3816,15 +4861,16 @@
       }
     ],
     "city": "English",
+    "tech": "Electricity",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 16,
-    "tech": "Electricity",
     "builder_init": 651.0926700581867
   },
   {
     "building": "EastIndiaCompany",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -3840,15 +4886,16 @@
       }
     ],
     "city": "English",
+    "tech": "PrivateOwnership",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 13,
-    "tech": "PrivateOwnership",
     "builder_init": 86.59860093970933
   },
   {
     "building": "ArcDeTriomphe",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -3864,15 +4911,16 @@
       }
     ],
     "city": "French",
+    "tech": "Electricity",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 16,
-    "tech": "Electricity",
     "builder_init": 43.53333108623047
   },
   {
     "building": "MontSaintMichel",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Culture",
@@ -3880,15 +4928,16 @@
       }
     ],
     "city": "French",
+    "tech": "Revolution",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 13,
-    "tech": "Revolution",
     "builder_init": 432.65729615119494
   },
   {
     "building": "Louvre",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -3904,15 +4953,16 @@
       }
     ],
     "city": "French",
+    "tech": "Railway",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "Railway",
     "builder_init": 71.83358710690909
   },
   {
     "building": "CentrePompidou",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -3928,15 +4978,16 @@
       }
     ],
     "city": "French",
+    "tech": "Software",
     "age": "InformationAge",
     "age_index": 9,
     "column": 24,
-    "tech": "Software",
     "builder_init": 5672.944932309464
   },
   {
     "building": "EasterBunny",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -3951,15 +5002,16 @@
         "count": "408159"
       }
     ],
+    "tech": "PrivateOwnership",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 13,
-    "tech": "PrivateOwnership",
     "builder_init": 135.12200129561813
   },
   {
     "building": "BlueMosque",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Cannon",
@@ -3975,15 +5027,16 @@
       }
     ],
     "city": "Ottoman",
+    "tech": "Exploration",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 12,
-    "tech": "Exploration",
     "builder_init": 213.26859141677417
   },
   {
     "building": "TopkapiPalace",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Biplane",
@@ -3999,15 +5052,16 @@
       }
     ],
     "city": "Ottoman",
+    "tech": "Aviation",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "tech": "Aviation",
     "builder_init": 132.92006550381853
   },
   {
     "building": "SwissBank",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Forex",
@@ -4022,15 +5076,16 @@
         "count": "986366"
       }
     ],
+    "tech": "MonetarySystem",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 22,
-    "tech": "MonetarySystem",
     "builder_init": 444.47483951527806
   },
   {
     "building": "ItaipuDam",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Diplomacy",
@@ -4046,15 +5101,16 @@
       }
     ],
     "city": "Brazilian",
+    "tech": "Hydroelectricity",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "Hydroelectricity",
     "builder_init": 60.153756994961654
   },
   {
     "building": "CathedralOfBrasilia",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Biplane",
@@ -4070,15 +5126,16 @@
       }
     ],
     "city": "Brazilian",
+    "tech": "Aviation",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "tech": "Aviation",
     "builder_init": 132.92006550381853
   },
   {
     "building": "RedFort",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Frigate",
@@ -4094,15 +5151,16 @@
       }
     ],
     "city": "Indian",
+    "tech": "RapidFire",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "RapidFire",
     "builder_init": 55.84178127980406
   },
   {
     "building": "SanchiStupa",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Garment",
@@ -4118,15 +5176,16 @@
       }
     ],
     "city": "Indian",
+    "tech": "Physics",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 9,
-    "tech": "Physics",
     "builder_init": 103.02510948905109
   },
   {
     "building": "QutbMinar",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -4142,15 +5201,16 @@
       }
     ],
     "city": "Indian",
+    "tech": "Banking",
     "age": "RenaissanceAge",
     "age_index": 5,
     "column": 11,
-    "tech": "Banking",
     "builder_init": 65.38787253450892
   },
   {
     "building": "BranCastle",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Coin",
@@ -4165,30 +5225,32 @@
         "count": "42517"
       }
     ],
+    "tech": "HolyEmpire",
     "age": "MiddleAge",
     "age_index": 4,
     "column": 10,
-    "tech": "HolyEmpire",
     "builder_init": 78.4419022601476
   },
   {
     "building": "PortOfSingapore",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Koti",
         "count": "41571"
       }
     ],
+    "tech": "Globalization",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "tech": "Globalization",
     "builder_init": 2.2680557231681315
   },
   {
     "building": "SydneyOperaHouse",
     "mult": "5",
+    "output": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -4204,15 +5266,16 @@
       }
     ],
     "city": "Australian",
+    "tech": "Television",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 22,
-    "tech": "Television",
     "builder_init": 637.912881091136
   },
   {
     "building": "SydneyHarbourBridge",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -4228,15 +5291,16 @@
       }
     ],
     "city": "Australian",
+    "tech": "Hydroelectricity",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "Hydroelectricity",
     "builder_init": 159.4943964852769
   },
   {
     "building": "GreatOceanRoad",
     "mult": "1.7",
+    "output": {},
     "build_resources": [
       {
         "resource": "Battleship",
@@ -4248,15 +5312,16 @@
       }
     ],
     "city": "Australian",
+    "tech": "Rocketry",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "tech": "Rocketry",
     "builder_init": 36.307927958084264
   },
   {
     "building": "KizhiPogost",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -4272,15 +5337,16 @@
       }
     ],
     "city": "Russian",
+    "tech": "Alloy",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Alloy",
     "builder_init": 57.41840593943299
   },
   {
     "building": "Hermitage",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -4292,15 +5358,16 @@
       }
     ],
     "city": "Russian",
+    "tech": "Journalism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 15,
-    "tech": "Journalism",
     "builder_init": 39.618889583068444
   },
   {
     "building": "Sputnik1",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Satellite",
@@ -4308,15 +5375,16 @@
       }
     ],
     "city": "Russian",
+    "tech": "Satellite",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 21,
-    "tech": "Satellite",
     "builder_init": 141.05309208959065
   },
   {
     "building": "AkademikLomonosov",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Spacecraft",
@@ -4324,15 +5392,16 @@
       }
     ],
     "city": "Russian",
+    "tech": "Genetics",
     "age": "InformationAge",
     "age_index": 9,
     "column": 25,
-    "tech": "Genetics",
     "builder_init": 330.48804705882355
   },
   {
     "building": "ChateauFrontenac",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -4348,15 +5417,16 @@
       }
     ],
     "city": "Canadian",
+    "tech": "Combustion",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 17,
-    "tech": "Combustion",
     "builder_init": 32.52088196345882
   },
   {
     "building": "Habitat67",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Bitcoin",
@@ -4364,15 +5434,16 @@
       }
     ],
     "city": "Canadian",
+    "tech": "ArtificialIntelligence",
     "age": "InformationAge",
     "age_index": 9,
     "column": 26,
-    "tech": "ArtificialIntelligence",
     "builder_init": 280.92163993547314
   },
   {
     "building": "WorldTradeOrganization",
     "mult": "2",
+    "output": {},
     "build_resources": [
       {
         "resource": "MutualFund",
@@ -4387,15 +5458,16 @@
         "count": "1393604"
       }
     ],
+    "tech": "FinancialLeverage",
     "age": "InformationAge",
     "age_index": 9,
     "column": 24,
-    "tech": "FinancialLeverage",
     "builder_init": 696.540373343177
   },
   {
     "building": "CothonOfCarthage",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "SiegeRam",
@@ -4411,15 +5483,16 @@
       }
     ],
     "city": "Carthaginian",
+    "tech": "Architecture",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 8,
-    "tech": "Architecture",
     "builder_init": 33.46835677845156
   },
   {
     "building": "Mauritshuis",
     "mult": "1.5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -4427,25 +5500,26 @@
       }
     ],
     "city": "Dutch",
+    "tech": "Capitalism",
     "age": "IndustrialAge",
     "age_index": 6,
     "column": 14,
-    "tech": "Capitalism",
     "builder_init": 18.358458638075838
   },
   {
     "building": "Midsummer",
     "mult": "5",
+    "output": {},
     "build_resources": [
       {
         "resource": "Alcohol",
         "count": "152950"
       }
     ],
+    "tech": "Calendar",
     "age": "IronAge",
     "age_index": 2,
     "column": 5,
-    "tech": "Calendar",
     "builder_init": 44.036811694760004
   }
 ]

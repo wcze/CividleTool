@@ -7,8 +7,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 输入 / 输出路径
-const BUILDING_SRC = path.join(__dirname, '.temp', 'BuildingDefinitions.js');
+// 输入 / 输出路径（兼容 downloadFiles 转换后的 .js，以及手动下载的 .ts）
+const BUILDING_SRC_JS = path.join(__dirname, '.temp', 'BuildingDefinitions.js');
+const BUILDING_SRC_TS = path.join(__dirname, '.temp', 'BuildingDefinitions.ts');
 const TECH_SRC = path.join(__dirname, '.temp', 'TechDefinitions.js');
 const TIMED_SRC = path.join(__dirname, '.temp', 'TimedBuildingUnlock.js');
 const CITY_SRC = path.join(__dirname, '.temp', 'CityDefinitions.js');
@@ -23,7 +24,8 @@ const DEFAULT_MULT = 1.5;
 // 提取所有 "Name = { ... };" 对象字面量块（花括号配对，支持嵌套）
 function extractObjectBlocks(text) {
   const blocks = [];
-  const re = /^\s*([A-Za-z_$][\w$]*)\s*=\s*\{/gm;
+  // 兼容 js 格式（Name = {）与 ts 格式（Name: IBuildingDefinition = {）
+  const re = /^\s*([A-Za-z_$][\w$]*)\s*(?::\s*[A-Za-z_$][\w$]*)?\s*=\s*\{/gm;
   let m;
   while ((m = re.exec(text)) !== null) {
     const name = m[1];
@@ -69,6 +71,18 @@ function extractBuildResources(body) {
     items.push({ resource, count: String(parseFloat(count) * 10) });
   }
   return items;
+}
+
+// 提取 output：{ Resource: 数量, ... }（保持源文件里的 key 顺序）
+function extractOutput(body) {
+  const m = body.match(/output:\s*\{([^}]*)\}/);
+  const result = {};
+  if (m) {
+    for (const [, resource, count] of m[1].matchAll(/([A-Za-z_$][\w$]*)\s*:\s*([\d.]+)/g)) {
+      result[resource] = parseFloat(count);
+    }
+  }
+  return result;
 }
 
 // 提取 construction 原始权重（不缩放）：[{ resource, weight }]
@@ -188,13 +202,14 @@ function buildCityLookup(citySrc) {
 // ---------- 主流程 ----------
 
 function main() {
-  if (!fs.existsSync(BUILDING_SRC)) {
-    console.error(`❌ 找不到源文件: ${BUILDING_SRC}`);
-    console.error('   请先运行 downloadFile.js 下载 BuildingDefinitions.js');
+  const buildingSrcPath = fs.existsSync(BUILDING_SRC_JS) ? BUILDING_SRC_JS : BUILDING_SRC_TS;
+  if (!fs.existsSync(buildingSrcPath)) {
+    console.error(`❌ 找不到源文件: ${buildingSrcPath}`);
+    console.error('   请先运行 downloadFile.js 下载 BuildingDefinitions');
     process.exit(1);
   }
 
-  const buildingSrc = fs.readFileSync(BUILDING_SRC, 'utf8');
+  const buildingSrc = fs.readFileSync(buildingSrcPath, 'utf8');
 
   // 奇观升级倍率覆盖表（其余默认 1.5）
   const wonderCostBase = parseNumberMap(buildingSrc, 'WonderCostBase');
@@ -228,46 +243,55 @@ function main() {
         const m = body.match(new RegExp(key + ':\\s*\\{([^}]*)\\}'))
         return !!m && m[1].trim() !== ''
       }
-      return hasField('construction') || hasField('input')
+      return hasField('construction') || hasField('input') || hasField('output')
     })
     .map(({ name, body }) => {
       const item = {
         building: name,
         mult: wonderCostBase[name] !== undefined ? String(wonderCostBase[name]) : String(DEFAULT_MULT),
+        output: extractOutput(body),
         build_resources: extractBuildResources(body)
       }
-      // 仅给奇观（WorldWonder）追加年龄字段，并按成本公式计算真实消耗
-      if (/special:\s*BuildingSpecial\.WorldWonder/.test(body)) {
-        // 反查来源：优先 unlockBuilding/TimedBuildingUnlock，其次城市 uniqueBuildings
-        let lookup = techLookup[name]
-        const cityInfo = cityLookup[name]
-        if (cityInfo) {
-          // 存文明名（如 Chinese/Dutch），便于 tGame 本地化翻译
-          item.city = cityInfo.cityName
-          if (!lookup && cityInfo.tech) {
-            const info = techInfoByName[cityInfo.tech]
-            if (info) lookup = { ...info, tech: cityInfo.tech }
-          }
+      // 反查来源：优先 unlockBuilding/TimedBuildingUnlock，其次城市 uniqueBuildings
+      let lookup = techLookup[name]
+      const cityInfo = cityLookup[name]
+      if (cityInfo) {
+        // 存文明名（如 Chinese/Dutch），便于 tGame 本地化翻译
+        item.city = cityInfo.cityName
+        if (!lookup && cityInfo.tech) {
+          const info = techInfoByName[cityInfo.tech]
+          if (info) lookup = { ...info, tech: cityInfo.tech }
         }
-        if (lookup && lookup.age_id !== undefined && lookup.column > 0) {
+      }
+      // 所有建筑：记录解锁科技（用于判断“已解锁建筑”）
+      if (lookup) {
+        item.tech = lookup.tech
+        if (lookup.age_id !== undefined && lookup.column > 0) {
           item.age = lookup.age_id
           item.age_index = lookup.age_index
           item.column = lookup.column
-          item.tech = lookup.tech
-          // 真实消耗 = 成本倍率 × 权重 / 物品单价
-          const multiplier = getWonderCostMultiplier(lookup.column, lookup.age_index)
-          item.build_resources = extractConstructionWeights(body).map(({ resource, weight }) => ({
-            resource,
-            count: String(Math.round((multiplier * weight) / (prices[resource] ?? 1)))
-          }))
-          // 基础建造者能力 = 材料总量 / (500×(age_index^1.5+3) + 50×column^1.5)
-          const totalAmount = item.build_resources.reduce(
-            (sum, r) => sum + parseFloat(r.count),
-            0
-          )
-          const denom = 500 * (Math.pow(lookup.age_index, 1.5) + 3) + 50 * Math.pow(lookup.column, 1.5)
-          item.builder_init = totalAmount / denom
         }
+      }
+      // 仅奇观（WorldWonder）按成本公式计算真实消耗
+      if (
+        /special:\s*BuildingSpecial\.WorldWonder/.test(body) &&
+        lookup &&
+        lookup.age_id !== undefined &&
+        lookup.column > 0
+      ) {
+        // 真实消耗 = 成本倍率 × 权重 / 物品单价
+        const multiplier = getWonderCostMultiplier(lookup.column, lookup.age_index)
+        item.build_resources = extractConstructionWeights(body).map(({ resource, weight }) => ({
+          resource,
+          count: String(Math.round((multiplier * weight) / (prices[resource] ?? 1)))
+        }))
+        // 基础建造者能力 = 材料总量 / (500×(age_index^1.5+3) + 50×column^1.5)
+        const totalAmount = item.build_resources.reduce(
+          (sum, r) => sum + parseFloat(r.count),
+          0
+        )
+        const denom = 500 * (Math.pow(lookup.age_index, 1.5) + 3) + 50 * Math.pow(lookup.column, 1.5)
+        item.builder_init = totalAmount / denom
       }
       return item
     });
