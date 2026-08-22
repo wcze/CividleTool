@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const TEMP_DIR = path.join(__dirname, '.temp');
 
 // 依次执行的脚本（相对本文件）
-const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js', 'handle-market.js'];
+const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js', 'handle-market.js', 'handle-language.js'];
 
 function runScript(script) {
   const scriptPath = path.join(__dirname, script);
@@ -64,11 +64,11 @@ function main() {
     console.warn(`⚠️  .temp 目录仅 ${tempCount} 个源文件，可能部分下载失败，将继续使用已有文件。`);
   }
 
-  // 3. 依次执行计算脚本
-  runScript('handle-prices.js');
-  runScript('handle-buildings.js');
-  runScript('handle-civilization.js');
-  runScript('handle-market.js');
+  // 3. 依次执行其余计算脚本（STEPS 里除了 downloadFiles 之外的所有步骤）
+  for (const script of STEPS) {
+    if (script === 'downloadFiles.js') continue;
+    runScript(script);
+  }
 
   // 4. 清理临时文件
   cleanTemp();

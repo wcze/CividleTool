@@ -1,7 +1,10 @@
 // src/data/getData/index.js
 import https from 'https';
+import http from 'http';
+import tls from 'tls';
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -25,7 +28,7 @@ const FILES = [
     {
         url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/CityDefinitions.ts',
         output: './.temp/CityDefinitions.js'
-    }, 
+    },
     {
         url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/MaterialDefinitions.ts',
         output: './.temp/MaterialDefinitions.js'
@@ -34,82 +37,182 @@ const FILES = [
         url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/UpgradeDefinitions.ts',
         output: './.temp/UpgradeDefinitions.js'
     },
+    {
+        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/languages/zh-CN.ts',
+        output: './.temp/languages-zh-CN.js'
+    },
+    {
+        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/languages/en.ts',
+        output: './.temp/languages-en.js'
+    },
 ];
 
 // 下载配置
 const CONFIG = {
     timeout: 30000, // 超时时间（毫秒）
-    retries: 3, // 重试次数
+    retries: 5, // 重试次数
     retryDelay: 2000, // 重试延迟（毫秒）
 };
+
+// ============ 代理支持（浏览器能访问但 Node 不能时，多半是系统代理） ============
+
+// 规范化代理字符串 -> { host, port }
+function normalizeProxy(proxyStr) {
+    let s = proxyStr.trim();
+    if (!/^https?:\/\//i.test(s)) s = 'http://' + s;
+    const u = new URL(s);
+    return { host: u.hostname, port: parseInt(u.port, 10) || 80 };
+}
+
+// 获取代理：优先环境变量，其次 Windows 系统代理（浏览器正在用的）
+function getSystemProxy() {
+    const envProxy =
+        process.env.HTTPS_PROXY || process.env.https_proxy ||
+        process.env.HTTP_PROXY || process.env.http_proxy ||
+        process.env.ALL_PROXY || process.env.all_proxy;
+    if (envProxy) return normalizeProxy(envProxy);
+
+    if (process.platform === 'win32') {
+        try {
+            const out = execSync(
+                'reg query "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings" /v ProxyEnable & reg query "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings" /v ProxyServer',
+                { encoding: 'utf8' }
+            );
+            const enable = /ProxyEnable\s+REG_DWORD\s+0x([0-9a-f]+)/i.exec(out);
+            const server = /ProxyServer\s+REG_SZ\s+(\S+)/i.exec(out);
+            if (enable && parseInt(enable[1], 16) === 1 && server && server[1]) {
+                return normalizeProxy(server[1]);
+            }
+        } catch (e) {
+            // 读取注册表失败则当作无代理
+        }
+    }
+    return null;
+}
+
+// 通过 HTTP CONNECT 隧道经代理发起 GET 请求（纯 Node 内置模块，无需额外依赖）
+function tunnelGet(url, proxy, callback) {
+    const u = new URL(url);
+    const host = u.hostname;
+    const port = u.port || 443;
+
+    const connectReq = http.request({
+        host: proxy.host,
+        port: proxy.port,
+        method: 'CONNECT',
+        path: `${host}:${port}`,
+        headers: { Host: `${host}:${port}`, 'User-Agent': 'Mozilla/5.0' },
+    });
+    connectReq.on('connect', (res, socket) => {
+        if (res.statusCode !== 200) {
+            socket.destroy();
+            callback(new Error(`代理 CONNECT 失败: ${res.statusCode}`));
+            return;
+        }
+        const tlsSocket = tls.connect({ socket, servername: host });
+        tlsSocket.on('secureConnect', () => {
+            const pathAndQuery = u.pathname + u.search;
+            tlsSocket.write(
+                `GET ${pathAndQuery} HTTP/1.1\r\n` +
+                `Host: ${host}\r\n` +
+                `User-Agent: Mozilla/5.0\r\n` +
+                `Accept: */*\r\n` +
+                `Connection: close\r\n\r\n`
+            );
+            let raw = '';
+            tlsSocket.on('data', (c) => { raw += c; });
+            tlsSocket.on('end', () => {
+                const idx = raw.indexOf('\r\n\r\n');
+                if (idx < 0) { callback(new Error('响应头不完整')); return; }
+                const head = raw.slice(0, idx);
+                const statusCode = parseInt(head.split('\r\n')[0].split(' ')[1], 10);
+                const headers = {};
+                for (const line of head.split('\r\n').slice(1)) {
+                    const ci = line.indexOf(':');
+                    if (ci > 0) headers[line.slice(0, ci).trim().toLowerCase()] = line.slice(ci + 1).trim();
+                }
+                callback(null, { statusCode, headers, body: raw.slice(idx + 4) });
+            });
+            tlsSocket.on('error', (e) => callback(e));
+        });
+        tlsSocket.on('error', (e) => callback(e));
+    });
+    connectReq.on('error', (e) => callback(e));
+    connectReq.end();
+}
+
+// 发起请求（支持代理与重定向），resolve 响应体文本
+function rawRequest(url, proxy, redirectCount = 0) {
+    return new Promise((resolve, reject) => {
+        if (redirectCount > 5) {
+            reject(new Error('重定向次数过多'));
+            return;
+        }
+        const timeout = setTimeout(() => reject(new Error('下载超时')), CONFIG.timeout);
+        const onDone = (err, res) => {
+            clearTimeout(timeout);
+            if (err) { reject(err); return; }
+            const { statusCode, headers, body } = res;
+            if (statusCode >= 300 && statusCode < 400 && headers.location) {
+                const next = new URL(headers.location, url).toString();
+                console.log(`  ↪ 重定向到: ${next}`);
+                rawRequest(next, proxy, redirectCount + 1).then(resolve, reject);
+                return;
+            }
+            if (statusCode !== 200) {
+                reject(new Error(`HTTP ${statusCode}`));
+                return;
+            }
+            resolve(body);
+        };
+
+        if (proxy) {
+            tunnelGet(url, proxy, onDone);
+        } else {
+            https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
+                let data = '';
+                res.on('data', (c) => { data += c; });
+                res.on('end', () => onDone(null, { statusCode: res.statusCode, headers: res.headers, body: data }));
+                res.on('error', onDone);
+            }).on('error', onDone);
+        }
+    });
+}
+
+// 下载单个文件（带重试，自动走系统代理）
+function downloadFile(url, retries = CONFIG.retries) {
+    const proxy = getSystemProxy();
+    if (proxy) {
+        console.log(`  🌐 检测到系统代理: ${proxy.host}:${proxy.port}，将经代理下载`);
+    }
+
+    return new Promise((resolve, reject) => {
+        const attemptDownload = async (attempt) => {
+            console.log(`  尝试 ${attempt}/${retries}...`);
+            try {
+                const data = await rawRequest(url, proxy);
+                resolve(data);
+            } catch (error) {
+                if (attempt < retries) {
+                    console.log(`  ⚠️ 下载失败: ${error.message}`);
+                    console.log(`  ⏳ 等待 ${CONFIG.retryDelay}ms 后重试...`);
+                    await sleep(CONFIG.retryDelay);
+                    await attemptDownload(attempt + 1);
+                } else {
+                    reject(error);
+                }
+            }
+        };
+
+        attemptDownload(1).catch(reject);
+    });
+}
 
 // ============ 工具函数 ============
 
 // 延迟函数
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-// 下载单个文件（带重试）
-function downloadFile(url, retries = CONFIG.retries) {
-    return new Promise((resolve, reject) => {
-        const attemptDownload = (attempt) => {
-            console.log(`  尝试 ${attempt}/${retries}...`);
-
-            const timeout = setTimeout(() => {
-                reject(new Error('下载超时'));
-            }, CONFIG.timeout);
-
-            https.get(url, (response) => {
-                clearTimeout(timeout);
-
-                // 处理重定向
-                if (response.statusCode === 301 || response.statusCode === 302) {
-                    const redirectUrl = response.headers.location;
-                    console.log(`  ↪ 重定向到: ${redirectUrl}`);
-                    https.get(redirectUrl, (redirectResponse) => {
-                        if (redirectResponse.statusCode !== 200) {
-                            reject(new Error(`重定向失败，状态码：${redirectResponse.statusCode}`));
-                            return;
-                        }
-                        let data = '';
-                        redirectResponse.on('data', (chunk) => { data += chunk; });
-                        redirectResponse.on('end', () => { resolve(data); });
-                        redirectResponse.on('error', reject);
-                    }).on('error', reject);
-                    return;
-                }
-
-                if (response.statusCode !== 200) {
-                    reject(new Error(`HTTP ${response.statusCode}`));
-                    return;
-                }
-
-                let data = '';
-                response.on('data', (chunk) => { data += chunk; });
-                response.on('end', () => { resolve(data); });
-                response.on('error', reject);
-            }).on('error', reject);
-        };
-
-        // 执行下载，失败后重试
-        const tryDownload = async (attempt) => {
-            try {
-                await attemptDownload(attempt);
-            } catch (error) {
-                if (attempt < retries) {
-                    console.log(`  ⚠️ 下载失败: ${error.message}`);
-                    console.log(`  ⏳ 等待 ${CONFIG.retryDelay}ms 后重试...`);
-                    await sleep(CONFIG.retryDelay);
-                    await tryDownload(attempt + 1);
-                } else {
-                    throw error;
-                }
-            }
-        };
-
-        tryDownload(1);
-    });
 }
 
 // TypeScript转JavaScript
