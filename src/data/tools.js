@@ -20,10 +20,5 @@ export function getTools() {
       name: t('tools.FreeCivilization.name'),
       description: t('tools.FreeCivilization.description')
     },
-    {
-      id: 'MarketQuery',
-      name: t('tools.MarketQuery.name'),
-      description: t('tools.MarketQuery.description')
-    }
   ]
 }
