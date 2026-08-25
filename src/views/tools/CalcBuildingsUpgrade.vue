@@ -220,6 +220,7 @@ import spriteImage from '@/assets/textures_building.png'
 import builderCapacityImage from '@/assets/How-to-view-Builder-Capacity-Multiplier.png'
 import AppDialog from '@/components/AppDialog.vue'
 import { t, tGame, locale } from '@/i18n'
+import { formatNumber as formatNumberShared, FULL_SUFFIXES } from '@/utils/format'
 
 // ===== 建筑贴图（雪碧图） =====
 // textures_building.json 中的键名形如 Building_StoneQuarry，
@@ -419,19 +420,8 @@ const calculate = () => {
   // 由 computed 自动触发
 }
 
-// 数字后缀：K(千) M(百万) B(十亿) T(万亿) Qa(千兆) Qt(百京) Sx Sp Oc No Dc
-const NUMBER_SUFFIXES = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
-
 // 格式化数字：按 1000 进位，自动选择合适后缀，避免出现 2174603.02B 这类大数字
-const formatNumber = (num) => {
-  if (!Number.isFinite(num)) return String(num ?? 0)
-  if (num < 0) return '-' + formatNumber(-num)
-  if (num < 1000) return Math.round(num * 100) / 100
-  let tier = Math.floor(Math.log10(num) / 3)
-  tier = Math.min(tier, NUMBER_SUFFIXES.length - 1)
-  const scaled = num / Math.pow(1000, tier)
-  return scaled.toFixed(2) + NUMBER_SUFFIXES[tier]
-}
+const formatNumber = (num) => formatNumberShared(num, FULL_SUFFIXES)
 
 // 格式化时长（秒 → 年月日时分秒），随语言切换
 // 月按 30 天、年按 365 天近似，避免巨大数字（如 1 亿小时）难以阅读

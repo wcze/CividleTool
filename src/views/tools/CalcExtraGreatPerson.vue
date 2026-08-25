@@ -188,7 +188,7 @@ import { computed, ref } from 'vue'
 import ResourceSelect from '@/components/ResourceSelect.vue'
 import prices from '@/data/prices.json'
 import { t, tGame } from '@/i18n'
-import { formatNumberWithDetail } from '@/utils/format'
+import { formatNumberWithDetail, formatNumber, FULL_SUFFIXES } from '@/utils/format'
 
 /**
  * 每页显示数量
@@ -335,13 +335,11 @@ const equivalentAmount = computed(() => {
 })
 
 /**
- * 折合数量格式化：保留最多 2 位小数，带千分位
+ * 折合数量格式化：科学计数法（带后缀），不带括号内完整数字
+ * （equivalentAmount 已是实际数量，非 M 起步，故用 FULL_SUFFIXES）
  */
 function formatEquivalent(value) {
-  if (!Number.isFinite(value)) return '0'
-  return value.toLocaleString('en-US', {
-    maximumFractionDigits: 2
-  })
+  return formatNumber(value, FULL_SUFFIXES)
 }
 
 /**

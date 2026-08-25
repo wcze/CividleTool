@@ -16,8 +16,14 @@
  * 例如 formatNumber(num, ['', 'K', 'M', 'B', 'T', ...])。
  */
 
-// 默认数字后缀（基础单位 M）
+// 默认数字后缀（基础单位 M，用于已经是"百万"起步的数值，如伟人成本）
 const DEFAULT_SUFFIXES = ['M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
+
+/**
+ * 完整数字后缀（从个位起步），用于尚未折算成 M 的原始数量
+ * （如折合资源数量、建筑资源消耗等）。
+ */
+export const FULL_SUFFIXES = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
 
 /**
  * 格式化大数：按 1000 进位自动选择合适后缀。
@@ -35,10 +41,14 @@ export function formatNumber(value, suffixes = DEFAULT_SUFFIXES) {
     return '0' + suffixes[0]
   }
 
+  if (value < 0) {
+    return '-' + formatNumber(-value, suffixes)
+  }
+
   let displayValue = value
   let tier = 0
 
-  while (Math.abs(displayValue) >= 1000 && tier < suffixes.length - 1) {
+  while (displayValue >= 1000 && tier < suffixes.length - 1) {
     displayValue /= 1000
     tier++
   }
