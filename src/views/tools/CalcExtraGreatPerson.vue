@@ -712,9 +712,9 @@ function nextPage() {
 }
 
 .eq-text {
-  color: #6b7a8f;
+  color: #414a56;
 
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .eq-text .eq-amount {
