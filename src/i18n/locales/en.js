@@ -2,7 +2,15 @@ export default {
   nav: {
     home: 'Home',
     openMenu: 'Open menu',
-    about: 'About'
+    about: 'About',
+    settings: 'Settings'
+  },
+  settings: {
+    title: 'Settings',
+    language: 'Language',
+    numberFormat: 'Number Format',
+    numberFormatSuffix: 'Unit suffix (e.g. 1Qa)',
+    numberFormatScientific: 'Scientific notation (e.g. 1e15)'
   },
   about: {
     title: 'About',

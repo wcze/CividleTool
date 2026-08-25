@@ -2,7 +2,15 @@ export default {
   nav: {
     home: '首页',
     openMenu: '打开菜单',
-    about: '关于'
+    about: '关于',
+    settings: '设置'
+  },
+  settings: {
+    title: '设置',
+    language: '语言',
+    numberFormat: '大数展示格式',
+    numberFormatSuffix: '单位后缀（如 1Qa）',
+    numberFormatScientific: '科学计数法（如 1e15）'
   },
   about: {
     title: '关于',

@@ -14,7 +14,12 @@
  *
  * 如需其他计数体系（如带 K 的普通计数），可传入自定义后缀列表，
  * 例如 formatNumber(num, ['', 'K', 'M', 'B', 'T', ...])。
+ *
+ * 展示格式（单位后缀 / 科学计数法）由用户在设置页选择，
+ * 详见 store/settings.js 的 numberFormat。
  */
+
+import { numberFormat } from '../store/settings'
 
 // 默认数字后缀（基础单位 M，用于已经是"百万"起步的数值，如伟人成本）
 const DEFAULT_SUFFIXES = ['M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
@@ -26,23 +31,33 @@ const DEFAULT_SUFFIXES = ['M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc
 export const FULL_SUFFIXES = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qt', 'Sx', 'Sp', 'Oc', 'No', 'Dc']
 
 /**
- * 格式化大数：按 1000 进位自动选择合适后缀。
+ * 格式化大数：按用户设置展示为「单位后缀」（按 1000 进位）或「科学计数法」。
  *
  * @param {number} value 数值
- * @param {string[]} [suffixes] 后缀列表（从最低位开始），默认 M/B/T/Qa...
- * @returns {string} 例如 64 → "64M"，1728 → "1.73B"
+ * @param {string[]} [suffixes] 单位后缀列表（从最低位开始），默认 M/B/T/Qa...
+ * @param {number} [baseMultiplier] value 对应的真实数量倍率，仅用于科学计数法，默认 1
+ * @returns {string} 单位后缀模式：64 → "64M"，1728 → "1.73B"；科学计数法模式：真实数值 < 1000 时不转换（如 10 → "10.0"），
+ *   避免出现 "1.00e1" 这类反而更难读的小数字；>= 1000 时使用指数形式，如 5000000 → "5.00e6"
  */
-export function formatNumber(value, suffixes = DEFAULT_SUFFIXES) {
+export function formatNumber(value, suffixes = DEFAULT_SUFFIXES, baseMultiplier = 1) {
   if (!Number.isFinite(value)) {
-    return '0' + suffixes[0]
+    return numberFormat.value === 'scientific' ? '0' : '0' + suffixes[0]
   }
 
   if (value === 0) {
-    return '0' + suffixes[0]
+    return numberFormat.value === 'scientific' ? '0' : '0' + suffixes[0]
   }
 
   if (value < 0) {
-    return '-' + formatNumber(-value, suffixes)
+    return '-' + formatNumber(-value, suffixes, baseMultiplier)
+  }
+
+  if (numberFormat.value === 'scientific') {
+    const realValue = value * baseMultiplier
+    if (realValue < 1000) {
+      return formatDecimal(realValue)
+    }
+    return realValue.toExponential(2).replace('e+', 'e')
   }
 
   let displayValue = value
@@ -104,5 +119,5 @@ export function formatNumberDetail(value) {
  * @returns {string} 例如 64 → "64.0M (64,000,000)"
  */
 export function formatNumberWithDetail(value, suffixes = DEFAULT_SUFFIXES, baseMultiplier = 1e6) {
-  return `${formatNumber(value, suffixes)} (${formatNumberDetail(value * baseMultiplier)})`
+  return `${formatNumber(value, suffixes, baseMultiplier)} (${formatNumberDetail(value * baseMultiplier)})`
 }

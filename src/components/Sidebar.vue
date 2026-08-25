@@ -7,6 +7,7 @@
     <!-- 主导航：首页 / 关于 -->
     <nav class="side-nav">
       <router-link to="/" class="side-nav-item" exact-active-class="active">{{ t('nav.home') }}</router-link>
+      <router-link to="/settings" class="side-nav-item" active-class="active">{{ t('nav.settings') }}</router-link>
       <router-link to="/about" class="side-nav-item" active-class="active">{{ t('nav.about') }}</router-link>
     </nav>
 

@@ -10,6 +10,7 @@
         <div class="nav-right">
           <div class="nav-links">
             <router-link to="/" class="nav-link">{{ t('nav.home') }}</router-link>
+            <router-link to="/settings" class="nav-link">{{ t('nav.settings') }}</router-link>
             <router-link to="/about" class="nav-link">{{ t('nav.about') }}</router-link>
           </div>
 

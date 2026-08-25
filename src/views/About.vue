@@ -10,7 +10,7 @@
       <div class="about-card">
         <div class="about-row">
           <span class="about-key">{{ t('about.developer') }}</span>
-          <span class="about-value">cCheNgz</span>
+          <span class="about-value">CHENGZ</span>
         </div>
 
         <div class="about-row">
