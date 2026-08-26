@@ -10,44 +10,45 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ============ 配置区域 ============
-// 定义需要下载的文件列表
+
+const github_url = "https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main";
+
 const FILES = [
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/src/scripts/Version.json',
+        url: 'src/scripts/Version.json',
         output: '../version.json',
         raw: true
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/BuildingDefinitions.ts',
+        url: 'shared/definitions/BuildingDefinitions.ts',
         output: './.temp/BuildingDefinitions.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/TechDefinitions.ts',
+        url: 'shared/definitions/TechDefinitions.ts',
         output: './.temp/TechDefinitions.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/TimedBuildingUnlock.ts',
+        url: 'shared/definitions/TimedBuildingUnlock.ts',
         output: './.temp/TimedBuildingUnlock.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/CityDefinitions.ts',
+        url: 'shared/definitions/CityDefinitions.ts',
         output: './.temp/CityDefinitions.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/MaterialDefinitions.ts',
+        url: 'shared/definitions/MaterialDefinitions.ts',
         output: './.temp/MaterialDefinitions.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/UpgradeDefinitions.ts',
+        url: 'shared/definitions/UpgradeDefinitions.ts',
         output: './.temp/UpgradeDefinitions.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/languages/zh-CN.ts',
+        url: 'shared/languages/zh-CN.ts',
         output: './.temp/languages-zh-CN.js'
     },
     {
-        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/languages/en.ts',
+        url: 'shared/languages/en.ts',
         output: './.temp/languages-en.js'
     },
 ];
@@ -124,9 +125,12 @@ function tunnelGet(url, proxy, callback) {
                 `Accept: */*\r\n` +
                 `Connection: close\r\n\r\n`
             );
-            let raw = '';
-            tlsSocket.on('data', (c) => { raw += c; });
+            const chunks = [];
+            tlsSocket.on('data', (c) => { chunks.push(c); });
             tlsSocket.on('end', () => {
+                // 先收集所有 Buffer 分片，最后一次性解码，避免 UTF-8 多字节字符
+                // 被 TCP 拆到两个分片之间时损坏成 �
+                const raw = Buffer.concat(chunks).toString('utf8');
                 const idx = raw.indexOf('\r\n\r\n');
                 if (idx < 0) { callback(new Error('响应头不完整')); return; }
                 const head = raw.slice(0, idx);
@@ -175,9 +179,10 @@ function rawRequest(url, proxy, redirectCount = 0) {
             tunnelGet(url, proxy, onDone);
         } else {
             https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
-                let data = '';
-                res.on('data', (c) => { data += c; });
-                res.on('end', () => onDone(null, { statusCode: res.statusCode, headers: res.headers, body: data }));
+                // 先收集所有 Buffer 分片，最后一次性解码，避免 UTF-8 多字节字符损坏成 �
+                const chunks = [];
+                res.on('data', (c) => { chunks.push(c); });
+                res.on('end', () => onDone(null, { statusCode: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString('utf8') }));
                 res.on('error', onDone);
             }).on('error', onDone);
         }
@@ -255,23 +260,15 @@ function tsToJs(tsContent) {
     return js;
 }
 
-// 保存文件（带备份）
-function saveFile(content, outputPath, backup = true) {
+// 保存文件（直接覆盖，不保留备份）
+function saveFile(content, outputPath) {
     // 确保输出目录（如 ./.temp）存在
     const fileDir = path.dirname(path.join(__dirname, outputPath));
     fs.mkdirSync(fileDir, { recursive: true });
 
     const fullPath = path.join(__dirname, outputPath);
 
-    // 如果文件已存在，在同一目录下备份原文件
-    if (backup && fs.existsSync(fullPath)) {
-        const ext = path.extname(outputPath);
-        const backupName = `${path.basename(outputPath, ext)}.backup.${Date.now()}${ext}`;
-        const backupPath = path.join(fileDir, backupName);
-        fs.copyFileSync(fullPath, backupPath);
-        console.log(`  💾 已备份到：${path.relative(__dirname, backupPath)}`);
-    }
-
+    // 直接覆盖写入
     fs.writeFileSync(fullPath, content, 'utf8');
     console.log(`  ✅ 已保存：${outputPath} (${(content.length / 1024).toFixed(2)} KB)`);
 }
@@ -324,11 +321,12 @@ async function main() {
         const index = i + 1;
 
         console.log(`[${index}/${FILES.length}] 处理: ${file.output}`);
-        console.log(`  📡 ${file.url}`);
+        const fullUrl = github_url + "/" + file.url;
+        console.log(`  📡 ${fullUrl}`);
 
         try {
             // 下载
-            const tsContent = await downloadFile(file.url);
+            const tsContent = await downloadFile(fullUrl);
             console.log(`  ✅ 下载完成 (${(tsContent.length / 1024).toFixed(2)} KB)`);
 
             // 转换（raw 文件本身即为 JSON，跳过 ts->js 转换，仅格式化）
@@ -340,8 +338,8 @@ async function main() {
                 jsContent = tsToJs(tsContent);
             }
 
-            // 保存（raw 文件如 version.json 无需保留历史备份）
-            saveFile(jsContent, file.output, !file.raw);
+            // 保存（直接覆盖）
+            saveFile(jsContent, file.output);
 
             // 预览（可选，如果文件太多可以注释掉）
             if (FILES.length <= 3) {
