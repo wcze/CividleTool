@@ -14,6 +14,11 @@ const __dirname = path.dirname(__filename);
 // 定义需要下载的文件列表
 const FILES = [
     {
+        url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/src/scripts/Version.json',
+        output: '../version.json',
+        raw: true
+    },
+    {
         url: 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main/shared/definitions/BuildingDefinitions.ts',
         output: './.temp/BuildingDefinitions.js'
     },
@@ -251,7 +256,7 @@ function tsToJs(tsContent) {
 }
 
 // 保存文件（带备份）
-function saveFile(content, outputPath) {
+function saveFile(content, outputPath, backup = true) {
     // 确保输出目录（如 ./.temp）存在
     const fileDir = path.dirname(path.join(__dirname, outputPath));
     fs.mkdirSync(fileDir, { recursive: true });
@@ -259,8 +264,9 @@ function saveFile(content, outputPath) {
     const fullPath = path.join(__dirname, outputPath);
 
     // 如果文件已存在，在同一目录下备份原文件
-    if (fs.existsSync(fullPath)) {
-        const backupName = `${path.basename(outputPath, '.js')}.backup.${Date.now()}.js`;
+    if (backup && fs.existsSync(fullPath)) {
+        const ext = path.extname(outputPath);
+        const backupName = `${path.basename(outputPath, ext)}.backup.${Date.now()}${ext}`;
         const backupPath = path.join(fileDir, backupName);
         fs.copyFileSync(fullPath, backupPath);
         console.log(`  💾 已备份到：${path.relative(__dirname, backupPath)}`);
@@ -311,12 +317,17 @@ async function main() {
             const tsContent = await downloadFile(file.url);
             console.log(`  ✅ 下载完成 (${(tsContent.length / 1024).toFixed(2)} KB)`);
 
-            // 转换
-            console.log('  🔄 转换中...');
-            const jsContent = tsToJs(tsContent);
+            // 转换（raw 文件本身即为 JSON，跳过 ts->js 转换，仅格式化）
+            let jsContent;
+            if (file.raw) {
+                jsContent = JSON.stringify(JSON.parse(tsContent), null, 2) + '\n';
+            } else {
+                console.log('  🔄 转换中...');
+                jsContent = tsToJs(tsContent);
+            }
 
-            // 保存
-            saveFile(jsContent, file.output);
+            // 保存（raw 文件如 version.json 无需保留历史备份）
+            saveFile(jsContent, file.output, !file.raw);
 
             // 预览（可选，如果文件太多可以注释掉）
             if (FILES.length <= 3) {
