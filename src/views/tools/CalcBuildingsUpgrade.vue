@@ -43,11 +43,11 @@
         <div class="input-row">
           <div class="input-group">
             <label>{{ t('calcBuildings.currentLevel') }}</label>
-            <input v-model.number="currentLevel" type="number" min="0" class="num-input" @input="calculate" />
+            <input v-model.number="currentLevel" type="number" min="0" max="1000" class="num-input" @input="onLevelInput('currentLevel')" />
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.targetLevel') }}</label>
-            <input v-model.number="targetLevel" type="number" min="0" class="num-input" @input="calculate" />
+            <input v-model.number="targetLevel" type="number" min="0" max="1000" class="num-input" @input="onLevelInput('targetLevel')" />
             <!-- 目标等级快速按钮 -->
             <div class="level-presets">
               <button v-for="lvl in [25, 30, 35, 40, 45, 50]" :key="lvl" class="preset-btn"
@@ -111,7 +111,7 @@
 
           <!-- 建造所需时间 -->
           <div class="time-result" v-if="totalBuildTime > 0">
-            <span class="time-label">⏱️ {{ t('calcBuildings.buildTime') }}</span>
+            <span class="time-label">{{ t('calcBuildings.buildTime') }}</span>
             <strong class="time-value">{{ formatTime(totalBuildTime) }}</strong>
             <span class="time-detail">{{ t('calcBuildings.buildTimeDetail', { count: levelDiff }) }}</span>
           </div>
@@ -154,7 +154,6 @@
 
       <div class="search-wrapper">
         <div class="search-input-container">
-          <span class="search-icon">🔍</span>
           <input v-model="keyword" type="text" :placeholder="t('calcBuildings.searchPlaceholder')"
             class="search-input" />
           <button v-if="keyword" class="clear-btn" @click="keyword = ''">
@@ -244,7 +243,7 @@ function getFrame(buildingKey) {
 function getSpriteStyle(buildingKey) {
   const frame = getFrame(buildingKey)
   if (!frame) return null
-  const scale = Math.min(ICON_SIZE / frame.w, ICON_SIZE / frame.h)
+  const scale = Math.min(ICON_SIZE / frame.w, ICON_SIZE / frame.h) - 0.05;
   return {
     width: `${frame.w}px`,
     height: `${frame.h}px`,
@@ -279,6 +278,15 @@ const selectedBuilding = ref(null)
 const currentLevel = ref(0)
 const targetLevel = ref(1)
 const buildingCount = ref(1)
+
+// 等级输入限制：0 <= 等级 <= 1000，超出自动钳制
+const onLevelInput = (key) => {
+  const raw = key === 'currentLevel' ? currentLevel.value : targetLevel.value
+  const clamped = Math.max(0, Math.min(1000, Number.isFinite(Number(raw)) ? Number(raw) : 0))
+  if (key === 'currentLevel') currentLevel.value = clamped
+  else targetLevel.value = clamped
+  calculate()
+}
 
 // 是否展开“查看详情”（每一级升级明细）
 const showDetails = ref(false)
@@ -436,22 +444,43 @@ const formatTime = (seconds) => {
   if (!isFinite(seconds) || seconds <= 0) return '0' + s
   const round1 = (n) => Math.round(n * 10) / 10
   const total = round1(seconds)
-  if (total < 60) return `${total}${s}`
-  const mins = Math.floor(total / 60)
-  const secs = round1(total - mins * 60)
-  if (mins < 60) return `${mins}${m} ${secs}${s}`
-  const hrs = Math.floor(mins / 60)
-  const remMins = mins - hrs * 60
-  if (hrs < 24) return `${hrs}${h} ${remMins}${m} ${secs}${s}`
-  const days = Math.floor(hrs / 24)
-  const remHrs = hrs - days * 24
-  if (days < 30) return `${days}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
-  const months = Math.floor(days / 30)
-  const remDays = days - months * 30
-  if (months < 12) return `${months}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
-  const years = Math.floor(months / 12)
-  const remMonths = months - years * 12
-  return `${years}${y} ${remMonths}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+  let result
+  if (total < 60) {
+    result = `${total}${s}`
+  } else {
+    const mins = Math.floor(total / 60)
+    const secs = round1(total - mins * 60)
+    if (mins < 60) {
+      result = `${mins}${m} ${secs}${s}`
+    } else {
+      const hrs = Math.floor(mins / 60)
+      const remMins = mins - hrs * 60
+      if (hrs < 24) {
+        result = `${hrs}${h} ${remMins}${m} ${secs}${s}`
+      } else {
+        const days = Math.floor(hrs / 24)
+        const remHrs = hrs - days * 24
+        if (days < 30) {
+          result = `${days}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+        } else {
+          const months = Math.floor(days / 30)
+          const remDays = days - months * 30
+          if (months < 12) {
+            result = `${months}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+          } else {
+            const years = Math.floor(months / 12)
+            const remMonths = months - years * 12
+            result = `${years}${y} ${remMonths}${mo} ${remDays}${d} ${remHrs}${h} ${remMins}${m} ${secs}${s}`
+          }
+        }
+      }
+    }
+  }
+  // 数值过大（结果含科学计数法 e）时，提示时间过大并附上原值
+  if (result.includes('e')) {
+    return `${isZh ? '时间过大' : 'Time too large'}（${result}）`
+  }
+  return result
 }
 </script>
 
@@ -515,13 +544,6 @@ const formatTime = (seconds) => {
   background: #ffffff;
   border-color: #4a90d9;
   box-shadow: 0 0 0 4px rgba(74, 144, 217, 0.12);
-}
-
-.search-icon {
-  padding: 0 0 0 16px;
-  font-size: 0.95rem;
-  opacity: 0.5;
-  flex-shrink: 0;
 }
 
 .search-input {

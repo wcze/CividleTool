@@ -3,10 +3,10 @@
     <!-- 顶部导航栏 -->
     <nav class="navbar">
       <div class="nav-inner">
-        <div class="logo">
+        <router-link to="/" class="logo">
           <img :src="iconUrl" alt="" class="nav-logo" />
           <span>CivIdle</span><span class="logo-dot"> Tool</span>
-        </div>
+        </router-link>
         <div class="nav-right">
           <div class="nav-links">
             <router-link to="/" class="nav-link">{{ t('nav.home') }}</router-link>
@@ -155,13 +155,13 @@ onBeforeUnmount(() => {
 }
 
 .nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -172,6 +172,8 @@ onBeforeUnmount(() => {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-1);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-logo {
