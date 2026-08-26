@@ -294,6 +294,20 @@ function showPreview(content, filename) {
 
 // ============ 主流程 ============
 
+// 在 version.json 中记录本次同步执行的时间戳
+function stampSyncTime() {
+    const versionPath = path.join(__dirname, '../version.json');
+    const timestamp = new Date().toISOString();
+    try {
+        const data = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+        data.sync_data = timestamp;
+        fs.writeFileSync(versionPath, JSON.stringify(data, null, 2) + '\n', 'utf8');
+        console.log(`  🕒 已写入同步时间：${timestamp}`);
+    } catch (e) {
+        console.log(`  ⚠️ 写入同步时间失败: ${e.message}`);
+    }
+}
+
 async function main() {
     const startTime = Date.now();
 
@@ -345,6 +359,9 @@ async function main() {
 
         console.log(''); // 空行分隔
     }
+
+    // ============ 记录同步时间 ============
+    stampSyncTime();
 
     // ============ 输出汇总 ============
     console.log('='.repeat(60));

@@ -51,6 +51,13 @@
             </a>
           </span>
         </div>
+        <div class="about-row">
+          <span class="about-key">{{ t('about.dataVersion') }}</span>
+          <span class="about-value">
+            build {{ version.build }}
+            <span class="version-sync">（{{ t('about.syncTime') }}: {{ syncTime }} {{ t('about.beijingTime') }}）</span>
+          </span>
+        </div>
       </div>
     </div>
   </ToolContainer>
@@ -61,6 +68,7 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import ToolContainer from '../components/ToolContainer.vue'
 import { getTools } from '../data/tools'
+import version from '../data/version.json'
 import { t } from '../i18n'
 
 const router = useRouter()
@@ -74,6 +82,17 @@ const switchTool = (tool) => router.push(`/tool/${tool.id}`)
 
 const dataSourceUrl =
   'https://docs.google.com/spreadsheets/d/1ip9TaNErRSrtGuBMawM1P0KfnOVzi3Eiax7aMo4upxA/edit?usp=sharing'
+
+// 将 ISO 时间格式化为 yyyy-MM-dd HH:mm:ss（本地时间）
+function formatDateTime(iso) {
+  if (!iso) return ''
+  const d = new Date(iso)
+  if (Number.isNaN(d.getTime())) return iso
+  const pad = (n) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
+}
+
+const syncTime = computed(() => formatDateTime(version.sync_data))
 </script>
 
 <style scoped>
@@ -165,7 +184,7 @@ const dataSourceUrl =
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--text-3, #6b6b6b);
+  color: var(--text-2, #6b6b6b);
   padding-top: 2px;
   opacity: 0.7;
 }
@@ -200,6 +219,13 @@ const dataSourceUrl =
   color: var(--text-4, #b0b0b0);
   font-weight: 300;
   opacity: 0.5;
+}
+
+/* ——— 版本同步时间（浅色） ——— */
+.version-sync {
+  color: var(--text-3, #b0b0b0);
+  font-size: 0.9em;
+  font-weight: 400;
 }
 
 /* ——— 📱 移动端适配 ——— */

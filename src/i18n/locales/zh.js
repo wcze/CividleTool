@@ -15,6 +15,9 @@ export default {
   about: {
     title: '关于',
     close: '关闭',
+    dataVersion: '数据版本',
+    syncTime: '同步时间',
+    beijingTime: '北京时间',
     developer: '开发',
     dataSource: '数据参考',
     gameSource: '游戏源码',

@@ -148,7 +148,7 @@ const localeModel = computed({
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--text-3, #6b6b6b);
+  color: var(--text-2, #6b6b6b);
   opacity: 0.7;
 }
 

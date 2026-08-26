@@ -15,6 +15,9 @@ export default {
   about: {
     title: 'About',
     close: 'Close',
+    dataVersion: 'Data Version',
+    syncTime: 'Synced at',
+    beijingTime: 'Beijing Time (UTC+8)',
     developer: 'Developer',
     dataSource: 'Data Reference',
     gameSource: 'Game Source',
