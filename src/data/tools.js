@@ -15,6 +15,11 @@ export function getTools() {
       name: t('tools.CalcExtraGreatPerson.name'),
       description: t('tools.CalcExtraGreatPerson.description')
     },
+    {
+      id: 'CalcWarehouseRatio',
+      name: t('tools.CalcWarehouseRatio.name'),
+      description: t('tools.CalcWarehouseRatio.description')
+    },
      {
       id: 'FreeCivilization',
       name: t('tools.FreeCivilization.name'),

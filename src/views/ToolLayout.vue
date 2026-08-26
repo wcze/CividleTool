@@ -100,6 +100,7 @@ import { useRouter, useRoute } from 'vue-router'
 import ToolContainer from '../components/ToolContainer.vue'
 import CalcBuildingsUpgrade from './tools/CalcBuildingsUpgrade.vue'
 import CalcExtraGreatPerson from './tools/CalcExtraGreatPerson.vue'
+import CalcWarehouseRatio from './tools/CalcWarehouseRatio.vue'
 import FreeCivilization from './tools/FreeCivilization.vue'
 import MarketQuery from './tools/MarketQuery.vue'
 import { getTools } from '../data/tools'
@@ -114,6 +115,7 @@ const tools = computed(() => getTools())
 const componentsMap = {
     'CalcBuildingsUpgrade': CalcBuildingsUpgrade,
     'CalcExtraGreatPerson': CalcExtraGreatPerson,
+    'CalcWarehouseRatio': CalcWarehouseRatio,
     'FreeCivilization': FreeCivilization,
     'MarketQuery': MarketQuery
 }

@@ -48,6 +48,10 @@ export default {
       name: '伟人所需帝国价值',
       description: '计算第 N 个重生额外伟人所需要的帝国价值'
     },
+    CalcWarehouseRatio: {
+      name: '产建仓库配比计算器',
+      description: '计算完全收纳产量所需的仓库数量：按幸福值分配产建与仓库配比，或反向由已有产建/仓库数量互算'
+    },
     FreeCivilization: {
       name: '周免文明查询',
       description: '查看每周免费游玩的文明列表'
@@ -112,6 +116,33 @@ export default {
     placeholder: '选择资源',
     searchPlaceholder: '搜索资源...',
     emptyText: '无匹配资源'
+  },
+  calcWarehouseRatio: {
+    capBLabel: '单仓库容量（单位 B / 十亿）',
+    prodKLabel: '单建筑秒产（单位 K / 千）',
+    capKLabel: '单仓库运力（单位 K / 千）',
+    productLabel: '产物',
+    scenarioA: '有幸福求配比',
+    scenarioB: '已有产建求仓库数',
+    scenarioC: '已有仓库求产建数',
+    happyLabel: '可使用幸福',
+    bldLabel: '已有产建个数',
+    whLabel: '已有仓库数量',
+    rowBuildings: '产建数量',
+    rowWarehouses: '仓库数量',
+    rowTotalProd: '总产能',
+    rowTotalCap: '总运力',
+    rowBalance: '配平',
+    balanced: '完全收纳',
+    overflow: '产能溢出',
+    rowPerSec: '每秒帝国价值',
+    rowFullTime: '满仓时间',
+    rowDailyCap: '每日运力',
+    rowNeedHappy: '需求幸福',
+    days: '{count} 天',
+    hours: '{count} 小时',
+    minutes: '{count} 分',
+    seconds: '{count} 秒'
   },
   freeCivilization: {
     title: '周免文明查询',

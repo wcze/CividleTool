@@ -48,6 +48,10 @@ export default {
       name: 'Great Person Empire Value',
       description: 'Calculate the empire value needed for the Nth rebirth extra Great Person'
     },
+    CalcWarehouseRatio: {
+      name: 'Producer/Warehouse Ratio Calculator',
+      description: 'Work out how many warehouses fully absorb your output: split producers and warehouses by happiness budget, or solve either count from the other'
+    },
     FreeCivilization: {
       name: 'Free Civilization Rotation',
       description: 'Check the weekly free civilization rotation schedule'
@@ -112,6 +116,33 @@ export default {
     placeholder: 'Select resource',
     searchPlaceholder: 'Search resource...',
     emptyText: 'No matching resources'
+  },
+  calcWarehouseRatio: {
+    capBLabel: 'Warehouse Capacity (unit: B / billion)',
+    prodKLabel: 'Producer Output per Second (unit: K / thousand)',
+    capKLabel: 'Warehouse Throughput (unit: K / thousand)',
+    productLabel: 'Product',
+    scenarioA: 'Solve ratio from happiness',
+    scenarioB: 'Solve warehouses from producers',
+    scenarioC: 'Solve producers from warehouses',
+    happyLabel: 'Available Happiness',
+    bldLabel: 'Existing Producers',
+    whLabel: 'Existing Warehouses',
+    rowBuildings: 'Producers',
+    rowWarehouses: 'Warehouses',
+    rowTotalProd: 'Total Output',
+    rowTotalCap: 'Total Throughput',
+    rowBalance: 'Balance',
+    balanced: 'Fully absorbed',
+    overflow: 'Output overflow',
+    rowPerSec: 'Empire Value / sec',
+    rowFullTime: 'Time to Fill',
+    rowDailyCap: 'Daily Throughput',
+    rowNeedHappy: 'Happiness Needed',
+    days: '{count}d',
+    hours: '{count}h',
+    minutes: '{count}m',
+    seconds: '{count}s'
   },
   freeCivilization: {
     title: 'Free Civilization Rotation',
