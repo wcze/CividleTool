@@ -1,3 +1,8 @@
+[[中文]](https://github.com/wcze/CividleTool#cividle-tool)  |  [[English]](https://github.com/wcze/CividleTool#cividle-tool-1)
+
+--- 
+---
+
 # CivIdle Tool
 
 CivIdle（放置文明）游戏工具集。
@@ -23,6 +28,11 @@ npm run dev
 ``` javascript
 const github_url = "https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main";
 ```
+
+## 打包
+
+1. `npm run sync-data` 同步最新游戏数据
+2. `npm run build`
 
 ---
 
@@ -50,3 +60,8 @@ The default source is the `main` branch. To change it, edit `github_url` in `src
 ```javascript
 const github_url = "https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main";
 ```
+
+## Build
+
+1. `npm run sync-data` — Sync the latest game data
+2. `npm run build`

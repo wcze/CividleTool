@@ -5159,7 +5159,7 @@
   },
   {
     "building": "SanchiStupa",
-    "mult": "1.5",
+    "mult": "4",
     "output": {},
     "build_resources": [
       {
