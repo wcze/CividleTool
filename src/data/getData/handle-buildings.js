@@ -85,6 +85,17 @@ function extractOutput(body) {
   return result;
 }
 
+function extractInput(body){
+  const m = body.match(/input:\s*\{([^}]*)\}/);
+  const result = {};
+  if (m) {
+    for (const [, resource, count] of m[1].matchAll(/([A-Za-z_$][\w$]*)\s*:\s*([\d.]+)/g)) {
+      result[resource] = parseFloat(count);
+    }
+  }
+  return result;
+}
+
 // 提取 construction 原始权重（不缩放）：[{ resource, weight }]
 function extractConstructionWeights(body) {
   const m = body.match(/construction:\s*\{([^}]*)\}/);
@@ -250,6 +261,7 @@ function main() {
         building: name,
         mult: wonderCostBase[name] !== undefined ? String(wonderCostBase[name]) : String(DEFAULT_MULT),
         output: extractOutput(body),
+        input: extractInput(body),
         build_resources: extractBuildResources(body)
       }
       // 反查来源：优先 unlockBuilding/TimedBuildingUnlock，其次城市 uniqueBuildings

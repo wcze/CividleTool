@@ -5,6 +5,7 @@
     "output": {
       "Worker": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Wood",
@@ -18,6 +19,10 @@
     "mult": "1.5",
     "output": {
       "Worker": 6
+    },
+    "input": {
+      "Wheat": 1,
+      "Water": 1
     },
     "build_resources": [
       {
@@ -43,6 +48,11 @@
     "mult": "1.5",
     "output": {
       "Worker": 84
+    },
+    "input": {
+      "Cheese": 1,
+      "Meat": 2,
+      "Bread": 1
     },
     "build_resources": [
       {
@@ -73,6 +83,9 @@
     "output": {
       "Worker": 510
     },
+    "input": {
+      "Pizza": 3
+    },
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -94,6 +107,9 @@
     "output": {
       "Worker": 4358
     },
+    "input": {
+      "Bond": 1
+    },
     "build_resources": [
       {
         "resource": "Bond",
@@ -112,6 +128,7 @@
     "output": {
       "Wheat": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Wood",
@@ -129,6 +146,7 @@
     "output": {
       "Stone": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Wood",
@@ -143,6 +161,7 @@
     "output": {
       "Wood": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -157,6 +176,7 @@
     "output": {
       "Water": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -171,6 +191,7 @@
     "output": {
       "Iron": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -188,6 +209,7 @@
     "output": {
       "Copper": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -209,6 +231,7 @@
     "output": {
       "Coal": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Iron",
@@ -234,6 +257,7 @@
     "output": {
       "Sand": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Wood",
@@ -251,6 +275,7 @@
     "output": {
       "Gold": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -272,6 +297,7 @@
     "output": {
       "Uranium": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -292,6 +318,9 @@
     "mult": "1.5",
     "output": {
       "NuclearFuelRod": 1
+    },
+    "input": {
+      "Uranium": 10
     },
     "build_resources": [
       {
@@ -314,6 +343,9 @@
     "output": {
       "FusionFuel": 1
     },
+    "input": {
+      "NuclearFuelRod": 10
+    },
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -332,6 +364,7 @@
     "output": {
       "Oil": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -357,6 +390,7 @@
     "output": {
       "NaturalGas": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -382,6 +416,7 @@
     "output": {
       "Aluminum": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Tool",
@@ -407,6 +442,7 @@
     "output": {
       "Power": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -424,6 +460,9 @@
     "mult": "1.5",
     "output": {
       "Power": 1
+    },
+    "input": {
+      "Coal": 1
     },
     "build_resources": [
       {
@@ -446,6 +485,9 @@
     "output": {
       "Power": 3
     },
+    "input": {
+      "NaturalGas": 2
+    },
     "build_resources": [
       {
         "resource": "Concrete",
@@ -464,6 +506,7 @@
       "Water": 1,
       "Power": 2
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Dynamite",
@@ -484,6 +527,9 @@
     "mult": "1.5",
     "output": {
       "Power": 65
+    },
+    "input": {
+      "NuclearFuelRod": 2
     },
     "build_resources": [
       {
@@ -506,6 +552,9 @@
     "output": {
       "Power": 1140
     },
+    "input": {
+      "FusionFuel": 2
+    },
     "build_resources": [
       {
         "resource": "FusionFuel",
@@ -523,6 +572,9 @@
     "mult": "1.5",
     "output": {
       "Sword": 1
+    },
+    "input": {
+      "Tool": 2
     },
     "build_resources": [
       {
@@ -548,6 +600,9 @@
     "mult": "1.5",
     "output": {
       "Armor": 1
+    },
+    "input": {
+      "Tool": 2
     },
     "build_resources": [
       {
@@ -578,6 +633,11 @@
     "output": {
       "Chariot": 1
     },
+    "input": {
+      "Horse": 2,
+      "Lumber": 2,
+      "Copper": 1
+    },
     "build_resources": [
       {
         "resource": "Horse",
@@ -607,6 +667,11 @@
     "output": {
       "Knight": 1
     },
+    "input": {
+      "Horse": 1,
+      "Armor": 1,
+      "Sword": 1
+    },
     "build_resources": [
       {
         "resource": "Horse",
@@ -631,6 +696,11 @@
     "mult": "1.5",
     "output": {
       "Cannon": 1
+    },
+    "input": {
+      "Iron": 2,
+      "Wood": 1,
+      "Tool": 1
     },
     "build_resources": [
       {
@@ -665,6 +735,10 @@
     "output": {
       "Gunpowder": 1
     },
+    "input": {
+      "Wood": 1,
+      "Coal": 1
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -685,6 +759,11 @@
     "mult": "1.5",
     "output": {
       "Dynamite": 1
+    },
+    "input": {
+      "Wheat": 1,
+      "Gunpowder": 1,
+      "Coal": 1
     },
     "build_resources": [
       {
@@ -710,6 +789,11 @@
     "mult": "1.5",
     "output": {
       "SiegeRam": 1
+    },
+    "input": {
+      "Lumber": 2,
+      "Iron": 2,
+      "Tool": 1
     },
     "build_resources": [
       {
@@ -744,6 +828,11 @@
     "output": {
       "Caravel": 1
     },
+    "input": {
+      "Lumber": 5,
+      "Cloth": 2,
+      "Tool": 2
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -772,6 +861,12 @@
     "mult": "1.5",
     "output": {
       "Galleon": 1
+    },
+    "input": {
+      "Caravel": 1,
+      "Sword": 1,
+      "SiegeRam": 1,
+      "Armor": 1
     },
     "build_resources": [
       {
@@ -802,6 +897,12 @@
     "output": {
       "Frigate": 1
     },
+    "input": {
+      "Galleon": 1,
+      "Knight": 1,
+      "Cannon": 1,
+      "Lens": 1
+    },
     "build_resources": [
       {
         "resource": "Galleon",
@@ -831,6 +932,10 @@
     "output": {
       "Rifle": 1
     },
+    "input": {
+      "Gunpowder": 5,
+      "Tool": 5
+    },
     "build_resources": [
       {
         "resource": "Gunpowder",
@@ -852,6 +957,10 @@
     "output": {
       "GatlingGun": 1
     },
+    "input": {
+      "Rifle": 1,
+      "Gunpowder": 5
+    },
     "build_resources": [
       {
         "resource": "Rifle",
@@ -872,6 +981,11 @@
     "mult": "1.5",
     "output": {
       "Artillery": 1
+    },
+    "input": {
+      "GatlingGun": 1,
+      "Dynamite": 1,
+      "Aluminum": 5
     },
     "build_resources": [
       {
@@ -898,6 +1012,11 @@
     "output": {
       "Ironclad": 1
     },
+    "input": {
+      "GatlingGun": 1,
+      "Rifle": 1,
+      "Frigate": 1
+    },
     "build_resources": [
       {
         "resource": "GatlingGun",
@@ -922,6 +1041,13 @@
     "mult": "1.5",
     "output": {
       "Battleship": 1
+    },
+    "input": {
+      "Ironclad": 1,
+      "Artillery": 1,
+      "Cable": 5,
+      "Steel": 5,
+      "Aluminum": 5
     },
     "build_resources": [
       {
@@ -956,6 +1082,12 @@
     "output": {
       "Tank": 1
     },
+    "input": {
+      "Engine": 1,
+      "Steel": 10,
+      "Cannon": 1,
+      "GatlingGun": 1
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -985,6 +1117,12 @@
     "output": {
       "Biplane": 1
     },
+    "input": {
+      "Engine": 1,
+      "Steel": 1,
+      "Lens": 1,
+      "Petrol": 5
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -1013,6 +1151,13 @@
     "mult": "1.5",
     "output": {
       "Rocket": 1
+    },
+    "input": {
+      "Engine": 1,
+      "Artillery": 1,
+      "Steel": 5,
+      "Cable": 5,
+      "Petrol": 10
     },
     "build_resources": [
       {
@@ -1047,6 +1192,10 @@
     "output": {
       "AtomicBomb": 1
     },
+    "input": {
+      "Dynamite": 10,
+      "Uranium": 10
+    },
     "build_resources": [
       {
         "resource": "Dynamite",
@@ -1067,6 +1216,10 @@
     "mult": "1.5",
     "output": {
       "FighterJet": 2
+    },
+    "input": {
+      "Airplane": 1,
+      "Artillery": 1
     },
     "build_resources": [
       {
@@ -1089,6 +1242,10 @@
     "output": {
       "AircraftCarrier": 1
     },
+    "input": {
+      "Battleship": 1,
+      "FighterJet": 10
+    },
     "build_resources": [
       {
         "resource": "Battleship",
@@ -1110,6 +1267,9 @@
     "output": {
       "Submarine": 1
     },
+    "input": {
+      "Ironclad": 2
+    },
     "build_resources": [
       {
         "resource": "Ironclad",
@@ -1126,6 +1286,10 @@
     "mult": "1.5",
     "output": {
       "NuclearSubmarine": 1
+    },
+    "input": {
+      "Submarine": 2,
+      "NuclearMissile": 2
     },
     "build_resources": [
       {
@@ -1148,6 +1312,10 @@
     "output": {
       "NuclearMissile": 1
     },
+    "input": {
+      "AtomicBomb": 1,
+      "Rocket": 1
+    },
     "build_resources": [
       {
         "resource": "AtomicBomb",
@@ -1168,6 +1336,11 @@
     "mult": "1.5",
     "output": {
       "Peace": 1
+    },
+    "input": {
+      "NuclearMissile": 4,
+      "Diplomacy": 1,
+      "Radio": 1
     },
     "build_resources": [
       {
@@ -1194,6 +1367,9 @@
     "output": {
       "Poem": 1
     },
+    "input": {
+      "Paper": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1210,6 +1386,10 @@
     "mult": "1.5",
     "output": {
       "Poem": 2
+    },
+    "input": {
+      "Paper": 2,
+      "Alcohol": 1
     },
     "build_resources": [
       {
@@ -1232,6 +1412,9 @@
     "output": {
       "Painting": 1
     },
+    "input": {
+      "Paper": 2
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -1252,6 +1435,9 @@
     "mult": "1.5",
     "output": {
       "Music": 1
+    },
+    "input": {
+      "Alcohol": 2
     },
     "build_resources": [
       {
@@ -1274,6 +1460,10 @@
     "output": {
       "Opera": 2
     },
+    "input": {
+      "Music": 1,
+      "Poem": 1
+    },
     "build_resources": [
       {
         "resource": "Music",
@@ -1294,6 +1484,10 @@
     "mult": "1.5",
     "output": {
       "Faith": 1
+    },
+    "input": {
+      "Horse": 1,
+      "Alcohol": 1
     },
     "build_resources": [
       {
@@ -1320,6 +1514,10 @@
     "output": {
       "Faith": 3
     },
+    "input": {
+      "Music": 1,
+      "Poem": 1
+    },
     "build_resources": [
       {
         "resource": "Music",
@@ -1336,6 +1534,10 @@
     "mult": "1.5",
     "output": {
       "Faith": 4
+    },
+    "input": {
+      "Cheese": 1,
+      "Opera": 1
     },
     "build_resources": [
       {
@@ -1354,6 +1556,10 @@
     "output": {
       "Faith": 3
     },
+    "input": {
+      "Painting": 1,
+      "Furniture": 1
+    },
     "build_resources": [
       {
         "resource": "Painting",
@@ -1371,6 +1577,9 @@
     "output": {
       "Science": 140
     },
+    "input": {
+      "Paper": 4
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -1387,6 +1596,10 @@
     "mult": "1.5",
     "output": {
       "Science": 800
+    },
+    "input": {
+      "Faith": 2,
+      "Poem": 2
     },
     "build_resources": [
       {
@@ -1410,6 +1623,10 @@
       "Philosophy": 1,
       "Science": 250
     },
+    "input": {
+      "Poem": 2,
+      "Faith": 2
+    },
     "build_resources": [
       {
         "resource": "Poem",
@@ -1431,6 +1648,10 @@
     "output": {
       "Newspaper": 1,
       "Science": 1000
+    },
+    "input": {
+      "Philosophy": 2,
+      "Book": 10
     },
     "build_resources": [
       {
@@ -1454,6 +1675,10 @@
       "Magazine": 1,
       "Science": 1000
     },
+    "input": {
+      "Sports": 2,
+      "Book": 10
+    },
     "build_resources": [
       {
         "resource": "Sports",
@@ -1475,6 +1700,10 @@
     "output": {
       "Science": 7500
     },
+    "input": {
+      "Culture": 3,
+      "Philosophy": 3
+    },
     "build_resources": [
       {
         "resource": "Culture",
@@ -1495,6 +1724,10 @@
     "mult": "1.5",
     "output": {
       "Science": 25940
+    },
+    "input": {
+      "Banknote": 1,
+      "Bond": 1
     },
     "build_resources": [
       {
@@ -1518,6 +1751,9 @@
     "output": {
       "Science": 80625
     },
+    "input": {
+      "Computer": 1
+    },
     "build_resources": [
       {
         "resource": "Computer",
@@ -1534,6 +1770,10 @@
     "mult": "1.5",
     "output": {
       "Culture": 1
+    },
+    "input": {
+      "Music": 2,
+      "Painting": 2
     },
     "build_resources": [
       {
@@ -1555,6 +1795,11 @@
     "mult": "1.5",
     "output": {
       "Law": 1
+    },
+    "input": {
+      "Philosophy": 1,
+      "Faith": 1,
+      "Culture": 1
     },
     "build_resources": [
       {
@@ -1581,6 +1826,11 @@
     "output": {
       "Sports": 1
     },
+    "input": {
+      "Culture": 1,
+      "Opera": 1,
+      "Philosophy": 1
+    },
     "build_resources": [
       {
         "resource": "Culture",
@@ -1605,6 +1855,11 @@
     "mult": "1.5",
     "output": {
       "Politics": 1
+    },
+    "input": {
+      "Culture": 2,
+      "Philosophy": 2,
+      "Law": 2
     },
     "build_resources": [
       {
@@ -1631,6 +1886,11 @@
     "output": {
       "Movie": 1
     },
+    "input": {
+      "Sports": 5,
+      "Lens": 5,
+      "Garment": 5
+    },
     "build_resources": [
       {
         "resource": "Sports",
@@ -1655,6 +1915,11 @@
     "mult": "1.5",
     "output": {
       "Radio": 1
+    },
+    "input": {
+      "Magazine": 5,
+      "Newspaper": 5,
+      "Culture": 5
     },
     "build_resources": [
       {
@@ -1681,6 +1946,11 @@
     "output": {
       "Diplomacy": 1
     },
+    "input": {
+      "Law": 5,
+      "Politics": 5,
+      "Philosophy": 5
+    },
     "build_resources": [
       {
         "resource": "Law",
@@ -1706,6 +1976,10 @@
     "output": {
       "TV": 1
     },
+    "input": {
+      "Radio": 2,
+      "Movie": 10
+    },
     "build_resources": [
       {
         "resource": "Radio",
@@ -1726,6 +2000,10 @@
     "mult": "1.5",
     "output": {
       "Internet": 1
+    },
+    "input": {
+      "Computer": 1,
+      "OpticalFiber": 5
     },
     "build_resources": [
       {
@@ -1748,6 +2026,10 @@
     "output": {
       "Software": 1
     },
+    "input": {
+      "Computer": 1,
+      "Philosophy": 10
+    },
     "build_resources": [
       {
         "resource": "Computer",
@@ -1769,6 +2051,10 @@
     "output": {
       "Supercomputer": 1
     },
+    "input": {
+      "Software": 1,
+      "Computer": 5
+    },
     "build_resources": [
       {
         "resource": "Software",
@@ -1789,6 +2075,11 @@
     "mult": "1.5",
     "output": {
       "CivGPT": 1
+    },
+    "input": {
+      "Internet": 1,
+      "Supercomputer": 2,
+      "Radio": 1
     },
     "build_resources": [
       {
@@ -1814,6 +2105,11 @@
     "mult": "1.5",
     "output": {
       "CivGPT": 2
+    },
+    "input": {
+      "Internet": 2,
+      "Supercomputer": 4,
+      "Radio": 2
     },
     "build_resources": [
       {
@@ -1841,6 +2137,10 @@
     "output": {
       "CivTok": 1
     },
+    "input": {
+      "Internet": 1,
+      "Politics": 1
+    },
     "build_resources": [
       {
         "resource": "Internet",
@@ -1861,6 +2161,11 @@
     "mult": "1.5",
     "output": {
       "CivOasis": 1
+    },
+    "input": {
+      "CivTok": 1,
+      "Supercomputer": 1,
+      "Diplomacy": 2
     },
     "build_resources": [
       {
@@ -1887,6 +2192,7 @@
     "output": {
       "Cotton": 1
     },
+    "input": {},
     "build_resources": [
       {
         "resource": "Wood",
@@ -1903,6 +2209,9 @@
     "mult": "1.5",
     "output": {
       "Cloth": 1
+    },
+    "input": {
+      "Cotton": 2
     },
     "build_resources": [
       {
@@ -1925,6 +2234,9 @@
     "output": {
       "Garment": 1
     },
+    "input": {
+      "Cloth": 2
+    },
     "build_resources": [
       {
         "resource": "Cloth",
@@ -1941,6 +2253,10 @@
     "mult": "1.5",
     "output": {
       "Furniture": 1
+    },
+    "input": {
+      "Lumber": 2,
+      "Copper": 1
     },
     "build_resources": [
       {
@@ -1963,6 +2279,10 @@
     "output": {
       "Book": 1
     },
+    "input": {
+      "Paper": 5,
+      "Poem": 1
+    },
     "build_resources": [
       {
         "resource": "Paper",
@@ -1984,6 +2304,9 @@
     "output": {
       "Flour": 1
     },
+    "input": {
+      "Wheat": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -2000,6 +2323,9 @@
     "mult": "1.5",
     "output": {
       "Meat": 2
+    },
+    "input": {
+      "Wheat": 2
     },
     "build_resources": [
       {
@@ -2018,6 +2344,9 @@
     "output": {
       "Milk": 2
     },
+    "input": {
+      "Wheat": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -2035,6 +2364,9 @@
     "output": {
       "Horse": 1
     },
+    "input": {
+      "Wheat": 2
+    },
     "build_resources": [
       {
         "resource": "Lumber",
@@ -2051,6 +2383,10 @@
     "mult": "1.5",
     "output": {
       "Bread": 1
+    },
+    "input": {
+      "Water": 1,
+      "Flour": 1
     },
     "build_resources": [
       {
@@ -2077,6 +2413,9 @@
     "output": {
       "Cheese": 1
     },
+    "input": {
+      "Milk": 2
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -2098,6 +2437,10 @@
     "output": {
       "Alcohol": 1
     },
+    "input": {
+      "Wheat": 1,
+      "Water": 1
+    },
     "build_resources": [
       {
         "resource": "Copper",
@@ -2114,6 +2457,10 @@
     "mult": "1.5",
     "output": {
       "Paper": 1
+    },
+    "input": {
+      "Wood": 1,
+      "Water": 1
     },
     "build_resources": [
       {
@@ -2135,6 +2482,12 @@
     "mult": "1.5",
     "output": {
       "Pizza": 1
+    },
+    "input": {
+      "Cheese": 1,
+      "Meat": 1,
+      "Flour": 2,
+      "Water": 2
     },
     "build_resources": [
       {
@@ -2165,6 +2518,9 @@
     "output": {
       "Plastics": 1
     },
+    "input": {
+      "Oil": 2
+    },
     "build_resources": [
       {
         "resource": "Oil",
@@ -2181,6 +2537,9 @@
     "mult": "1.5",
     "output": {
       "Plastics": 1
+    },
+    "input": {
+      "NaturalGas": 2
     },
     "build_resources": [
       {
@@ -2199,6 +2558,9 @@
     "output": {
       "Lumber": 1
     },
+    "input": {
+      "Wood": 2
+    },
     "build_resources": [
       {
         "resource": "Stone",
@@ -2215,6 +2577,9 @@
     "mult": "1.5",
     "output": {
       "Glass": 1
+    },
+    "input": {
+      "Sand": 2
     },
     "build_resources": [
       {
@@ -2237,6 +2602,9 @@
     "output": {
       "Lens": 1
     },
+    "input": {
+      "Glass": 2
+    },
     "build_resources": [
       {
         "resource": "Glass",
@@ -2253,6 +2621,10 @@
     "mult": "1.5",
     "output": {
       "Tool": 1
+    },
+    "input": {
+      "Copper": 1,
+      "Wood": 1
     },
     "build_resources": [
       {
@@ -2271,6 +2643,9 @@
     "output": {
       "Tool": 1
     },
+    "input": {
+      "Iron": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -2288,6 +2663,9 @@
     "output": {
       "Brick": 1
     },
+    "input": {
+      "Stone": 2
+    },
     "build_resources": [
       {
         "resource": "Wood",
@@ -2304,6 +2682,10 @@
     "mult": "1.5",
     "output": {
       "Marble": 1
+    },
+    "input": {
+      "Stone": 2,
+      "Tool": 1
     },
     "build_resources": [
       {
@@ -2325,6 +2707,11 @@
     "mult": "1.5",
     "output": {
       "Concrete": 1
+    },
+    "input": {
+      "Brick": 5,
+      "Sand": 5,
+      "Tool": 5
     },
     "build_resources": [
       {
@@ -2351,6 +2738,9 @@
     "output": {
       "Rebar": 1
     },
+    "input": {
+      "Steel": 5
+    },
     "build_resources": [
       {
         "resource": "Steel",
@@ -2367,6 +2757,10 @@
     "mult": "1.5",
     "output": {
       "ReinforcedConcrete": 1
+    },
+    "input": {
+      "Rebar": 5,
+      "Concrete": 5
     },
     "build_resources": [
       {
@@ -2389,6 +2783,10 @@
     "output": {
       "Steel": 1
     },
+    "input": {
+      "Iron": 1,
+      "Coal": 1
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -2409,6 +2807,9 @@
     "mult": "1.5",
     "output": {
       "Silicon": 1
+    },
+    "input": {
+      "Sand": 5
     },
     "build_resources": [
       {
@@ -2431,6 +2832,9 @@
     "output": {
       "Cable": 1
     },
+    "input": {
+      "Copper": 5
+    },
     "build_resources": [
       {
         "resource": "Copper",
@@ -2447,6 +2851,11 @@
     "mult": "1.5",
     "output": {
       "Engine": 1
+    },
+    "input": {
+      "Iron": 1,
+      "Coal": 1,
+      "Tool": 1
     },
     "build_resources": [
       {
@@ -2473,6 +2882,10 @@
     "output": {
       "Train": 1
     },
+    "input": {
+      "Engine": 1,
+      "Steel": 10
+    },
     "build_resources": [
       {
         "resource": "Engine",
@@ -2493,6 +2906,11 @@
     "mult": "1.5",
     "output": {
       "Maglev": 1
+    },
+    "input": {
+      "Train": 15,
+      "Airplane": 15,
+      "Car": 15
     },
     "build_resources": [
       {
@@ -2518,6 +2936,14 @@
     "mult": "1.5",
     "output": {
       "Car": 1
+    },
+    "input": {
+      "Engine": 1,
+      "Steel": 1,
+      "Furniture": 1,
+      "Cable": 1,
+      "Plastics": 1,
+      "Petrol": 5
     },
     "build_resources": [
       {
@@ -2556,6 +2982,11 @@
     "output": {
       "Robocar": 1
     },
+    "input": {
+      "Car": 5,
+      "Supercomputer": 2,
+      "Satellite": 1
+    },
     "build_resources": [
       {
         "resource": "Car",
@@ -2580,6 +3011,11 @@
     "mult": "1.5",
     "output": {
       "PlanetaryRover": 2
+    },
+    "input": {
+      "Maglev": 1,
+      "Radio": 1,
+      "Supercomputer": 1
     },
     "build_resources": [
       {
@@ -2606,6 +3042,9 @@
     "output": {
       "Petrol": 1
     },
+    "input": {
+      "Oil": 2
+    },
     "build_resources": [
       {
         "resource": "Steel",
@@ -2622,6 +3061,9 @@
     "mult": "1.5",
     "output": {
       "Satellite": 1
+    },
+    "input": {
+      "Rocket": 2
     },
     "build_resources": [
       {
@@ -2640,6 +3082,9 @@
     "output": {
       "Airplane": 1
     },
+    "input": {
+      "Biplane": 2
+    },
     "build_resources": [
       {
         "resource": "Biplane",
@@ -2656,6 +3101,11 @@
     "mult": "1.5",
     "output": {
       "Spacecraft": 1
+    },
+    "input": {
+      "Rocket": 2,
+      "Satellite": 2,
+      "Airplane": 2
     },
     "build_resources": [
       {
@@ -2681,6 +3131,11 @@
     "mult": "1.5",
     "output": {
       "Spacecraft": 2
+    },
+    "input": {
+      "Rocket": 4,
+      "Satellite": 4,
+      "Airplane": 4
     },
     "build_resources": [
       {
@@ -2708,6 +3163,10 @@
     "output": {
       "Semiconductor": 1
     },
+    "input": {
+      "Silicon": 10,
+      "Copper": 10
+    },
     "build_resources": [
       {
         "resource": "Silicon",
@@ -2728,6 +3187,11 @@
     "mult": "1.5",
     "output": {
       "Computer": 1
+    },
+    "input": {
+      "Semiconductor": 5,
+      "Plastics": 5,
+      "Aluminum": 5
     },
     "build_resources": [
       {
@@ -2754,6 +3218,11 @@
     "output": {
       "OpticalFiber": 1
     },
+    "input": {
+      "Cable": 10,
+      "Glass": 10,
+      "Plastics": 10
+    },
     "build_resources": [
       {
         "resource": "Cable",
@@ -2778,6 +3247,9 @@
     "mult": "1.5",
     "output": {
       "Coin": 1
+    },
+    "input": {
+      "Gold": 3
     },
     "build_resources": [
       {
@@ -2804,6 +3276,9 @@
     "output": {
       "Banknote": 1
     },
+    "input": {
+      "Coin": 3
+    },
     "build_resources": [
       {
         "resource": "Coin",
@@ -2820,6 +3295,9 @@
     "mult": "1.5",
     "output": {
       "Bond": 1
+    },
+    "input": {
+      "Banknote": 3
     },
     "build_resources": [
       {
@@ -2838,6 +3316,9 @@
     "output": {
       "Stock": 1
     },
+    "input": {
+      "Bond": 3
+    },
     "build_resources": [
       {
         "resource": "Bond",
@@ -2854,6 +3335,10 @@
     "mult": "1.5",
     "output": {
       "Forex": 1
+    },
+    "input": {
+      "Banknote": 2,
+      "Bond": 2
     },
     "build_resources": [
       {
@@ -2876,6 +3361,10 @@
     "output": {
       "MutualFund": 1
     },
+    "input": {
+      "Forex": 1,
+      "Stock": 1
+    },
     "build_resources": [
       {
         "resource": "Forex",
@@ -2897,6 +3386,9 @@
     "output": {
       "HedgeFund": 1
     },
+    "input": {
+      "MutualFund": 2
+    },
     "build_resources": [
       {
         "resource": "MutualFund",
@@ -2913,6 +3405,10 @@
     "mult": "1.5",
     "output": {
       "Bitcoin": 1
+    },
+    "input": {
+      "HedgeFund": 2,
+      "CivTok": 1
     },
     "build_resources": [
       {
@@ -2933,6 +3429,7 @@
     "building": "Caravansary",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -2956,6 +3453,7 @@
     "building": "Market",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -2979,6 +3477,7 @@
     "building": "Warehouse",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Lumber",
@@ -3002,6 +3501,7 @@
     "building": "CloneFactory",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Software",
@@ -3021,6 +3521,7 @@
     "building": "CloneLab",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Rocket",
@@ -3042,12 +3543,14 @@
     "output": {
       "Worker": 10
     },
+    "input": {},
     "build_resources": []
   },
   {
     "building": "Statistics",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3068,6 +3571,7 @@
     "building": "Petra",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Gold",
@@ -3084,6 +3588,7 @@
     "building": "Stonehenge",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3100,6 +3605,7 @@
     "building": "HatshepsutTemple",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3124,6 +3630,7 @@
     "building": "LighthouseOfAlexandria",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Iron",
@@ -3148,6 +3655,7 @@
     "building": "PyramidOfGiza",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3164,6 +3672,7 @@
     "building": "ColossusOfRhodes",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3180,6 +3689,7 @@
     "building": "GreatMosqueOfSamarra",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Sand",
@@ -3204,6 +3714,7 @@
     "building": "HangingGarden",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3228,6 +3739,7 @@
     "building": "TempleOfHeaven",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Iron",
@@ -3252,6 +3764,7 @@
     "building": "Parthenon",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -3277,6 +3790,7 @@
     "building": "TempleOfArtemis",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Armor",
@@ -3301,6 +3815,7 @@
     "building": "LuxorTemple",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Tool",
@@ -3325,6 +3840,7 @@
     "building": "ChichenItza",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3349,6 +3865,7 @@
     "building": "MausoleumAtHalicarnassus",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -3373,6 +3890,7 @@
     "building": "HagiaSophia",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3397,6 +3915,7 @@
     "building": "AngkorWat",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3421,6 +3940,7 @@
     "building": "TerracottaArmy",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Chariot",
@@ -3445,6 +3965,7 @@
     "building": "Persepolis",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3469,6 +3990,7 @@
     "building": "OxfordUniversity",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3493,6 +4015,7 @@
     "building": "SaintBasilsCathedral",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -3517,6 +4040,7 @@
     "building": "ForbiddenCity",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -3541,6 +4065,7 @@
     "building": "HimejiCastle",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Caravel",
@@ -3565,6 +4090,7 @@
     "building": "TajMahal",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3589,6 +4115,9 @@
     "building": "Colosseum",
     "mult": "1.5",
     "output": {},
+    "input": {
+      "Chariot": 10
+    },
     "build_resources": [
       {
         "resource": "Brick",
@@ -3614,6 +4143,7 @@
     "building": "MogaoCaves",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -3638,6 +4168,7 @@
     "building": "StatueOfZeus",
     "mult": "5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Marble",
@@ -3663,6 +4194,7 @@
     "building": "CircusMaximus",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Music",
@@ -3688,6 +4220,7 @@
     "building": "EiffelTower",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Steel",
@@ -3704,6 +4237,7 @@
     "building": "Rijksmuseum",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Newspaper",
@@ -3728,6 +4262,7 @@
     "building": "SummerPalace",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Gunpowder",
@@ -3752,6 +4287,7 @@
     "building": "StatueOfLiberty",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -3776,6 +4312,7 @@
     "building": "Neuschwanstein",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Rifle",
@@ -3800,6 +4337,7 @@
     "building": "BrandenburgGate",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -3824,6 +4362,7 @@
     "building": "GrandBazaar",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Coin",
@@ -3848,6 +4387,7 @@
     "building": "AbuSimbel",
     "mult": "2",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3873,6 +4413,7 @@
     "building": "GreatSphinx",
     "mult": "5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Stone",
@@ -3898,6 +4439,7 @@
     "building": "Hollywood",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Magazine",
@@ -3922,6 +4464,7 @@
     "building": "GoldenGateBridge",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -3946,6 +4489,7 @@
     "building": "CristoRedentor",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -3970,6 +4514,7 @@
     "building": "UnitedNations",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -3994,6 +4539,7 @@
     "building": "ManhattanProject",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -4010,6 +4556,7 @@
     "building": "SagradaFamilia",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -4034,6 +4581,7 @@
     "building": "GreatWall",
     "mult": "5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -4059,6 +4607,7 @@
     "building": "YellowCraneTower",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -4084,6 +4633,7 @@
     "building": "PorcelainTower",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -4109,6 +4659,7 @@
     "building": "CNTower",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Movie",
@@ -4133,6 +4684,7 @@
     "building": "SpaceNeedle",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Battleship",
@@ -4157,6 +4709,7 @@
     "building": "ApolloProgram",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "FighterJet",
@@ -4181,6 +4734,7 @@
     "building": "Atomium",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -4205,6 +4759,7 @@
     "building": "ChoghaZanbil",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Water",
@@ -4233,6 +4788,7 @@
     "building": "Broadway",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Opera",
@@ -4258,6 +4814,7 @@
     "building": "TheMet",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Book",
@@ -4283,6 +4840,7 @@
     "building": "WallStreet",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -4308,6 +4866,7 @@
     "building": "StPetersBasilica",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4319,6 +4878,7 @@
     "building": "ProphetsMosque",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4330,6 +4890,7 @@
     "building": "GreatDagonPagoda",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4341,6 +4902,7 @@
     "building": "Pantheon",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4352,6 +4914,7 @@
     "building": "WallOfBabylon",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -4377,6 +4940,7 @@
     "building": "TowerOfBabel",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -4402,6 +4966,7 @@
     "building": "ZigguratOfUr",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Brick",
@@ -4427,6 +4992,7 @@
     "building": "InternationalSpaceStation",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Spacecraft",
@@ -4451,6 +5017,7 @@
     "building": "MarinaBaySands",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -4475,6 +5042,7 @@
     "building": "PalmJumeirah",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "HedgeFund",
@@ -4499,6 +5067,7 @@
     "building": "AldersonDisk",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -4523,6 +5092,7 @@
     "building": "DysonSphere",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "CivGPT",
@@ -4547,6 +5117,7 @@
     "building": "MatrioshkaBrain",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -4571,6 +5142,7 @@
     "building": "Superintelligence",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Robocar",
@@ -4603,6 +5175,7 @@
     "building": "LargeHadronCollider",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Supercomputer",
@@ -4627,6 +5200,7 @@
     "building": "BigBen",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -4643,6 +5217,7 @@
     "building": "ItsukushimaShrine",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Furniture",
@@ -4668,6 +5243,7 @@
     "building": "GoldenPavilion",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4693,6 +5269,7 @@
     "building": "OsakaCastle",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -4718,6 +5295,7 @@
     "building": "CologneCathedral",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4743,6 +5321,7 @@
     "building": "Elbphilharmonie",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Radio",
@@ -4768,6 +5347,7 @@
     "building": "SantaClausVillage",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Faith",
@@ -4784,6 +5364,7 @@
     "building": "YearOfTheSnake",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Opera",
@@ -4800,6 +5381,7 @@
     "building": "BritishMuseum",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -4825,6 +5407,7 @@
     "building": "CambridgeUniversity",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -4850,6 +5433,7 @@
     "building": "TowerBridge",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -4871,6 +5455,7 @@
     "building": "EastIndiaCompany",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -4896,6 +5481,7 @@
     "building": "ArcDeTriomphe",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Train",
@@ -4921,6 +5507,7 @@
     "building": "MontSaintMichel",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Culture",
@@ -4938,6 +5525,7 @@
     "building": "Louvre",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -4963,6 +5551,7 @@
     "building": "CentrePompidou",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -4988,6 +5577,7 @@
     "building": "EasterBunny",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -5012,6 +5602,7 @@
     "building": "BlueMosque",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Cannon",
@@ -5037,6 +5628,7 @@
     "building": "TopkapiPalace",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Biplane",
@@ -5062,6 +5654,7 @@
     "building": "SwissBank",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Forex",
@@ -5086,6 +5679,7 @@
     "building": "ItaipuDam",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Diplomacy",
@@ -5111,6 +5705,7 @@
     "building": "CathedralOfBrasilia",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Biplane",
@@ -5136,6 +5731,7 @@
     "building": "RedFort",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Frigate",
@@ -5161,6 +5757,7 @@
     "building": "SanchiStupa",
     "mult": "4",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Garment",
@@ -5186,6 +5783,7 @@
     "building": "QutbMinar",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Banknote",
@@ -5211,6 +5809,7 @@
     "building": "BranCastle",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Coin",
@@ -5235,6 +5834,7 @@
     "building": "PortOfSingapore",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Koti",
@@ -5251,6 +5851,7 @@
     "building": "SydneyOperaHouse",
     "mult": "5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "TV",
@@ -5276,6 +5877,7 @@
     "building": "SydneyHarbourBridge",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -5301,6 +5903,7 @@
     "building": "GreatOceanRoad",
     "mult": "1.7",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Battleship",
@@ -5322,6 +5925,7 @@
     "building": "KizhiPogost",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bond",
@@ -5347,6 +5951,7 @@
     "building": "Hermitage",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -5368,6 +5973,7 @@
     "building": "Sputnik1",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Satellite",
@@ -5385,6 +5991,7 @@
     "building": "AkademikLomonosov",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Spacecraft",
@@ -5402,6 +6009,7 @@
     "building": "ChateauFrontenac",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Tank",
@@ -5427,6 +6035,7 @@
     "building": "Habitat67",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Bitcoin",
@@ -5444,6 +6053,7 @@
     "building": "WorldTradeOrganization",
     "mult": "2",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "MutualFund",
@@ -5468,6 +6078,7 @@
     "building": "CothonOfCarthage",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "SiegeRam",
@@ -5493,6 +6104,7 @@
     "building": "Mauritshuis",
     "mult": "1.5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Politics",
@@ -5510,6 +6122,7 @@
     "building": "Midsummer",
     "mult": "5",
     "output": {},
+    "input": {},
     "build_resources": [
       {
         "resource": "Alcohol",
