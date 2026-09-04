@@ -60,7 +60,7 @@
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.buildingCount') }}</label>
-            <input v-model.number="buildingCount" type="number" min="1" max="5000" class="num-input"
+            <input v-model.number="buildingCount" type="number" min="0" max="5000" class="num-input"
               @input="onBuildingCountInput('buildingCount')" />
           </div>
           <div class="input-group">
@@ -155,7 +155,7 @@
             </div>
             <div class="input-group">
               <label>{{ t('calcBuildings.buildingCount') }}</label>
-              <input v-model.number="consumptionBuildingCount" type="number" min="1" max="5000" class="num-input"
+              <input v-model.number="consumptionBuildingCount" type="number" min="0" max="5000" class="num-input"
                 @input="onBuildingCountInput('consumptionBuildingCount')" />
             </div>
           </div>
