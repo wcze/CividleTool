@@ -91,7 +91,7 @@ export default {
     builderPower: '建造者能力',
     buildTime: '建造所需时间',
     buildTimeDetail: '（共 {count} 次升级）',
-    consumptionTitle: '建筑生成所需消耗资源',
+    consumptionTitle: '建筑生产所需消耗资源',
     consumptionFormula: '当前实际等级 {level} × 建筑数量 {count}',
     consumptionPeriod: '时间',
     consumptionPerSec: '每秒',
