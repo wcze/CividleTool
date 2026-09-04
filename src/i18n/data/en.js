@@ -1490,6 +1490,7 @@ const EN = {
    ResourcePanelSections: "Resource Panel Sections",
    ResourceTransportPreference: "Transport Preference",
    RestitutorDescHTML: "Wishlist my upcoming game - <b>Restitutor: Empire Restored</b>. It is a historical incremental grand strategy game focused on <i>statecraft, diplomacy, and calculated warfare</i>. Set in the Roman Empire after the death of Commodus in 192 AD, when the empire fractures into rival provinces. As a governor, lead a province of your choice and restore the empire.",
+   RestitutorEmpireRestoredEarlyAccess: "Restitutor: Empire Restored Early Access",
    RestorePurchases: "Restore Purchases",
    RevealDeposit: "Reveal",
    Revolution: "Revolution",

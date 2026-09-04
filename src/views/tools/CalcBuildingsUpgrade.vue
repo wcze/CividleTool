@@ -43,11 +43,13 @@
         <div class="input-row">
           <div class="input-group">
             <label>{{ t('calcBuildings.currentLevel') }}</label>
-            <input v-model.number="currentLevel" type="number" min="0" max="1000" class="num-input" @input="onLevelInput('currentLevel')" />
+            <input v-model.number="currentLevel" type="number" min="0" max="150" class="num-input"
+              @input="onLevelInput('currentLevel')" />
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.targetLevel') }}</label>
-            <input v-model.number="targetLevel" type="number" min="0" max="1000" class="num-input" @input="onLevelInput('targetLevel')" />
+            <input v-model.number="targetLevel" type="number" min="0" max="150" class="num-input"
+              @input="onLevelInput('targetLevel')" />
             <!-- 目标等级快速按钮 -->
             <div class="level-presets">
               <button v-for="lvl in [25, 30, 35, 40, 45, 50]" :key="lvl" class="preset-btn"
@@ -58,7 +60,8 @@
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.buildingCount') }}</label>
-            <input v-model.number="buildingCount" type="number" min="1" class="num-input" @input="calculate" />
+            <input v-model.number="buildingCount" type="number" min="1" max="5000" class="num-input"
+              @input="onBuildingCountInput('buildingCount')" />
           </div>
           <div class="input-group">
             <div class="label-with-help">
@@ -78,12 +81,8 @@
           <div class="result-header">
             <div class="result-header-left">
               <span class="result-title">{{ t('calcBuildings.upgradeResources') }}</span>
-              <button
-                type="button"
-                class="detail-btn"
-                v-if="upgradeDetails.length > 0"
-                @click="showDetails = !showDetails"
-              >
+              <button type="button" class="detail-btn" v-if="upgradeDetails.length > 0"
+                @click="showDetails = !showDetails">
                 <span>{{ showDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
                 <span class="chevron" :class="{ open: showDetails }">▾</span>
               </button>
@@ -108,14 +107,11 @@
               </span>
             </div>
           </div>
-
-          <!-- 建造所需时间 -->
           <div class="time-result" v-if="totalBuildTime > 0">
             <span class="time-label">{{ t('calcBuildings.buildTime') }}</span>
             <strong class="time-value">{{ formatTime(totalBuildTime) }}</strong>
             <span class="time-detail">{{ t('calcBuildings.buildTimeDetail', { count: levelDiff }) }}</span>
           </div>
-
           <div class="detail-table-wrap" v-if="showDetails && upgradeDetails.length > 0">
             <table class="detail-table">
               <thead>
@@ -137,10 +133,57 @@
             </table>
           </div>
         </div>
+      </div>
 
-        <div v-else class="result-empty">
-          {{ t('calcBuildings.emptyResult') }}
+      <div v-if="hasConsumptionInputs" class="calculator-body consumption-calculator-body">
+        <div class="result-header consumption-header">
+          <div class="result-header-left">
+            <span class="result-title">{{ t('calcBuildings.consumptionTitle') }}</span>
+            <button type="button" class="detail-btn" @click="showConsumptionDetails = !showConsumptionDetails">
+              <span>{{ showConsumptionDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
+              <span class="chevron" :class="{ open: showConsumptionDetails }">▾</span>
+            </button>
+          </div>
         </div>
+
+        <template v-if="showConsumptionDetails">
+          <div class="input-row consumption-input-row">
+            <div class="input-group">
+              <label>{{ t('calcBuildings.actualLevel') }}</label>
+              <input v-model.number="actualLevel" type="number" min="0" max="150" class="num-input"
+                @input="onLevelInput('actualLevel')" />
+            </div>
+            <div class="input-group">
+              <label>{{ t('calcBuildings.buildingCount') }}</label>
+              <input v-model.number="consumptionBuildingCount" type="number" min="1" max="5000" class="num-input"
+                @input="onBuildingCountInput('consumptionBuildingCount')" />
+            </div>
+          </div>
+
+          <div class="result-header consumption-formula-row">
+            <span class="level-range">
+              {{ t('calcBuildings.consumptionFormula', { level: actualLevel, count: consumptionBuildingCount }) }}
+            </span>
+          </div>
+          <div class="detail-table-wrap">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th>{{ t('calcBuildings.consumptionPeriod') }}</th>
+                  <th v-for="resource in consumptionStats" :key="resource.key">{{ resource.resource }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="period in consumptionPeriods" :key="period.key">
+                  <th>{{ period.label }}</th>
+                  <td v-for="resource in consumptionStats" :key="resource.key">
+                    {{ formatNumber(resource.values[period.key]) }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </template>
       </div>
     </div>
 
@@ -168,10 +211,7 @@
     </div>
 
     <!-- ===== 建造者能力乘数说明弹窗 ===== -->
-    <AppDialog
-      v-model="showHelpDialog"
-      :title="t('calcBuildings.builderCapacityHelpAlt')"
-    >
+    <AppDialog v-model="showHelpDialog" :title="t('calcBuildings.builderCapacityHelpAlt')">
       <img :src="builderCapacityImage" :alt="t('calcBuildings.builderCapacityHelpAlt')" />
     </AppDialog>
 
@@ -277,19 +317,35 @@ const selectedBuilding = ref(null)
 // 计算器输入
 const currentLevel = ref(0)
 const targetLevel = ref(1)
+const actualLevel = ref(1)
 const buildingCount = ref(1)
+const consumptionBuildingCount = ref(1)
 
-// 等级输入限制：0 <= 等级 <= 1000，超出自动钳制
+// 等级输入限制：0 <= 等级 <= 150，超出自动钳制
 const onLevelInput = (key) => {
-  const raw = key === 'currentLevel' ? currentLevel.value : targetLevel.value
-  const clamped = Math.max(0, Math.min(1000, Number.isFinite(Number(raw)) ? Number(raw) : 0))
+  const raw = key === 'currentLevel'
+    ? currentLevel.value
+    : key === 'targetLevel'
+      ? targetLevel.value
+      : actualLevel.value
+  const clamped = Math.max(0, Math.min(150, Number.isFinite(Number(raw)) ? Number(raw) : 0))
   if (key === 'currentLevel') currentLevel.value = clamped
-  else targetLevel.value = clamped
+  else if (key === 'targetLevel') targetLevel.value = clamped
+  else actualLevel.value = clamped
+  calculate()
+}
+
+const onBuildingCountInput = (key) => {
+  const raw = key === 'buildingCount' ? buildingCount.value : consumptionBuildingCount.value
+  const clamped = Math.max(1, Math.min(5000, Number.isFinite(Number(raw)) ? Number(raw) : 1))
+  if (key === 'buildingCount') buildingCount.value = clamped
+  else consumptionBuildingCount.value = clamped
   calculate()
 }
 
 // 是否展开“查看详情”（每一级升级明细）
 const showDetails = ref(false)
+const showConsumptionDetails = ref(false)
 
 // 建造者能力乘数：从 localStorage 自动读取，变化时自动保存
 const BUILDER_MULTIPLIER_KEY = 'cividle-builder-multiplier'
@@ -311,6 +367,48 @@ const builderPower = computed(() => {
   const bm = Math.max(0, builderMultiplier.value || 1)
   return init * bm
 })
+// 消耗统计：实际等级 * 建筑数量，再换算到小时 / 4小时 / 天
+const hasConsumptionInputs = computed(() =>
+  Object.keys(selectedBuilding.value?.input || {}).length > 0
+)
+
+// 消耗统计：input * 实际等级 * 建筑数量，再换算到不同时间周期。
+const consumptionStats = computed(() => {
+  locale.value
+  if (!hasConsumptionInputs.value) return []
+  const level = Math.max(0, Number(actualLevel.value) || 0)
+  const count = Math.max(0, Number(consumptionBuildingCount.value) || 0)
+  return Object.entries(selectedBuilding.value.input).map(([resource, input]) => {
+    const perSec = (Number(input) || 0) * level * count
+    const perHour = perSec * 3600
+    return {
+      key: resource,
+      resource: tGame(resource),
+      values: {
+        perSec,
+        perHour,
+        per4Hours: perHour * 4,
+        per12Hours: perHour * 12,
+        perDay: perHour * 24,
+        per2Days: perHour * 24 * 2,
+        per3Days: perHour * 24 * 3
+      }
+    }
+  })
+})
+
+const consumptionPeriods = computed(() => {
+  locale.value
+  return [
+    { key: 'perSec', label: t('calcBuildings.consumptionPerSec') },
+    { key: 'perHour', label: t('calcBuildings.consumptionPerHour') },
+    { key: 'per4Hours', label: t('calcBuildings.consumptionPer4Hours') },
+    { key: 'per12Hours', label: t('calcBuildings.consumptionPer12Hours') },
+    { key: 'perDay', label: t('calcBuildings.consumptionPerDay') },
+    { key: 'per2Days', label: t('calcBuildings.consumptionPer2Days') },
+    { key: 'per3Days', label: t('calcBuildings.consumptionPer3Days') }
+  ]
+})
 
 // 建造者能力乘数说明弹窗是否显示
 const showHelpDialog = ref(false)
@@ -331,8 +429,11 @@ const selectBuilding = (item) => {
   selectedBuilding.value = item
   currentLevel.value = 0
   targetLevel.value = 1
+  actualLevel.value = 1
   buildingCount.value = 1
+  consumptionBuildingCount.value = 1
   showDetails.value = false
+  showConsumptionDetails.value = false
   calculate()
 
   // 滚动到顶部
@@ -700,6 +801,12 @@ const formatTime = (seconds) => {
   margin-bottom: 16px;
 }
 
+.calculator-body + .calculator-body {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e8edf4;
+}
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -810,6 +917,13 @@ const formatTime = (seconds) => {
   border-radius: 12px;
   padding: 16px 20px 18px;
   border: 1px solid #e8edf4;
+}
+
+.consumption-input-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 576px;
 }
 
 .result-header {
@@ -1016,6 +1130,11 @@ const formatTime = (seconds) => {
 .detail-table td:last-child {
   color: #4a90d9;
   font-weight: 600;
+}
+
+.consumption-calculator-body .detail-table td:last-child {
+  color: #1a2332;
+  font-weight: 400;
 }
 
 /* ===== 建筑卡片网格 ===== */
@@ -1242,6 +1361,11 @@ const formatTime = (seconds) => {
     gap: 10px;
   }
 
+  .consumption-input-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .calculator-header {
     flex-wrap: wrap;
     gap: 8px;
@@ -1273,5 +1397,6 @@ const formatTime = (seconds) => {
     flex-wrap: wrap;
     justify-content: flex-end;
   }
+
 }
 </style>
