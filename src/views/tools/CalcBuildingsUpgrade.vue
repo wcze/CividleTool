@@ -337,7 +337,7 @@ const onLevelInput = (key) => {
 
 const onBuildingCountInput = (key) => {
   const raw = key === 'buildingCount' ? buildingCount.value : consumptionBuildingCount.value
-  const clamped = Math.max(1, Math.min(5000, Number.isFinite(Number(raw)) ? Number(raw) : 1))
+  const clamped = Math.max(0, Math.min(5000, Number.isFinite(Number(raw)) ? Number(raw) : 0))
   if (key === 'buildingCount') buildingCount.value = clamped
   else consumptionBuildingCount.value = clamped
   calculate()
