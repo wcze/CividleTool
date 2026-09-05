@@ -1,0 +1,40 @@
+name: Sync Data and Build
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+    
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run sync-data
+        run: npm run sync-data
+
+      - name: Run build
+        run: npm run build
+
+      - name: Auto commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "[data] [skip ci] auto-sync data and build"
+          commit_user_name: "GitHub Actions Bot"
+          commit_user_email: "actions@github.com"
