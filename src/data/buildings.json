@@ -4113,7 +4113,7 @@
   },
   {
     "building": "Colosseum",
-    "mult": "1.5",
+    "mult": "2",
     "output": {},
     "input": {
       "Chariot": 10

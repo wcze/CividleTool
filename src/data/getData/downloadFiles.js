@@ -289,6 +289,21 @@ function showPreview(content, filename) {
     console.log('  ' + '─'.repeat(50));
 }
 
+// 比较远程与本地版本号。Version.json 当前使用 build 字段，保留
+// version 字段兼容其他版本格式。
+function isSameVersion(remoteContent) {
+    const versionPath = path.join(__dirname, '../version.json');
+    try {
+        const remoteVersion = JSON.parse(remoteContent);
+        const localVersion = JSON.parse(fs.readFileSync(versionPath, 'utf8'));
+        const remoteNumber = remoteVersion.build ?? remoteVersion.version;
+        const localNumber = localVersion.build ?? localVersion.version;
+        return remoteNumber !== undefined && localNumber !== undefined && remoteNumber === localNumber;
+    } catch (e) {
+        return false;
+    }
+}
+
 // ============ 主流程 ============
 
 // 在 version.json 中记录本次同步执行的时间戳
@@ -328,6 +343,12 @@ async function main() {
             // 下载
             const tsContent = await downloadFile(fullUrl);
             console.log(`  ✅ 下载完成 (${(tsContent.length / 1024).toFixed(2)} KB)`);
+
+            // 版本未变化时不覆盖 version.json，也不执行后续下载和同步时间更新。
+            if (file.raw && isSameVersion(tsContent)) {
+                console.log('  ℹ️ 远程版本与本地版本一致，无需同步。');
+                return;
+            }
 
             // 转换（raw 文件本身即为 JSON，跳过 ts->js 转换，仅格式化）
             let jsContent;
