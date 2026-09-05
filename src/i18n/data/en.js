@@ -1088,6 +1088,7 @@ const EN = {
    Museum: "Museum",
    Music: "Music",
    MusiciansGuild: "Musician's Guild",
+   MuteWhenBackgrounded: "Mute When Backgrounded",
    MutualAssuredDestruction: "Mutual Assured Destruction",
    MutualFund: "Mutual Fund",
    Name: "Name",

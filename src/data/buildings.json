@@ -4407,7 +4407,7 @@
     "age": "BronzeAge",
     "age_index": 1,
     "column": 2,
-    "builder_init": 43.499145896104174
+    "builder_init": 43.49914589610418
   },
   {
     "building": "GreatSphinx",
@@ -4458,7 +4458,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 255.9645650234107
+    "builder_init": 255.96456502341076
   },
   {
     "building": "GoldenGateBridge",
@@ -4483,7 +4483,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 103.45053370272193
+    "builder_init": 103.45053370272194
   },
   {
     "building": "CristoRedentor",
@@ -4550,7 +4550,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 1855.8532818937285
+    "builder_init": 1855.8532818937288
   },
   {
     "building": "SagradaFamilia",
@@ -4575,7 +4575,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 19,
-    "builder_init": 314.7848257621703
+    "builder_init": 314.7848257621704
   },
   {
     "building": "GreatWall",
@@ -4728,7 +4728,7 @@
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "builder_init": 327.6030840691076
+    "builder_init": 327.60308406910764
   },
   {
     "building": "Atomium",
@@ -5648,7 +5648,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 132.92006550381853
+    "builder_init": 132.92006550381856
   },
   {
     "building": "SwissBank",
@@ -5699,7 +5699,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 60.153756994961654
+    "builder_init": 60.15375699496166
   },
   {
     "building": "CathedralOfBrasilia",
@@ -5725,7 +5725,7 @@
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 132.92006550381853
+    "builder_init": 132.92006550381856
   },
   {
     "building": "RedFort",
@@ -5845,7 +5845,7 @@
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "builder_init": 2.2680557231681315
+    "builder_init": 2.268055723168132
   },
   {
     "building": "SydneyOperaHouse",
