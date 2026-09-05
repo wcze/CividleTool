@@ -347,7 +347,7 @@ async function main() {
             // 版本未变化时不覆盖 version.json，也不执行后续下载和同步时间更新。
             if (file.raw && isSameVersion(tsContent)) {
                 console.log('  ℹ️ 远程版本与本地版本一致，无需同步。');
-                return;
+                return false;
             }
 
             // 转换（raw 文件本身即为 JSON，跳过 ts->js 转换，仅格式化）
@@ -402,4 +402,7 @@ async function main() {
 }
 
 // 执行
-main();
+main().then((synced) => {
+    // 供 sync-data.js 区分“无需同步”与下载失败。
+    if (synced === false) process.exitCode = 2;
+});

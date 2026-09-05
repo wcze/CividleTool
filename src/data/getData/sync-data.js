@@ -9,22 +9,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const TEMP_DIR = path.join(__dirname, '.temp');
+const NO_UPDATE_EXIT_CODE = 2;
 
 // 依次执行的脚本（相对本文件）
 const STEPS = ['downloadFiles.js', 'handle-prices.js', 'handle-buildings.js', 'handle-civilization.js', 'handle-market.js', 'handle-language.js'];
 
-function runScript(script) {
+function runScript(script, allowedExitCodes = []) {
   const scriptPath = path.join(__dirname, script);
   console.log(`\n===== ▶ 执行 ${script} =====`);
   const result = spawnSync(process.execPath, [scriptPath], {
     cwd: __dirname,
     stdio: 'inherit',
   });
-  if (result.status !== 0) {
+  if (result.status !== 0 && !allowedExitCodes.includes(result.status)) {
     console.error(`❌ ${script} 执行失败 (退出码 ${result.status})`);
     process.exit(result.status ?? 1);
   }
   console.log(`✅ ${script} 执行完成\n`);
+  return result.status;
 }
 
 function cleanTemp() {
@@ -51,7 +53,11 @@ function main() {
   console.log('='.repeat(50));
 
   // 1. 下载源文件
-  runScript('downloadFiles.js');
+  const downloadStatus = runScript('downloadFiles.js', [NO_UPDATE_EXIT_CODE]);
+  if (downloadStatus === NO_UPDATE_EXIT_CODE) {
+    console.log('ℹ️ 版本未变化，无需同步数据。');
+    return;
+  }
 
   // 2. 下载后检查 .temp 是否有可用的源文件，避免后续脚本缺文件
   const tempCount = checkTempFiles();
