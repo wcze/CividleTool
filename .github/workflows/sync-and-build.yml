@@ -3,8 +3,15 @@ name: Sync Data and Build
 on:
   schedule:
     - cron: '0 16 * * *'
-    
+
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-and-build-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -13,6 +20,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -21,7 +30,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run sync-data
         run: npm run sync-data
@@ -29,9 +38,14 @@ jobs:
       - name: Run build
         run: npm run build
 
-      - name: Auto commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "[data] [skip ci] auto-sync data and build"
-          commit_user_name: "GitHub Actions Bot"
-          commit_user_email: "actions@github.com"
+      - name: Commit and push generated changes
+        shell: bash
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "[data] [skip ci] auto-sync data and build"
+          git fetch origin master
+          git rebase origin/master
+          git push origin HEAD:master
