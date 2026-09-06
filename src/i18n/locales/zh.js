@@ -69,6 +69,7 @@ export default {
     }
   },
   calcBuildings: {
+    productionRoute: '\u5efa\u7b51\u751f\u4ea7\u8def\u7ebf',
     title: '建筑资源',
     totalBuildings: '共 {count} 个建筑',
     subtitle: '搜索建筑名称，查看建造所需资源',

@@ -188,6 +188,65 @@
           </div>
         </template>
       </div>
+
+      <div v-if="productionGraph" class="calculator-body production-calculator-body">
+        <div class="result-header production-header">
+          <div class="result-header-left">
+            <span class="result-title">{{ t('calcBuildings.productionRoute') }}</span>
+            <button type="button" class="detail-btn" @click="showProductionDetails = !showProductionDetails">
+              <span>{{ showProductionDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
+              <span class="chevron" :class="{ open: showProductionDetails }">▼</span>
+            </button>
+          </div>
+        </div>
+
+        <div v-if="showProductionDetails" class="production-chart-wrap">
+          <svg class="production-chart" :viewBox="`0 0 ${productionGraph.width} ${productionGraph.height}`"
+            :width="productionGraph.width" :height="productionGraph.height" role="img">
+            <defs>
+              <marker v-for="(color, index) in productionPalette" :key="`production-arrow-${index}`"
+                :id="`production-arrow-${index}`" viewBox="0 0 6 6" markerWidth="5" markerHeight="5"
+                refX="5" refY="3" orient="auto">
+                <path d="M0,0L6,3L0,6z" :fill="color" />
+              </marker>
+            </defs>
+            <g class="production-edge-layer">
+              <path v-for="edge in productionGraph.edges.filter(edge => !productionHoverId || !productionRelated(edge))"
+                :key="edge.key" class="production-edge"
+                :class="{ dim: productionHoverId && !productionRelated(edge) }"
+                :d="edge.path" :stroke="productionPalette[edge.colorIndex]"
+                :marker-end="`url(#production-arrow-${edge.colorIndex})`" />
+            </g>
+            <g v-for="node in productionGraph.nodes" :key="node.id" class="production-node"
+              :class="{ building: node.kind === 'building', resource: node.kind === 'resource', highlight: productionRelatedNode(node), hovered: productionHoverId === node.id }"
+              @mouseenter="productionHoverId = node.id" @mouseleave="productionHoverId = null">
+              <rect :x="node.x" :y="node.y" :width="node.width" :height="node.totalHeight || node.height" rx="6"
+                :style="productionNodeBorderColor(node) ? { '--node-stroke': productionNodeBorderColor(node) } : null"
+                @mouseenter.stop="productionHoverId = node.id" />
+              <text :x="node.x + node.width / 2" :y="node.y + 18" text-anchor="middle">{{ node.label }}</text>
+              <text v-for="(line, index) in node.detailLines" :key="`${node.id}-${index}`" class="production-detail"
+                :x="node.x + node.width / 2" :y="node.y + 36 + index * 18" text-anchor="middle">{{ line }}</text>
+              <g v-for="switcher in node.switchers" :key="`${node.id}-switch-${switcher.resource}`"
+                class="production-switch" @mouseenter.stop="productionHoverId = null">
+                <rect class="switch-prev" :rx="5" :x="node.x + 1" :y="node.y + node.height - 1" :width="node.width / 2 - 2" height="30" rx="0"
+                  @click.stop="toggleProductionChoice(switcher.resource, -1)" />
+                <rect class="switch-next" :rx="5" :x="node.x + node.width / 2 + 1" :y="node.y + node.height - 1" :width="node.width / 2 - 2" height="30" rx="0"
+                  @click.stop="toggleProductionChoice(switcher.resource, 1)" />
+                <line :x1="node.x" :y1="node.y + node.height" :x2="node.x + node.width" :y2="node.y + node.height" />
+                <line :x1="node.x + node.width / 2" :y1="node.y + node.height" :x2="node.x + node.width / 2" :y2="node.y + node.totalHeight" />
+                <text :x="node.x + node.width / 4" :y="node.y + node.height + 19" text-anchor="middle"><</text>
+                <text :x="node.x + node.width * 0.75" :y="node.y + node.height + 19" text-anchor="middle">></text>
+              </g>
+            </g>
+            <g v-if="productionHoverId" class="production-edge-overlay">
+              <path v-for="edge in productionGraph.edges.filter(edge => productionRelated(edge))" :key="`active-${edge.key}`"
+                class="production-edge highlight"
+                :d="edge.path" :stroke="productionPalette[edge.colorIndex]"
+                :marker-end="`url(#production-arrow-${edge.colorIndex})`" />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
 
     <!-- ===== 顶部搜索区 ===== -->
@@ -356,6 +415,180 @@ const onBuildingCountInput = (key) => {
 // 是否展开“查看详情”（每一级升级明细）
 const showDetails = ref(false)
 const showConsumptionDetails = ref(false)
+const showProductionDetails = ref(false)
+const productionHoverId = ref(null)
+const productionChoices = ref({})
+const productionColors = ['#e45756', '#3a86ff', '#2a9d8f', '#f4a261', '#8e5bd9', '#d1495b', '#118ab2', '#6a994e']
+const productionPalette = computed(() => productionColors.flatMap(color => {
+  const value = Number.parseInt(color.slice(1), 16)
+  const r = value >> 16, g = (value >> 8) & 255, b = value & 255
+  const adjust = (amount) => {
+    const mix = amount < 0 ? 0 : 255
+    const ratio = Math.abs(amount) / 100
+    return `#${[r, g, b].map(channel => Math.round(channel + (mix - channel) * ratio).toString(16).padStart(2, '0')).join('')}`
+  }
+  return [adjust(0), adjust(12), adjust(-12), adjust(22)]
+}))
+
+const toggleProductionChoice = (resource, direction) => {
+  const current = productionChoices.value[resource] || 0
+  const candidates = buildingsData.filter(building => Object.prototype.hasOwnProperty.call(building.output || {}, resource))
+  if (candidates.length < 2) return
+  productionChoices.value = {
+    ...productionChoices.value,
+    [resource]: (current + direction + candidates.length) % candidates.length
+  }
+}
+
+const buildProductionGraph = (buildingKey, choices) => {
+  locale.value
+  const target = buildingsData.find(b => b.building === buildingKey)
+  if (!target) return null
+  const producer = new Map()
+  const producerCandidates = new Map()
+  buildingsData.forEach(b => Object.keys(b.output || {}).forEach(resource => {
+    if (!producerCandidates.has(resource)) producerCandidates.set(resource, [])
+    producerCandidates.get(resource).push(b)
+  }))
+  producerCandidates.forEach((candidates, resource) => {
+    producer.set(resource, candidates[(choices?.[resource] || 0) % candidates.length])
+  })
+  const nodes = new Map(), edges = new Map(), seen = new Set()
+  const routeResources = new Map()
+  const visit = (building, depth) => {
+    if (!building) return
+    if (seen.has(building.building)) {
+      const old = nodes.get(`b:${building.building}`)
+      if (old) old.depth = Math.min(old.depth, depth)
+      return
+    }
+    seen.add(building.building)
+    const id = `b:${building.building}`
+    nodes.set(id, {
+      id,
+      kind: 'building',
+      label: tGame(building.building),
+      detailLines: Object.keys(building.output || {}).map(tGame),
+      switchers: [],
+      depth
+    })
+    Object.entries(building.input || {}).forEach(([resource, count]) => {
+      const parent = producer.get(resource)
+      if (parent && parent !== building) {
+        if (!routeResources.has(`b:${parent.building}`)) routeResources.set(`b:${parent.building}`, resource)
+        edges.set(`${parent.building}>${id}`, { from: `b:${parent.building}`, to: id })
+        visit(parent, depth - 2)
+      } else {
+        const resourceId = `r:${resource}`
+        nodes.set(resourceId, { id: resourceId, kind: 'resource', label: tGame(resource), detailLines: [String(count)], depth: depth - 1 })
+        edges.set(`${resourceId}>${id}`, { from: resourceId, to: id })
+      }
+    })
+  }
+  visit(target, 0)
+
+  const buildingNodes = [...nodes.values()].filter(node => node.kind === 'building')
+  buildingNodes.forEach(node => {
+    const data = buildingsData.find(b => b.building === node.id.slice(2))
+    const routeResource = routeResources.get(node.id)
+    node.switchers = routeResource ? [routeResource].flatMap(resource => {
+      const candidates = producerCandidates.get(resource) || []
+      return candidates.length > 1
+        ? [{ resource, index: (choices?.[resource] || 0) % candidates.length, total: candidates.length }]
+        : []
+    }) : []
+  })
+  buildingNodes.forEach(node => {
+    const data = buildingsData.find(b => b.building === node.id.slice(2))
+    if (!data || Object.keys(data.input || {}).length) return
+    const consumers = buildingNodes.filter(other => {
+      const otherData = buildingsData.find(b => b.building === other.id.slice(2))
+      return other !== node && Object.keys(otherData?.input || {}).some(resource => Object.prototype.hasOwnProperty.call(data.output || {}, resource))
+    })
+    if (consumers.length) node.depth = Math.min(...consumers.map(consumer => consumer.depth)) - 2
+  })
+
+  const min = Math.min(...[...nodes.values()].map(node => node.depth))
+  const columns = new Map()
+  nodes.forEach(node => {
+    const column = node.depth - min
+    if (!columns.has(column)) columns.set(column, [])
+    columns.get(column).push(node)
+  })
+  const keys = [...columns.keys()].sort((a, b) => a - b)
+  const gap = 72, rowGap = 40, positions = new Map()
+  const columnWidths = keys.map(column => Math.max(120, ...columns.get(column).map(node =>
+    Math.max(node.kind === 'building' ? 160 : 120, node.label.length * 8 + 28, ...node.detailLines.map(line => line.length * 7 + 28)))))
+  keys.forEach((column, columnIndex) => {
+    let y = 24
+    columns.get(column).forEach((node, rowIndex) => {
+      node.width = columnWidths[columnIndex]
+      node.height = node.kind === 'building'
+        ? 30 + Math.max(1, node.detailLines.length) * 18
+        : 58
+      node.x = 24 + columnWidths.slice(0, columnIndex).reduce((sum, width) => sum + width + gap, 0)
+      node.y = y
+      node.columnIndex = columnIndex
+      node.rowIndex = rowIndex
+      node.totalHeight = node.height + (node.switchers.length ? 30 : 0)
+      y += node.totalHeight + rowGap
+      positions.set(node.id, node)
+    })
+  })
+  const rowEdgeCounts = new Map()
+  edges.forEach(edge => {
+    const from = positions.get(edge.from), to = positions.get(edge.to)
+    if (!from || !to) return
+    edge.rowIndex = from.rowIndex || 0
+    edge.colorIndex = (edge.rowIndex % productionColors.length) * 4 + (rowEdgeCounts.get(edge.rowIndex) || 0) % 4
+    rowEdgeCounts.set(edge.rowIndex, (rowEdgeCounts.get(edge.rowIndex) || 0) + 1)
+    const y1 = from.y + from.height / 2, y2 = to.y + to.height / 2
+    if (from.x === to.x) {
+      const bend = from.x - 42
+      edge.path = `M${from.x},${y1} C${bend},${y1} ${bend},${y2} ${from.x},${y2}`
+      return
+    }
+    const x1 = from.x + from.width, x2 = to.x
+    if (to.columnIndex - from.columnIndex === 1 && Math.abs(y1 - y2) < 0.5) {
+      edge.path = `M${x1},${y1} L${x2},${y2}`
+      return
+    }
+    const horizontal = Math.max(1, x2 - x1), dx = Math.min(42, horizontal * 0.42)
+    const curve = Math.min(80, Math.max(10, Math.abs(y2 - y1) * 0.18)), direction = y2 >= y1 ? 1 : -1
+    edge.path = `M${x1},${y1} C${x1 + dx},${y1 + direction * curve} ${x2 - dx},${y2 - direction * curve} ${x2},${y2}`
+  })
+  const nodeList = [...nodes.values()], edgeList = [...edges.values()].filter(edge => edge.path)
+  if (edgeList.length === 0) return null
+  return {
+    nodes: nodeList,
+    edges: edgeList.map((edge, index) => ({ ...edge, key: `${edge.from}>${edge.to}-${index}` })),
+    width: Math.max(760, ...nodeList.map(node => node.x + node.width + 24)),
+    height: Math.max(150, ...keys.map(column => columns.get(column).reduce((sum, node) => sum + node.totalHeight + rowGap, 24)))
+  }
+}
+
+const productionGraph = computed(() => buildProductionGraph(selectedBuilding.value?.buildingKey, productionChoices.value))
+const productionRelated = (edge) => {
+  if (!productionHoverId.value) return false
+  return edge.from === productionHoverId.value || edge.to === productionHoverId.value
+}
+const productionRelatedNode = (node) => {
+  if (!productionHoverId.value) return false
+  if (node.id === productionHoverId.value) return true
+  return productionGraph.value?.edges.some(edge => productionRelated(edge) && (edge.from === node.id || edge.to === node.id))
+}
+
+const productionNodeBorderColor = (node) => {
+  if (!productionHoverId.value) return null
+
+  const relatedEdge = productionGraph.value?.edges.find(edge =>
+    (edge.from === productionHoverId.value && edge.to === node.id) ||
+    (edge.to === productionHoverId.value && edge.from === node.id)
+  )
+
+  if (!relatedEdge) return null
+  return productionPalette.value[relatedEdge.colorIndex]
+}
 
 // 建造者能力乘数：从 localStorage 自动读取，变化时自动保存
 const BUILDER_MULTIPLIER_KEY = 'cividle-builder-multiplier'
@@ -444,6 +677,9 @@ const selectBuilding = (item) => {
   consumptionBuildingCount.value = 1
   showDetails.value = false
   showConsumptionDetails.value = false
+  showProductionDetails.value = false
+  productionHoverId.value = null
+  productionChoices.value = {}
   calculate()
 
   // 滚动到顶部
@@ -1162,6 +1398,56 @@ const formatTime = (seconds) => {
 }
 
 /* ===== 建筑卡片网格 ===== */
+.production-chart-wrap {
+  overflow-x: auto;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.production-chart {
+  display: block;
+  min-width: 760px;
+  isolation: isolate;
+}
+
+.production-edge {
+  fill: none;
+  stroke-width: 2;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.production-edge.dim { opacity: 0.14; }
+.production-edge.highlight {
+  opacity: 1;
+  stroke-width: 3;
+}
+
+.production-node {
+  pointer-events: auto;
+}
+
+.production-node rect {
+  stroke-width: 1.5;
+  fill-opacity: 0.72;
+  transition: all 0.15s ease;
+  stroke: var(--node-stroke, #4a90d9);
+}
+
+.production-node.building rect { fill: #ffffff; stroke: var(--node-stroke, #4a90d9); }
+.production-node.resource rect { fill: #ffffff; stroke: var(--node-stroke, #9bb8d8); }
+.production-node.highlight rect { stroke: var(--node-stroke, #4a90d9); stroke-width: 3; fill: #f7fbff; fill-opacity: 1; }
+.production-node.hovered rect { stroke: var(--node-stroke, #2563a8); stroke-width: 3; fill: #eef6ff; fill-opacity: 1; }
+.production-node text { font-size: 13px; dominant-baseline: middle; pointer-events: none; }
+.production-node .production-detail { font-size: 11px; fill: #66758a; }
+.production-node .production-switch rect { fill: #00000000; stroke: none; stroke-width: 0; }
+.production-switch .switch-prev, .production-switch .switch-next { cursor: pointer; }
+.production-switch text { fill: #3978c8; font-size: 16px; font-weight: 600; cursor: pointer; }
+.production-switch .switch-prev:hover,
+.production-switch .switch-next:hover { fill: #e5f0ff; stroke: #4a90d9; }
+.production-switch line { stroke: #9bb8d8; stroke-width: 1; pointer-events: none; }
+
 .building-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));

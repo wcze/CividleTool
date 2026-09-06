@@ -96,6 +96,7 @@ export default {
     buildTime: 'Build Time Required',
     buildTimeDetail: '({count} upgrades total)',
     consumptionTitle: 'Resources Consumed for Building Production',
+    productionRoute: 'Building Production Route',
     consumptionFormula: 'Actual level {level} × building count {count}',
     consumptionPeriod: 'Period',
     consumptionPerSec: 'Per sec',
