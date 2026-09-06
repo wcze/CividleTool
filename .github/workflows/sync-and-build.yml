@@ -43,9 +43,20 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add -A
-          git diff --cached --quiet && exit 0
-          git commit -m "[data] [skip ci] auto-sync data and build"
           git fetch origin master
           git rebase origin/master
-          git push origin HEAD:master
+
+          git add ./src
+          if ! git diff --cached --quiet; then
+            git commit -m "[skip ci] auto-sync data and build"
+          fi
+
+          git add ./dist
+          if ! git diff --cached --quiet; then
+            build_time=$(TZ=Asia/Shanghai date '+%Y%m%d%H%M')
+            git commit -m "[build] ${build_time}"
+          fi
+
+          if ! git diff --quiet origin/master...HEAD; then
+            git push origin HEAD:master
+          fi
