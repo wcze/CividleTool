@@ -96,6 +96,11 @@ function extractInput(body){
   return result;
 }
 
+function extractMax(body) {
+  const m = body.match(/(?:^|[,\n])\s*max:\s*([\d.]+)/);
+  return m ? parseFloat(m[1]) : undefined;
+}
+
 // 提取建筑描述对应的本地化键（如 desc: () => $t(L.MarketDesc)）
 // 没有描述或格式无法识别时返回 undefined，调用方不写入 desc 字段
 function extractDescription(body) {
@@ -129,6 +134,17 @@ function extractStringArray(body, key) {
   if (!m) return [];
   return [...m[1].matchAll(/"([A-Za-z_$][\w$]*)"|'([A-Za-z_$][\w$]*)'/g)].map(
     (x) => x[1] || x[2]
+  );
+}
+
+function parseStringSet(text, key) {
+  const m = text.match(new RegExp(`(?:const|let|var)\\s+${key}\\s*=\\s*new Set(?:<[^>]+>)?\\(\\[([\\s\\S]*?)\\]`));
+  if (!m) return new Set();
+  return new Set(
+    m[1]
+      .split(',')
+      .map((value) => value.trim().replace(/^['"]|['"]$/g, ''))
+      .filter(Boolean)
   );
 }
 
@@ -231,6 +247,7 @@ function main() {
 
   // 奇观升级倍率覆盖表（其余默认 1.5）
   const wonderCostBase = parseNumberMap(buildingSrc, 'WonderCostBase');
+  const upgradableWorldWonders = parseStringSet(buildingSrc, 'UpgradableWorldWonders');
 
   // 科技反查表（TechDefinitions + TimedBuildingUnlock）
   let techLookup = {};
@@ -269,8 +286,10 @@ function main() {
         mult: wonderCostBase[name] !== undefined ? String(wonderCostBase[name]) : String(DEFAULT_MULT),
         output: extractOutput(body),
         input: extractInput(body),
+        max: extractMax(body),
         build_resources: extractBuildResources(body)
       }
+      if (upgradableWorldWonders.has(name)) item.upgradable = true
       const desc = extractDescription(body)
       if (desc) item.desc = desc
       // 反查来源：优先 unlockBuilding/TimedBuildingUnlock，其次城市 uniqueBuildings

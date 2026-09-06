@@ -3549,6 +3549,7 @@
       "Worker": 10
     },
     "input": {},
+    "max": 0,
     "build_resources": []
   },
   {
@@ -3556,6 +3557,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3578,6 +3580,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Gold",
@@ -3596,6 +3599,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3614,6 +3618,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3640,6 +3645,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Iron",
@@ -3666,6 +3672,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3684,6 +3691,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3702,6 +3710,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Sand",
@@ -3728,6 +3737,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3754,6 +3764,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Iron",
@@ -3780,6 +3791,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Marble",
@@ -3794,6 +3806,7 @@
         "count": "107552"
       }
     ],
+    "upgradable": true,
     "desc": "ParthenonDescV3",
     "city": "Greek",
     "tech": "Democracy",
@@ -3807,6 +3820,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Armor",
@@ -3833,6 +3847,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Tool",
@@ -3859,6 +3874,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -3885,6 +3901,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Marble",
@@ -3911,6 +3928,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -3937,6 +3955,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -3963,6 +3982,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Chariot",
@@ -3989,6 +4009,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -4015,6 +4036,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4041,6 +4063,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Furniture",
@@ -4067,6 +4090,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Banknote",
@@ -4093,6 +4117,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Caravel",
@@ -4119,6 +4144,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4147,6 +4173,7 @@
     "input": {
       "Chariot": 10
     },
+    "max": 1,
     "build_resources": [
       {
         "resource": "Brick",
@@ -4161,6 +4188,7 @@
         "count": "298150"
       }
     ],
+    "upgradable": true,
     "desc": "ColosseumDescV3",
     "city": "Roman",
     "tech": "Theater",
@@ -4174,6 +4202,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4200,6 +4229,7 @@
     "mult": "5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Marble",
@@ -4214,6 +4244,7 @@
         "count": "85186"
       }
     ],
+    "upgradable": true,
     "desc": "StatueOfZeusDescV2",
     "city": "Greek",
     "tech": "Theater",
@@ -4227,6 +4258,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Music",
@@ -4241,6 +4273,7 @@
         "count": "716721"
       }
     ],
+    "upgradable": true,
     "desc": "CircusMaximusDescV3",
     "city": "Roman",
     "tech": "CivilService",
@@ -4254,6 +4287,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Steel",
@@ -4272,6 +4306,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Newspaper",
@@ -4298,6 +4333,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Gunpowder",
@@ -4324,6 +4360,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -4350,6 +4387,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Rifle",
@@ -4376,6 +4414,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Train",
@@ -4402,6 +4441,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Coin",
@@ -4428,6 +4468,7 @@
     "mult": "2",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -4442,6 +4483,7 @@
         "count": "15525"
       }
     ],
+    "upgradable": true,
     "desc": "AbuSimbelDescV2",
     "city": "Egyptian",
     "tech": "Housing",
@@ -4455,6 +4497,7 @@
     "mult": "5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Stone",
@@ -4469,6 +4512,7 @@
         "count": "14450"
       }
     ],
+    "upgradable": true,
     "desc": "GreatSphinxDescV3",
     "city": "Egyptian",
     "tech": "Arithmetic",
@@ -4482,6 +4526,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Magazine",
@@ -4508,6 +4553,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -4534,6 +4580,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -4560,6 +4607,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Politics",
@@ -4574,6 +4622,7 @@
         "count": "126746"
       }
     ],
+    "upgradable": true,
     "desc": "UnitedNationsDescV2",
     "tech": "UnitedNations",
     "age": "WorldWarAge",
@@ -4586,6 +4635,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -4604,6 +4654,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Tank",
@@ -4630,6 +4681,7 @@
     "mult": "5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Brick",
@@ -4644,6 +4696,7 @@
         "count": "33871"
       }
     ],
+    "upgradable": true,
     "desc": "GreatWallDescV2",
     "city": "Chinese",
     "tech": "LandTrade",
@@ -4657,6 +4710,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Furniture",
@@ -4671,6 +4725,7 @@
         "count": "103548"
       }
     ],
+    "upgradable": true,
     "desc": "YellowCraneTowerDescV2",
     "city": "Chinese",
     "tech": "Geography",
@@ -4684,6 +4739,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Banknote",
@@ -4698,6 +4754,7 @@
         "count": "158874"
       }
     ],
+    "upgradable": true,
     "desc": "PorcelainTowerDescV2",
     "city": "Chinese",
     "tech": "Banking",
@@ -4711,6 +4768,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Movie",
@@ -4737,6 +4795,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Battleship",
@@ -4763,6 +4822,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "FighterJet",
@@ -4789,6 +4849,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "NuclearFuelRod",
@@ -4815,6 +4876,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Water",
@@ -4845,6 +4907,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Opera",
@@ -4872,6 +4935,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Book",
@@ -4899,6 +4963,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bond",
@@ -4926,6 +4991,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4939,6 +5005,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4952,6 +5019,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4965,6 +5033,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -4978,6 +5047,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Brick",
@@ -5005,6 +5075,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Brick",
@@ -5032,6 +5103,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Brick",
@@ -5059,6 +5131,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Spacecraft",
@@ -5073,6 +5146,7 @@
         "count": "1245168"
       }
     ],
+    "upgradable": true,
     "desc": "InternationalSpaceStationDesc",
     "tech": "Nanotechnology",
     "age": "InformationAge",
@@ -5085,6 +5159,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "TV",
@@ -5099,6 +5174,7 @@
         "count": "18095771"
       }
     ],
+    "upgradable": true,
     "desc": "MarinaBaySandsDesc",
     "tech": "SocialNetwork",
     "age": "InformationAge",
@@ -5111,6 +5187,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "HedgeFund",
@@ -5125,6 +5202,7 @@
         "count": "8207461"
       }
     ],
+    "upgradable": true,
     "desc": "PalmJumeirahDesc",
     "tech": "Blockchain",
     "age": "InformationAge",
@@ -5137,6 +5215,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -5151,6 +5230,7 @@
         "count": "1690101"
       }
     ],
+    "upgradable": true,
     "desc": "AldersonDiskDesc",
     "tech": "Future",
     "age": "InformationAge",
@@ -5163,6 +5243,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "CivGPT",
@@ -5177,6 +5258,7 @@
         "count": "1828676"
       }
     ],
+    "upgradable": true,
     "desc": "DysonSphereDesc",
     "tech": "Future",
     "age": "InformationAge",
@@ -5189,6 +5271,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "CivOasis",
@@ -5203,6 +5286,7 @@
         "count": "1705246"
       }
     ],
+    "upgradable": true,
     "desc": "MatrioshkaBrainDescV3",
     "tech": "Future",
     "age": "InformationAge",
@@ -5215,6 +5299,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Robocar",
@@ -5249,6 +5334,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Supercomputer",
@@ -5263,6 +5349,7 @@
         "count": "7169328"
       }
     ],
+    "upgradable": true,
     "desc": "LargeHadronColliderDescV3",
     "tech": "VirtualReality",
     "age": "InformationAge",
@@ -5275,6 +5362,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Politics",
@@ -5293,6 +5381,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Furniture",
@@ -5320,6 +5409,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -5347,6 +5437,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Train",
@@ -5374,6 +5465,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
@@ -5388,6 +5480,7 @@
         "count": "58679"
       }
     ],
+    "upgradable": true,
     "desc": "CologneCathedralDesc",
     "city": "German",
     "tech": "HolyEmpire",
@@ -5401,6 +5494,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Radio",
@@ -5428,12 +5522,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Faith",
         "count": "1573135"
       }
     ],
+    "upgradable": true,
     "desc": "SantaClausVillageDesc",
     "tech": "Theocracy",
     "age": "MiddleAge",
@@ -5446,12 +5542,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Opera",
         "count": "255557"
       }
     ],
+    "upgradable": true,
     "desc": "YearOfTheSnakeDescV2",
     "tech": "Theater",
     "age": "ClassicalAge",
@@ -5464,6 +5562,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Tank",
@@ -5491,6 +5590,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Philosophy",
@@ -5518,6 +5618,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -5541,6 +5642,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bond",
@@ -5568,6 +5670,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Train",
@@ -5595,6 +5698,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Culture",
@@ -5614,6 +5718,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bond",
@@ -5641,6 +5746,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "TV",
@@ -5668,6 +5774,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bond",
@@ -5694,6 +5801,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Cannon",
@@ -5721,6 +5829,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Biplane",
@@ -5748,6 +5857,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Forex",
@@ -5762,6 +5872,7 @@
         "count": "986366"
       }
     ],
+    "upgradable": true,
     "desc": "SwissBankDescV3",
     "tech": "MonetarySystem",
     "age": "ColdWarAge",
@@ -5774,6 +5885,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Diplomacy",
@@ -5788,6 +5900,7 @@
         "count": "659232"
       }
     ],
+    "upgradable": true,
     "desc": "ItaipuDamDesc",
     "city": "Brazilian",
     "tech": "Hydroelectricity",
@@ -5801,6 +5914,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Biplane",
@@ -5828,6 +5942,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Frigate",
@@ -5842,6 +5957,7 @@
         "count": "141089"
       }
     ],
+    "upgradable": true,
     "desc": "RedFortDesc",
     "city": "Indian",
     "tech": "RapidFire",
@@ -5855,6 +5971,7 @@
     "mult": "4",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Garment",
@@ -5869,6 +5986,7 @@
         "count": "371832"
       }
     ],
+    "upgradable": true,
     "desc": "SanchiStupaDescV2",
     "city": "Indian",
     "tech": "Physics",
@@ -5882,6 +6000,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Banknote",
@@ -5896,6 +6015,7 @@
         "count": "317747"
       }
     ],
+    "upgradable": true,
     "desc": "QutbMinarDescV2",
     "city": "Indian",
     "tech": "Banking",
@@ -5909,6 +6029,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Coin",
@@ -5935,12 +6056,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Koti",
         "count": "41571"
       }
     ],
+    "upgradable": true,
     "desc": "PortOfSingaporeDesc",
     "tech": "Globalization",
     "age": "ColdWarAge",
@@ -5953,6 +6076,7 @@
     "mult": "5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "TV",
@@ -5967,6 +6091,7 @@
         "count": "5793891"
       }
     ],
+    "upgradable": true,
     "desc": "SydneyOperaHouseDesc",
     "city": "Australian",
     "tech": "Television",
@@ -5980,6 +6105,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "ReinforcedConcrete",
@@ -5994,6 +6120,7 @@
         "count": "130300"
       }
     ],
+    "upgradable": true,
     "desc": "SydneyHarbourBridgeDesc",
     "city": "Australian",
     "tech": "Hydroelectricity",
@@ -6007,6 +6134,7 @@
     "mult": "1.7",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Battleship",
@@ -6017,6 +6145,7 @@
         "count": "389850"
       }
     ],
+    "upgradable": true,
     "desc": "GreatOceanRoadDesc",
     "city": "Australian",
     "tech": "Rocketry",
@@ -6030,6 +6159,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bond",
@@ -6057,6 +6187,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Politics",
@@ -6067,6 +6198,7 @@
         "count": "330678"
       }
     ],
+    "upgradable": true,
     "desc": "HermitageDesc",
     "city": "Russian",
     "tech": "Journalism",
@@ -6080,12 +6212,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Satellite",
         "count": "2486119"
       }
     ],
+    "upgradable": true,
     "desc": "Sputnik1DescV3",
     "city": "Russian",
     "tech": "Satellite",
@@ -6099,12 +6233,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Spacecraft",
         "count": "7022871"
       }
     ],
+    "upgradable": true,
     "desc": "AkademikLomonosovDescV2",
     "city": "Russian",
     "tech": "Genetics",
@@ -6118,6 +6254,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Tank",
@@ -6132,6 +6269,7 @@
         "count": "294334"
       }
     ],
+    "upgradable": true,
     "desc": "ChateauFrontenacDesc",
     "city": "Canadian",
     "tech": "Combustion",
@@ -6145,12 +6283,14 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Bitcoin",
         "count": "6075977"
       }
     ],
+    "upgradable": true,
     "desc": "Habitat67DescV2",
     "city": "Canadian",
     "tech": "ArtificialIntelligence",
@@ -6164,6 +6304,7 @@
     "mult": "2",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "MutualFund",
@@ -6178,6 +6319,7 @@
         "count": "1393604"
       }
     ],
+    "upgradable": true,
     "desc": "WorldTradeOrganizationDesc",
     "tech": "FinancialLeverage",
     "age": "InformationAge",
@@ -6190,6 +6332,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "SiegeRam",
@@ -6204,6 +6347,7 @@
         "count": "102664"
       }
     ],
+    "upgradable": true,
     "desc": "CothonOfCarthageDesc",
     "city": "Carthaginian",
     "tech": "Architecture",
@@ -6217,6 +6361,7 @@
     "mult": "1.5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Politics",
@@ -6236,12 +6381,14 @@
     "mult": "5",
     "output": {},
     "input": {},
+    "max": 1,
     "build_resources": [
       {
         "resource": "Alcohol",
         "count": "152950"
       }
     ],
+    "upgradable": true,
     "desc": "MidsummerDesc",
     "tech": "Calendar",
     "age": "IronAge",
