@@ -62,6 +62,10 @@ export default {
     MarketQuery: {
       name: 'Market Query',
       description: 'Upload a save to view market trades'
+    },
+    CalcTradeTilePoints: {
+      name: 'Trade Tile Point Calculator',
+      description: 'Estimate the time to gain the next Tile Point from Account Rank and Owned/Occupied Tiles'
     }
   },
   calcBuildings: {
@@ -130,6 +134,24 @@ export default {
     placeholder: 'Select resource',
     searchPlaceholder: 'Search resource...',
     emptyText: 'No matching resources'
+  },
+  calcTradeTilePoints: {
+    title: 'Trade Tile Point Calculator',
+    accountLevel: 'From Account Rank',
+    tileValue: 'From Owned/Occpied Tiles',
+    helpTitle: 'How to view tile points',
+    exampleAccountLevel: 'e.g. 5',
+    exampleTileValue: 'e.g. 3.696',
+    numberHint: '',
+    totalPoints: 'Tile Point',
+    usedPoints: 'Used Tile Point',
+    availablePoints: 'Available Tile Point',
+    growthLabel: 'Tile Point Gain',
+    estimatedTime: 'Time to gain next Tile Point',
+    growthDetail: '+{rate}',
+    alreadyEnough: 'Already reached (now: {time})',
+    noGrowth: 'No growth, cannot reach the target',
+    estimatedAt: 'Estimated {time} (about {hours}h {minutes}m from now)'
   },
   calcWarehouseRatio: {
     capBLabel: 'Warehouse Capacity (unit: B / billion)',

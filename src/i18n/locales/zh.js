@@ -62,6 +62,10 @@ export default {
     MarketQuery: {
       name: '市集查询',
       description: '上传存档，查看市集交易'
+    },
+    CalcTradeTilePoints: {
+      name: '贸易地块点数计算',
+      description: '根据账号等级和贸易地块点数，估算获得下个贸易点数的时间'
     }
   },
   calcBuildings: {
@@ -130,6 +134,24 @@ export default {
     placeholder: '选择资源',
     searchPlaceholder: '搜索资源...',
     emptyText: '无匹配资源'
+  },
+  calcTradeTilePoints: {
+    title: '贸易地块点数计算',
+    accountLevel: '来自账号等级',
+    tileValue: '来自当前贸易地块点数',
+    helpTitle: '如何查看贸易地块点数',
+    exampleAccountLevel: '例如 5',
+    exampleTileValue: '例如 3.696',
+    numberHint: '',
+    totalPoints: '地块点数',
+    usedPoints: '已使用地块点数',
+    availablePoints: '可用地块点数',
+    growthLabel: '每小时增长',
+    estimatedTime: '获得下个贸易点数的时间',
+    growthDetail: '+{rate}',
+    alreadyEnough: '已满足（当前：{time}）',
+    noGrowth: '增长为零，无法达到',
+    estimatedAt: '预计 {time}（约{hours}小时{minutes}分钟后）'
   },
   calcWarehouseRatio: {
     capBLabel: '单仓库容量（单位 B / 十亿）',

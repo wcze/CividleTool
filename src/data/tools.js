@@ -20,10 +20,15 @@ export function getTools() {
       name: t('tools.CalcWarehouseRatio.name'),
       description: t('tools.CalcWarehouseRatio.description')
     },
-     {
+    {
       id: 'FreeCivilization',
       name: t('tools.FreeCivilization.name'),
       description: t('tools.FreeCivilization.description')
+    },
+    {
+      id: 'CalcTradeTilePoints',
+      name: t('tools.CalcTradeTilePoints.name'),
+      description: t('tools.CalcTradeTilePoints.description')
     },
   ]
 }

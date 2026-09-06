@@ -103,6 +103,7 @@ import CalcExtraGreatPerson from './tools/CalcExtraGreatPerson.vue'
 import CalcWarehouseRatio from './tools/CalcWarehouseRatio.vue'
 import FreeCivilization from './tools/FreeCivilization.vue'
 import MarketQuery from './tools/MarketQuery.vue'
+import CalcTradeTilePoints from './tools/CalcTradeTilePoints.vue'
 import { getTools } from '../data/tools'
 import { t } from '../i18n'
 
@@ -117,7 +118,8 @@ const componentsMap = {
     'CalcExtraGreatPerson': CalcExtraGreatPerson,
     'CalcWarehouseRatio': CalcWarehouseRatio,
     'FreeCivilization': FreeCivilization,
-    'MarketQuery': MarketQuery
+    'MarketQuery': MarketQuery,
+    'CalcTradeTilePoints': CalcTradeTilePoints
 }
 
 const currentToolId = computed(() => route.params.id)
