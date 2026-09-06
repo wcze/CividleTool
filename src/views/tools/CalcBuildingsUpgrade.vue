@@ -12,7 +12,7 @@
             <span v-else class="icon-fallback">🏗️</span>
           </span>
           <h2>{{ selectedBuilding.building }}</h2>
-          <span class="mult-badge-lg">{{ t('calcBuildings.multiplier') }} ×{{ selectedBuilding.mult }}</span>
+          <span class="mult-badge-lg">{{ getBuildingMultiplierLabel(selectedBuilding) }}</span>
         </div>
         <button class="close-btn" @click="closeCalculator">✕ {{ t('calcBuildings.close') }}</button>
       </div>
@@ -46,24 +46,27 @@
         <div class="input-row">
           <div class="input-group">
             <label>{{ t('calcBuildings.currentLevel') }}</label>
-            <input v-model.number="currentLevel" type="number" min="0" max="150" class="num-input"
+            <input v-model.number="currentLevel" type="number" min="0" max="150"
+              :disabled="isNonUpgradableWonder(selectedBuilding)" class="num-input"
               @input="onLevelInput('currentLevel')" />
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.targetLevel') }}</label>
-            <input v-model.number="targetLevel" type="number" min="0" max="150" class="num-input"
+            <input v-model.number="targetLevel" type="number" min="0" :max="maxTargetLevel"
+              :disabled="isNonUpgradableWonder(selectedBuilding)" class="num-input"
               @input="onLevelInput('targetLevel')" />
             <!-- 目标等级快速按钮 -->
-            <div class="level-presets">
+            <div v-if="!isNonUpgradableWonder(selectedBuilding)" class="level-presets">
               <button v-for="lvl in [25, 30, 35, 40, 45, 50]" :key="lvl" class="preset-btn"
-                @click="targetLevel = lvl; calculate()">
+                @click="setTargetLevel(lvl)">
                 {{ lvl }}
               </button>
             </div>
           </div>
           <div class="input-group">
             <label>{{ t('calcBuildings.buildingCount') }}</label>
-            <input v-model.number="buildingCount" type="number" min="0" max="5000" class="num-input"
+            <input v-model.number="buildingCount" type="number" min="0" :max="maxBuildingCount"
+              :disabled="maxBuildingCount === 1" class="num-input"
               @input="onBuildingCountInput('buildingCount')" />
           </div>
           <div class="input-group">
@@ -80,11 +83,12 @@
         </div>
 
         <!-- 结果区 -->
-        <div class="result-area" v-if="totalResources.length > 0 && targetLevel > currentLevel">
+        <div class="result-area" v-if="totalResources.length > 0 && levelDiff > 0">
           <div class="result-header">
             <div class="result-header-left">
               <span class="result-title">{{ t('calcBuildings.upgradeResources') }}</span>
-              <button type="button" class="detail-btn" v-if="upgradeDetails.length > 0"
+              <button type="button" class="detail-btn"
+                v-if="!isNonUpgradableWonder(selectedBuilding) && upgradeDetails.length > 0"
                 @click="showDetails = !showDetails">
                 <span>{{ showDetails ? t('calcBuildings.hideDetails') : t('calcBuildings.viewDetails') }}</span>
                 <span class="chevron" :class="{ open: showDetails }">▾</span>
@@ -158,7 +162,8 @@
             </div>
             <div class="input-group">
               <label>{{ t('calcBuildings.buildingCount') }}</label>
-              <input v-model.number="consumptionBuildingCount" type="number" min="0" max="5000" class="num-input"
+              <input v-model.number="consumptionBuildingCount" type="number" min="0" :max="maxBuildingCount"
+                :disabled="maxBuildingCount === 1" class="num-input"
                 @input="onBuildingCountInput('consumptionBuildingCount')" />
             </div>
           </div>
@@ -169,7 +174,12 @@
             </span>
           </div>
           <div class="detail-table-wrap">
-            <table class="detail-table">
+            <table class="detail-table consumption-table">
+              <colgroup>
+                <col class="consumption-period-column" />
+                <col v-for="resource in consumptionStats" :key="`column-${resource.key}`"
+                  class="consumption-resource-column" />
+              </colgroup>
               <thead>
                 <tr>
                   <th>{{ t('calcBuildings.consumptionPeriod') }}</th>
@@ -290,13 +300,23 @@
             </span>
             <span class="building-name">{{ item.building }}</span>
           </div>
-          <span class="mult-badge">×{{ item.mult }}</span>
+          <span v-if="!isNonUpgradableWonder(item)" class="mult-badge">×{{ item.mult }}</span>
         </div>
 
         <div class="resources">
           <span class="resource-label">{{ t('calcBuildings.buildResources') }}</span>
           <div class="resource-list">
             <span v-for="res in item.build_resources" :key="res.resource" class="resource-tag">
+              {{ res.resource }}
+              <span class="count">{{ res.count }}</span>
+            </span>
+          </div>
+        </div>
+
+        <div v-if="item.output.length > 0" class="resources">
+          <span class="resource-label">{{ t('calcBuildings.buildingOutput') }}</span>
+          <div class="resource-list">
+            <span v-for="res in item.output" :key="res.resource" class="resource-tag">
               {{ res.resource }}
               <span class="count">{{ res.count }}</span>
             </span>
@@ -332,6 +352,19 @@ const BUILDING_FRAME_ALIASES = {
   YearOfTheSnakeV2: 'YearOfTheSnake'
 }
 
+const BUILDING_NAME_ALIASES = {
+  TheMet: 'ThePentagon',
+  YearOfTheSnake: 'YearOfTheSnakeV2'
+}
+
+const isNonUpgradableWonder = (building) =>
+  building?.builder_init != null && !building.upgradable
+
+const getBuildingMultiplierLabel = (building) =>
+  isNonUpgradableWonder(building)
+    ? t('calcBuildings.notUpgradable')
+    : `${t('calcBuildings.multiplier')} ×${building.mult}`
+
 // 图标显示尺寸（px）
 const ICON_SIZE = 48
 
@@ -362,10 +395,14 @@ const buildings = computed(() =>
     const item = {
       ...b,
       buildingKey: b.building,
-      building: tGame(b.building),
+      building: tGame(BUILDING_NAME_ALIASES[b.building] || b.building),
       build_resources: b.build_resources.map((r) => ({
         ...r,
         resource: tGame(r.resource)
+      })),
+      output: Object.entries(b.output || {}).map(([resource, count]) => ({
+        resource: tGame(resource),
+        count
       }))
     }
     // 预计算贴图样式，模板中直接使用
@@ -390,6 +427,24 @@ const actualLevel = ref(1)
 const buildingCount = ref(1)
 const consumptionBuildingCount = ref(1)
 
+const isWonder = computed(() => selectedBuilding.value?.builder_init != null)
+const maxBuildingCount = computed(() => {
+  if (!isWonder.value) return 5000
+  const max = Number(selectedBuilding.value.max)
+  return Number.isFinite(max) ? Math.max(0, max) : 5000
+})
+const maxTargetLevel = computed(() => {
+  if (isWonder.value && !selectedBuilding.value.upgradable) {
+    return Math.min(150, currentLevel.value + 1)
+  }
+  return 150
+})
+
+const setTargetLevel = (level) => {
+  targetLevel.value = Math.min(level, maxTargetLevel.value)
+  calculate()
+}
+
 // 等级输入限制：0 <= 等级 <= 150，超出自动钳制
 const onLevelInput = (key) => {
   const raw = key === 'currentLevel'
@@ -397,16 +452,21 @@ const onLevelInput = (key) => {
     : key === 'targetLevel'
       ? targetLevel.value
       : actualLevel.value
-  const clamped = Math.max(0, Math.min(150, Number.isFinite(Number(raw)) ? Number(raw) : 0))
+  const max = key === 'targetLevel' ? maxTargetLevel.value : 150
+  const clamped = Math.max(0, Math.min(max, Number.isFinite(Number(raw)) ? Number(raw) : 0))
   if (key === 'currentLevel') currentLevel.value = clamped
   else if (key === 'targetLevel') targetLevel.value = clamped
   else actualLevel.value = clamped
+  if (key === 'currentLevel' && targetLevel.value > maxTargetLevel.value) {
+    targetLevel.value = maxTargetLevel.value
+  }
   calculate()
 }
 
 const onBuildingCountInput = (key) => {
   const raw = key === 'buildingCount' ? buildingCount.value : consumptionBuildingCount.value
-  const clamped = Math.max(0, Math.min(5000, Number.isFinite(Number(raw)) ? Number(raw) : 0))
+  const max = maxBuildingCount.value
+  const clamped = Math.max(0, Math.min(max, Number.isFinite(Number(raw)) ? Number(raw) : 0))
   if (key === 'buildingCount') buildingCount.value = clamped
   else consumptionBuildingCount.value = clamped
   calculate()
@@ -662,9 +722,16 @@ const filteredBuildings = computed(() => {
     return buildings.value
   }
   const kw = keyword.value.trim().toLowerCase()
-  return buildings.value.filter(item =>
-    item.building.toLowerCase().includes(kw)
-  )
+  return buildings.value.filter(item => {
+    const resourceNames = [
+      ...item.build_resources.map(resource => resource.resource),
+      ...item.output.map(resource => resource.resource),
+      ...Object.keys(item.input || {}).map(tGame)
+    ]
+    return [item.building, ...resourceNames].some(name =>
+      name.toLowerCase().includes(kw)
+    )
+  })
 })
 
 // 选择建筑
@@ -673,8 +740,8 @@ const selectBuilding = (item) => {
   currentLevel.value = 0
   targetLevel.value = 1
   actualLevel.value = 1
-  buildingCount.value = 1
-  consumptionBuildingCount.value = 1
+  buildingCount.value = Math.min(1, maxBuildingCount.value)
+  consumptionBuildingCount.value = Math.min(1, maxBuildingCount.value)
   showDetails.value = false
   showConsumptionDetails.value = false
   showProductionDetails.value = false
@@ -703,7 +770,8 @@ const upgradeDetails = computed(() => {
 
   const mult = parseFloat(selectedBuilding.value.mult)
   const baseResources = selectedBuilding.value.build_resources
-  const diff = targetLevel.value - currentLevel.value
+  const effectiveTargetLevel = Math.min(targetLevel.value, maxTargetLevel.value)
+  const diff = effectiveTargetLevel - currentLevel.value
   const bm = Math.max(0, builderMultiplier.value || 1)
   // 基础建造者能力：普通建筑 = 1，奇观 = builder_init（时代/科技列计算）
   const builderInit = selectedBuilding.value.builder_init ?? 1
@@ -767,7 +835,7 @@ const totalBuildTime = computed(() =>
 
 // 等级差
 const levelDiff = computed(() => {
-  return Math.max(0, targetLevel.value - currentLevel.value)
+  return Math.max(0, Math.min(targetLevel.value, maxTargetLevel.value) - currentLevel.value)
 })
 
 // 计算函数（触发响应式更新）
@@ -1130,6 +1198,14 @@ const formatTime = (seconds) => {
   background: #ffffff;
 }
 
+.num-input:disabled {
+  color: #6b7a8f;
+  background: #eef1f5;
+  border-color: #d5dce5;
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
 .num-input[type="number"]::-webkit-inner-spin-button,
 .num-input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1397,6 +1473,19 @@ const formatTime = (seconds) => {
   font-weight: 400;
 }
 
+.consumption-table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 720px;
+}
+
+.consumption-table th,
+.consumption-table td {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ===== 建筑卡片网格 ===== */
 .production-chart-wrap {
   overflow-x: auto;
@@ -1452,6 +1541,7 @@ const formatTime = (seconds) => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 14px;
+  align-items: start;
 }
 
 .building-card {
@@ -1571,6 +1661,12 @@ const formatTime = (seconds) => {
   font-weight: 500;
   display: block;
   margin-bottom: 6px;
+}
+
+.resources + .resources {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f4fa;
 }
 
 .resource-list {
