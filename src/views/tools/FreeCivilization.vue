@@ -4,16 +4,6 @@
     <!-- ==================== 查询卡片 ==================== -->
     <section class="calculator-card">
 
-      <div class="calculator-header">
-        <div class="calculator-title">
-          {{ t('freeCivilization.title') }}
-        </div>
-
-        <div class="calculator-description">
-          {{ t('freeCivilization.description') }}
-        </div>
-      </div>
-
       <div class="filter-grid">
 
         <!-- 国家 -->
@@ -402,8 +392,15 @@ const civilizations = computed(() => {
     return []
   }
 
+  const excludedCivilizations = new Set([
+    'Roman',
+    'Greek',
+    'Egyptian',
+    'Chinese'
+  ])
+
   return civilizationData.filter(civilization => {
-    return civilization && civilization.name
+    return civilization && civilization.name && !excludedCivilizations.has(civilization.name)
   })
 })
 
@@ -588,7 +585,7 @@ const REFERENCE_DATE =
  * index = (week + OFFSET) % cities.length
  */
 
-const OFFSET = 2
+const OFFSET = 0
 
 
 /* =========================================================
