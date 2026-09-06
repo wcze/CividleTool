@@ -3444,6 +3444,7 @@
         "count": "10"
       }
     ],
+    "desc": "CaravansaryDesc",
     "tech": "LandTrade",
     "age": "IronAge",
     "age_index": 2,
@@ -3468,6 +3469,7 @@
         "count": "20"
       }
     ],
+    "desc": "MarketDesc",
     "tech": "Market",
     "age": "BronzeAge",
     "age_index": 1,
@@ -3492,6 +3494,7 @@
         "count": "10"
       }
     ],
+    "desc": "WarehouseDesc",
     "tech": "RoadAndWheel",
     "age": "IronAge",
     "age_index": 2,
@@ -3512,6 +3515,7 @@
         "count": "50"
       }
     ],
+    "desc": "CloneFactoryDesc",
     "tech": "Genetics",
     "age": "InformationAge",
     "age_index": 9,
@@ -3532,6 +3536,7 @@
         "count": "50"
       }
     ],
+    "desc": "CloneLabDesc",
     "tech": "Genetics",
     "age": "InformationAge",
     "age_index": 9,
@@ -3561,6 +3566,7 @@
         "count": "4500"
       }
     ],
+    "desc": "StatisticsOfficeDesc",
     "tech": "Counting",
     "age": "StoneAge",
     "age_index": 0,
@@ -3578,6 +3584,7 @@
         "count": "596300"
       }
     ],
+    "desc": "PetraDescV3",
     "tech": "Politics",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3595,6 +3602,7 @@
         "count": "711300"
       }
     ],
+    "desc": "StonehengeDesc",
     "tech": "Astronomy",
     "age": "IronAge",
     "age_index": 2,
@@ -3620,6 +3628,7 @@
         "count": "19267"
       }
     ],
+    "desc": "HatshepsutTempleDesc",
     "tech": "Metallurgy",
     "age": "BronzeAge",
     "age_index": 1,
@@ -3645,6 +3654,7 @@
         "count": "99821"
       }
     ],
+    "desc": "LighthouseOfAlexandriaDesc",
     "tech": "Engineering",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3662,6 +3672,7 @@
         "count": "135000"
       }
     ],
+    "desc": "PyramidOfGizaDesc",
     "tech": "Masonry",
     "age": "StoneAge",
     "age_index": 0,
@@ -3679,6 +3690,7 @@
         "count": "173400"
       }
     ],
+    "desc": "ColossusOfRhodesDesc",
     "tech": "Market",
     "age": "BronzeAge",
     "age_index": 1,
@@ -3704,6 +3716,7 @@
         "count": "59275"
       }
     ],
+    "desc": "GreatMosqueOfSamarraDescV2",
     "tech": "RoadAndWheel",
     "age": "IronAge",
     "age_index": 2,
@@ -3729,6 +3742,7 @@
         "count": "101967"
       }
     ],
+    "desc": "HangingGardenDesc",
     "tech": "Calendar",
     "age": "IronAge",
     "age_index": 2,
@@ -3754,6 +3768,7 @@
         "count": "161329"
       }
     ],
+    "desc": "TempleOfHeavenDesc",
     "tech": "Autocracy",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3779,6 +3794,7 @@
         "count": "107552"
       }
     ],
+    "desc": "ParthenonDescV3",
     "city": "Greek",
     "tech": "Democracy",
     "age": "ClassicalAge",
@@ -3805,6 +3821,7 @@
         "count": "255634"
       }
     ],
+    "desc": "TempleOfArtemisDesc",
     "tech": "Feudalism",
     "age": "MiddleAge",
     "age_index": 4,
@@ -3830,6 +3847,7 @@
         "count": "102664"
       }
     ],
+    "desc": "LuxorTempleDescV2",
     "tech": "Religion",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3855,6 +3873,7 @@
         "count": "26263"
       }
     ],
+    "desc": "ChichenItzaDesc",
     "tech": "Architecture",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3880,6 +3899,7 @@
         "count": "99821"
       }
     ],
+    "desc": "MausoleumAtHalicarnassusDescV2",
     "tech": "CityState",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3905,6 +3925,7 @@
         "count": "63776"
       }
     ],
+    "desc": "HagiaSophiaDescV2",
     "tech": "HolyEmpire",
     "age": "MiddleAge",
     "age_index": 4,
@@ -3930,6 +3951,7 @@
         "count": "313566"
       }
     ],
+    "desc": "AngkorWatDesc",
     "tech": "CivilService",
     "age": "MiddleAge",
     "age_index": 4,
@@ -3955,6 +3977,7 @@
         "count": "1788900"
       }
     ],
+    "desc": "TerracottaArmyDesc",
     "tech": "Machinery",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -3980,6 +4003,7 @@
         "count": "101967"
       }
     ],
+    "desc": "PersepolisDesc",
     "tech": "Shamanism",
     "age": "IronAge",
     "age_index": 2,
@@ -4005,6 +4029,7 @@
         "count": "2678157"
       }
     ],
+    "desc": "OxfordUniversityDescV3",
     "tech": "University",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -4030,6 +4055,7 @@
         "count": "1184277"
       }
     ],
+    "desc": "SaintBasilsCathedralDescV2",
     "tech": "Firearm",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -4055,6 +4081,7 @@
         "count": "679218"
       }
     ],
+    "desc": "ForbiddenCityDesc",
     "tech": "PrintingPress",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -4080,6 +4107,7 @@
         "count": "18535"
       }
     ],
+    "desc": "HimejiCastleDesc",
     "tech": "Colonialism",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -4105,6 +4133,7 @@
         "count": "1166169"
       }
     ],
+    "desc": "TajMahalDescV2",
     "tech": "Constitution",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -4132,6 +4161,7 @@
         "count": "298150"
       }
     ],
+    "desc": "ColosseumDescV3",
     "city": "Roman",
     "tech": "Theater",
     "age": "ClassicalAge",
@@ -4158,6 +4188,7 @@
         "count": "584307"
       }
     ],
+    "desc": "MogaoCavesDescV3",
     "tech": "Theocracy",
     "age": "MiddleAge",
     "age_index": 4,
@@ -4183,6 +4214,7 @@
         "count": "85186"
       }
     ],
+    "desc": "StatueOfZeusDescV2",
     "city": "Greek",
     "tech": "Theater",
     "age": "ClassicalAge",
@@ -4209,6 +4241,7 @@
         "count": "716721"
       }
     ],
+    "desc": "CircusMaximusDescV3",
     "city": "Roman",
     "tech": "CivilService",
     "age": "MiddleAge",
@@ -4227,6 +4260,7 @@
         "count": "9378075"
       }
     ],
+    "desc": "EiffelTowerDesc",
     "tech": "Alloy",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4252,6 +4286,7 @@
         "count": "1494589"
       }
     ],
+    "desc": "RijksmuseumDesc",
     "tech": "Journalism",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4277,6 +4312,7 @@
         "count": "182492"
       }
     ],
+    "desc": "SummerPalaceDesc",
     "tech": "Imperialism",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4302,6 +4338,7 @@
         "count": "734670"
       }
     ],
+    "desc": "StatueOfLibertyDesc",
     "tech": "StockMarket",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4327,6 +4364,7 @@
         "count": "3929860"
       }
     ],
+    "desc": "NeuschwansteinDesc",
     "tech": "Rifling",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4352,6 +4390,7 @@
         "count": "59159"
       }
     ],
+    "desc": "BrandenburgGateDesc",
     "tech": "Refinery",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -4377,6 +4416,7 @@
         "count": "456095"
       }
     ],
+    "desc": "GrandBazaarDesc",
     "tech": "Education",
     "age": "MiddleAge",
     "age_index": 4,
@@ -4402,12 +4442,13 @@
         "count": "15525"
       }
     ],
+    "desc": "AbuSimbelDescV2",
     "city": "Egyptian",
     "tech": "Housing",
     "age": "BronzeAge",
     "age_index": 1,
     "column": 2,
-    "builder_init": 43.49914589610418
+    "builder_init": 43.499145896104174
   },
   {
     "building": "GreatSphinx",
@@ -4428,6 +4469,7 @@
         "count": "14450"
       }
     ],
+    "desc": "GreatSphinxDescV3",
     "city": "Egyptian",
     "tech": "Arithmetic",
     "age": "BronzeAge",
@@ -4454,11 +4496,12 @@
         "count": "2296720"
       }
     ],
+    "desc": "HollywoodDesc",
     "tech": "MotionPicture",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 255.96456502341076
+    "builder_init": 255.9645650234107
   },
   {
     "building": "GoldenGateBridge",
@@ -4479,11 +4522,12 @@
         "count": "107888"
       }
     ],
+    "desc": "GoldenGateBridgeDesc",
     "tech": "Hydroelectricity",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 103.45053370272194
+    "builder_init": 103.45053370272193
   },
   {
     "building": "CristoRedentor",
@@ -4504,6 +4548,7 @@
         "count": "1255452"
       }
     ],
+    "desc": "CristoRedentorDesc",
     "tech": "Radio",
     "age": "WorldWarAge",
     "age_index": 7,
@@ -4529,6 +4574,7 @@
         "count": "126746"
       }
     ],
+    "desc": "UnitedNationsDescV2",
     "tech": "UnitedNations",
     "age": "WorldWarAge",
     "age_index": 7,
@@ -4546,11 +4592,12 @@
         "count": "28268850"
       }
     ],
+    "desc": "ManhattanProjectDesc",
     "tech": "NuclearFission",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 1855.8532818937288
+    "builder_init": 1855.8532818937285
   },
   {
     "building": "SagradaFamilia",
@@ -4571,11 +4618,12 @@
         "count": "2433913"
       }
     ],
+    "desc": "SagradaFamiliaDesc",
     "tech": "Assembly",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 19,
-    "builder_init": 314.7848257621704
+    "builder_init": 314.7848257621703
   },
   {
     "building": "GreatWall",
@@ -4596,6 +4644,7 @@
         "count": "33871"
       }
     ],
+    "desc": "GreatWallDescV2",
     "city": "Chinese",
     "tech": "LandTrade",
     "age": "IronAge",
@@ -4622,6 +4671,7 @@
         "count": "103548"
       }
     ],
+    "desc": "YellowCraneTowerDescV2",
     "city": "Chinese",
     "tech": "Geography",
     "age": "MiddleAge",
@@ -4648,6 +4698,7 @@
         "count": "158874"
       }
     ],
+    "desc": "PorcelainTowerDescV2",
     "city": "Chinese",
     "tech": "Banking",
     "age": "RenaissanceAge",
@@ -4674,6 +4725,7 @@
         "count": "1158778"
       }
     ],
+    "desc": "CNTowerDesc",
     "tech": "Television",
     "age": "ColdWarAge",
     "age_index": 8,
@@ -4699,6 +4751,7 @@
         "count": "16471462"
       }
     ],
+    "desc": "SpaceNeedleDesc",
     "tech": "Satellite",
     "age": "ColdWarAge",
     "age_index": 8,
@@ -4724,11 +4777,12 @@
         "count": "147905"
       }
     ],
+    "desc": "ApolloProgramDesc",
     "tech": "SpaceProgram",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "builder_init": 327.60308406910764
+    "builder_init": 327.6030840691076
   },
   {
     "building": "Atomium",
@@ -4749,6 +4803,7 @@
         "count": "6541995"
       }
     ],
+    "desc": "AtomiumDescV2",
     "tech": "NuclearReactor",
     "age": "ColdWarAge",
     "age_index": 8,
@@ -4778,6 +4833,7 @@
         "count": "152950"
       }
     ],
+    "desc": "ChoghaZanbilDescV2",
     "tech": "Construction",
     "age": "IronAge",
     "age_index": 2,
@@ -4803,6 +4859,7 @@
         "count": "161874"
       }
     ],
+    "desc": "BroadwayDesc",
     "city": "American",
     "tech": "Railway",
     "age": "IndustrialAge",
@@ -4829,6 +4886,7 @@
         "count": "400822"
       }
     ],
+    "desc": "ThePentagonDesc",
     "city": "American",
     "tech": "RapidFire",
     "age": "IndustrialAge",
@@ -4855,6 +4913,7 @@
         "count": "662868"
       }
     ],
+    "desc": "WallStreetDesc",
     "city": "American",
     "tech": "Capitalism",
     "age": "IndustrialAge",
@@ -4872,7 +4931,8 @@
         "resource": "Faith",
         "count": "3000"
       }
-    ]
+    ],
+    "desc": "StPetersBasilicaDescV2"
   },
   {
     "building": "ProphetsMosque",
@@ -4884,7 +4944,8 @@
         "resource": "Faith",
         "count": "3000"
       }
-    ]
+    ],
+    "desc": "ProphetsMosqueDesc"
   },
   {
     "building": "GreatDagonPagoda",
@@ -4896,7 +4957,8 @@
         "resource": "Faith",
         "count": "3000"
       }
-    ]
+    ],
+    "desc": "GreatDagonPagodaDescV2"
   },
   {
     "building": "Pantheon",
@@ -4908,7 +4970,8 @@
         "resource": "Faith",
         "count": "3000"
       }
-    ]
+    ],
+    "desc": "PantheonDescV2"
   },
   {
     "building": "WallOfBabylon",
@@ -4929,6 +4992,7 @@
         "count": "79033"
       }
     ],
+    "desc": "WallOfBabylonDesc",
     "city": "Babylonian",
     "tech": "LandTrade",
     "age": "IronAge",
@@ -4955,6 +5019,7 @@
         "count": "752867"
       }
     ],
+    "desc": "TowerOfBabelDesc",
     "city": "Babylonian",
     "tech": "Religion",
     "age": "ClassicalAge",
@@ -4981,6 +5046,7 @@
         "count": "596300"
       }
     ],
+    "desc": "ZigguratOfUrDescV2",
     "city": "Babylonian",
     "tech": "Theater",
     "age": "ClassicalAge",
@@ -5007,6 +5073,7 @@
         "count": "1245168"
       }
     ],
+    "desc": "InternationalSpaceStationDesc",
     "tech": "Nanotechnology",
     "age": "InformationAge",
     "age_index": 9,
@@ -5032,6 +5099,7 @@
         "count": "18095771"
       }
     ],
+    "desc": "MarinaBaySandsDesc",
     "tech": "SocialNetwork",
     "age": "InformationAge",
     "age_index": 9,
@@ -5057,6 +5125,7 @@
         "count": "8207461"
       }
     ],
+    "desc": "PalmJumeirahDesc",
     "tech": "Blockchain",
     "age": "InformationAge",
     "age_index": 9,
@@ -5082,6 +5151,7 @@
         "count": "1690101"
       }
     ],
+    "desc": "AldersonDiskDesc",
     "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
@@ -5107,6 +5177,7 @@
         "count": "1828676"
       }
     ],
+    "desc": "DysonSphereDesc",
     "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
@@ -5132,6 +5203,7 @@
         "count": "1705246"
       }
     ],
+    "desc": "MatrioshkaBrainDescV3",
     "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
@@ -5165,6 +5237,7 @@
         "count": "1690101"
       }
     ],
+    "desc": "SuperintelligenceDescV3",
     "tech": "Future",
     "age": "InformationAge",
     "age_index": 9,
@@ -5190,6 +5263,7 @@
         "count": "7169328"
       }
     ],
+    "desc": "LargeHadronColliderDescV3",
     "tech": "VirtualReality",
     "age": "InformationAge",
     "age_index": 9,
@@ -5207,6 +5281,7 @@
         "count": "210528"
       }
     ],
+    "desc": "BigBenDesc",
     "tech": "Capitalism",
     "age": "IndustrialAge",
     "age_index": 6,
@@ -5232,6 +5307,7 @@
         "count": "26263"
       }
     ],
+    "desc": "ItsukushimaShrineDescV2",
     "city": "Japanese",
     "tech": "Religion",
     "age": "ClassicalAge",
@@ -5258,6 +5334,7 @@
         "count": "166945"
       }
     ],
+    "desc": "GoldenPavilionDesc",
     "city": "Japanese",
     "tech": "Theocracy",
     "age": "MiddleAge",
@@ -5284,6 +5361,7 @@
         "count": "116385"
       }
     ],
+    "desc": "OsakaCastleDesc",
     "city": "Japanese",
     "tech": "Electricity",
     "age": "IndustrialAge",
@@ -5310,6 +5388,7 @@
         "count": "58679"
       }
     ],
+    "desc": "CologneCathedralDesc",
     "city": "German",
     "tech": "HolyEmpire",
     "age": "MiddleAge",
@@ -5336,6 +5415,7 @@
         "count": "1740293"
       }
     ],
+    "desc": "ElbphilharmonieDesc",
     "city": "German",
     "tech": "Skyscraper",
     "age": "ColdWarAge",
@@ -5354,6 +5434,7 @@
         "count": "1573135"
       }
     ],
+    "desc": "SantaClausVillageDesc",
     "tech": "Theocracy",
     "age": "MiddleAge",
     "age_index": 4,
@@ -5371,6 +5452,7 @@
         "count": "255557"
       }
     ],
+    "desc": "YearOfTheSnakeDescV2",
     "tech": "Theater",
     "age": "ClassicalAge",
     "age_index": 3,
@@ -5396,6 +5478,7 @@
         "count": "294334"
       }
     ],
+    "desc": "BritishMuseumDesc",
     "city": "English",
     "tech": "Combustion",
     "age": "IndustrialAge",
@@ -5422,6 +5505,7 @@
         "count": "1776415"
       }
     ],
+    "desc": "CambridgeUniversityDesc",
     "city": "English",
     "tech": "Enlightenment",
     "age": "RenaissanceAge",
@@ -5444,6 +5528,7 @@
         "count": "7776644"
       }
     ],
+    "desc": "TowerBridgeDesc",
     "city": "English",
     "tech": "Electricity",
     "age": "IndustrialAge",
@@ -5470,6 +5555,7 @@
         "count": "772193"
       }
     ],
+    "desc": "EastIndiaCompanyDescV2",
     "city": "English",
     "tech": "PrivateOwnership",
     "age": "RenaissanceAge",
@@ -5496,6 +5582,7 @@
         "count": "116385"
       }
     ],
+    "desc": "ArcDeTriompheDescV2",
     "city": "French",
     "tech": "Electricity",
     "age": "IndustrialAge",
@@ -5514,6 +5601,7 @@
         "count": "4081593"
       }
     ],
+    "desc": "MontSaintMichelDesc",
     "city": "French",
     "tech": "Revolution",
     "age": "RenaissanceAge",
@@ -5540,6 +5628,7 @@
         "count": "114409"
       }
     ],
+    "desc": "LouvreDesc",
     "city": "French",
     "tech": "Railway",
     "age": "IndustrialAge",
@@ -5566,6 +5655,7 @@
         "count": "55053786"
       }
     ],
+    "desc": "CentrePompidouDesc",
     "city": "French",
     "tech": "Software",
     "age": "InformationAge",
@@ -5592,6 +5682,7 @@
         "count": "408159"
       }
     ],
+    "desc": "EasterBunnyDesc",
     "tech": "PrivateOwnership",
     "age": "RenaissanceAge",
     "age_index": 5,
@@ -5617,6 +5708,7 @@
         "count": "111293"
       }
     ],
+    "desc": "BlueMosqueDesc",
     "city": "Ottoman",
     "tech": "Exploration",
     "age": "RenaissanceAge",
@@ -5643,12 +5735,13 @@
         "count": "252699"
       }
     ],
+    "desc": "TopkapiPalaceDesc",
     "city": "Ottoman",
     "tech": "Aviation",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 132.92006550381856
+    "builder_init": 132.92006550381853
   },
   {
     "building": "SwissBank",
@@ -5669,6 +5762,7 @@
         "count": "986366"
       }
     ],
+    "desc": "SwissBankDescV3",
     "tech": "MonetarySystem",
     "age": "ColdWarAge",
     "age_index": 8,
@@ -5694,12 +5788,13 @@
         "count": "659232"
       }
     ],
+    "desc": "ItaipuDamDesc",
     "city": "Brazilian",
     "tech": "Hydroelectricity",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 20,
-    "builder_init": 60.15375699496166
+    "builder_init": 60.153756994961654
   },
   {
     "building": "CathedralOfBrasilia",
@@ -5720,12 +5815,13 @@
         "count": "252699"
       }
     ],
+    "desc": "CathedralOfBrasiliaDesc",
     "city": "Brazilian",
     "tech": "Aviation",
     "age": "WorldWarAge",
     "age_index": 7,
     "column": 18,
-    "builder_init": 132.92006550381856
+    "builder_init": 132.92006550381853
   },
   {
     "building": "RedFort",
@@ -5746,6 +5842,7 @@
         "count": "141089"
       }
     ],
+    "desc": "RedFortDesc",
     "city": "Indian",
     "tech": "RapidFire",
     "age": "IndustrialAge",
@@ -5772,6 +5869,7 @@
         "count": "371832"
       }
     ],
+    "desc": "SanchiStupaDescV2",
     "city": "Indian",
     "tech": "Physics",
     "age": "MiddleAge",
@@ -5798,6 +5896,7 @@
         "count": "317747"
       }
     ],
+    "desc": "QutbMinarDescV2",
     "city": "Indian",
     "tech": "Banking",
     "age": "RenaissanceAge",
@@ -5824,6 +5923,7 @@
         "count": "42517"
       }
     ],
+    "desc": "BranCastleDescV2",
     "tech": "HolyEmpire",
     "age": "MiddleAge",
     "age_index": 4,
@@ -5841,11 +5941,12 @@
         "count": "41571"
       }
     ],
+    "desc": "PortOfSingaporeDesc",
     "tech": "Globalization",
     "age": "ColdWarAge",
     "age_index": 8,
     "column": 23,
-    "builder_init": 2.268055723168132
+    "builder_init": 2.2680557231681315
   },
   {
     "building": "SydneyOperaHouse",
@@ -5866,6 +5967,7 @@
         "count": "5793891"
       }
     ],
+    "desc": "SydneyOperaHouseDesc",
     "city": "Australian",
     "tech": "Television",
     "age": "ColdWarAge",
@@ -5892,6 +5994,7 @@
         "count": "130300"
       }
     ],
+    "desc": "SydneyHarbourBridgeDesc",
     "city": "Australian",
     "tech": "Hydroelectricity",
     "age": "WorldWarAge",
@@ -5914,6 +6017,7 @@
         "count": "389850"
       }
     ],
+    "desc": "GreatOceanRoadDesc",
     "city": "Australian",
     "tech": "Rocketry",
     "age": "WorldWarAge",
@@ -5940,6 +6044,7 @@
         "count": "89228"
       }
     ],
+    "desc": "KizhiPogostDescV2",
     "city": "Russian",
     "tech": "Alloy",
     "age": "IndustrialAge",
@@ -5962,6 +6067,7 @@
         "count": "330678"
       }
     ],
+    "desc": "HermitageDesc",
     "city": "Russian",
     "tech": "Journalism",
     "age": "IndustrialAge",
@@ -5980,6 +6086,7 @@
         "count": "2486119"
       }
     ],
+    "desc": "Sputnik1DescV3",
     "city": "Russian",
     "tech": "Satellite",
     "age": "ColdWarAge",
@@ -5998,6 +6105,7 @@
         "count": "7022871"
       }
     ],
+    "desc": "AkademikLomonosovDescV2",
     "city": "Russian",
     "tech": "Genetics",
     "age": "InformationAge",
@@ -6024,6 +6132,7 @@
         "count": "294334"
       }
     ],
+    "desc": "ChateauFrontenacDesc",
     "city": "Canadian",
     "tech": "Combustion",
     "age": "IndustrialAge",
@@ -6042,6 +6151,7 @@
         "count": "6075977"
       }
     ],
+    "desc": "Habitat67DescV2",
     "city": "Canadian",
     "tech": "ArtificialIntelligence",
     "age": "InformationAge",
@@ -6068,6 +6178,7 @@
         "count": "1393604"
       }
     ],
+    "desc": "WorldTradeOrganizationDesc",
     "tech": "FinancialLeverage",
     "age": "InformationAge",
     "age_index": 9,
@@ -6093,6 +6204,7 @@
         "count": "102664"
       }
     ],
+    "desc": "CothonOfCarthageDesc",
     "city": "Carthaginian",
     "tech": "Architecture",
     "age": "ClassicalAge",
@@ -6111,6 +6223,7 @@
         "count": "210528"
       }
     ],
+    "desc": "MauritshuisDesc",
     "city": "Dutch",
     "tech": "Capitalism",
     "age": "IndustrialAge",
@@ -6129,6 +6242,7 @@
         "count": "152950"
       }
     ],
+    "desc": "MidsummerDesc",
     "tech": "Calendar",
     "age": "IronAge",
     "age_index": 2,

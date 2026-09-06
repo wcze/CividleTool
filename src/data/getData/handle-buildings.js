@@ -96,6 +96,13 @@ function extractInput(body){
   return result;
 }
 
+// 提取建筑描述对应的本地化键（如 desc: () => $t(L.MarketDesc)）
+// 没有描述或格式无法识别时返回 undefined，调用方不写入 desc 字段
+function extractDescription(body) {
+  const m = body.match(/desc:\s*\(\s*\)\s*=>\s*(?:\$t|t)\(\s*L\.([A-Za-z_$][\w$]*)/);
+  return m ? m[1] : undefined;
+}
+
 // 提取 construction 原始权重（不缩放）：[{ resource, weight }]
 function extractConstructionWeights(body) {
   const m = body.match(/construction:\s*\{([^}]*)\}/);
@@ -264,6 +271,8 @@ function main() {
         input: extractInput(body),
         build_resources: extractBuildResources(body)
       }
+      const desc = extractDescription(body)
+      if (desc) item.desc = desc
       // 反查来源：优先 unlockBuilding/TimedBuildingUnlock，其次城市 uniqueBuildings
       let lookup = techLookup[name]
       const cityInfo = cityLookup[name]
