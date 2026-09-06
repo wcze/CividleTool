@@ -233,9 +233,17 @@
               <rect :x="node.x" :y="node.y" :width="node.width" :height="node.totalHeight || node.height" rx="6"
                 :style="productionNodeBorderColor(node) ? { '--node-stroke': productionNodeBorderColor(node) } : null"
                 @mouseenter.stop="productionHoverId = node.id" />
-              <text :x="node.x + node.width / 2" :y="node.y + 18" text-anchor="middle">{{ node.label }}</text>
+              <foreignObject v-if="node.kind === 'building' && node.frame" :x="node.x + 8" :y="node.y + 8"
+                width="48" height="48">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="building-icon production-icon-box">
+                  <span class="sprite" :style="node.spriteStyle"></span>
+                </div>
+              </foreignObject>
+              <text :x="node.kind === 'building' ? node.x + 68 : node.x + node.width / 2"
+                :y="node.y + 22" :text-anchor="node.kind === 'building' ? 'start' : 'middle'">{{ node.label }}</text>
               <text v-for="(line, index) in node.detailLines" :key="`${node.id}-${index}`" class="production-detail"
-                :x="node.x + node.width / 2" :y="node.y + 36 + index * 18" text-anchor="middle">{{ line }}</text>
+                :x="node.kind === 'building' ? node.x + 68 : node.x + node.width / 2"
+                :y="node.y + 42 + index * 18" :text-anchor="node.kind === 'building' ? 'start' : 'middle'">{{ line }}</text>
               <g v-for="switcher in node.switchers" :key="`${node.id}-switch-${switcher.resource}`"
                 class="production-switch" @mouseenter.stop="productionHoverId = null">
                 <rect class="switch-prev" :rx="5" :x="node.x + 1" :y="node.y + node.height - 1" :width="node.width / 2 - 2" height="30" rx="0"
@@ -527,6 +535,8 @@ const buildProductionGraph = (buildingKey, choices) => {
     nodes.set(id, {
       id,
       kind: 'building',
+      frame: getFrame(building.building),
+      spriteStyle: getSpriteStyle(building.building),
       label: tGame(building.building),
       detailLines: Object.keys(building.output || {}).map(tGame),
       switchers: [],
@@ -578,13 +588,13 @@ const buildProductionGraph = (buildingKey, choices) => {
   const keys = [...columns.keys()].sort((a, b) => a - b)
   const gap = 72, rowGap = 40, positions = new Map()
   const columnWidths = keys.map(column => Math.max(120, ...columns.get(column).map(node =>
-    Math.max(node.kind === 'building' ? 160 : 120, node.label.length * 8 + 28, ...node.detailLines.map(line => line.length * 7 + 28)))))
+    Math.max(node.kind === 'building' ? 220 : 120, node.label.length * 8 + 28, ...node.detailLines.map(line => line.length * 7 + 28)))))
   keys.forEach((column, columnIndex) => {
     let y = 24
     columns.get(column).forEach((node, rowIndex) => {
       node.width = columnWidths[columnIndex]
       node.height = node.kind === 'building'
-        ? 30 + Math.max(1, node.detailLines.length) * 18
+        ? Math.max(64, 24 + Math.max(1, node.detailLines.length) * 18)
         : 58
       node.x = 24 + columnWidths.slice(0, columnIndex).reduce((sum, width) => sum + width + gap, 0)
       node.y = y
@@ -596,6 +606,7 @@ const buildProductionGraph = (buildingKey, choices) => {
     })
   })
   const rowEdgeCounts = new Map()
+  const sameRowArcCounts = new Map()
   edges.forEach(edge => {
     const from = positions.get(edge.from), to = positions.get(edge.to)
     if (!from || !to) return
@@ -609,7 +620,16 @@ const buildProductionGraph = (buildingKey, choices) => {
       return
     }
     const x1 = from.x + from.width, x2 = to.x
-    if (to.columnIndex - from.columnIndex === 1 && Math.abs(y1 - y2) < 0.5) {
+    const sameRow = Math.abs(y1 - y2) < 0.5
+    if (sameRow && to.columnIndex - from.columnIndex > 1) {
+      const arcLane = sameRowArcCounts.get(from.rowIndex) || 0
+      sameRowArcCounts.set(from.rowIndex, arcLane + 1)
+      const arcY = Math.max(8, y1 - 28 - arcLane * 12)
+      const horizontal = Math.max(1, x2 - x1), dx = Math.min(42, horizontal * 0.42)
+      edge.path = `M${x1},${y1} C${x1 + dx},${arcY} ${x2 - dx},${arcY} ${x2},${y2}`
+      return
+    }
+    if (to.columnIndex - from.columnIndex === 1 && sameRow) {
       edge.path = `M${x1},${y1} L${x2},${y2}`
       return
     }
