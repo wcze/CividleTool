@@ -3,6 +3,9 @@
     <!-- ===== 升级计算器（置顶） ===== -->
     <div v-if="selectedBuilding" class="calculator-panel">
       <div class="calculator-header">
+        <p v-if="selectedBuilding.desc" class="building-desc">
+          {{ tGame(selectedBuilding.desc) }}
+        </p>
         <div class="calc-title">
           <span class="building-icon calc-icon">
             <span v-if="selectedBuilding.spriteStyle" class="sprite" :style="selectedBuilding.spriteStyle"></span>
@@ -313,6 +316,13 @@ const buildings = computed(() =>
 )
 const keyword = ref('')
 const selectedBuilding = ref(null)
+
+// 语言切换后，重新使用当前语言构建的建筑对象，更新名称和资源翻译
+watch(locale, () => {
+  const buildingKey = selectedBuilding.value?.buildingKey
+  if (!buildingKey) return
+  selectedBuilding.value = buildings.value.find(item => item.buildingKey === buildingKey) || null
+})
 
 // 计算器输入
 const currentLevel = ref(0)
@@ -710,12 +720,25 @@ const formatTime = (seconds) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px solid #f0f4fa;
 }
 
+.building-desc {
+  order: 3;
+  flex: 0 0 100%;
+  margin: 0;
+  color: #5f7187;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
 .calc-title {
+  order: 1;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -742,6 +765,7 @@ const formatTime = (seconds) => {
 }
 
 .close-btn {
+  order: 2;
   background: none;
   border: none;
   font-size: 0.85rem;
