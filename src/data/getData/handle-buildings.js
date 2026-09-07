@@ -101,6 +101,11 @@ function extractMax(body) {
   return m ? parseFloat(m[1]) : undefined;
 }
 
+function extractSpecial(body) {
+  const m = body.match(/special:\s*BuildingSpecial\.(WorldWonder|NaturalWonder)/);
+  return m ? m[1] : undefined;
+}
+
 // 提取建筑描述对应的本地化键（如 desc: () => $t(L.MarketDesc)）
 // 没有描述或格式无法识别时返回 undefined，调用方不写入 desc 字段
 function extractDescription(body) {
@@ -271,14 +276,13 @@ function main() {
     : {};
 
   const buildings = extractObjectBlocks(buildingSrc)
-    // 排除自然奇观；保留 construction 或 input 任一非空的建筑
+    // 保留有资源字段或特殊类型的建筑
     .filter(({ body }) => {
-      if (/special:\s*BuildingSpecial\.NaturalWonder/.test(body)) return false
       const hasField = (key) => {
         const m = body.match(new RegExp(key + ':\\s*\\{([^}]*)\\}'))
         return !!m && m[1].trim() !== ''
       }
-      return hasField('construction') || hasField('input') || hasField('output')
+      return hasField('construction') || hasField('input') || hasField('output') || extractSpecial(body)
     })
     .map(({ name, body }) => {
       const item = {
@@ -289,6 +293,8 @@ function main() {
         max: extractMax(body),
         build_resources: extractBuildResources(body)
       }
+      const special = extractSpecial(body)
+      if (special) item.special = special
       if (upgradableWorldWonders.has(name)) item.upgradable = true
       const desc = extractDescription(body)
       if (desc) item.desc = desc

@@ -1,7 +1,8 @@
 <template>
   <div class="building-viewer">
     <!-- ===== 升级计算器（置顶） ===== -->
-    <div v-if="selectedBuilding" class="calculator-panel">
+    <AppDialog v-model="showCalculatorDialog" :title="selectedBuilding?.building || ''" :large="true">
+      <div v-if="selectedBuilding" class="calculator-panel">
       <div class="calculator-header">
         <p v-if="selectedBuilding.desc" class="building-desc">
           {{ tGame(selectedBuilding.desc) }}
@@ -12,9 +13,11 @@
             <span v-else class="icon-fallback">🏗️</span>
           </span>
           <h2>{{ selectedBuilding.building }}</h2>
+          <span v-if="getWonderTypeKey(selectedBuilding)" class="wonder-badge-lg">
+            {{ t(`calcBuildings.${getWonderTypeKey(selectedBuilding)}`) }}
+          </span>
           <span class="mult-badge-lg">{{ getBuildingMultiplierLabel(selectedBuilding) }}</span>
         </div>
-        <button class="close-btn" @click="closeCalculator">✕ {{ t('calcBuildings.close') }}</button>
       </div>
 
       <!-- 建筑信息：解锁时代 / 解锁科技 / 文明 / 建造者能力 -->
@@ -31,17 +34,21 @@
           <span class="meta-label">{{ t('calcBuildings.unlockTech') }}</span>
           <span class="meta-value">{{ tGame(selectedBuilding.tech) }}</span>
         </span>
+        <span class="meta-item" v-if="exclusiveCivilizationNames.length > 0">
+          <span class="meta-label">{{ t('calcBuildings.exclusiveCivilization') }}</span>
+          <span class="meta-value">{{ exclusiveCivilizationNames.join(locale === 'zh' ? '、' : ', ') }}</span>
+        </span>
         <span class="meta-item" v-if="selectedBuilding.builder_init != null">
           <span class="meta-label">{{ t('calcBuildings.builderInit') }}</span>
           <span class="meta-value">{{ formatNumber(selectedBuilding.builder_init) }}</span>
         </span>
-        <span class="meta-item meta-power">
+        <span v-if="!isNaturalWonder(selectedBuilding)" class="meta-item meta-power">
           <span class="meta-label">{{ t('calcBuildings.builderPower') }}</span>
           <span class="meta-value">{{ formatNumber(builderPower) }}</span>
         </span>
       </div>
 
-      <div class="calculator-body">
+      <div v-if="!isNaturalWonder(selectedBuilding)" class="calculator-body">
         <!-- 输入区 -->
         <div class="input-row">
           <div class="input-group">
@@ -83,7 +90,10 @@
         </div>
 
         <!-- 结果区 -->
-        <div class="result-area" v-if="totalResources.length > 0 && levelDiff > 0">
+        <div v-if="isLevelRangeInvalid" class="empty-result">
+          {{ t('calcBuildings.emptyResult') }}
+        </div>
+        <div class="result-area" v-else-if="totalResources.length > 0 && levelDiff > 0">
           <div class="result-header">
             <div class="result-header-left">
               <span class="result-title">{{ t('calcBuildings.upgradeResources') }}</span>
@@ -265,15 +275,15 @@
           </svg>
         </div>
       </div>
-    </div>
+      </div>
+    </AppDialog>
 
     <!-- ===== 顶部搜索区 ===== -->
     <div class="search-section">
-      <div class="section-header">
-        <h1>{{ t('calcBuildings.title') }}</h1>
+      <div class="subtitle-row">
+        <p class="subtitle">{{ t('calcBuildings.subtitle') }}</p>
         <span class="badge">{{ t('calcBuildings.totalBuildings', { count: buildings.length }) }}</span>
       </div>
-      <p class="subtitle">{{ t('calcBuildings.subtitle') }}</p>
 
       <div class="search-wrapper">
         <div class="search-input-container">
@@ -288,6 +298,40 @@
           <span v-html="t('calcBuildings.foundCount', { count: filteredBuildings.length })"></span>
         </div>
       </div>
+
+      <div class="building-filters">
+          <div class="filter-button-group building-type-filter-group" role="group"
+            :aria-label="t('calcBuildings.buildingTypeFilter')">
+            <button type="button" class="filter-btn" :class="{ active: buildingTypeFilter === 'all' }"
+              @click="setBuildingTypeFilter('all')">
+              {{ t('calcBuildings.allTypes') }}
+            </button>
+            <button type="button" class="filter-btn" :class="{ active: buildingTypeFilter === 'building' }"
+              @click="setBuildingTypeFilter('building')">
+              {{ t('calcBuildings.ordinaryBuilding') }}
+            </button>
+            <button type="button" class="filter-btn" :class="{ active: buildingTypeFilter === 'worldWonder' }"
+              @click="setBuildingTypeFilter('worldWonder')">
+              {{ t('calcBuildings.worldWonder') }}
+            </button>
+            <button type="button" class="filter-btn" :class="{ active: buildingTypeFilter === 'naturalWonder' }"
+              @click="setBuildingTypeFilter('naturalWonder')">
+              {{ t('calcBuildings.naturalWonder') }}
+            </button>
+        </div>
+
+        <div v-if="buildingTypeFilter !== 'naturalWonder'" class="filter-button-group age-filter-group" role="group"
+          :aria-label="t('calcBuildings.ageFilter')">
+          <button type="button" class="filter-btn" :class="{ active: buildingAgeFilter === 'all' }"
+            @click="buildingAgeFilter = 'all'">
+            {{ t('calcBuildings.allAges') }}
+          </button>
+          <button v-for="age in availableAges" :key="age.key" type="button" class="filter-btn"
+            :class="{ active: buildingAgeFilter === age.key }" @click="buildingAgeFilter = age.key">
+            {{ age.label }}
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- ===== 建造者能力乘数说明弹窗 ===== -->
@@ -300,7 +344,7 @@
       <div v-for="item in filteredBuildings" :key="item.building" class="building-card"
         :class="{ active: selectedBuilding && selectedBuilding.building === item.building }"
         @click="selectBuilding(item)">
-        <div class="card-header">
+        <div class="card-header" :class="{ 'natural-wonder-card-header': isNaturalWonder(item) }">
           <div class="building-title">
             <span class="building-icon">
               <span v-if="item.spriteStyle" class="sprite" :style="item.spriteStyle"></span>
@@ -311,7 +355,7 @@
           <span v-if="!isNonUpgradableWonder(item)" class="mult-badge">×{{ item.mult }}</span>
         </div>
 
-        <div class="resources">
+        <div v-if="!isNaturalWonder(item)" class="resources">
           <span class="resource-label">{{ t('calcBuildings.buildResources') }}</span>
           <div class="resource-list">
             <span v-for="res in item.build_resources" :key="res.resource" class="resource-tag">
@@ -321,7 +365,7 @@
           </div>
         </div>
 
-        <div v-if="item.output.length > 0" class="resources">
+        <div v-if="item.output.length > 0 && !isNaturalWonder(item)" class="resources">
           <span class="resource-label">{{ t('calcBuildings.buildingOutput') }}</span>
           <div class="resource-list">
             <span v-for="res in item.output" :key="res.resource" class="resource-tag">
@@ -342,8 +386,9 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick } from 'vue'
+import { ref, computed, watch } from 'vue'
 import buildingsData from '@/data/buildings.json'
+import civilizationData from '@/data/civilization.json'
 import texturesData from '@/data/textures_building.json'
 import spriteImage from '@/assets/textures_building.png'
 import builderCapacityImage from '@/assets/How-to-view-Builder-Capacity-Multiplier.png'
@@ -362,11 +407,29 @@ const BUILDING_FRAME_ALIASES = {
 
 const BUILDING_NAME_ALIASES = {
   TheMet: 'ThePentagon',
-  YearOfTheSnake: 'YearOfTheSnakeV2'
+  YearOfTheSnake: 'YearOfTheSnakeV2',
+  Statistics: 'StatisticsOffice',
+  Shenandoah: 'GrandCanyon'
 }
 
+const getWonderTypeKey = (building) => {
+  if (building?.special === 'WorldWonder') return 'worldWonder'
+  if (building?.special === 'NaturalWonder') return 'naturalWonder'
+  return null
+}
+
+const isNaturalWonder = (building) => building?.special === 'NaturalWonder'
+
+const exclusiveCivilizationNames = computed(() => {
+  const buildingKey = selectedBuilding.value?.buildingKey
+  if (!buildingKey || !isNaturalWonder(selectedBuilding.value)) return []
+  return civilizationData
+    .filter(civilization => civilization.naturalWonders?.includes(buildingKey))
+    .map(civilization => tGame(civilization.name))
+})
+
 const isNonUpgradableWonder = (building) =>
-  building?.builder_init != null && !building.upgradable
+  getWonderTypeKey(building) != null && !building.upgradable
 
 const getBuildingMultiplierLabel = (building) =>
   isNonUpgradableWonder(building)
@@ -397,9 +460,32 @@ function getSpriteStyle(buildingKey) {
   }
 }
 
+const getBuildingCategoryRank = (building) => {
+  if (building.special === 'WorldWonder') return 1
+  if (building.special === 'NaturalWonder') return 2
+  return 0
+}
+
+const STARTING_BUILDING_ORDER = ['Hut', 'StoneQuarry', 'LoggingCamp', 'Aqueduct']
+const getStartingBuildingRank = (building) => {
+  const rank = STARTING_BUILDING_ORDER.indexOf(building.buildingKey)
+  return rank === -1 ? Number.MAX_SAFE_INTEGER : rank
+}
+
+const getBuildingCountryName = (building) => {
+  if (building.city) return tGame(building.city)
+  if (building.special !== 'NaturalWonder') return ''
+  return civilizationData
+    .filter(civilization => civilization.naturalWonders?.includes(building.building))
+    .map(civilization => tGame(civilization.name))
+    .join(', ')
+}
+
 // 建筑数据：建筑名 / 资源名按当前语言翻译（中文使用游戏内本地化数据）
-const buildings = computed(() =>
-  buildingsData.map((b) => {
+const buildings = computed(() => {
+  const translatedBuildings = buildingsData
+    .filter(building => building.building !== 'Headquarter')
+    .map((b) => {
     const item = {
       ...b,
       buildingKey: b.building,
@@ -416,10 +502,53 @@ const buildings = computed(() =>
     // 预计算贴图样式，模板中直接使用
     item.spriteStyle = getSpriteStyle(item.buildingKey)
     return item
-  })
-)
+    })
+  return translatedBuildings
+    .map((building, index) => ({ building, index }))
+    .sort((a, b) => {
+      const startingDiff = getStartingBuildingRank(a.building) - getStartingBuildingRank(b.building)
+      if (startingDiff !== 0) return startingDiff
+
+      const categoryDiff = getBuildingCategoryRank(a.building) - getBuildingCategoryRank(b.building)
+      if (categoryDiff !== 0) return categoryDiff
+
+      const ageA = Number.isFinite(Number(a.building.age_index)) ? Number(a.building.age_index) : Number.MAX_SAFE_INTEGER
+      const ageB = Number.isFinite(Number(b.building.age_index)) ? Number(b.building.age_index) : Number.MAX_SAFE_INTEGER
+      if (ageA !== ageB) return ageA - ageB
+
+      const countryDiff = getBuildingCountryName(a.building).localeCompare(
+        getBuildingCountryName(b.building),
+        locale.value === 'zh' ? 'zh-CN' : 'en'
+      )
+      return countryDiff !== 0 ? countryDiff : a.index - b.index
+    })
+    .map(({ building }) => building)
+})
 const keyword = ref('')
 const selectedBuilding = ref(null)
+const showCalculatorDialog = ref(false)
+const buildingTypeFilter = ref('all')
+const buildingAgeFilter = ref('all')
+
+const setBuildingTypeFilter = (type) => {
+  buildingTypeFilter.value = type === 'all' || buildingTypeFilter.value === type ? 'all' : type
+  if (buildingTypeFilter.value === 'naturalWonder') {
+    buildingAgeFilter.value = 'all'
+  }
+}
+
+const availableAges = computed(() => {
+  const ages = new Map()
+  buildingsData.forEach(building => {
+    if (!building.age || ages.has(building.age)) return
+    ages.set(building.age, {
+      key: building.age,
+      label: tGame(building.age),
+      index: Number.isFinite(Number(building.age_index)) ? Number(building.age_index) : Number.MAX_SAFE_INTEGER
+    })
+  })
+  return [...ages.values()].sort((a, b) => a.index - b.index)
+})
 
 // 语言切换后，重新使用当前语言构建的建筑对象，更新名称和资源翻译
 watch(locale, () => {
@@ -435,7 +564,7 @@ const actualLevel = ref(1)
 const buildingCount = ref(1)
 const consumptionBuildingCount = ref(1)
 
-const isWonder = computed(() => selectedBuilding.value?.builder_init != null)
+const isWonder = computed(() => getWonderTypeKey(selectedBuilding.value) != null)
 const maxBuildingCount = computed(() => {
   if (!isWonder.value) return 5000
   const max = Number(selectedBuilding.value.max)
@@ -738,11 +867,16 @@ const showHelpDialog = ref(false)
 
 // 搜索过滤
 const filteredBuildings = computed(() => {
-  if (!keyword.value.trim()) {
-    return buildings.value
-  }
   const kw = keyword.value.trim().toLowerCase()
   return buildings.value.filter(item => {
+    const typeMatches = buildingTypeFilter.value === 'all'
+      ? true
+      : buildingTypeFilter.value === 'building'
+        ? !item.special
+        : item.special === (buildingTypeFilter.value === 'worldWonder' ? 'WorldWonder' : 'NaturalWonder')
+    const ageMatches = buildingAgeFilter.value === 'all' || item.age === buildingAgeFilter.value
+    if (!typeMatches || !ageMatches) return false
+    if (!kw) return true
     const resourceNames = [
       ...item.build_resources.map(resource => resource.resource),
       ...item.output.map(resource => resource.resource),
@@ -767,20 +901,8 @@ const selectBuilding = (item) => {
   showProductionDetails.value = false
   productionHoverId.value = null
   productionChoices.value = {}
+  showCalculatorDialog.value = true
   calculate()
-
-  // 滚动到顶部
-  nextTick(() => {
-    const calculator = document.querySelector('.calculator-panel')
-    if (calculator) {
-      calculator.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  })
-}
-
-// 关闭计算器
-const closeCalculator = () => {
-  selectedBuilding.value = null
 }
 
 // 每个等级升级的明细：材料 / 每秒运输量 / 耗时
@@ -858,6 +980,8 @@ const levelDiff = computed(() => {
   return Math.max(0, Math.min(targetLevel.value, maxTargetLevel.value) - currentLevel.value)
 })
 
+const isLevelRangeInvalid = computed(() => targetLevel.value < currentLevel.value)
+
 // 计算函数（触发响应式更新）
 const calculate = () => {
   // 由 computed 自动触发
@@ -927,8 +1051,9 @@ const formatTime = (seconds) => {
 
 /* ===== 顶部搜索区 ===== */
 .search-section {
-  padding: 28px 0 24px;
-  border-bottom: 1px solid #eef2f6;
+  padding: 20px 24px 24px;
+  border: 2px solid #4a90d9;
+  border-radius: 14px;
   margin-bottom: 24px;
 }
 
@@ -957,6 +1082,13 @@ const formatTime = (seconds) => {
 .subtitle {
   font-size: 0.95rem;
   color: #6b7a8f;
+  margin: 0;
+}
+
+.subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 18px;
 }
 
@@ -1030,6 +1162,65 @@ const formatTime = (seconds) => {
   font-weight: 600;
 }
 
+.building-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.filter-button-group {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  gap: 0;
+  padding: 4px;
+  background: #eef2f7;
+  border-radius: 12px;
+}
+
+.age-filter-group {
+  overflow: visible;
+  flex-wrap: wrap;
+}
+
+.age-filter-group .filter-btn {
+  flex: 1 1 88px;
+}
+
+.building-type-filter-group {
+  overflow: hidden;
+}
+
+.filter-btn {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 36px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #6b7a8f;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover:not(.active) {
+  color: #1a2332;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #3d7fc4;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.18);
+}
+
 /* ===== 升级计算器（置顶） ===== */
 .calculator-panel {
   background: #ffffff;
@@ -1088,21 +1279,16 @@ const formatTime = (seconds) => {
   font-weight: 600;
 }
 
-.close-btn {
-  order: 2;
-  background: none;
-  border: none;
-  font-size: 0.85rem;
-  color: #9aabbf;
-  cursor: pointer;
-  padding: 4px 12px;
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-
-.close-btn:hover {
-  background: #f0f4fa;
-  color: #1a2332;
+.wonder-badge-lg,
+.wonder-badge {
+  font-size: 0.75rem;
+  color: #2b6cb0;
+  background: #eef7ff;
+  border: 1px solid #cfe6fa;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* 建筑信息：解锁时代 / 解锁科技 / 建造者能力 */
@@ -1268,6 +1454,15 @@ const formatTime = (seconds) => {
 }
 
 /* ===== 结果区 ===== */
+.empty-result {
+  padding: 14px 16px;
+  border: 1px solid #f1c7c7;
+  border-radius: 10px;
+  background: #fff6f6;
+  color: #b54848;
+  font-size: 0.9rem;
+}
+
 .result-area {
   background: #f7faff;
   border-radius: 12px;
@@ -1595,6 +1790,10 @@ const formatTime = (seconds) => {
   gap: 12px;
 }
 
+.natural-wonder-card-header {
+  border-bottom: none;
+}
+
 .building-title {
   display: flex;
   align-items: center;
@@ -1742,6 +1941,47 @@ const formatTime = (seconds) => {
 }
 
 @media (max-width: 768px) {
+  .search-section {
+    padding: 14px;
+  }
+
+  .subtitle-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+
+  .building-filters {
+    width: 100%;
+  }
+
+  .filter-button-group {
+    width: 100%;
+  }
+
+  .building-type-filter-group {
+    overflow: visible;
+  }
+
+  .age-filter-group {
+    overflow: visible;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    min-width: 0;
+    padding: 0 10px;
+    font-size: 0.78rem;
+  }
+
+  .building-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .building-card {
+    padding: 16px;
+  }
+
   .input-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -1752,10 +1992,6 @@ const formatTime = (seconds) => {
 }
 
 @media (max-width: 600px) {
-  .search-section {
-    padding: 18px 0 16px;
-  }
-
   .section-header h1 {
     font-size: 1.3rem;
   }
@@ -1763,14 +1999,6 @@ const formatTime = (seconds) => {
   .badge {
     font-size: 0.7rem;
     padding: 1px 10px;
-  }
-
-  .building-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .building-card {
-    padding: 16px;
   }
 
   .search-input {

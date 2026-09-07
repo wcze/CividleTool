@@ -3568,6 +3568,7 @@
         "count": "4500"
       }
     ],
+    "special": "WorldWonder",
     "desc": "StatisticsOfficeDesc",
     "tech": "Counting",
     "age": "StoneAge",
@@ -3587,12 +3588,73 @@
         "count": "596300"
       }
     ],
+    "special": "WorldWonder",
     "desc": "PetraDescV3",
     "tech": "Politics",
     "age": "ClassicalAge",
     "age_index": 3,
     "column": 7,
     "builder_init": 118.68818004541619
+  },
+  {
+    "building": "Alps",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "AlpsDescV2"
+  },
+  {
+    "building": "GrottaAzzurra",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GrottaAzzurraDescV2"
+  },
+  {
+    "building": "Aphrodite",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "AphroditeDescV2"
+  },
+  {
+    "building": "Poseidon",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "PoseidonDescV2"
+  },
+  {
+    "building": "NileRiver",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "NileRiverDesc"
+  },
+  {
+    "building": "MountSinai",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "MountSinaiDesc"
   },
   {
     "building": "Stonehenge",
@@ -3606,6 +3668,7 @@
         "count": "711300"
       }
     ],
+    "special": "WorldWonder",
     "desc": "StonehengeDesc",
     "tech": "Astronomy",
     "age": "IronAge",
@@ -3633,6 +3696,7 @@
         "count": "19267"
       }
     ],
+    "special": "WorldWonder",
     "desc": "HatshepsutTempleDesc",
     "tech": "Metallurgy",
     "age": "BronzeAge",
@@ -3660,6 +3724,7 @@
         "count": "99821"
       }
     ],
+    "special": "WorldWonder",
     "desc": "LighthouseOfAlexandriaDesc",
     "tech": "Engineering",
     "age": "ClassicalAge",
@@ -3679,6 +3744,7 @@
         "count": "135000"
       }
     ],
+    "special": "WorldWonder",
     "desc": "PyramidOfGizaDesc",
     "tech": "Masonry",
     "age": "StoneAge",
@@ -3698,6 +3764,7 @@
         "count": "173400"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ColossusOfRhodesDesc",
     "tech": "Market",
     "age": "BronzeAge",
@@ -3725,6 +3792,7 @@
         "count": "59275"
       }
     ],
+    "special": "WorldWonder",
     "desc": "GreatMosqueOfSamarraDescV2",
     "tech": "RoadAndWheel",
     "age": "IronAge",
@@ -3752,6 +3820,7 @@
         "count": "101967"
       }
     ],
+    "special": "WorldWonder",
     "desc": "HangingGardenDesc",
     "tech": "Calendar",
     "age": "IronAge",
@@ -3779,6 +3848,7 @@
         "count": "161329"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TempleOfHeavenDesc",
     "tech": "Autocracy",
     "age": "ClassicalAge",
@@ -3806,6 +3876,7 @@
         "count": "107552"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "ParthenonDescV3",
     "city": "Greek",
@@ -3835,6 +3906,7 @@
         "count": "255634"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TempleOfArtemisDesc",
     "tech": "Feudalism",
     "age": "MiddleAge",
@@ -3862,6 +3934,7 @@
         "count": "102664"
       }
     ],
+    "special": "WorldWonder",
     "desc": "LuxorTempleDescV2",
     "tech": "Religion",
     "age": "ClassicalAge",
@@ -3889,6 +3962,7 @@
         "count": "26263"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ChichenItzaDesc",
     "tech": "Architecture",
     "age": "ClassicalAge",
@@ -3916,6 +3990,7 @@
         "count": "99821"
       }
     ],
+    "special": "WorldWonder",
     "desc": "MausoleumAtHalicarnassusDescV2",
     "tech": "CityState",
     "age": "ClassicalAge",
@@ -3943,6 +4018,7 @@
         "count": "63776"
       }
     ],
+    "special": "WorldWonder",
     "desc": "HagiaSophiaDescV2",
     "tech": "HolyEmpire",
     "age": "MiddleAge",
@@ -3970,6 +4046,7 @@
         "count": "313566"
       }
     ],
+    "special": "WorldWonder",
     "desc": "AngkorWatDesc",
     "tech": "CivilService",
     "age": "MiddleAge",
@@ -3997,6 +4074,7 @@
         "count": "1788900"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TerracottaArmyDesc",
     "tech": "Machinery",
     "age": "ClassicalAge",
@@ -4024,6 +4102,7 @@
         "count": "101967"
       }
     ],
+    "special": "WorldWonder",
     "desc": "PersepolisDesc",
     "tech": "Shamanism",
     "age": "IronAge",
@@ -4051,6 +4130,7 @@
         "count": "2678157"
       }
     ],
+    "special": "WorldWonder",
     "desc": "OxfordUniversityDescV3",
     "tech": "University",
     "age": "RenaissanceAge",
@@ -4078,6 +4158,7 @@
         "count": "1184277"
       }
     ],
+    "special": "WorldWonder",
     "desc": "SaintBasilsCathedralDescV2",
     "tech": "Firearm",
     "age": "RenaissanceAge",
@@ -4105,6 +4186,7 @@
         "count": "679218"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ForbiddenCityDesc",
     "tech": "PrintingPress",
     "age": "RenaissanceAge",
@@ -4132,6 +4214,7 @@
         "count": "18535"
       }
     ],
+    "special": "WorldWonder",
     "desc": "HimejiCastleDesc",
     "tech": "Colonialism",
     "age": "RenaissanceAge",
@@ -4159,6 +4242,7 @@
         "count": "1166169"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TajMahalDescV2",
     "tech": "Constitution",
     "age": "RenaissanceAge",
@@ -4188,6 +4272,7 @@
         "count": "298150"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "ColosseumDescV3",
     "city": "Roman",
@@ -4217,6 +4302,7 @@
         "count": "584307"
       }
     ],
+    "special": "WorldWonder",
     "desc": "MogaoCavesDescV3",
     "tech": "Theocracy",
     "age": "MiddleAge",
@@ -4244,6 +4330,7 @@
         "count": "85186"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "StatueOfZeusDescV2",
     "city": "Greek",
@@ -4273,6 +4360,7 @@
         "count": "716721"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "CircusMaximusDescV3",
     "city": "Roman",
@@ -4294,6 +4382,7 @@
         "count": "9378075"
       }
     ],
+    "special": "WorldWonder",
     "desc": "EiffelTowerDesc",
     "tech": "Alloy",
     "age": "IndustrialAge",
@@ -4321,6 +4410,7 @@
         "count": "1494589"
       }
     ],
+    "special": "WorldWonder",
     "desc": "RijksmuseumDesc",
     "tech": "Journalism",
     "age": "IndustrialAge",
@@ -4348,6 +4438,7 @@
         "count": "182492"
       }
     ],
+    "special": "WorldWonder",
     "desc": "SummerPalaceDesc",
     "tech": "Imperialism",
     "age": "IndustrialAge",
@@ -4375,6 +4466,7 @@
         "count": "734670"
       }
     ],
+    "special": "WorldWonder",
     "desc": "StatueOfLibertyDesc",
     "tech": "StockMarket",
     "age": "IndustrialAge",
@@ -4402,6 +4494,7 @@
         "count": "3929860"
       }
     ],
+    "special": "WorldWonder",
     "desc": "NeuschwansteinDesc",
     "tech": "Rifling",
     "age": "IndustrialAge",
@@ -4429,6 +4522,7 @@
         "count": "59159"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BrandenburgGateDesc",
     "tech": "Refinery",
     "age": "IndustrialAge",
@@ -4456,6 +4550,7 @@
         "count": "456095"
       }
     ],
+    "special": "WorldWonder",
     "desc": "GrandBazaarDesc",
     "tech": "Education",
     "age": "MiddleAge",
@@ -4483,6 +4578,7 @@
         "count": "15525"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "AbuSimbelDescV2",
     "city": "Egyptian",
@@ -4512,6 +4608,7 @@
         "count": "14450"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "GreatSphinxDescV3",
     "city": "Egyptian",
@@ -4541,6 +4638,7 @@
         "count": "2296720"
       }
     ],
+    "special": "WorldWonder",
     "desc": "HollywoodDesc",
     "tech": "MotionPicture",
     "age": "WorldWarAge",
@@ -4568,6 +4666,7 @@
         "count": "107888"
       }
     ],
+    "special": "WorldWonder",
     "desc": "GoldenGateBridgeDesc",
     "tech": "Hydroelectricity",
     "age": "WorldWarAge",
@@ -4595,6 +4694,7 @@
         "count": "1255452"
       }
     ],
+    "special": "WorldWonder",
     "desc": "CristoRedentorDesc",
     "tech": "Radio",
     "age": "WorldWarAge",
@@ -4622,6 +4722,7 @@
         "count": "126746"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "UnitedNationsDescV2",
     "tech": "UnitedNations",
@@ -4642,6 +4743,7 @@
         "count": "28268850"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ManhattanProjectDesc",
     "tech": "NuclearFission",
     "age": "WorldWarAge",
@@ -4669,6 +4771,7 @@
         "count": "2433913"
       }
     ],
+    "special": "WorldWonder",
     "desc": "SagradaFamiliaDesc",
     "tech": "Assembly",
     "age": "WorldWarAge",
@@ -4696,6 +4799,7 @@
         "count": "33871"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "GreatWallDescV2",
     "city": "Chinese",
@@ -4725,6 +4829,7 @@
         "count": "103548"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "YellowCraneTowerDescV2",
     "city": "Chinese",
@@ -4754,6 +4859,7 @@
         "count": "158874"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "PorcelainTowerDescV2",
     "city": "Chinese",
@@ -4762,6 +4868,26 @@
     "age_index": 5,
     "column": 11,
     "builder_init": 113.7955257096709
+  },
+  {
+    "building": "MountTai",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "MountTaiDesc"
+  },
+  {
+    "building": "YangtzeRiver",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "YangtzeRiverDesc"
   },
   {
     "building": "CNTower",
@@ -4783,6 +4909,7 @@
         "count": "1158778"
       }
     ],
+    "special": "WorldWonder",
     "desc": "CNTowerDesc",
     "tech": "Television",
     "age": "ColdWarAge",
@@ -4810,6 +4937,7 @@
         "count": "16471462"
       }
     ],
+    "special": "WorldWonder",
     "desc": "SpaceNeedleDesc",
     "tech": "Satellite",
     "age": "ColdWarAge",
@@ -4837,6 +4965,7 @@
         "count": "147905"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ApolloProgramDesc",
     "tech": "SpaceProgram",
     "age": "ColdWarAge",
@@ -4864,6 +4993,7 @@
         "count": "6541995"
       }
     ],
+    "special": "WorldWonder",
     "desc": "AtomiumDescV2",
     "tech": "NuclearReactor",
     "age": "ColdWarAge",
@@ -4895,6 +5025,7 @@
         "count": "152950"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ChoghaZanbilDescV2",
     "tech": "Construction",
     "age": "IronAge",
@@ -4922,6 +5053,7 @@
         "count": "161874"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BroadwayDesc",
     "city": "American",
     "tech": "Railway",
@@ -4950,6 +5082,7 @@
         "count": "400822"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ThePentagonDesc",
     "city": "American",
     "tech": "RapidFire",
@@ -4978,6 +5111,7 @@
         "count": "662868"
       }
     ],
+    "special": "WorldWonder",
     "desc": "WallStreetDesc",
     "city": "American",
     "tech": "Capitalism",
@@ -4985,6 +5119,26 @@
     "age_index": 6,
     "column": 14,
     "builder_init": 107.440950271521
+  },
+  {
+    "building": "Shenandoah",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GrandCanyonDesc"
+  },
+  {
+    "building": "NiagaraFalls",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "NiagaraFallsDescV2"
   },
   {
     "building": "StPetersBasilica",
@@ -4998,6 +5152,7 @@
         "count": "3000"
       }
     ],
+    "special": "WorldWonder",
     "desc": "StPetersBasilicaDescV2"
   },
   {
@@ -5012,6 +5167,7 @@
         "count": "3000"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ProphetsMosqueDesc"
   },
   {
@@ -5026,6 +5182,7 @@
         "count": "3000"
       }
     ],
+    "special": "WorldWonder",
     "desc": "GreatDagonPagodaDescV2"
   },
   {
@@ -5040,6 +5197,7 @@
         "count": "3000"
       }
     ],
+    "special": "WorldWonder",
     "desc": "PantheonDescV2"
   },
   {
@@ -5062,6 +5220,7 @@
         "count": "79033"
       }
     ],
+    "special": "WorldWonder",
     "desc": "WallOfBabylonDesc",
     "city": "Babylonian",
     "tech": "LandTrade",
@@ -5090,6 +5249,7 @@
         "count": "752867"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TowerOfBabelDesc",
     "city": "Babylonian",
     "tech": "Religion",
@@ -5118,6 +5278,7 @@
         "count": "596300"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ZigguratOfUrDescV2",
     "city": "Babylonian",
     "tech": "Theater",
@@ -5125,6 +5286,26 @@
     "age_index": 3,
     "column": 7,
     "builder_init": 296.7204501135405
+  },
+  {
+    "building": "EuphratesRiver",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "EuphratesRiverDesc"
+  },
+  {
+    "building": "ZagrosMountains",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "ZagrosMountainsDesc"
   },
   {
     "building": "InternationalSpaceStation",
@@ -5146,6 +5327,7 @@
         "count": "1245168"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "InternationalSpaceStationDesc",
     "tech": "Nanotechnology",
@@ -5174,6 +5356,7 @@
         "count": "18095771"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "MarinaBaySandsDesc",
     "tech": "SocialNetwork",
@@ -5202,6 +5385,7 @@
         "count": "8207461"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "PalmJumeirahDesc",
     "tech": "Blockchain",
@@ -5230,6 +5414,7 @@
         "count": "1690101"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "AldersonDiskDesc",
     "tech": "Future",
@@ -5258,6 +5443,7 @@
         "count": "1828676"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "DysonSphereDesc",
     "tech": "Future",
@@ -5286,6 +5472,7 @@
         "count": "1705246"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "MatrioshkaBrainDescV3",
     "tech": "Future",
@@ -5322,6 +5509,7 @@
         "count": "1690101"
       }
     ],
+    "special": "WorldWonder",
     "desc": "SuperintelligenceDescV3",
     "tech": "Future",
     "age": "InformationAge",
@@ -5349,6 +5537,7 @@
         "count": "7169328"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "LargeHadronColliderDescV3",
     "tech": "VirtualReality",
@@ -5369,6 +5558,7 @@
         "count": "210528"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BigBenDesc",
     "tech": "Capitalism",
     "age": "IndustrialAge",
@@ -5396,6 +5586,7 @@
         "count": "26263"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ItsukushimaShrineDescV2",
     "city": "Japanese",
     "tech": "Religion",
@@ -5424,6 +5615,7 @@
         "count": "166945"
       }
     ],
+    "special": "WorldWonder",
     "desc": "GoldenPavilionDesc",
     "city": "Japanese",
     "tech": "Theocracy",
@@ -5452,6 +5644,7 @@
         "count": "116385"
       }
     ],
+    "special": "WorldWonder",
     "desc": "OsakaCastleDesc",
     "city": "Japanese",
     "tech": "Electricity",
@@ -5459,6 +5652,26 @@
     "age_index": 6,
     "column": 16,
     "builder_init": 43.53333108623047
+  },
+  {
+    "building": "Kanagawa",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "KanagawaDesc"
+  },
+  {
+    "building": "MountFuji",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "MountFujiDescV2"
   },
   {
     "building": "CologneCathedral",
@@ -5480,6 +5693,7 @@
         "count": "58679"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "CologneCathedralDesc",
     "city": "German",
@@ -5509,6 +5723,7 @@
         "count": "1740293"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ElbphilharmonieDesc",
     "city": "German",
     "tech": "Skyscraper",
@@ -5516,6 +5731,36 @@
     "age_index": 8,
     "column": 21,
     "builder_init": 187.87673253409466
+  },
+  {
+    "building": "Zugspitze",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "ZugspitzeDesc"
+  },
+  {
+    "building": "RhineGorge",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "RhineGorgeDesc"
+  },
+  {
+    "building": "BlackForest",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "BlackForestDesc"
   },
   {
     "building": "SantaClausVillage",
@@ -5529,6 +5774,7 @@
         "count": "1573135"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "SantaClausVillageDesc",
     "tech": "Theocracy",
@@ -5536,6 +5782,26 @@
     "age_index": 4,
     "column": 9,
     "builder_init": 229.65474452554744
+  },
+  {
+    "building": "Lapland",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "LaplandDesc"
+  },
+  {
+    "building": "RockefellerCenterChristmasTree",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "RockefellerCenterChristmasTreeDesc"
   },
   {
     "building": "YearOfTheSnake",
@@ -5549,6 +5815,7 @@
         "count": "255557"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "YearOfTheSnakeDescV2",
     "tech": "Theater",
@@ -5577,6 +5844,7 @@
         "count": "294334"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BritishMuseumDesc",
     "city": "English",
     "tech": "Combustion",
@@ -5605,6 +5873,7 @@
         "count": "1776415"
       }
     ],
+    "special": "WorldWonder",
     "desc": "CambridgeUniversityDesc",
     "city": "English",
     "tech": "Enlightenment",
@@ -5629,6 +5898,7 @@
         "count": "7776644"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TowerBridgeDesc",
     "city": "English",
     "tech": "Electricity",
@@ -5657,6 +5927,7 @@
         "count": "772193"
       }
     ],
+    "special": "WorldWonder",
     "desc": "EastIndiaCompanyDescV2",
     "city": "English",
     "tech": "PrivateOwnership",
@@ -5664,6 +5935,26 @@
     "age_index": 5,
     "column": 13,
     "builder_init": 86.59860093970933
+  },
+  {
+    "building": "CerneAbbasGiant",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "CerneAbbasGiantDesc"
+  },
+  {
+    "building": "DuneOfPilat",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "DuneOfPilatDesc"
   },
   {
     "building": "ArcDeTriomphe",
@@ -5685,6 +5976,7 @@
         "count": "116385"
       }
     ],
+    "special": "WorldWonder",
     "desc": "ArcDeTriompheDescV2",
     "city": "French",
     "tech": "Electricity",
@@ -5705,6 +5997,7 @@
         "count": "4081593"
       }
     ],
+    "special": "WorldWonder",
     "desc": "MontSaintMichelDesc",
     "city": "French",
     "tech": "Revolution",
@@ -5733,6 +6026,7 @@
         "count": "114409"
       }
     ],
+    "special": "WorldWonder",
     "desc": "LouvreDesc",
     "city": "French",
     "tech": "Railway",
@@ -5761,6 +6055,7 @@
         "count": "55053786"
       }
     ],
+    "special": "WorldWonder",
     "desc": "CentrePompidouDesc",
     "city": "French",
     "tech": "Software",
@@ -5789,6 +6084,7 @@
         "count": "408159"
       }
     ],
+    "special": "WorldWonder",
     "desc": "EasterBunnyDesc",
     "tech": "PrivateOwnership",
     "age": "RenaissanceAge",
@@ -5816,6 +6112,7 @@
         "count": "111293"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BlueMosqueDesc",
     "city": "Ottoman",
     "tech": "Exploration",
@@ -5844,6 +6141,7 @@
         "count": "252699"
       }
     ],
+    "special": "WorldWonder",
     "desc": "TopkapiPalaceDesc",
     "city": "Ottoman",
     "tech": "Aviation",
@@ -5851,6 +6149,36 @@
     "age_index": 7,
     "column": 18,
     "builder_init": 132.92006550381853
+  },
+  {
+    "building": "Cappadocia",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "CappadociaDesc"
+  },
+  {
+    "building": "Pamukkale",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "PamukkaleDesc"
+  },
+  {
+    "building": "MountArarat",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "MountAraratDesc"
   },
   {
     "building": "SwissBank",
@@ -5872,6 +6200,7 @@
         "count": "986366"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "SwissBankDescV3",
     "tech": "MonetarySystem",
@@ -5900,6 +6229,7 @@
         "count": "659232"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "ItaipuDamDesc",
     "city": "Brazilian",
@@ -5929,6 +6259,7 @@
         "count": "252699"
       }
     ],
+    "special": "WorldWonder",
     "desc": "CathedralOfBrasiliaDesc",
     "city": "Brazilian",
     "tech": "Aviation",
@@ -5936,6 +6267,66 @@
     "age_index": 7,
     "column": 18,
     "builder_init": 132.92006550381853
+  },
+  {
+    "building": "Capybara",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "CapybaraDesc"
+  },
+  {
+    "building": "GiantOtter",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GiantOtterDesc"
+  },
+  {
+    "building": "Hoatzin",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "HoatzinDesc"
+  },
+  {
+    "building": "RoyalFlycatcher",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "RoyalFlycatcherDesc"
+  },
+  {
+    "building": "GlassFrog",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GlassFrogDesc"
+  },
+  {
+    "building": "PygmyMarmoset",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "PygmyMarmosetDesc"
   },
   {
     "building": "RedFort",
@@ -5957,6 +6348,7 @@
         "count": "141089"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "RedFortDesc",
     "city": "Indian",
@@ -5986,6 +6378,7 @@
         "count": "371832"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "SanchiStupaDescV2",
     "city": "Indian",
@@ -6015,6 +6408,7 @@
         "count": "317747"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "QutbMinarDescV2",
     "city": "Indian",
@@ -6023,6 +6417,26 @@
     "age_index": 5,
     "column": 11,
     "builder_init": 65.38787253450892
+  },
+  {
+    "building": "GangesRiver",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GangesRiverDescV3"
+  },
+  {
+    "building": "Sundarbans",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "SundarbansDescV2"
   },
   {
     "building": "BranCastle",
@@ -6044,6 +6458,7 @@
         "count": "42517"
       }
     ],
+    "special": "WorldWonder",
     "desc": "BranCastleDescV2",
     "tech": "HolyEmpire",
     "age": "MiddleAge",
@@ -6063,6 +6478,7 @@
         "count": "41571"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "PortOfSingaporeDesc",
     "tech": "Globalization",
@@ -6091,6 +6507,7 @@
         "count": "5793891"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "SydneyOperaHouseDesc",
     "city": "Australian",
@@ -6120,6 +6537,7 @@
         "count": "130300"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "SydneyHarbourBridgeDesc",
     "city": "Australian",
@@ -6145,6 +6563,7 @@
         "count": "389850"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "GreatOceanRoadDesc",
     "city": "Australian",
@@ -6153,6 +6572,36 @@
     "age_index": 7,
     "column": 20,
     "builder_init": 36.307927958084264
+  },
+  {
+    "building": "GreatBarrierReef",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "GreatBarrierReefDesc"
+  },
+  {
+    "building": "Uluru",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "UluruDesc"
+  },
+  {
+    "building": "LakeBaikal",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "LakeBaikalDesc"
   },
   {
     "building": "KizhiPogost",
@@ -6174,6 +6623,7 @@
         "count": "89228"
       }
     ],
+    "special": "WorldWonder",
     "desc": "KizhiPogostDescV2",
     "city": "Russian",
     "tech": "Alloy",
@@ -6198,6 +6648,7 @@
         "count": "330678"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "HermitageDesc",
     "city": "Russian",
@@ -6219,6 +6670,7 @@
         "count": "2486119"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "Sputnik1DescV3",
     "city": "Russian",
@@ -6240,6 +6692,7 @@
         "count": "7022871"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "AkademikLomonosovDescV2",
     "city": "Russian",
@@ -6248,6 +6701,36 @@
     "age_index": 9,
     "column": 25,
     "builder_init": 330.48804705882355
+  },
+  {
+    "building": "AuroraBorealis",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "AuroraBorealisDesc"
+  },
+  {
+    "building": "LakeLouise",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "LakeLouiseDesc"
+  },
+  {
+    "building": "DinosaurProvincialPark",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "DinosaurProvincialParkDesc"
   },
   {
     "building": "ChateauFrontenac",
@@ -6269,6 +6752,7 @@
         "count": "294334"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "ChateauFrontenacDesc",
     "city": "Canadian",
@@ -6290,6 +6774,7 @@
         "count": "6075977"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "Habitat67DescV2",
     "city": "Canadian",
@@ -6319,6 +6804,7 @@
         "count": "1393604"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "WorldTradeOrganizationDesc",
     "tech": "FinancialLeverage",
@@ -6347,6 +6833,7 @@
         "count": "102664"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "CothonOfCarthageDesc",
     "city": "Carthaginian",
@@ -6355,6 +6842,16 @@
     "age_index": 3,
     "column": 8,
     "builder_init": 33.46835677845156
+  },
+  {
+    "building": "AtlasMountains",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "AtlasMountainsDesc"
   },
   {
     "building": "Mauritshuis",
@@ -6368,6 +6865,7 @@
         "count": "210528"
       }
     ],
+    "special": "WorldWonder",
     "desc": "MauritshuisDesc",
     "city": "Dutch",
     "tech": "Capitalism",
@@ -6375,6 +6873,16 @@
     "age_index": 6,
     "column": 14,
     "builder_init": 18.358458638075838
+  },
+  {
+    "building": "Keukenhof",
+    "mult": "1.5",
+    "output": {},
+    "input": {},
+    "max": 0,
+    "build_resources": [],
+    "special": "NaturalWonder",
+    "desc": "KeukenhofDescV2"
   },
   {
     "building": "Midsummer",
@@ -6388,6 +6896,7 @@
         "count": "152950"
       }
     ],
+    "special": "WorldWonder",
     "upgradable": true,
     "desc": "MidsummerDesc",
     "tech": "Calendar",

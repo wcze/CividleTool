@@ -3,9 +3,11 @@
     <div
       v-if="visible"
       class="dialog-overlay"
+      :class="{ 'dialog-overlay-large': large }"
       @click.self="visible = false"
     >
-      <div class="dialog-panel" role="dialog" aria-modal="true" :aria-label="title">
+      <div class="dialog-panel" :class="{ 'dialog-panel-large': large }" role="dialog" aria-modal="true"
+        :aria-label="title">
         <div class="dialog-header">
           <h3>{{ title }}</h3>
           <button type="button" class="dialog-close" @click="visible = false">✕</button>
@@ -27,6 +29,10 @@ defineProps({
   title: {
     type: String,
     default: ''
+  },
+  large: {
+    type: Boolean,
+    default: false
   }
 })
 </script>
@@ -55,6 +61,13 @@ defineProps({
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
   overflow: hidden;
   animation: dialog-pop 0.2s ease;
+}
+
+.dialog-panel-large {
+  width: 95vw;
+  max-width: 1600px;
+  height: 95vh;
+  max-height: 95vh;
 }
 
 .dialog-header {
@@ -121,8 +134,18 @@ defineProps({
     align-items: flex-end;
   }
   .dialog-panel {
+    width: 100%;
     max-height: 88vh;
     border-radius: 16px 16px 0 0;
+  }
+  .dialog-overlay-large {
+    padding: 0;
+    align-items: stretch;
+  }
+  .dialog-panel-large {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
   }
 }
 </style>
