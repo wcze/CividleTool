@@ -44,15 +44,21 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           
-          # 先暂存本地生成的文件
-          git stash
+          # 先暂存本地生成的文件；没有变化时 git stash 不会创建 stash
+          stash_created=false
+          if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+            git stash push --include-untracked -m "sync-data generated changes"
+            stash_created=true
+          fi
 
           # 拉取并变基远程最新代码
           git fetch origin master
           git rebase origin/master
 
-          # 恢复本地暂存的修改
-          git stash pop
+          # 仅在确实创建了 stash 时恢复
+          if [ "$stash_created" = true ]; then
+            git stash pop
+          fi
 
           git add ./src
           if ! git diff --cached --quiet; then

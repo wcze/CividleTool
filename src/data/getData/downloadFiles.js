@@ -379,6 +379,13 @@ async function main() {
         console.log(''); // 空行分隔
     }
 
+    // 任一文件下载失败都必须让调用方感知，避免后续使用不完整的源数据生成文件。
+    if (failCount > 0) {
+        console.error(`❌ 有 ${failCount} 个文件下载失败，终止本次同步。`);
+        process.exitCode = 1;
+        return;
+    }
+
     // ============ 记录同步时间 ============
     stampSyncTime();
 
