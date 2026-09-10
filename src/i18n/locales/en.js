@@ -69,6 +69,7 @@ export default {
     }
   },
   calcBuildings: {
+    calculatorTitle: 'Building Upgrade Calculator',
     title: 'Building Resources',
     totalBuildings: 'Total {count} buildings',
     subtitle: 'Search for a building to view its construction resources',

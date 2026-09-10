@@ -69,6 +69,7 @@ export default {
     }
   },
   calcBuildings: {
+    calculatorTitle: '\u5efa\u7b51\u5347\u7ea7\u8ba1\u7b97\u5668',
     productionRoute: '\u5efa\u7b51\u751f\u4ea7\u8def\u7ebf',
     title: '建筑资源',
     totalBuildings: '共 {count} 个建筑',

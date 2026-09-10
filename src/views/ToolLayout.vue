@@ -19,7 +19,7 @@
                         <div class="home-icon">
                             <img :src="iconUrl" alt="CivIdle" />
                         </div>
-                        <h1>CivIdle <span>Tools</span></h1>
+                        <h1>CivIdle <span>Tool</span></h1>
                         <p class="home-subtitle">{{ t('home.subtitle') }}</p>
                     </div>
 

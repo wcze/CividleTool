@@ -1,7 +1,17 @@
 <template>
-  <div class="building-viewer">
+  <div ref="buildingViewerRef" class="building-viewer" :class="{ 'building-viewer-page-mode': !calculatorFullscreen }">
     <!-- ===== 升级计算器（置顶） ===== -->
-    <AppDialog v-model="showCalculatorDialog" :title="selectedBuilding?.building || ''" :large="true">
+    <AppDialog
+      v-model="showCalculatorDialog"
+      v-model:fullscreen="calculatorFullscreen"
+      :title="t('calcBuildings.calculatorTitle')"
+      :large="true"
+      :fullscreen-toggle="!isMobileViewport"
+      :teleport="calculatorFullscreen"
+      :origin="calculatorDialogOrigin"
+      :page-bounds="calculatorPageBounds"
+      :animate-from-origin="true"
+    >
       <div v-if="selectedBuilding" class="calculator-panel">
       <div class="calculator-header">
         <p v-if="selectedBuilding.desc" class="building-desc">
@@ -342,8 +352,8 @@
     <!-- ===== 建筑卡片列表 ===== -->
     <div class="building-grid" v-if="filteredBuildings.length > 0">
       <div v-for="item in filteredBuildings" :key="item.building" class="building-card"
-        :class="{ active: selectedBuilding && selectedBuilding.building === item.building }"
-        @click="selectBuilding(item)">
+        :class="{ active: activeBuildingKey === item.buildingKey }"
+        @click="selectBuilding(item, $event)">
         <div class="card-header" :class="{ 'natural-wonder-card-header': isNaturalWonder(item) }">
           <div class="building-title">
             <span class="building-icon">
@@ -386,7 +396,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import buildingsData from '@/data/buildings.json'
 import civilizationData from '@/data/civilization.json'
 import texturesData from '@/data/textures_building.json'
@@ -527,6 +537,93 @@ const buildings = computed(() => {
 const keyword = ref('')
 const selectedBuilding = ref(null)
 const showCalculatorDialog = ref(false)
+const activeBuildingKey = ref(null)
+const calculatorDialogOrigin = ref(null)
+const calculatorPageBounds = ref(null)
+let activeBuildingTimer = null
+const CALCULATOR_DIALOG_MODE_KEY = 'cividle-calc-buildings-dialog-mode'
+const storedCalculatorDialogMode = localStorage.getItem(CALCULATOR_DIALOG_MODE_KEY)
+const mobileMediaQuery = window.matchMedia('(max-width: 768px)')
+const isMobileViewport = ref(mobileMediaQuery.matches)
+const calculatorFullscreen = ref(isMobileViewport.value ? false : storedCalculatorDialogMode === 'fullscreen')
+watch(calculatorFullscreen, (isFullscreen) => {
+  if (isMobileViewport.value) return
+  localStorage.setItem(CALCULATOR_DIALOG_MODE_KEY, isFullscreen ? 'fullscreen' : 'page')
+}, { immediate: true })
+
+const syncCalculatorViewportMode = (event) => {
+  isMobileViewport.value = event.matches
+  calculatorFullscreen.value = event.matches
+    ? false
+    : localStorage.getItem(CALCULATOR_DIALOG_MODE_KEY) !== 'page'
+}
+
+const updateCalculatorPageBounds = () => {
+  if (!showCalculatorDialog.value || calculatorFullscreen.value) return
+  const contentArea = buildingViewerRef.value?.closest('.content-area')
+  if (!contentArea) return
+  const { top, left, width, height } = contentArea.getBoundingClientRect()
+  calculatorPageBounds.value = { top, left, width, height }
+}
+
+onMounted(() => {
+  mobileMediaQuery.addEventListener('change', syncCalculatorViewportMode)
+  window.addEventListener('resize', updateCalculatorPageBounds)
+})
+const buildingViewerRef = ref(null)
+let lockedContentArea = null
+let lockedContentAreaOverflow = ''
+let lockedContentAreaScrollTop = 0
+
+const updateCalculatorScrollLock = async () => {
+  await nextTick()
+  const contentArea = buildingViewerRef.value?.closest('.content-area')
+  if (showCalculatorDialog.value && !calculatorFullscreen.value) {
+    if (lockedContentArea && lockedContentArea !== contentArea) {
+      lockedContentArea.style.overflowY = lockedContentAreaOverflow
+    }
+    if (!lockedContentArea && contentArea) {
+      lockedContentArea = contentArea
+      lockedContentAreaOverflow = lockedContentArea.style.overflowY
+      lockedContentAreaScrollTop = lockedContentArea.scrollTop
+      const { top, left, width, height } = lockedContentArea.getBoundingClientRect()
+      calculatorPageBounds.value = { top, left, width, height }
+      lockedContentArea.style.overflowY = 'hidden'
+    }
+  } else if (lockedContentArea) {
+    const contentAreaToRestore = lockedContentArea
+    const scrollTopToRestore = lockedContentAreaScrollTop
+    contentAreaToRestore.style.overflowY = lockedContentAreaOverflow
+    lockedContentArea = null
+    lockedContentAreaOverflow = ''
+    lockedContentAreaScrollTop = 0
+    calculatorPageBounds.value = null
+    await nextTick()
+    contentAreaToRestore.scrollTop = scrollTopToRestore
+  }
+}
+
+watch([showCalculatorDialog, calculatorFullscreen], updateCalculatorScrollLock)
+watch(showCalculatorDialog, (isVisible) => {
+  if (isVisible) {
+    if (activeBuildingTimer) clearTimeout(activeBuildingTimer)
+    return
+  }
+  activeBuildingTimer = setTimeout(() => {
+    activeBuildingKey.value = null
+    activeBuildingTimer = null
+  }, 500)
+})
+onBeforeUnmount(() => {
+  mobileMediaQuery.removeEventListener('change', syncCalculatorViewportMode)
+  window.removeEventListener('resize', updateCalculatorPageBounds)
+  if (activeBuildingTimer) clearTimeout(activeBuildingTimer)
+  if (lockedContentArea) {
+    lockedContentArea.style.overflowY = lockedContentAreaOverflow
+    lockedContentArea.scrollTop = lockedContentAreaScrollTop
+  }
+  calculatorPageBounds.value = null
+})
 const buildingTypeFilter = ref('all')
 const buildingAgeFilter = ref('all')
 
@@ -889,7 +986,17 @@ const filteredBuildings = computed(() => {
 })
 
 // 选择建筑
-const selectBuilding = (item) => {
+const selectBuilding = (item, event) => {
+  const rect = event.currentTarget.getBoundingClientRect()
+  calculatorDialogOrigin.value = {
+    x: rect.left + rect.width / 2,
+    y: rect.top + rect.height / 2
+  }
+  activeBuildingKey.value = item.buildingKey
+  if (activeBuildingTimer) {
+    clearTimeout(activeBuildingTimer)
+    activeBuildingTimer = null
+  }
   selectedBuilding.value = item
   currentLevel.value = 0
   targetLevel.value = 1
@@ -1047,6 +1154,11 @@ const formatTime = (seconds) => {
 .building-viewer {
   max-width: 100%;
   padding: 0 0 20px;
+}
+
+.building-viewer-page-mode {
+  position: relative;
+  min-height: 100%;
 }
 
 /* ===== 顶部搜索区 ===== */
@@ -1707,6 +1819,7 @@ const formatTime = (seconds) => {
   border: 1px solid #e8edf4;
   border-radius: 10px;
   background: #ffffff;
+  user-select: none;
 }
 
 .production-chart {
