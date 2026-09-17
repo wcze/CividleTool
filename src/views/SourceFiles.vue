@@ -27,7 +27,7 @@ import version from '@/data/version.json'
 import buildingsUrl from '@/data/buildings.json?url'
 import buildingsUnlockUrl from '@/data/buildingsUnlock.json?url'
 import civilizationUrl from '@/data/civilization.json?url'
-import pricesUrl from '@/data/prices.json?url'
+import pricesUrl from '@/data/prices.json?url&no-inline'
 import { t } from '@/i18n'
 
 const sourceBaseUrl = 'https://raw.githubusercontent.com/fishpondstudio/CivIdle/refs/heads/main'
