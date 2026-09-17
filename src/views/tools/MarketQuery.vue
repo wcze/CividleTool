@@ -350,7 +350,7 @@ import AppSelect from '@/components/AppSelect.vue'
 import ResourceSelect from '@/components/ResourceSelect.vue'
 import ConfirmDialog from '@/components/ConfirmDialog.vue'
 import buildingsData from '@/data/buildings.json'
-import marketData from '@/data/market.json'
+import marketData from '@/data/buildingsUnlock.json'
 import { t, tGame, locale } from '@/i18n'
 
 const HOUR = 60 * 60 * 1000

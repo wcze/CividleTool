@@ -20,10 +20,15 @@ export default {
     beijingTime: '北京时间',
     developer: '开发',
     dataSource: '数据参考',
+    querySourceFiles: '查询数据文件',
     gameSource: '游戏源码',
     translationSource: '翻译来源',
     projectUrl: '项目地址',
     disclaimer: '本工具集由玩家自制，非官方发布，所有数据仅供参考。'
+  },
+  sourceFiles: {
+    generatedNote: 'JSON 文件由本项目根据游戏源数据处理生成。',
+    repositoryNote: 'Source 链接指向 CivIdle 官方 GitHub 仓库的 main 分支：'
   },
   home: {
     subtitle: 'CivIdle 工具集',

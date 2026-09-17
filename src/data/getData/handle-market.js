@@ -1,6 +1,6 @@
 // src/data/getData/handle-market.js
 // 同步脚本：把 .temp 下的 TechDefinitions / UpgradeDefinitions / MaterialDefinitions
-// 处理成 src/data/market.json，供 compute-resources.js 计算市场 resources 列表。
+// 处理成 src/data/buildingsUnlock.json，供 compute-resources.js 计算市场 resources 列表。
 // 生成的字段：
 //   techUnlock     : { 科技名: [解锁的建筑...] }（保持源文件顺序）
 //   upgradeUnlock  : { 升级名: [解锁的建筑...] }（保持源文件顺序）
@@ -20,7 +20,7 @@ const UPGRADE_SRC_JS = path.join(__dirname, '.temp', 'UpgradeDefinitions.js');
 const UPGRADE_SRC_TS = path.join(__dirname, '.temp', 'UpgradeDefinitions.ts');
 const MATERIAL_SRC_JS = path.join(__dirname, '.temp', 'MaterialDefinitions.js');
 const MATERIAL_SRC_TS = path.join(__dirname, '.temp', 'MaterialDefinitions.ts');
-const OUT = path.join(__dirname, '..', 'market.json');
+const OUT = path.join(__dirname, '..', 'buildingsUnlock.json');
 
 // 解析 "Name = { ... }" 或 "Name: Type = { ... }" 对象字面量块（花括号配对，支持嵌套）
 function extractObjectBlocks(text) {

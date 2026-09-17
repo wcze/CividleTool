@@ -56,6 +56,9 @@
           <span class="about-value">
             build {{ version.build }}
             <span class="version-sync">（{{ t('about.syncTime') }}: {{ syncTime }} {{ t('about.beijingTime') }}）</span>
+            <div>
+              <a :href="sourceFilesUrl" rel="noopener noreferrer">{{ t('about.querySourceFiles') }}</a>
+            </div>
           </span>
         </div>
       </div>
@@ -79,6 +82,7 @@ const tools = computed(() => getTools())
 
 const goHome = () => router.push('/')
 const switchTool = (tool) => router.push(`/tool/${tool.id}`)
+const sourceFilesUrl = router.resolve('/source-files').href
 
 const dataSourceUrl =
   'https://docs.google.com/spreadsheets/d/1ip9TaNErRSrtGuBMawM1P0KfnOVzi3Eiax7aMo4upxA/edit?usp=sharing'

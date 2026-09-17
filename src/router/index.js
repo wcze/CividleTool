@@ -16,6 +16,10 @@ const routes = [
   {
     path: '/settings',
     component: () => import('../views/Settings.vue')
+  },
+  {
+    path: '/source-files',
+    component: () => import('../views/SourceFiles.vue')
   }
 ]
 
